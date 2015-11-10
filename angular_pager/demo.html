@@ -4,37 +4,7 @@
     <meta charset="UTF-8">
     <link href="../style/bootstrap.css" rel="stylesheet" />
     <link href="../style/bootstrap-theme.css" rel="stylesheet" />
-    <script src="../vendor/jquery-1.11.1.js"></script>
-    <script src="../vendor/angular.js"></script>
-    <script src="../vendor/bootstrap.js"></script>
-    <script src="../vendor/paging.js"></script>
-    <script src="../vendor/ng-lodash.js"></script>
-    <script>
-        angular.module('app',['ngLodash','bw.paging'])
-                .controller('appCtrl',['$scope','$http', 'lodash', function($scope, $http , _){
-                    $scope.page= 1;
-                    $scope.page_size =10;
-                    $http.get('../data/data.json')
-                            .then(function(data){
-                                $scope.allrows = data.data;
-                                var _rows = data.data;
-                                var _page =  $scope.page - 1;
-                                var _start = _page*$scope.page_size ;
-                                var _end =   _page*$scope.page_size + $scope.page_size
-                                _rows = _.slice(_rows, _start, _end);
-                                $scope.rows = _rows;
-                                $scope.count = data.data.length;
-                            });
 
-                    $scope.pageAction = function(page){
-                        var _rows =  $scope.allrows;
-                        var _start = (page-1)*$scope.page_size ;
-                        var _end =   (page-1)*$scope.page_size + $scope.page_size;
-                        _rows = _.slice(_rows, _start, _end);
-                        $scope.rows = _rows;
-                    }
-                }]);
-    </script>
     <title></title>
 </head>
 <body ng-app="app" ng-controller="appCtrl">
@@ -67,5 +37,35 @@
 </div>
 
 </body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',['ngLodash','bw.paging'])
+            .controller('appCtrl',['$scope','$http', 'lodash', function($scope, $http , _){
+                $scope.page= 1;
+                $scope.page_size =10;
+                $http.get('../data/data.json')
+                        .then(function(data){
+                            $scope.allrows = data.data;
+                            var _rows = data.data;
+                            var _page =  $scope.page - 1;
+                            var _start = _page*$scope.page_size ;
+                            var _end =   _page*$scope.page_size + $scope.page_size
+                            _rows = _.slice(_rows, _start, _end);
+                            $scope.rows = _rows;
+                            $scope.count = data.data.length;
+                        });
 
+                $scope.pageAction = function(page){
+                    var _rows =  $scope.allrows;
+                    var _start = (page-1)*$scope.page_size ;
+                    var _end =   (page-1)*$scope.page_size + $scope.page_size;
+                    _rows = _.slice(_rows, _start, _end);
+                    $scope.rows = _rows;
+                }
+            }]);
+</script>
 </html>
