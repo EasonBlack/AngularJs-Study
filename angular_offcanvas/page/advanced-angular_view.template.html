@@ -1,0 +1,25 @@
+<div id="div_child">
+<span>Hello World!!</span>
+<span class="glyphicon glyphicon-align-justify btn btn-default  visible-xs"
+      style="width: 40px;"
+      ng-click="triggerOffRow()"
+      aria-hidden="true">
+
+</span>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Depart</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rows">
+            <td>{{row.name}}</td>
+            <td>{{row.age}}</td>
+            <td>{{row.depart}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

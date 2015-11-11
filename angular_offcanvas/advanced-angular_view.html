@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        body,html {
+            margin:0px;
+            padding:0px;
+            height:100%;
+            overflow:hidden;
+        }
+        div {
+            margin:0px;
+            padding:0px;
+            height:100%;
+        }
+
+        .menu {
+            background-color: #000000;
+            position:absolute;
+            bottom:0;
+            top:0;
+        }
+
+        .content {
+            left:33%;
+            overflow-y:scroll;
+        }
+
+        .row {
+            transition:all 0.5s ease;
+        }
+
+        @media screen and (max-width: 767px){
+            .row-offcanvas {
+                left:0;
+                position:relative;
+            }
+
+            .menu {
+                position:absolute;
+                top: 0;
+                width: 50%;
+                left:-50%;
+            }
+
+            .content {
+                left:0;
+            }
+            
+            .off-row {
+                left:50%;
+            }
+
+        }
+
+    </style>
+</head>
+<body ng-app="app" ng-controller="mainController">
+<div class="container-fluid">
+    <div class="row row-offcanvas " ng-class="{ 'off-row' : offrow} ">
+        <div class="col-md-4 col-xs-6 menu"></div>
+        <div class="col-md-8 col-xs-12 content" ng-view>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script src="../vendor/angular-route.js"></script>
+<script src="../vendor/loading-bar.js"></script>
+<script>
+    angular.module('app', [ 'ngRoute'])
+            .config(['$routeProvider',function($routeProvider) {
+                $routeProvider
+                        .when('/', {
+                            templateUrl : 'page/advanced-angular_view.template.html',
+                            controller  : 'childController'
+                        })
+            }])
+            .controller('mainController',['$scope', function($scope){
+                $scope.triggerOffRow = function(){
+                    $scope.offrow = !$scope.offrow;
+                }
+            }])
+            .controller('childController',['$scope','$http',function($scope , $http){
+                $http.get('../data/data.json')
+                        .then(function(result){
+                            $scope.rows = result.data;
+                        });
+
+            }])
+</script>
+</html>
