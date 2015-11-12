@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        html,body,.container-fluid,.row,.left,.right {
+            height:100%;
+        }
+        .left {
+            background-color: #67b168;
+            padding:20px;
+        }
+        .right {
+            background-color:#adadad;
+            padding:20px;
+        }
+    </style>
+</head>
+<body ng-app='app' ng-controller="mainCtrl">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 left">
+            <input ng-model="message" type="text">
+            <input ng-model="user" type="text">
+        </div>
+        <div class="col-sm-9 right">
+            <my-div mymessage="message"></my-div>
+            <my-div2 myuser="user"></my-div2>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+
+<script>
+angular.module('app',[])
+        .controller('mainCtrl',function($scope){
+            $scope.message = "Hello World";
+            $scope.user = 'eason';
+            $scope.sth = "Something";
+            $scope.changesth = function(){
+                $scope.sth = "HaHaHaaaaa";
+            }
+        })
+        .directive("myDiv",function($timeout){
+           return {
+               restrict : 'E',
+               replace: true,
+               template: '<div>{{mymessage}}</div>',
+               scope: {
+                   mymessage: '='
+               },
+               link: function(scope,ele){
+                   ele.click(function(){
+                       $timeout(function(){
+                           scope.mymessage = "XXXX XXX";
+                       });
+                   })
+               }
+           }
+        })
+        .directive("myDiv2",function($timeout){
+            return {
+                restrict : 'E',
+                replace: true,
+                template: '<div ng-click="changename()">{{myuser}}</div>',
+                scope: {
+                    myuser: '='
+                },
+                link: function(scope,ele){
+                    scope.changename = function(){
+                        scope.myuser = "XXXXXX"
+                    }
+                }
+            }
+        })
+
+
+</script>
+</html>
