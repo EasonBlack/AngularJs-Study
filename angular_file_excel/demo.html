@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            margin-top:30px;
+        }
+        ul {
+            list-style: none;
+            padding: 0px;
+            margin-top:30px;
+        }
+    </style>
+</head>
+<body ng-app="app"  >
+  <div ng-controller="appCtrl" class="container">
+      <div class="row">
+          <button class="button btn btn-default" ngf-select ng-model="file" name="file" >Select</button>
+      </div>
+      <div class="row">
+          <ul class='default'>
+              <li ng-repeat="item in items">
+                  {{ item | json }}
+              </li>
+          </ul>
+      </div>
+
+  </div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-file-upload.js"></script>
+<script src="vendor/lodash.js"></script>
+<script src="vendor/jszip.js"></script>
+<script src="vendor/xlsx.js"></script>
+<script src="vendor/xlsx-reader.js"></script>
+<script>
+    angular.module('app',['ngFileUpload'])
+            .controller('appCtrl',['$scope', 'Upload', 'XLSXReaderService', function($scope, Upload, XLSXReaderService){
+                $scope.$watch( 'file' ,function(){
+
+                    if(!$scope.file) return false;
+
+                    var excelFile = $scope.file;
+                    console.log(excelFile);
+                    XLSXReaderService.readFile(excelFile, false, true)
+                            .then(function (xlsxData) {
+                                sheets = xlsxData.sheets;
+                                $scope.items = sheets['Sheet1'];
+                            });
+                });
+            }])
+
+            .factory("XLSXReaderService", ['$q', '$rootScope',
+                function($q, $rootScope) {
+                    var service = function(data) {
+                        angular.extend(this, data);
+                    }
+                    service.readFile = function(file, readCells, toJSON) {
+                        var deferred = $q.defer();
+                        XLSXReader(file, readCells, toJSON, function(data) {
+                            $rootScope.$apply(function() {
+                                deferred.resolve(data);
+                            });
+                        });
+                        return deferred.promise;
+                    }
+                    return service;
+                }
+            ]);
+</script>
+</html>
