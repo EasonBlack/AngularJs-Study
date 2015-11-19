@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        body,html {
+            margin:0px;
+            padding:0px;
+            height:100%;
+            width:100%;
+        }
+        .top {
+            height:50px;
+            width:100%;
+            background-color:#9acfea;
+        }
+
+        .container-fluid {
+            height:calc(100% - 50px);
+        }
+
+        .left {
+            height:100%;
+        }
+
+        .right {
+            height:100%;
+            border-left: 1px solid gray;
+        }
+
+        ul {
+            list-style:none;
+            display:inline-block;
+            margin: 0px;
+            padding:0px;
+            margin-left:10px;
+            margin-top:10px;
+        }
+
+        li {
+            float:left;
+            margin-right:20px;
+            width: 150px;
+            height: 30px;
+            background: #fff;
+            text-align: center;
+            border-right: solid 1px #ccc;
+            line-height: 30px;
+        }
+
+        li.active {
+            background: #6e7e92;
+        }
+        li.active > a {
+            color:white;
+        }
+
+        .active_step {
+            display:block;
+        }
+        .hide {
+            display:none;
+        }
+        .step_container {
+            margin-top:50px;
+        }
+        .button_container {
+            width:100%;
+        }
+
+        .button_container a {
+            width:100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="top"></div>
+<div class="container-fluid" ng-app="app" ng-controller="appCtrl">
+    <div class="col-sm-4 left">
+        <div class="panel-body">
+             <div class="row" ng-show="result.txt1">TXT1: {{result.txt1}}</div>
+             <div class="row" ng-show="result.txt2">TXT2: {{result.txt2}}</div>
+             <div class="row" ng-show="result.txt3">TXT3: {{result.txt3}}</div>
+             <div class="row" ng-show="result.txt4">TXT4: {{result.txt4}}</div>
+        </div>
+    </div>
+    <div class="col-sm-8 right">
+         <div class="row">
+             <ul>
+                 <li   ng-class="{true:'active',false:''}[nav_active==1]">
+                         <a href="#" class="" ng-click="nav_active = 1">First Step</a>
+                 </li>
+                 <li  ng-class="{true:'active',false:''}[nav_active==2]">
+                         <a href="#" class="" ng-click="nav_active = 2">Second Step</a>
+                 </li>
+             </ul>
+         </div>
+         <div class="row step_container">
+             <div  ng-class="{true:'active_step',false:'hide'}[nav_active==1]"  ng-include="'templates/first_step.html'"></div>
+             <div  ng-class="{true:'active_step',false:'hide'}[nav_active==2]" ng-include="'templates/second_step.html'"></div>
+         </div>
+        <div class="row ">
+            <div class="col-sm-2 button_container">
+                <a class="btn btn-default" ng-class="{true:'active_step',false:'hide'}[nav_active!='1']" ng-click="prev()">Prev Step</a>
+                <a class="btn btn-default" ng-class="{true:'active_step',false:'hide'}[nav_active=='1']" ng-click="next()">Next Step</a>
+                <a class="btn btn-info" ng-class="{true:'active_step',false:'hide'}[nav_active=='2']" ng-click="save()">Save</a>
+            </div>
+        </div>
+        <div class="row"  ng-show="result_show">
+            <div class="col-sm-6">
+                {{ result | json }}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script>
+    angular.module('app',[])
+            .controller('appCtrl', ['$scope',function($scope){
+                  //init
+                  $scope.nav_active =  1;
+                  $scope.result_show = false;
+
+                  $scope.next = function(){
+                      $scope.nav_active = parseInt($scope.nav_active) + 1;
+                  }
+                  $scope.prev = function(){
+                      $scope.nav_active = parseInt($scope.nav_active) - 1;
+                  }
+                  $scope.save = function(){
+                      $scope.result_show = true;
+                  }
+            }])
+</script>
+</html>
