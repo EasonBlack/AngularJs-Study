@@ -1,0 +1,24 @@
+<div class="col-md-8" style="background-color: #67b168;;height:100%;"  ng-if="gv">
+    <div class="row" style="height:50%;padding:10px;" >
+        <div class="col-md-4">
+            <ul>
+                <li><label>Green Text1</label><input type="text" value="" ng-model="gv_text1"></li>
+                <li><label>Green Text2</label><input type="text" value="" ng-model="gv_text2"></li>
+            </ul>
+        </div>
+        <div class="col-md-8" style="background-color:#d43f3a;height:100%" ng-if="rv">
+            <ul>
+                <li><label>Red Text1</label><input type="text" value="" ng-model="rv_text1"></li>
+                <li><select ng-model="obj.rv_text2"  ng-options="item.id as item.Title for item in items"></select></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style="height:50%;padding:10px;">
+        <div  class="col-md-8 col-md-offset-4" style="background-color:#c0a16b;height:100%" ng-if="yv">
+            <ul>
+                <li><label>Yello Text1</label><input type="text" value="" ng-model="obj.yv_text1"></li>
+                <li><label>Yello Text2</label><input type="text" value="" ng-model="$parent.$parent.$parent.yv_text2"></li>
+            </ul>
+        </div>
+    </div>
+</div>

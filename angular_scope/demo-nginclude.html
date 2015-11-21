@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        body,html {
+            margin:0px;
+            padding:0px;
+            height: 100%;
+        }
+        div {
+            box-sizing: border-box;
+        }
+        ul {
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" style="background-color: #1b6d85;height:100%;" ng-app="app" ng-controller="appCtrl">
+    <div class="row" style=";height:100%;padding:10px;">
+        <div  class="col-md-4">
+            <ul>
+                <li><input type="checkbox" value="" ng-model="gv"><label>Show Green Panel</label></li>
+                <li><input type="checkbox" value="" ng-model="rv"><label>Show Red Panel</label></li>
+                <li><input type="checkbox" value="" ng-model="yv"><label>Show Yello Panel</label></li>
+                <div ng-show="gv">
+                    <li><input type="text" value="" ng-model="gv_text1"><label>Green Text1</label></li>
+                    <li><input type="text" value="" ng-model="gv_text2"><label>Green Text2</label></li>
+                </div>
+                <div ng-show="rv">
+                    <li><input type="text" value="" ng-model="rv_text1"><label>Red Text1</label></li>
+                    <li>
+                        <input type="text" value="" ng-model="obj.rv_text2"><label>Red Text2</label>
+                        <br>
+                        <em>two way bind with the child-child because of {}</em>
+                        <br>
+                    </li>
+                </div>
+                <div ng-show="yv">
+                    <li>
+                        <input type="text" value="" ng-model="obj.yv_text1"><label>Yello Text1</label>
+                        <br>
+                        <em>two way bind with the child-child because of {}</em>
+                        <br>
+                    </li>
+                    <li>
+                        <input type="text" value="" ng-model="yv_text2"><label>Yello Text2</label>
+                        <br>
+                        <em>two way bind with the child-child because of $parent.$parent.$parent</em>
+                        <br>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div ng-include="'demo-nginclude.template.html'" style="height:100%"></div>
+    </div>
+</div>
+
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script src="../vendor/angular-route.js"></script>
+<script>
+    angular.module('app',[])
+            .controller('appCtrl', function($scope){
+
+                $scope.obj = {};
+                $scope.items = [
+                    {id: '1', Title: 'AAAA'},
+                    {id: '2', Title: 'BBBB'},
+                    {id: '3', Title: 'CCCC'},
+                ];
+
+            })
+
+</script>
+</html>
