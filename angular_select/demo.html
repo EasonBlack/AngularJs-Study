@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="panel-body">
+        <select ng-model="item"
+                ng-options="item as item.name for item in items"
+                ng-init = "item = items[0]"
+                >
+        </select>
+        <div>
+            {{item  | json}}
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <select ng-model="item2"
+                ng-options="item.id as item.name for item in item2s"
+                ng-init = "item2 = item2s[0].id"
+                >
+        </select>
+        <div>
+            {{item2  | json}}
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-file-upload.js"></script>
+<script src="vendor/lodash.js"></script>
+<script src="vendor/jszip.js"></script>
+<script src="vendor/xlsx.js"></script>
+<script src="vendor/xlsx-reader.js"></script>
+<script>
+  angular.module('app',[])
+          .controller('appCtrl',function($scope){
+              $scope.items = [
+                  {id: 1, name : 'aaaa'},
+                  {id: 2, name : 'bbbb'},
+                  {id: 3, name : 'cccc'},
+                  {id: 4, name : 'dddd'},
+                  {id: 5, name : 'eeee'}
+              ]
+
+              $scope.item2s = $scope.items;
+          })
+</script>
+</html>
