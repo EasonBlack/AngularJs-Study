@@ -1,0 +1,17 @@
+<div class="panel-body">
+    <select ng-model="$parent.item"
+            ng-options="item as item.name for item in items"
+            ng-init = "item = items[0]"
+            >
+    </select>
+</div>
+
+
+<div class="panel-body">
+    <select ng-model="$parent.item2"
+            >
+        <option value="1">aaaa</option>
+        <option value="2">bbbb</option>
+        <option value="3">cccc</option>
+    </select>
+</div>
