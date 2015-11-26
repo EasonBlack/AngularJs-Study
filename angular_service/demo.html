@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container" ng-app="app" >
+    <div class="row" ng-controller="appCtrl1">
+         <ul>
+             <li ng-repeat="item in items">{{item.name}}</li>
+         </ul>
+    </div>
+    <div class="row" ng-controller="appCtrl2">
+         <input type="text" ng-model="testVal">
+         <button class="btn btn-info" ng-click="addItem()">Add</button>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+
+<script>
+    angular.module('app',[])
+            .service('myService', function () {
+                var data = [
+                    {name: 1},
+                    {name: 2},
+                    {name: 3}
+                ];
+                return {
+                    getAll : function(){
+                        return data;
+                    },
+                    addData : function(val){
+                        data.push({name: val });
+                    }
+                }
+            })
+            .controller('appCtrl1',['$scope', 'myService', function($scope, myService){
+                 $scope.items = myService.getAll();
+            }])
+            .controller('appCtrl2',['$scope', 'myService', function($scope, myService){
+                 $scope.addItem = function(){
+                     myService.addData($scope.testVal);
+                 }
+            }])
+</script>
+</html>
