@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="vendor/select.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<p>Selected: {{country.selected}}</p>
+
+<ui-select ng-model="country.selected" theme="bootstrap" style="width:600px;">
+    <ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="country in countries | filter: $select.search">
+        <div ng-bind-html="country.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/angular-sanitize.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-file-upload.js"></script>
+<script src="vendor/select.js"></script>
+<script>
+    angular.module('app',['ngSanitize', 'ui.select'])
+            .controller('appCtrl',function($scope){
+                $scope.country = {};
+                $scope.countries = [
+                    {name: 'Afghanistan', code: 'AF'},
+                    {name: 'Åland Islands', code: 'AX'},
+                    {name: 'Albania', code: 'AL'},
+                    {name: 'Algeria', code: 'DZ'},
+                    {name: 'American Samoa', code: 'AS'},
+                    {name: 'Andorra', code: 'AD'},
+                    {name: 'Angola', code: 'AO'}
+                ]
+            });
+</script>
+</html>
