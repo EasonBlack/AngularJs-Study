@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="style/demo.main.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row main-container" ng-app="app" ng-controller='appMainCtrl'>
+         <div class="col-md-2 left">
+             <ul>
+                 <li>
+                     <a class="button btn btn-primary" ngf-select  ng-model="picFile" name="picFile" accept="image/*">
+                         Select
+                     </a>
+                 </li>
+                 <li>
+                     <a class="button btn btn-primary" ng-click='settings.on_design=true' ng-if="settings.on_design==false" >Design</a>
+                 </li>
+                 <li>
+                     <a class="button btn btn-primary"ng-click='settings.on_design=false' ng-if="settings.on_design == true" >Finish</a>
+                 </li>
+                 <li>
+                     <a class="button btn btn-success" ng-click="loadImage()" >Play</a>
+                 </li>
+             </ul>
+         </div>
+         <div class="col-md-5 edit-container">
+             <div class="image-container" create-difference point="pic.difference" ondesign="settings.on_design">
+                 <img ng-show="picFile != null" ngf-src="picFile">
+             </div>
+         </div>
+         <div class="col-md-5 game-container">
+             <div class="image-container" ng-show="settings.on_play" >
+                 <difference-spot ng-repeat="item in pic.difference" x="item.x" y="item.y" ></difference-spot>
+                 <img   ng-show="picFile != null" ngf-src="picFile"  />
+             </div>
+         </div>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/ng-file-upload.js"></script>
+<script src="script/demo.app.js"></script>
+
+</html>
