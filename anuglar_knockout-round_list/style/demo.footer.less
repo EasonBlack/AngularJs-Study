@@ -1,0 +1,70 @@
+
+.swipe-ul {
+  list-style:none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 1200px;
+  padding: 0px;
+  transition:all 0.5s ease;
+
+  li {
+     display:inline-block;
+     width:200px;
+     height:400px;
+  }
+
+  .level1 {
+    background-color: #009966;
+  }
+  .level2 {
+    background-color: #FF6600;
+  }
+  .level3 {
+    background-color: #FFFF66;
+  }
+  .level4 {
+    background-color: #990033;
+  }
+}
+
+.container {
+  margin-top:50px;
+}
+
+.swipe-box {
+  width: 400px;
+  height:400px;
+  overflow:hidden;
+  position:relative;
+
+}
+
+.footer-container {
+  width:250px;
+  height:30px;
+  ul {
+    list-style:none;
+    width:250px;
+  }
+  li {
+    width:20px;
+    height:20px;
+    display:inline-block;
+  }
+  a {
+    display: inline-block;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    border: 1px solid #f7f7f7;
+    background-color: #999999;
+  }
+  a:hover {
+    background-color: steelblue;
+  }
+  .active {
+    background-color: yellowgreen;
+  }
+}

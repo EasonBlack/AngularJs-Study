@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="style/demo.footer.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="swipe-box">
+        <ul class="swipe-ul">
+            <li class="level4">
+            </li><li class="level3">
+        </li><li class="level2">
+        </li><li class="level1">
+        </li>
+        </ul>
+    </div>
+
+    <div class="footer-container">
+        <ul>
+            <li><a level="1"></a></li>
+            <li><a level="2"></a></li>
+            <li><a level="3"></a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script>
+    $('.footer-container a').on('click',function(e){
+         $('.footer-container a').removeClass('active')
+         $(this).addClass('active');
+         var _left = $(this).attr('level');
+         $('.swipe-ul').css('left', -(_left-1)*200+'px');
+    });
+</script>
+</html>

@@ -1,0 +1,76 @@
+ul {
+  list-style: none;
+}
+ul li {
+  display: inline-block;
+  width: 280px;
+  height: 100%;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+}
+ul .level2 .box-container {
+  margin-bottom: 60px;
+}
+ul .level1 .box-container {
+  margin-top: 60px;
+}
+ul .level1 .down-box:before {
+  content: '';
+  position: absolute;
+  height: 120px;
+  width: 30px;
+  left: -80px;
+  top: -60px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+}
+ul .level2 .down-box:before {
+  content: '';
+  position: absolute;
+  height: 70px;
+  width: 30px;
+  left: -80px;
+  top: -35px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+}
+.box-container .up-box,
+.box-container .down-box {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  background-color: #CCCC99;
+  color: black;
+  font-weight: bold;
+  line-height: 30px;
+  padding-left: 12px;
+}
+.box-container .up-box:after,
+.box-container .down-box:after {
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #080808;
+  content: attr(score);
+  color: white;
+  padding-left: 12px;
+}
+.box-container .up-box {
+  border-bottom: 1px solid #CCCCCC;
+}
+.box-container .up-box:after {
+  border-bottom: 1px solid #CCCCCC;
+}
+.box-container .up-box:before {
+  content: '';
+  position: absolute;
+  left: -50px;
+  width: 50px;
+  height: 30px;
+  border-bottom: 1px solid #CCCCCC;
+}

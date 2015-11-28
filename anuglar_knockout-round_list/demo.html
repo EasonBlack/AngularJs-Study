@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="style/demo.main.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="mask">
+        <div class=" row main-container">
+            <ul class="swipe-ul swipemove{{active}}">
+                <li class="level1" ng-style="getTop(1)">
+                    <match-box ng-repeat="match in level1"
+                               team1="{{match.team1}}"
+                               team2="{{match.team2}}"
+                               score1="{{match.score1}}"
+                               score2="{{match.score2}}"
+                               getbottom="{{getbottom(1)}}"
+                               gettailheight = "{{getTailHeight(1)}}"
+                            ></match-box>
+                </li><li class="level2" ng-style="getTop(2)">
+                <match-box ng-repeat="match in level2"
+                           team1="{{match.team1}}"
+                           team2="{{match.team2}}"
+                           score1="{{match.score1}}"
+                           score2="{{match.score2}}"
+                           getbottom="{{getbottom(2)}}"
+                           gettailheight = "{{getTailHeight(2)}}"
+                        ></match-box>
+            </li><li class="level3" ng-style="getTop(3)">
+                <match-box ng-repeat="match in level3"
+                           team1="{{match.team1}}"
+                           team2="{{match.team2}}"
+                           score1="{{match.score1}}"
+                           score2="{{match.score2}}"
+                           getbottom="{{getbottom(3)}}"
+                           gettailheight = "{{getTailHeight(3)}}"
+                        ></match-box>
+            </li><li class="level4" ng-style="getTop(4)">
+                <match-box ng-repeat="match in level4"
+                           team1="{{match.team1}}"
+                           team2="{{match.team2}}"
+                           score1="{{match.score1}}"
+                           score2="{{match.score2}}"
+                           getbottom="{{getbottom(4)}}"
+                           gettailheight = "{{getTailHeight(4)}}"
+                        ></match-box>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row footer-container">
+        <ul class="swipe-spot">
+            <li><a level="1" ng-click="active=1"></a></li>
+            <li><a level="2" ng-click="active=2"></a></li>
+            <li><a level="3" ng-click="active=3"></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="script/demo.app.js"></script>
+</html>

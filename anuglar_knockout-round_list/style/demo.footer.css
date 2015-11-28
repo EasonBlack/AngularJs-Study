@@ -1,0 +1,63 @@
+.swipe-ul {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 1200px;
+  padding: 0px;
+  transition: all 0.5s ease;
+}
+.swipe-ul li {
+  display: inline-block;
+  width: 200px;
+  height: 400px;
+}
+.swipe-ul .level1 {
+  background-color: #009966;
+}
+.swipe-ul .level2 {
+  background-color: #FF6600;
+}
+.swipe-ul .level3 {
+  background-color: #FFFF66;
+}
+.swipe-ul .level4 {
+  background-color: #990033;
+}
+.container {
+  margin-top: 50px;
+}
+.swipe-box {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.footer-container {
+  width: 250px;
+  height: 30px;
+}
+.footer-container ul {
+  list-style: none;
+  width: 250px;
+}
+.footer-container li {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.footer-container a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #f7f7f7;
+  background-color: #999999;
+}
+.footer-container a:hover {
+  background-color: steelblue;
+}
+.footer-container .active {
+  background-color: yellowgreen;
+}
