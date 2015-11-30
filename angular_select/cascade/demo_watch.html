@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="row">
+        <div class="col-md-2">
+            <select ng-model="mallId"
+                     ng-options="mall.id as mall.name for mall in malls">
+                    ></select>
+        </div>
+        <div class="col-md-2">
+            <select ng-model="brandId"
+                     ng-options="brand.id as brand.name for brand in brands"
+                    ></select>
+        </div>
+        <div class="col-md-2">
+            <select ng-model="shopId"
+                     ng-options="shop.id as shop.name for shop in shops"
+                    ></select>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',['ngLodash'])
+            .controller('appCtrl',['$scope','$http','lodash', function($scope, $http , _){
+                $http.get('data/data.json')
+                        .then(function(data){
+                            $scope.malls = data.data;
+                            $scope.mallId = $scope.malls[0].id;
+                });
+
+                $scope.$watch('mallId',function(nv){
+                    $http.get('data/data2.json', {id: $scope.mallId})
+                            .then(function(data){
+                                $scope.brands = _.filter(data.data , function(o){
+                                    return o.fid == $scope.mallId;
+                                });
+                                $scope.brandId = $scope.brands[0].id;
+                            });
+                });
+
+                $scope.$watch('brandId', function(nv){
+                    $http.get('data/data3.json', {id: $scope.brandId})
+                            .then(function(data){
+                                $scope.shops = _.filter(data.data , function(o){
+                                    return o.fid == $scope.brandId;
+                                });
+                                $scope.shopId = $scope.shops[0].id;
+                            });
+                })
+
+            }]);
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body ng-app='app' ng-controller="mainCtrl">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 left">
+        </div>
+        <div class="col-sm-9 right">
+            <my-div repeat="2">
+                <h2>This is Clickable</h2>
+            </my-div>
+            <my-div2 ver="2"></my-div2>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',[])
+            .controller('mainCtrl',function($scope){
+
+            })
+            .directive("myDiv",function($compile){
+                return {
+                    restrict : 'E',
+                    replace: true,
+                    compile : function(ele, attrs){
+                        var content = ele.children();
+                        for (var i=1; i<attrs.repeat; i++) {
+                            ele.append(content.clone());
+                        }
+                        return function (scope, element, attrs) {
+                            element.on("click", "h2", function() {
+                                $(this).css({ "color": "red" });
+                            });
+                        };
+                    }
+                }
+            })
+            .directive("myDiv2",function($compile){
+                return {
+                    restrict: 'E',
+                    replace: true,
+                    template: '<div ng-include="getContentUrl()"></div>',
+                    link: function(scope, element, attrs) {
+                        scope.getContentUrl = function() {
+                            return 'dynamic.template' + attrs.ver + '.html';
+                        }
+                    }
+                };
+            });
+</script>
+</html>
