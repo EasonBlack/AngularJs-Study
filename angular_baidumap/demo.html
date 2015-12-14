@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        body,html {
+            margin:0;
+            padding:0;
+            height:100%;
+        }
+        .container-fluid {
+           height:100%;
+        }
+        .row {
+            height:500px;
+        }
+        .leftpanel {
+            height:100%;
+            background-color: #009966;
+        }
+        .leftpanel label {
+            display: inline-block;
+            width: 30px;
+        }
+
+        .rightpanel {
+            height:100%;
+            background-color: #007FBB;
+            padding-left: 0px;
+        }
+
+
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6QkMdfO2FR1k3qiceZxbWnG9"></script>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+  <div class="container-fluid">
+      <div  class="row">
+          <div class="col-md-2 leftpanel">
+              <div>
+                  <label>省份</label>
+                  <select ng-model="province" ng-options="key as key for (key,value) in division"
+                          ng-change="city='';district='';">
+                      <option value="">省</option>
+                  </select>
+              </div>
+              <div>
+                  <label>城市</label>
+                  <select  ng-model="city" ng-options="key as key for (key,value) in division[province]"
+                           ng-change="district='';">
+                      <option value="">市</option>
+                  </select>
+              </div>
+              <div>
+                  <label>区</label>
+                  <select  ng-model="district" ng-options="value as value for value in division[province][city]"
+                           ng-change="setCity(district)">
+                      <option value="">区</option>
+                  </select>
+              </div>
+              <div>
+                  <label>地址</label>
+                  <input type="text" ng-model="mapOptions.address"  />
+              </div>
+          </div>
+          <div class="col-md-3 rightpanel">
+              <baidu-map options="mapOptions" style="width: 500px; height: 500px;display: block;"></baidu-map>
+          </div>
+      </div>
+  </div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/baiduMap.eason.js"></script>
+<script>
+    angular.module('app', ['baiduMap'])
+            .controller('appCtrl',['$scope','$http', '$timeout',function($scope, $http, $timeout){
+                $scope.mapOptions = {};
+                $http.get('../data/division.json')
+                        .then(function(result){
+                            $scope.division = result.data;
+                        });
+                $scope.setCity = function(p){
+                    $scope.mapOptions.city = p;
+                }
+
+                $scope.setAddress = function(e) {
+                    alert(e.keyCode);
+                }
+
+                $scope.mapOptions = {
+                    center: {},
+                    zoom: 17,
+                    city: '徐汇区'
+                };
+
+
+            }]);
+</script>
+</html>
