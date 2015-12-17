@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body ng-app='app' ng-controller="appCtrl">
+   <div>
+       <div main>
+           <child1></child1>
+           <child2></child2>
+       </div>
+   </div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script>
+ angular.module('app',[])
+         .controller('appCtrl',function(){
+             this.sayHi= function(){
+                 alert('Hiiiii');
+             }
+
+         })
+         .directive('main',function(){
+             return {
+                 restrict: "A",
+                 controller: function($scope){
+
+                     this.sayHello = function() {
+                        alert('Hello');
+                     };
+
+                     this.sayHi = function() {
+                         alert('Hi');
+                     };
+                 }
+             }
+         })
+         .directive('child1', function(){
+             return {
+                 restrict:'E',
+                 require:'^main',
+                 template: '<div>child1</div>',
+                 link: function (scope, element, attrs, mainCtrl) {
+                     element.click(function(){
+                         mainCtrl.sayHello();
+                     })
+
+                 }
+             }
+         })
+         .directive('child2', function(){
+             return {
+                 restrict:'E',
+                 controller: 'appCtrl',
+                 template: '<div>child2</div>',
+                 link: function (scope, element, attrs, mainCtrl) {
+                     element.click(function(){
+                         mainCtrl.sayHi();
+                     })
+
+                 }
+             }
+         });
+</script>
+</html>

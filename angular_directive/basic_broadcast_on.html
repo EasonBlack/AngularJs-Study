@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body ng-app='app' ng-controller="appCtrl as Ctrl">
+<div>
+    <div>
+        <child1></child1>
+        <button id="btnMain" ng-click="Ctrl.broadcastEvent()">Click Me</button>
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',[])
+            .controller('appCtrl',function($scope){
+                this.broadcastEvent = function () {
+                    $scope.$broadcast("testBroad");
+                }
+            })
+            .directive('child1', function(){
+                return {
+                    restrict:'E',
+                    template: '<div>child1- {{message}}</div>',
+                    controller : function($scope){
+                        $scope.$on('testBroad', function() {
+                            $scope.message = '11111111111';
+                        });
+                    },
+                    link: function (scope, element, attrs, mainCtrl) {
+
+                    }
+                }
+            });
+</script>
+</html>

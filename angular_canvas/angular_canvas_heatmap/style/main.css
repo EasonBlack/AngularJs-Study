@@ -1,0 +1,28 @@
+body,
+html {
+  height: 100%;
+  weight: 100%;
+  margin: 0;
+  padding: 0;
+}
+.canvas-container {
+  position: relative;
+  height: 500px;
+  width: 800px;
+  overflow: scroll;
+}
+.img_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: hand;
+}
+.img_container img {
+  height: 888px;
+  width: 1385px;
+}
+#canvas {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
