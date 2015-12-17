@@ -107,11 +107,11 @@ angular.module('app')
 
 
         this.setXY = function(x,y) {
-            var _scale_x = 1085 / this.mapWidth;
-            var _scale_y = 588 /  (this.mapHeight+22);
+            var _scale_x = 1050 / this.mapWidth;
+            var _scale_y = 521 /  (this.mapHeight);
             return  _obj = {
-                x: _scale_x*(x-7) + 150,
-                y:_scale_y*(this.mapHeight - y + 34) + 150
+                x: _scale_x*(x) + 150,
+                y:_scale_y*(this.mapHeight - y + 16) + 150
             }
         }
 
