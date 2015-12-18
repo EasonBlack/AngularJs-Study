@@ -5,6 +5,9 @@ angular.module('app')
 
         return {
             restrict: 'E',
+            scope : {
+                pic: '='
+            },
             templateUrl: 'demo.canvas.directive.template.html',
             link: function(scope,ele,attr){
 
@@ -31,9 +34,29 @@ angular.module('app')
                     pauseAndClear();
                 });
 
-                scope.$on('drawPlay',function(event){
-                    drawHeatMap(pointList.currentIndex);
+                scope.$on('imgPlus',function(event){
+                    var wspan = 1 * originWidth*0.25;
+                    var hspan = 1 * originHeight*0.25;
+                    handleImg(wspan, hspan);
                 });
+
+                scope.$on('imgMinus',function(event){
+                    var wspan = -1 * originWidth*0.25;
+                    var hspan = -1 * originHeight*0.25;
+                    handleImg(wspan, hspan);
+                });
+
+
+                function handleImg(wspan, hspan) {
+                    $('#imgsvg').css('width', parseInt($('#imgsvg').width()) + wspan);
+                    $('#imgsvg').css('height', parseInt($('#imgsvg').height()) + hspan);
+                    canvas.width = canvas.width + wspan;
+                    canvas.height = canvas.height + hspan;
+                    var w_rate =  canvas.width / originWidth;
+                    var h_rate =   canvas.height/ originHeight;
+                    pointList.resetAxis(w_rate,h_rate);
+                }
+
 
                 function pauseAndClear(){
                     for (var i = 0; i < timeouts.length; i++) {

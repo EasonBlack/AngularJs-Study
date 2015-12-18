@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="style/main.css"  rel="stylesheet" />
+</head>
+<body ng-app="app" ng-controller="appCtrl as ctrl">
+ <div class="container">
+     <div class="row canvas-container">
+         <my-canvas pic="picUrl"></my-canvas>
+     </div>
+     <div class="row">
+         <select id="sel" ng-model="speed">
+             <option>slow</option>
+             <option>normal</option>
+             <option>fast</option>
+         </select>
+         <button id="btnSpeed" ng-click="ctrl.drawSpeed()">Speed</button>
+         <button id="btnPause" ng-click="ctrl.drawPause()">Pause</button>
+         <button id="btnPlay"  ng-click="ctrl.drawPlay()">Play</button>
+         <button id="btnPlus" ng-click="ctrl.imgPlus()">+</button>
+         <button id="btnMinus" ng-click="ctrl.imgMinus()">-</button>
+     </div>
+ </div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="vendor/simpleheat.animate_heatmap.step3.js"></script>
+<script src="demo.app.js"></script>
+<script src="demo.pointlist.service.js"></script>
+<script src="demo.canvas.directive.js"></script>
+<script src="demo.jpg.controller.js"></script>
+
+</html>
