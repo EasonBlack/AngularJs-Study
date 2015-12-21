@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="datepicker/styles/bootstrap.css">
+    <link rel="stylesheet" href="datepicker/styles/index.css">
+</head>
+<body ng-app="app" ng-controller="appCtrl as ctrl">
+
+<div class="container">
+    <div class="row">
+
+        <input type="datetime" date-time auto-close="false" ng-model="starttime" max-view="date"  format="yyyy-MM-dd HH:mm:ss" class="form-control"
+                />
+    </div>
+
+</div>
+
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="datepicker/scripts/datePicker.js"></script>
+<script src="datepicker/scripts/datePickerUtils.js"></script>
+<script src="datepicker/scripts/dateRange.js"></script>
+<script src="datepicker/scripts/input.js"></script>
+<script>
+    angular.module('app',['datePicker'])
+            .controller('appCtrl', ['$scope', function($scope){
+            }])
+</script>
+</html>
