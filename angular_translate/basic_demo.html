@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="container" ng-app="app" ng-controller="appCtrl as ctrl">
+       <div>
+           <label>{{ 'version' | translate }}</label>
+       </div>
+      <div>
+          <label>{{ 'name' | translate }}</label>
+      </div>
+      <div>
+          <label>{{ 'surname' | translate }}</label>
+      </div>
+      <div>
+          <button ng-click="ctrl.translate()">Click Me</button>
+      </div>
+  </div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/angular-translate.js"></script>
+<script src="basic_demo/app.js"></script>
+<script src="basic_demo/ch.js"></script>
+<script src="basic_demo/en.js"></script>
+<script src="basic_demo/translation.js"></script>
+<script>
+ angular.module('app')
+         .controller('appCtrl', ['$scope', '$translate', function($scope,$translate){
+             $scope.languageIndex = 0;
+             $translate.use(['en', 'ch'][Number($scope.languageIndex)]);
+             this.translate = function(){
+                 $scope.languageIndex = !$scope.languageIndex;
+                 $translate.use(['en', 'ch'][Number($scope.languageIndex)]);
+             }
+
+         }]);
+
+</script>
+</html>
