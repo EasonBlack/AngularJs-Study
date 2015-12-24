@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body ng-app="app" ng-controller="appCtrl as ctrl">
+
+<div class="container">
+    <div class="row">
+        <input type="datetime" date-time auto-close="true" ng-model="date.starttime1" max-view="date"  format="yyyy-MM-dd HH:mm:ss" class="form-control"
+                />
+    </div>
+    <div class="row">
+        <input type="datetime" date-time auto-close="true" ng-model="date.starttime2" max-view="date"  format="yyyy-MM-dd HH:mm:ss" class="form-control"
+                />
+    </div>
+    <div class="row">
+        <input type="datetime" date-time auto-close="true" ng-model="date.starttime3" max-view="date"  format="yyyy-MM-dd HH:mm:ss" class="form-control"
+                />
+    </div>
+</div>
+
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/moment.js"></script>
+<script src="scripts/datePicker.js"></script>
+<script src="scripts/datePickerUtils.js"></script>
+<script src="scripts/dateRange.js"></script>
+<script src="scripts/input.js"></script>
+<script>
+    angular.module('app',['datePicker'])
+            .controller('appCtrl', ['$scope', function($scope){
+                $scope.date = {
+                    starttime1: '',
+                    starttime2: '',
+                    starttime3: '',
+
+                }
+                $scope.$watch('date.starttime1',function(nv){
+                    if(!nv) {
+                        return false;
+                    }
+                    if(!(nv instanceof Date)) {
+                        nv = new Date(nv);
+                    }
+
+                    var _date2 = moment(nv).startOf('day').hour(8).minute(0).seconds(0).milliseconds(0);
+                    var _date3 = moment(nv).startOf('day').hour(22).minute(0).seconds(0).milliseconds(0);
+                    $scope.date.starttime2 = _date2.toDate();
+                    $scope.date.starttime3 = _date3.toDate();
+                })
+            }])
+</script>
+</html>
