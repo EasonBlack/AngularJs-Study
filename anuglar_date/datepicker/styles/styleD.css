@@ -44,7 +44,7 @@
   margin-bottom: -1000px;
 }
 [date-range] [date-picker] .after.before {
-  color: #fff;
+  color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #499dcd;
   background-image: -moz-linear-gradient(top, #5bc0de, #2f6ab4);
@@ -65,7 +65,7 @@
 [date-range] [date-picker] .after.before.active,
 [date-range] [date-picker] .after.before.disabled,
 [date-range] [date-picker] .after.before[disabled] {
-  color: #fff;
+  color: #ffffff;
   background-color: #2f6ab4;
   *background-color: #2a5ea0;
 }
@@ -120,22 +120,23 @@
   border-radius: 4px;
 }
 [date-picker] span:hover {
-  background: #eee;
+  background: #eeeeee;
 }
 [date-picker] span.disabled,
 [date-picker] span.disabled:hover {
   background: none;
-  color: #999;
+  color: #999999;
   cursor: default;
 }
 [date-picker] .active,
 [date-picker] .now {
+  color: #ffffff;
   background-color: #006dcc;
-  background-image: -moz-linear-gradient(top, #08c, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #08c, #0044cc);
-  background-image: -o-linear-gradient(top, #08c, #0044cc);
-  background-image: linear-gradient(to bottom, #08c, #0044cc);
+  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
   border-color: #0044cc #0044cc #002a80;
@@ -156,7 +157,7 @@
 [date-picker] .now.disabled,
 [date-picker] .active[disabled],
 [date-picker] .now[disabled] {
-  color: #fff;
+  color: #ffffff;
   background-color: #0044cc;
   *background-color: #003bb3;
 }
@@ -167,7 +168,7 @@
   background-color: #003399 \9;
 }
 [date-picker] .now {
-  color: #fff;
+  color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #ee735b;
   background-image: -moz-linear-gradient(top, #ee5f5b, #ee905b);
@@ -188,7 +189,7 @@
 [date-picker] .now.active,
 [date-picker] .now.disabled,
 [date-picker] .now[disabled] {
-  color: #fff;
+  color: #ffffff;
   background-color: #ee905b;
   *background-color: #ec8044;
 }
@@ -217,6 +218,6 @@
 }
 [date-picker] th:hover,
 [date-picker] [ng-switch-when="date"] td span:hover {
-  background: #eee;
+  background: #eeeeee;
   cursor: pointer;
 }

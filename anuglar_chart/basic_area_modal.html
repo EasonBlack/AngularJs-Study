@@ -15,7 +15,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <highchart id="chart1" config="highchartsNG"></highchart>
         </div>
 
@@ -25,8 +25,8 @@
     <a class="btn btn-default" ng-click="OpenBig()" data-toggle="modal" data-target="#chart-modal">Open Big</a>
 </div>
 <div class="modal fade" id="chart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog" style="width:900px">
+        <div class="modal-content" style="width:100%">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
@@ -36,7 +36,7 @@
                     <div class="panel-body">
                         <div  class="row" >
                             <div class="col-md-12" id="big_chart_container" >
-                                <highchart id="big_chart" config="highchartsNG"></highchart>
+                                <highchart id="big_chart" config="highchartsBigNG"></highchart>
                             </div>
                         </div>
                     </div>
@@ -99,6 +99,12 @@
                         text: 'Hello'
                     },
                     loading: false
+                }
+
+                $scope.highchartsBigNG = $.extend({},$scope.highchartsNG , true);
+                $scope.highchartsBigNG.size = {
+                    width: 800,
+                    height: 400
                 }
 
 
