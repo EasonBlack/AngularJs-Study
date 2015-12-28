@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .row {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <highchart id="chart1" config="highchartsNG"></highchart>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <a class="btn btn-default" ng-click="OpenBig()" data-toggle="modal" data-target="#chart-modal">Open Big</a>
+</div>
+<div class="modal fade" id="chart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div  class="row" >
+                            <div class="col-md-12" id="big_chart_container" >
+                                <highchart id="big_chart" config="highchartsNG"></highchart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script src="../vendor/angular-route.js"></script>
+<script src="../vendor/highcharts.src.js"></script>
+<script src="../vendor/highcharts-ng.js"></script>
+<script>
+    angular.module('app', ["highcharts-ng"])
+            .controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
+
+                $scope.OpenBig = function(){
+                    $('#big_chart_container').css('visibility', 'initial');
+                }
+
+                var _xAxis = ['2001', '2002', '2003', '2004', '2005'];
+                $scope.highchartsNG = {
+                    options: {
+                        chart: {
+                            type: 'area'
+                        }
+                    },
+                    xAxis: {
+                        labels: {
+                            formatter: function(){
+                                return _xAxis[this.value];
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'xxxx',
+                            data: [10, 15, 12, 8, 7]
+                        },
+                        {
+                            name: 'yyyy',
+                            data: [2, 7, 11, 18, 19]
+                        },
+                        {
+                            name: 'zzzz',
+                            data: [10, 8, 12, 1, 7]
+                        }
+                    ],
+                    title: {
+                        text: 'Hello'
+                    },
+                    loading: false
+                }
+
+
+            }])
+</script>
+</html>
