@@ -1,27 +1,37 @@
 angular.module('app')
-.service('chartLine', [function() {
+.factory('chartLine', [function() {
 
-        var self = this;
-        this.setConfig = function(dataSet) {
-            self.NGConfig = {
+        var chartLine = function() {
+
+            this.dataSet =  {
+                type: 'line',
+                categories: ['2001', '2002', '2003', '2004', '2005'],
+                data: [10, 15, 12, 8, 7],
+                name: 'xxxxx',
+                title: 'AAAAA'
+            }
+
+            this.NGConfig = {
                 options: {
                     chart: {
                         type: 'line'
                     }
                 },
                 xAxis: {
-                    categories: dataSet.categories //['2001', '2002', '2003', '2004', '2005']
+                    categories: this.dataSet.categories //['2001', '2002', '2003', '2004', '2005']
                 },
                 series: [{
-                    name : dataSet.name,
-                    data: dataSet.data //[10, 15, 12, 8, 7]
+                    name : this.dataSet.name,
+                    data: this.dataSet.data //[10, 15, 12, 8, 7]
                 }],
                 title: {
-                    text: dataSet.title
+                    text: this.dataSet.title
                 },
                 loading: false
             }
+
         }
 
+        return chartLine;
 
     }]);

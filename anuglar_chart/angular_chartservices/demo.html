@@ -10,20 +10,27 @@
 <body ng-app="app" ng-controller="appCtrl">
     <div class="container">
       <div class="row">
-           <div class="col-sm-3">
-               <a class="btn btn-default">Add</a>
+           <div class="col-sm-3 col-sm-offset-1 button_container">
+               <a class="btn btn-default" ng-click="add()">Add</a>
            </div>
       </div>
         <div class="row">
-            <div class="col-sm-6" ng-repeat="item in items">
-                <highchart  config="item.config"></highchart>
+            <div class="col-sm-5 col-sm-offset-1 chart_container"  ng-repeat="item in items">
+                <select  ng-model="item.typeId"  ng-options="dt.id as dt.name for dt in dataType">
+                </select>
+                <a class="btn btn-default" ng-click="setChart(item, $index)">OK</a>
+
+                <highchart config="item.config"></highchart>
+
             </div>
+
         </div>
     </div>
 </body>
 </html>
 <script src="../../vendor/jquery-1.11.1.js"></script>
 <script src="../../vendor/angular.js"></script>
+<script src="../../vendor/angular-sanitize.js"></script>
 <script src="../../vendor/bootstrap.js"></script>
 <script src="../../vendor/paging.js"></script>
 <script src="../../vendor/ng-lodash.js"></script>

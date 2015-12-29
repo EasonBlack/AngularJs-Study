@@ -1,16 +1,31 @@
 angular.module('app')
-    .controller('appCtrl', ['$scope', '$http', 'chartLine', function ($scope, $http, chartLine ) {
-         $scope.items = [];
+    .controller('appCtrl', ['$scope', '$http', 'chartLine', function ($scope, $http, chartLine) {
+        $scope.items = [];
+        $scope.dataType = [
+            {id:1,name:'line'},
+            {id:2,name:'bar'}
+        ];
 
-         var _line =  {
-             type: 'line',
-             categories : ['2001', '2002', '2003', '2004', '2005'],
-             data : [10, 15, 12, 8, 7],
-             name: 'xxxxx',
-             title: 'AAAAA'
-         }
-        chartLine.setConfig(_line)
-        _line.config =  chartLine.NGConfig;
-        $scope.items.push(_line);
+
+        $scope.add = function(){
+            $scope.items.push({})
+        }
+
+        $scope.setChart = function(item, index){
+
+            switch(item.typeId) {
+                case 1:
+                    getLine(item, index);
+                    break;
+                case 2:
+                    //getBar();
+                    break;
+            }
+        }
+
+        function getLine(item, index) {
+            var _chartline = new chartLine();
+            $scope.items[index].config = _chartline.NGConfig
+        }
 
     }]);
