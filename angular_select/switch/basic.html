@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<div class="container">
+    <div class="row">
+        <select ng-model="result.type" ng-options="t.id as t.name for t in types"></select>
+    </div>
+    <div class="row"  ng-switch on="result.type">
+        <div ng-switch-when="1">
+             <select ng-model="result.org" ng-options="t.id as t.name for t in getOrgs1()"></select>
+        </div>
+        <div ng-switch-when="2">
+            <select ng-model="result.org" ng-options="t.id as t.name for t in getOrgs2()"></select>
+        </div>
+        <div ng-switch-when="3">
+            <select ng-model="result.org" ng-options="t.id as t.name for t in getOrgs3()"></select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            {{ result | json }}
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',['ngLodash'])
+            .controller('appCtrl',['$scope','lodash',function($scope, _){
+
+               $scope.types=[
+                   {id: '1',name: 'aaa'},
+                   {id: '2',name: 'bbb'},
+                   {id: '3',name: 'ccc'}
+               ]
+
+                $scope.getOrgs1 = function(){
+                    return [
+                        {id: '1',name: 'a1'},
+                        {id: '2',name: 'a2'},
+                        {id: '3',name: 'a3'}
+                    ]
+                }
+
+                $scope.getOrgs2 = function(){
+                    return [
+                        {id: '4',name: 'b1'},
+                        {id: '5',name: 'b2'},
+                        {id: '6',name: 'b3'}
+                    ]
+                }
+
+                $scope.getOrgs3 = function(){
+                    return [
+                        {id: '7',name: 'c1'},
+                        {id: '8',name: 'c2'}
+                    ]
+                }
+
+                $scope.result = {}
+
+            }]);
+</script>
+</html>
