@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container" ng-app="app" ng-controller="appCtrl">
+      <div class="row">
+          <select ng-model="info.parentId"
+                  ng-options="item.id as item.name for item in getItems(0)"
+                  >
+          </select>
+
+          <select ng-model="info.childId"
+                  ng-options="item.id as item.name for item in getItems(info.parentId)"
+                  >
+          </select>
+      </div>
+      <div class="row">
+          <select ng-model="info.parentId1"
+                  ng-options="item.id as item.name for item in items|filter:{parentId: '0'}"
+                  >
+          </select>
+
+          <select ng-model="info.childId1"
+                  ng-options="item.id as item.name for item in items|filter:{parentId: info.parentId1||' '}"
+                  >
+          </select>
+      </div>
+
+      <div class="row">
+          <select ng-model="info.parentId2"
+                  ng-options="item.id as item.name for item in parents"
+                  >
+              <option value="" style="display:none">----</option>
+          </select>
+
+          <select ng-model="info.childId2"
+                  ng-options="item.id as item.name for item in children"
+                  >
+              <option value="" style="display:none">----</option>
+          </select>
+      </div>
+
+  </div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',['ngLodash'])
+            .controller('appCtrl',['$scope','lodash',function($scope, _){
+                 $scope.info = {};
+                 $scope.items = [
+                     {id: '1', name : 'aa' , parentId: '0'},
+                     {id: '2', name : 'bb' , parentId: '0'},
+                     {id: '3', name : 'cc' , parentId: '0'},
+                     {id: '4', name : 'a1' , parentId: '1'},
+                     {id: '5', name : 'a2' , parentId: '1'},
+                     {id: '6', name : 'b1' , parentId: '2'},
+                     {id: '7', name : 'b2' , parentId: '2'},
+                     {id: '8', name : 'c1' , parentId: '3'},
+                     {id: '9', name : 'c2' , parentId: '3'}
+                 ]
+
+
+                $scope.getItems = function(id) {
+                    console.log(id);
+                    var _i = _.filter($scope.items, function(i){
+                       return i.parentId == id;
+                    });
+                    return _i;
+                }
+
+
+                $scope.parents = _.filter($scope.items, function(i){
+                    return i.parentId == 0;
+                });
+
+                $scope.$watch('info.parentId2', function(nv){
+                    if(!nv) return ;
+                    console.log('children get');
+                    $scope.children = _.filter($scope.items, function(i){
+                        return i.parentId == nv;
+                    });
+                });
+            }]);
+
+
+</script>
+</html>
