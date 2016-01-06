@@ -13,6 +13,17 @@
         tr {
             display: block;
         }
+
+        td {
+            display:inline-block;
+            width:45%;
+            border:0px !important;
+        }
+
+        tr:nth-child(odd){
+            display: block;
+            background-color: steelblue;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +71,7 @@
                         ele.on('drop', function (event) {
                             event.preventDefault();
                             var _thisId = event.target.parentElement.id;
-                            ('#' + _thisId).after($('#' + _ing));
+                            $('#' + _thisId).after($('#' + _ing));
                         })
                     }
                 }
