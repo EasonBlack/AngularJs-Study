@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+
+        tr {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+  <div class="container" >
+       <table class="table"  ondrop="drop(event)" ondragover="allowDrop(event)">
+           <tr id='t1' draggable="true" ondragstart="drag(event)">
+               <td><span>a1</span></td>
+               <td><span>b1</span></td>
+           </tr>
+           <tr  id='t2' draggable="true" ondragstart="drag(event)">
+               <td><span>a2</span></td>
+               <td><span>b2</span></td>
+           </tr>
+           <tr  id='t3' draggable="true" ondragstart="drag(event)">
+               <td><span>a3</span></td>
+               <td><span>b3</span></td>
+           </tr>
+       </table>
+  </div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script>
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+
+    function drag(e) {
+        e.dataTransfer.setData("trId", $(e.target).attr('id'));
+    }
+
+    function drop(e) {
+        e.preventDefault();
+        var _thisId = e.target.parentElement.id;
+        var _trId = e.dataTransfer.getData("trId");
+        $('#'+_thisId).after($('#'+_trId));
+    }
+</script>
+</html>
