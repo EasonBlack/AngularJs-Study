@@ -15,7 +15,13 @@
           <label>{{ 'name' | translate }}</label>
       </div>
       <div>
-          <label>{{ 'surname' | translate }}</label>
+          <label>{{surname}}</label>
+      </div>
+      <div>
+          <label>{{age}}</label>
+      </div>
+      <div>
+          <label>{{age1}}</label>
       </div>
       <div>
           <button ng-click="ctrl.translate()">Click Me</button>
@@ -36,12 +42,23 @@
                 });
                 $translateProvider.preferredLanguage('ch');
             }])
-            .controller('appCtrl', ['$scope', '$translate', function($scope,$translate){
+            .controller('appCtrl', ['$scope', '$translate', '$rootScope',function($scope,$translate,$rootScope){
                 $scope.languageIndex = 0;
                 this.translate = function(){
                     $scope.languageIndex = !$scope.languageIndex;
                     $translate.use(['ch', 'en'][Number($scope.languageIndex)]);
                 }
+
+                $rootScope.$on('$translateChangeSuccess', function () {
+                    $scope.surname = $translate.instant('surname');
+                });
+
+                $translate(['age','age1'])
+                        .then(function (translatedValue) {
+                            $scope.age = translatedValue['age'];
+                            $scope.age1 = translatedValue['age1'];
+                        });
+
             }]);
 
 </script>

@@ -1,5 +1,8 @@
 {
   "version": "版本",
   "name": "姓名",
-  "surname": "别名"
+  "surname": "别名",
+  "age": "年龄",
+  "age1": "年龄1"
+
 }
