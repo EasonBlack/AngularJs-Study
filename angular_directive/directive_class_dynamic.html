@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<div id='d1' class='my-dom1'>
+</div>
+<button ng-click="addDiv()">Add</button>
+<button ng-click="addClass()">AddClass</button>
+<button ng-click="addAttr()">AddAttr</button>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope','$compile', function ($scope, $compile) {
+                //$scope.classname = 'my-dom2';
+                $scope.d = {
+                    classname: 'my-dom2'
+                }
+                $scope.addDiv = function(){
+                    var dom = '<div class="my-dom2"></div>'
+                    dom = $compile(dom)($scope);
+                    console.log(dom);
+                    $('body').append(dom);
+                }
+
+                $scope.addClass = function(){
+                    $('#d1').removeClass('my-dom1');
+                    $('#d1').addClass('my-dom3');
+                    $compile($('#d1')[0])($scope);
+                }
+
+                $scope.addAttr = function(){
+                    $('#d1').removeClass('my-dom1');
+                    $('#d1').attr('my-attr','true');
+                    $compile($('#d1')[0])($scope);
+                }
+
+            }])
+            .directive('myDom1', function ($timeout) {
+                return {
+                    restrict: 'C',
+                    link: function (scope, ele, attr) {
+                        $(ele).css('background', 'green');
+                    }
+                }
+            })
+            .directive('myDom2', function ($timeout) {
+                return {
+                    restrict: 'C',
+                    link: function (scope, ele, attr) {
+                        $(ele).css('background', 'red');
+                    }
+                }
+            })
+            .directive('myDom3', function ($timeout) {
+                return {
+                    restrict: 'C',
+                    link: function (scope, ele, attr) {
+                        $(ele).css('background', 'blue');
+                    }
+                }
+            })
+            .directive('myAttr', function ($timeout) {
+                return {
+                    restrict: 'A',
+                    link: function (scope, ele, attr) {
+                        $(ele).css('background', 'yellow');
+                    }
+                }
+            });
+</script>
+</html>
