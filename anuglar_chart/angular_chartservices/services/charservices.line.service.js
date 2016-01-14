@@ -11,7 +11,7 @@ angular.module('app')
                 title: 'AAAAA'
             }
 
-            this.NGConfig = {
+            this.config = {
                 options: {
                     chart: {
                         type: 'line'

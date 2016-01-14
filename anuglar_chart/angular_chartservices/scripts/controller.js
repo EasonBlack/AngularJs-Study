@@ -25,7 +25,7 @@ angular.module('app')
 
         function getLine(item, index) {
             var _chartline = new chartLine();
-            $scope.items[index].config = _chartline.NGConfig
+            $scope.items[index].config = _chartline.config
         }
 
     }]);
