@@ -29,7 +29,7 @@
                             controller  : '1Controller',
                             controllerAs : 'ctrl'
                         })
-                        .when('/a', {
+                        .when('/a/:type/:id', {
                             templateUrl : 'page/demo_route_controlleras.template2.html',
                             controller  : '2Controller',
                             controllerAs : 'ctrl'
@@ -40,9 +40,9 @@
                        alert('xxxxx');
                    }
             }])
-             .controller('2Controller',['$scope', '$location', function($scope, $location){
+             .controller('2Controller',['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){
                  this.getX = function(){
-                     alert('yyyyy');
+                     alert('yyyyy:' + $routeParams.id + ':' + $routeParams.type);
                  }
              }]);
 
