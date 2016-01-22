@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+
+        .star-container {
+            position: relative;
+            height: 60px;
+            width:300px;
+        }
+
+        .button-container {
+            position: absolute;
+            right: 0;
+        }
+
+        ul {
+            top: 15px;
+            left: 0;
+            position: absolute;
+            list-style: none;
+            padding:0;
+        }
+
+        li {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+
+    <div class="star-container" ng-repeat="loyalty in loyalties">
+        <div>{{loyalty.title}}</div>
+        <ul>
+            <li  ng-repeat="l in getNumber(loyalty.stars) track by $index">
+                <img width="40" height="40" src="star.svg">
+            </li>
+        </ul>
+        <ul>
+            <li  ng-repeat="l in getNumber(loyalty.user) track by $index">
+                <img width="40" height="40" src="yellow-star.svg">
+            </li>
+        </ul>
+        <div class="button-container">
+            <button ng-click="loyalty.user>0 && ( loyalty.user=loyalty.user - 1)">-</button>
+            <button ng-click="loyalty.user<loyalty.stars && (loyalty.user=loyalty.user + 1)">+</button>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+
+                $scope.loyalties = [
+                    {'title': 'Buy 4 get 1', stars: 4, user: 3},
+                    {'title': 'Buy 6 get 1', stars: 6, user: 2},
+                ]
+
+                $scope.getNumber = function(num) {
+                    return new Array(num);
+                }
+            }])
+</script>
+</html>
