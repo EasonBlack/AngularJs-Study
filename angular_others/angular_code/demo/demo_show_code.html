@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div>
+       <pre>
+           <code>
+               {{something}}
+               def openFile(path):
+               file = open(path, "r")
+               content = file.read()
+               file.close()
+               return
+           </code>
+       </pre>
+    </div>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/angular-sanitize.js"></script>
+<script src="../../../vendor/bootstrap.js"></script>
+<script src="../../../vendor/paging.js"></script>
+<script src="../../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                  $scope.something = '123';
+            }])
+</script>
+</html>

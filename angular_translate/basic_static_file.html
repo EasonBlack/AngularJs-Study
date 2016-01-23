@@ -24,6 +24,10 @@
           <label>{{age1}}</label>
       </div>
       <div>
+          <label>{{info.age2}}</label>
+      </div>
+
+      <div>
           <button ng-click="ctrl.translate()">Click Me</button>
       </div>
   </div>
@@ -58,6 +62,10 @@
                             $scope.age = translatedValue['age'];
                             $scope.age1 = translatedValue['age1'];
                         });
+
+                $scope.info = {
+                    age2 : $translate.instant('age2')
+                }
 
             }]);
 

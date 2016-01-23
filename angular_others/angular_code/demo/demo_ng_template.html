@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <pre>
+           <code id="c1" ng-include="'/d1html'">
+           </code>
+    </pre>
+
+    <my-code></my-code>
+    <script type="text/ng-template" id="/d1html">
+        var a = aaaaaaaaaaaaaaaaaa
+    </script>
+
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/angular-sanitize.js"></script>
+<script src="../../../vendor/bootstrap.js"></script>
+<script src="../../../vendor/paging.js"></script>
+<script src="../../../vendor/ng-lodash.js"></script>
+
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', '$templateCache', function ($scope, _, $templateCache) {
+               var cc = $templateCache.get('/d1html');
+                $scope.demo = {};
+            }])
+            .directive('myCode' ,['$http','$compile', '$templateCache', function($http,$compile,$templateCache){
+               return {
+                   restrict: 'E',
+                   template:'<pre><code></code></pre>',
+                   link:function(scope, ele, attr){
+                       $http.get('demo_ng_template.t1.html').then(function(t){
+                           $compile(t.data);
+                           var t2 = $templateCache.get('/d2html');
+                           var t3 = $templateCache.get('/d3html');
+                           console.log(t2);
+                           $(ele).find('code').append(t2);
+                           $(ele).find('code').append(t3);
+                       })
+                   }
+               }
+            }]);
+</script>
+</html>

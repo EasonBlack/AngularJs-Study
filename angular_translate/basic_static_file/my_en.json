@@ -3,5 +3,6 @@
   "name": "name_t",
   "surname": "surname_t",
   "age": "age_t",
-  "age1": "age1_t"
+  "age1": "age1_t",
+  "age2": "age2_t"
 }
