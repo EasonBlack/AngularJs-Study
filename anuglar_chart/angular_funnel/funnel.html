@@ -7,9 +7,53 @@
     <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
     <style>
         .chart-container {
-            border:1px solid #333333;
-            height:500px;
+            border: 1px solid #333333;
+            height: 500px;
         }
+
+        .chart-wrap {
+            position:relative;
+        }
+
+        .button-container {
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 41px;
+        }
+
+        .btn1 {
+         margin-left:20px;
+            position: relative;
+        }
+
+        .btn-today:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 2px;
+            left: -15px;
+            background: #eeeeee;
+        }
+
+        .btn-today.active:before {
+            background: #67b168;
+        }
+
+        .btn-yesterday:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 2px;
+            left: -15px;
+            background: #eeeeee;
+        }
+
+        .btn-yesterday.active:before {
+            background: #d43f3a;
+        }
+
     </style>
 </head>
 <body ng-app="app" ng-controller="appCtrl">
