@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../style/ngDialog-css/ngDialog.css" rel="stylesheet" />
+    <link href="../../style/ngDialog-css/ngDialog-theme-default.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+ <button class="btn btn-primary" ng-click="clickToOpen()">Click Me</button>
+ <button class="btn btn-primary" ng-click="clickToOpen2()">Click Me</button>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script src="../../vendor/ngDialog.js"></script>
+<script>
+    angular.module('app',['ngLodash', 'ngDialog'])
+            .controller('appCtrl',['$scope','lodash','ngDialog',function($scope, _, ngDialog){
+                $scope.clickToOpen = function () {
+                    ngDialog.open({ template: 'simple.template.html' });
+                };
+
+                var dialogScope = $scope.$new();
+                dialogScope.title = 'this title from controller';
+                $scope.clickToOpen2 = function () {
+                    ngDialog.open({
+                        template: 'simple.template.2.html',
+                        scope: dialogScope
+                    });
+                };
+            }])
+</script>
+</html>
