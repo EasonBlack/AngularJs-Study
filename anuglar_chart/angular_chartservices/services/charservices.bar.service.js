@@ -1,22 +1,20 @@
 angular.module('app')
-.factory('chartLine', [function() {
+.factory('chartBar', [function() {
 
-        var chartLine = function(data) {
-
+        var chartBar = function(data) {
             this.dataSet = data;
-
             this.config = {
                 options: {
                     chart: {
-                        type: 'line'
+                        type: 'bar'
                     }
                 },
                 xAxis: {
-                    categories: this.dataSet.categories //['2001', '2002', '2003', '2004', '2005']
+                    categories:  this.dataSet.categories
                 },
                 series: [{
-                    name : this.dataSet.name,
-                    data: this.dataSet.data //[10, 15, 12, 8, 7]
+                    name :this.dataSet.name,
+                    data: this.dataSet.data
                 }],
                 title: {
                     text: this.dataSet.title
@@ -26,6 +24,6 @@ angular.module('app')
 
         }
 
-        return chartLine;
+        return chartBar;
 
     }]);

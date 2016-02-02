@@ -16,7 +16,7 @@
       </div>
         <div class="row">
             <div class="col-sm-5 col-sm-offset-1 chart_container"  ng-repeat="item in items">
-                <select  ng-model="item.typeId"  ng-options="dt.id as dt.name for dt in dataType">
+                <select  ng-model="item.typeName"  ng-options="dt.name as dt.name for dt in dataType">
                 </select>
                 <a class="btn btn-default" ng-click="setChart(item, $index)">OK</a>
 
@@ -39,6 +39,10 @@
 <script src="../../vendor/highcharts-ng.js"></script>
 <script src="scripts/app.js"></script>
 <script src="services/charservices.line.service.js"></script>
+<script src="services/charservices.bar.service.js"></script>
+<script src="services/charservices.area.service.js"></script>
+<script src="services/charservices.pie.service.js"></script>
+<script src="services/charservices.combine.service.js"></script>
 <script src="scripts/controller.js"></script>
 <script>
 
