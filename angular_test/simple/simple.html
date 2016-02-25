@@ -1,0 +1,44 @@
+<html>
+<head>
+    <!-- Jasmine References -->
+    <link rel="stylesheet" type="text/css" href="../../vendor/jasmine-core/jasmine.css">
+    <script src="../../vendor/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="../../vendor/jasmine-core/jasmine-html.js"></script>
+    <script type="text/javascript" src="../../vendor/jasmine-core/boot.js"></script>
+
+    <!-- Angular and Angular Mock references -->
+    <script type="text/javascript" src="../../vendor/angular.js"></script>
+    <script type="text/javascript" src="../../vendor/angular-mocks.js"></script>
+</head>
+<body></body>
+<script type="text/javascript" src="appCtrl.js"></script>
+<script type="text/javascript">
+    /* Test Code */
+    describe('calculator', function () {
+
+        beforeEach(module('app'));
+        var $controller;
+        beforeEach(inject(function(_$controller_){
+            $controller = _$controller_;
+        }));
+        describe('sum', function () {
+
+            it('1 + 1 should equal 2', function () {
+                var $scope = {};
+                var controller = $controller('appCtrl', { $scope: $scope });
+                $scope.x = 1;
+                $scope.y = 2;
+                $scope.sum();
+                expect($scope.z).toBe(3);
+            });
+
+            it('user name', function () {
+                var $scope = {};
+                var controller = $controller('appCtrl', { $scope: $scope });
+                expect($scope.userName).toBe('AA');
+            });
+
+        });
+    });
+</script>
+</html>
