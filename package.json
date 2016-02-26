@@ -1,0 +1,8 @@
+{
+  "name": "ang",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "karma-jasmine": "^0.3.7"
+  }
+}
