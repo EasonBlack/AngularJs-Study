@@ -21,6 +21,6 @@ describe('test app', function () {
         it('user name 3', inject(function($controller) {
             expect($scope.userName3).toBe('CC');
         }));
-        
+
     });
 });
