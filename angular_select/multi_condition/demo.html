@@ -98,11 +98,13 @@
                     var condition = _.find($scope.multi.conditions, function (e) {
                         return e.id == id
                     });
-                    var itemId;
                     var lastItem = _.last(condition.items);
-                    lastItem ? itemId = lastItem.id + 1 : itemId = 1;
                     condition.items.push({
-                        id: itemId
+                        id: lastItem ?  lastItem.id + 1 : 1,
+                        name :    lastItem ? lastItem.name : '',
+                        type :   lastItem ? lastItem.type : '',
+                        operators: lastItem ? lastItem.operators : [],
+                        contents : lastItem ? lastItem.contents : []
                     });
                     console.log($scope.multi.conditions);
                 }
