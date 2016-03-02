@@ -1,16 +1,21 @@
 angular.module('app')
-    .controller('appCtrl', ['$scope', '$http', 'chartLine', 'chartBar', 'chartArea','chartPie','chartCombine',function ($scope, $http, chartLine, chartBar,chartArea,chartPie,chartCombine) {
+    .controller('appCtrl', ['$scope', '$http', 'chartLine', 'chartBar', 'chartCustomBar', 'chartArea', 'chartPie', 'chartCombine', function ($scope, $http, chartLine, chartBar, chartCustomBar, chartArea, chartPie, chartCombine) {
 
         var self = this;
 
         $scope.items = [];
         $scope.dataType = [
-            {id:1, name:'line'},
-            {id:2, name:'bar' },
-            {id:3, name:'area' },
-            {id:4, name:'pie' },
-            {id:5, name:'combine' }
+            {id: 1, name: 'line'},
+            {id: 2, name: 'bar'},
+            {id: 3, name: 'customBar'},
+            {id: 4, name: 'area'},
+            {id: 5, name: 'pie'},
+            {id: 6, name: 'combine'}
         ];
+
+        //$http.get('data/chart.json').then(function(data){
+        //    console.log(data);
+        //})
 
         self.dataSet = {
             'xxx': {
@@ -19,6 +24,17 @@ angular.module('app')
                 data: [10, 15, 12, 8, 7],
                 name: 'xxxxx',
                 title: 'AAAAA'
+            },
+            'customBar': {
+                name: 'Bar',
+                categories: [
+                    {id: 1, name: 'KFC', icon: 'style/LOGO/kfc.png'},
+                    {id: 2, name: 'Bread', icon: 'style/LOGO/bread.png'},
+                    {id: 3, name: 'Burger', icon: 'style/LOGO/burger.png'},
+                    {id: 4, name: 'Manji', icon: 'style/LOGO/manji.png'},
+                    {id: 5, name: 'Pizzahut', icon: 'style/LOGO/pizzahut.png'}
+                ],
+                data: [120, 110, 90, 30, 20]
             },
             'piedata': {
                 type: 'line',
@@ -41,11 +57,11 @@ angular.module('app')
                 name: 'xxxxx',
                 title: 'AAAAA'
             },
-            'combinedata' : {
+            'combinedata': {
                 categories: ['2001', '2002', '2003', '2004', '2005'],
                 name: 'xxxxx',
                 title: 'AAAAA',
-                data :  [
+                data: [
                     {
                         type: 'column',
                         name: 'a',
@@ -74,39 +90,44 @@ angular.module('app')
 
 
         self.chartSet = {
-            'line' : function(item, index) {
-                var _data =  self.dataSet['xxx'];
+            'line': function (item, index) {
+                var _data = self.dataSet['xxx'];
                 var _chartline = new chartLine(_data);
                 $scope.items[index].config = _chartline.config
             },
-            'bar': function(item, index){
-                var _data =  self.dataSet['xxx'];
+            'bar': function (item, index) {
+                var _data = self.dataSet['xxx'];
                 var _chartBar = new chartBar(_data);
                 $scope.items[index].config = _chartBar.config
             },
-            'area': function(item, index){
-                var _data =  self.dataSet['xxx'];
+            'customBar': function (item, index) {
+                var _data = self.dataSet['customBar'];
+                var _chartBarConfig = chartCustomBar(_data);
+                $scope.items[index].config = _chartBarConfig ;// _chartBar.config
+            },
+            'area': function (item, index) {
+                var _data = self.dataSet['xxx'];
                 var _chartArea = new chartArea(_data);
                 $scope.items[index].config = _chartArea.config
             },
-            'pie': function(item, index){
-                var _data =  self.dataSet['piedata'];
+            'pie': function (item, index) {
+                var _data = self.dataSet['piedata'];
                 var _chartPie = new chartPie(_data);
                 $scope.items[index].config = _chartPie.config
             },
-            'combine': function(item, index){
-                var _data =  self.dataSet['combinedata'];
+            'combine': function (item, index) {
+                var _data = self.dataSet['combinedata'];
                 var _chartCombine = new chartCombine(_data);
                 $scope.items[index].config = _chartCombine.config
             }
         }
 
 
-        $scope.add = function(){
+        $scope.add = function () {
             $scope.items.push({})
         }
 
-        $scope.setChart = function(item, index){
+        $scope.setChart = function (item, index) {
             self.chartSet[item.typeName](item, index);
         }
 
