@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="main.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <a class="btn btn-primary" ng-click="addList()">Add</a> <input ng-model="newValue" /><input ng-model="searchValue" />
+    <div  class="example-animate-container">
+        <div  class="animate-repeat" ng-repeat="l in list | filter:searchValue as results">
+            <div>{{l}}</div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.0.min.js"></script>
+<script src="../../vendor/angular-animate.js"></script>
+
+
+<script>
+    angular.module('app',['ngAnimate'])
+            .controller('appCtrl', ['$scope', function ($scope) {
+                $scope.list = ['aaaaa', 'bbbbb', 'ccccc'];
+                $scope.addList = function () {
+                    $scope.list.push($scope.newValue);
+                }
+            }])
+</script>
+</html>
