@@ -157,7 +157,6 @@ angular.module('app')
                     $(this).toggleClass('active');
                     dataSetCurrent = setCurrent(ele)
                     renderText(dataSetCurrent);
-
                 });
 
                 ele.find('.btn-yesterday').click(function () {

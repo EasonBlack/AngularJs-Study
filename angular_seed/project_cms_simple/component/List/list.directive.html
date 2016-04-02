@@ -1,0 +1,17 @@
+<div class="TableContainer">
+    <table class="table">
+        <tr>
+            <th ng-repeat="header in ::list.Headers" ng-bind-html="::header.title" ></th>
+        </tr>
+        <tr ng-repeat="item in list.Data">
+            <td ng-repeat="header in ::list.Headers" ng-bind-html="item[header.name]"></td>
+        </tr>
+    </table>
+    <div paging
+         page="page"
+         page-size="::list.pagesize"
+         total="::list.total"
+         show-prev-next="true"
+         paging-action="pageSkip(page)">
+    </div>
+</div>

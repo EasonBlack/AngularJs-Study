@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="main.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <ul>
+        <li ng-repeat="c in multi.conditions">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>Condition {{$index + 1}}</div>
+                </div>
+                <div class="items-container col-md-10">
+                    <div class="row item-container" ng-repeat="item in c.items">
+                        <div class="col-md-3">
+                            <select ng-model="item.name" ng-options="d.name as d.name for d in dictionary"
+                                    ng-change="changeType(item);"
+                                    >
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select ng-model="item.operator" ng-options="d for d in item.operators">
+                            </select>
+                        </div>
+                        <div class="col-md-3" ng-switch on="item.type">
+                            <div ng-switch-when="number">
+                                <input ng-model="item.content1" class="number-input"><span>-</span><input ng-model="item.content2" class="number-input">
+                            </div>
+                            <div ng-switch-when="select">
+                                <select  ng-model="item.content" ng-options="d for d in item.contents"></select>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2">
+                            <a class="btn btn-success" ng-click="addItem(c.id)">Add</a>
+                            <a class="btn btn-default" ng-click="deleteItems(c.id, item.id)">Delete</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </li>
+    </ul>
+    <div class="button-container">
+        <a class="btn btn-primary" ng-click="addCondition()">Add Conditions</a>
+        <a class="btn btn-primary" ng-click="getResult()">Confirm</a>
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                var self = this;
+
+                $scope.dictionary = [
+                    {name: 'Age', type: 'number', operator: ['=']},
+                    {name: 'Gender', type: 'select', operator: ['='], content: ['Male', 'Female']}
+                ]
+
+                $scope.multi = {
+                    conditions: []
+                }
+
+                $scope.changeType = function (item) {
+                    var operator = _.find($scope.dictionary, function (d) {
+                        return d.name == item.name
+                    });
+                    item.operators = operator.operator;
+                    item.type = operator.type;
+                    item.contents = operator.content;
+                }
+
+                $scope.addCondition = function () {
+                    var lastCondition = _.last($scope.multi.conditions);
+                    var conditionId;
+                    lastCondition ? conditionId = lastCondition.id + 1 : conditionId = 1;
+                    $scope.multi.conditions.push({
+                        id: conditionId,
+                        items: [
+                            {id: 1}
+                        ]
+                    });
+                }
+
+                $scope.addItem = function (id) {
+                    var condition = _.find($scope.multi.conditions, function (e) {
+                        return e.id == id
+                    });
+                    var lastItem = _.last(condition.items);
+                    condition.items.push({
+                        id: lastItem ?  lastItem.id + 1 : 1,
+                        name :    lastItem ? lastItem.name : '',
+                        type :   lastItem ? lastItem.type : '',
+                        operators: lastItem ? lastItem.operators : [],
+                        contents : lastItem ? lastItem.contents : []
+                    });
+                    console.log($scope.multi.conditions);
+                }
+
+                $scope.deleteItems = function (cid, id) {
+                    var condition = _.find($scope.multi.conditions, function (e) {
+                        return e.id == cid
+                    });
+                    var items = condition.items;
+                    for (var i = items.length - 1; i >= 0; i--) {
+                        if (items[i].id == id) {
+                            items.splice(i, 1);
+                        }
+                    }
+                    if (items.length == 0) {
+                        var _condition = $scope.multi.conditions;
+                        for (var j = _condition.length - 1; j >= 0; j--) {
+                            if (_condition[j].id == cid) {
+                                _condition.splice(j, 1);
+                            }
+                        }
+                    }
+                    console.log($scope.multi.conditions);
+                }
+
+                $scope.getResult = function(){
+                    console.log($scope.multi.conditions);
+                }
+            }])
+</script>
+</html>
