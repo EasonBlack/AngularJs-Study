@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="row">
+        <div class="col-md-4">
+            <ul>
+                <li>
+                    <label>MOBILE</label>
+                    <span  ng-bind="resume.mobile"></span>
+                </li>
+                <li>
+                    <label>EMAIL</label>
+                    <span ng-bind="resume.email"> </span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <h2 ng-bind="resume.name"></h2>
+            <div ng-bind="resume.intro"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8"></div>
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/loading-bar.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', '$http',  function ($scope, $http) {
+                $scope.resume = {};
+
+                $http.get('data/demo.json')
+                        .then(function (response) {
+                            console.log(response.data);
+                            $scope.resume = response.data;
+                        })
+            }])
+</script>
+</html>

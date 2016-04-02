@@ -1,0 +1,66 @@
+{
+  "name": "XXXXX XX",
+  "intro": "A good man",
+  "mobile": "136000000",
+  "email": "easonxu@163.com",
+  "experience": [
+    {
+      "name": "AAAA",
+      "detail": "aaaaaaaa"
+    }
+  ],
+  "education": [
+    {
+      "name": "USST",
+      "detail": "IT"
+    }
+  ],
+  "english": [
+    {
+      "name": "reading",
+      "detail": "4"
+    },
+    {
+      "name": "writing",
+      "detail": "4"
+    },
+    {
+      "name": "Speaking",
+      "detail": "2"
+    },
+    {
+      "name": "listening",
+      "detail": "3"
+    }
+  ],
+  "skill": [
+    {
+      "name": "html5",
+      "detail": "5"
+    },
+    {
+      "name": ".net",
+      "detail": "4"
+    },
+    {
+      "name": "Javascript",
+      "detail": "5"
+    },
+    {
+      "name": "CSS",
+      "detail": "5"
+    },
+    {
+      "name": "React",
+      "detail": "3"
+    },
+    {
+      "name": "AngularJs",
+      "detail": "5"
+    },
+    {
+      "name": "Backbone",
+      "detail": "5"
+    }
+  ]
+}
