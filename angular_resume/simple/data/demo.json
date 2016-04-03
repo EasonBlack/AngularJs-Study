@@ -1,8 +1,9 @@
 {
   "name": "XXXXX XX",
-  "intro": "A good man",
+  "intro": "xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx  ",
   "mobile": "136000000",
   "email": "easonxu@163.com",
+  "birthday": "1900-09-09",
   "experience": [
     {
       "name": "AAAA",
@@ -22,7 +23,7 @@
     },
     {
       "name": "writing",
-      "detail": "4"
+      "detail": "5"
     },
     {
       "name": "Speaking",

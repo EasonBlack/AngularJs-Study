@@ -1,16 +1,84 @@
+@green-word: #3A9876;
+
 html, body {
   width: 100%;
-  height:100%;
+  height: 100%;
 }
 
 body {
-  background-color: rgba(59,159,149, 0.6);
+  background-color: rgba(59, 159, 149, 0.6);
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
   position: relative;
   background-color: white;
-  margin-top:50px;
+  margin-top: 50px;
   min-height: 40%;
-  box-shadow: 0 12px 10px -6px rgba(0,0,0,.3);
+  box-shadow: 0 12px 10px -6px rgba(0, 0, 0, .3);
+ .break {
+   margin-bottom:10px;
+ }
+  .left-break {
+    .short-break {
+      margin-left: 40px;
+      border-top: 2px solid #999999;
+    }
+  }
+  .break-word {
+    vertical-align: top;
+    display: block;
+    line-height: 0px;
+    color: @green-word;
+  }
+  .right-break {
+    .short-break {
+      border-top: 2px solid #999999;
+    }
+  }
+
+  .resume-intro {
+    margin-bottom: 10px;
+    h2 {
+      color: @green-word;
+    }
+    ul {
+      margin-top: 20px;
+      li {
+        margin-bottom: 20px;
+      }
+      li label {
+        display: block;
+        color: @green-word;
+      }
+    }
+  }
+  .resume-english {
+    svg.chart {
+      width: 100%;
+      height: 30px;
+
+      rect {
+        fill: @green-word;
+      }
+    }
+    .english-wrapper {
+      margin-top:16px;
+    }
+    .english-title {
+      font-weight: bold;
+      margin-left: 40px;
+    }
+
+  }
+  .resume-skill {
+
+  }
+  .resume-experience {
+
+  }
+
 }

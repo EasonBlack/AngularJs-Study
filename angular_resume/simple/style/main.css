@@ -6,10 +6,59 @@ body {
 body {
   background-color: rgba(59, 159, 149, 0.6);
 }
+ul {
+  list-style: none;
+}
 .container {
   position: relative;
   background-color: white;
   margin-top: 50px;
   min-height: 40%;
   box-shadow: 0 12px 10px -6px rgba(0, 0, 0, 0.3);
+}
+.container .break {
+  margin-bottom: 10px;
+}
+.container .left-break .short-break {
+  margin-left: 40px;
+  border-top: 2px solid #999999;
+}
+.container .break-word {
+  vertical-align: top;
+  display: block;
+  line-height: 0px;
+  color: #3a9876;
+}
+.container .right-break .short-break {
+  border-top: 2px solid #999999;
+}
+.container .resume-intro {
+  margin-bottom: 10px;
+}
+.container .resume-intro h2 {
+  color: #3a9876;
+}
+.container .resume-intro ul {
+  margin-top: 20px;
+}
+.container .resume-intro ul li {
+  margin-bottom: 20px;
+}
+.container .resume-intro ul li label {
+  display: block;
+  color: #3a9876;
+}
+.container .resume-english svg.chart {
+  width: 100%;
+  height: 30px;
+}
+.container .resume-english svg.chart rect {
+  fill: #3a9876;
+}
+.container .resume-english .english-wrapper {
+  margin-top: 16px;
+}
+.container .resume-english .english-title {
+  font-weight: bold;
+  margin-left: 40px;
 }

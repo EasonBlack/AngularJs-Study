@@ -9,9 +9,13 @@
 </head>
 <body>
 <div class="container" ng-app="app" ng-controller="appCtrl">
-    <div class="row">
+    <div class="row resume-intro">
         <div class="col-md-4">
             <ul>
+                <li>
+                    <label>BORN ON</label>
+                    <span  ng-bind="resume.birthday"></span>
+                </li>
                 <li>
                     <label>MOBILE</label>
                     <span  ng-bind="resume.mobile"></span>
@@ -27,11 +31,58 @@
             <div ng-bind="resume.intro"></div>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row break">
+        <div class="col-md-4 left-break">
+            <div class="short-break"></div>
+        </div>
+        <div class="col-md-2 break-word">ENGLISH</div>
+        <div class="col-md-6 right-break">
+            <div class="short-break"></div>
+        </div>
+    </div>
+
+    <div class="row resume-english">
+        <div ng-repeat="e in resume.english" class="english-wrapper">
+            <div class="col-md-4 ">
+                <div class="english-title"  ng-bind="e.name.toUpperCase()"></div>
+            </div>
+            <div class="col-md-8 english-chart">
+                <svg class="chart" >
+                    <g transform="translate(0,0)">
+                        <rect width="{{e.detail * 20 + '%'}}" height="19"></rect>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="row break">
+        <div class="col-md-4 left-break">
+            <div class="short-break"></div>
+        </div>
+        <div class="col-md-2 break-word">SKILL</div>
+        <div class="col-md-6 right-break">
+            <div class="short-break"></div>
+        </div>
+    </div>
+
+    <div class="row resume-skill">
         <div class="col-md-4"></div>
         <div class="col-md-8"></div>
     </div>
-    <div class="row">
+
+    <div class="row break">
+        <div class="col-md-4 left-break">
+            <div class="short-break"></div>
+        </div>
+        <div class="col-md-2 break-word">EXPERIENCE</div>
+        <div class="col-md-6 right-break">
+            <div class="short-break"></div>
+        </div>
+    </div>
+
+    <div class="row resume-experience">
         <div class="col-md-4"></div>
         <div class="col-md-8"></div>
     </div>
