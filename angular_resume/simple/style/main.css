@@ -62,3 +62,15 @@ ul {
   font-weight: bold;
   margin-left: 40px;
 }
+.container .resume-skill {
+  padding-top: 10px;
+}
+.container .resume-skill .skill-wrapper .col-md-4 {
+  margin-bottom: 10px;
+}
+.container .resume-skill .skill-wrapper .margin40 {
+  margin-left: 40px;
+}
+.container .resume-skill .skill-wrapper .skill-title {
+  width: 30%;
+}

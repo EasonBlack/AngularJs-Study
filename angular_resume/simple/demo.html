@@ -68,8 +68,24 @@
     </div>
 
     <div class="row resume-skill">
-        <div class="col-md-4"></div>
-        <div class="col-md-8"></div>
+        <div ng-repeat="k in resume.skill" class="skill-wrapper">
+            <div class="col-md-4" >
+                <div ng-class="{true:'margin40',false:''}[$index%3==0]">
+                    <label class="skill-title">{{k.name}}</label>
+                    <span class="skill-chart">
+                        <svg height="10" width="100">
+                            <g ng-repeat="c in getNumber(5) track by $index">
+                                <circle cx="{{5 + $index*20}}" cy="5" r="5" fill="#999999" />
+                            </g>
+
+                            <g ng-repeat="d in getNumber(k.detail)  track by $index">
+                                <circle cx="{{5 + $index*20}}" cy="5" r="5" fill="#3A9876" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row break">
@@ -96,6 +112,11 @@
     angular.module('app', [])
             .controller('appCtrl', ['$scope', '$http',  function ($scope, $http) {
                 $scope.resume = {};
+
+                $scope.getNumber = function(num) {
+                    num = parseInt(num);
+                    return new Array(num);
+                }
 
                 $http.get('data/demo.json')
                         .then(function (response) {
