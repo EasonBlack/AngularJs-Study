@@ -17,11 +17,15 @@ ul {
   position: relative;
   background-color: white;
   margin-top: 50px;
+  margin-bottom: 80px;
   min-height: 40%;
   box-shadow: 0 12px 10px -6px rgba(0, 0, 0, .3);
- .break {
-   margin-bottom:10px;
- }
+  .break {
+    margin-bottom: 10px;
+  }
+  .row {
+    margin-bottom:30px;
+  }
   .left-break {
     .short-break {
       margin-left: 40px;
@@ -41,7 +45,6 @@ ul {
   }
 
   .resume-intro {
-    margin-bottom: 10px;
     h2 {
       color: @green-word;
     }
@@ -66,7 +69,7 @@ ul {
       }
     }
     .english-wrapper {
-      margin-top:16px;
+      margin-top: 16px;
     }
     .english-title {
       font-weight: bold;
@@ -75,27 +78,110 @@ ul {
 
   }
   .resume-skill {
-     padding-top: 10px;
-     .skill-wrapper {
+    padding-top: 10px;
+    .skill-wrapper {
 
-       .col-md-4 {
-         margin-bottom:10px;
-       }
+      .col-md-4 {
+        margin-bottom: 10px;
+      }
 
-       .margin40 {
-         margin-left:40px;
-       }
+      .margin40 {
+        margin-left: 40px;
+      }
 
-       .skill-title {
-           width: 30%;
-       }
-       .skill-chart {
+      .skill-title {
+        width: 30%;
+      }
+      .skill-chart {
 
-       }
-     }
+      }
+    }
   }
   .resume-experience {
+    margin-bottom: 10px;
+    .experience-wrapper {
+      ul {
+        list-style: none;
+        border-left: 2px solid steelblue;
+        padding-left: 10px;
+        position: relative;
+
+        li {
+          display: block;
+          position: relative;
+
+          h3 {
+            color: @green-word;
+          }
+
+          &::after {
+            box-shadow: 0 0 0 4px @green-word;
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            content: "";
+            left: -15px;
+            top: 0px;
+          }
+
+          &::before {
+            left: -240px;
+            top: 50%;
+            position: absolute;
+            content: attr(data-title);
+            text-align: right;
+            font-weight: bolder;
+            font-size: 17px;
+            min-width: 120px;
+
+          }
+        }
+      }
+    }
 
   }
 
+}
+
+@media all and (max-width: 1000px) {
+  .container {
+    .left-break {
+      .short-break {
+        margin-left: 0px;
+      }
+    }
+    .break-word {
+       padding:0;
+    }
+    .resume-intro ul {
+      padding: 0;
+    }
+
+    .resume-english {
+      .english-title {
+        margin-left: 0px;
+      }
+    }
+    .resume-skill {
+      .skill-wrapper {
+        .margin40 {
+          margin-left: 0px;
+        }
+      }
+
+
+
+    }
+    .resume-experience {
+      .experience-wrapper {
+          ul li::before {
+            top:0;
+            right : 0;
+            left:auto;
+          }
+      }
+    }
+  }
 }
