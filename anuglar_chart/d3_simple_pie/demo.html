@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+        .chart-wrapper {
+            float:left;
+            display:block;
+            width:140px;
+            height:140px;
+            margin-right:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div ng-repeat="d in data">
+        <pie-chart num="{{d}}"></pie-chart>
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script src="../../vendor/d3.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                $scope.data = [5, 6, 7, 2];
+            }])
+            .directive('pieChart', ['$timeout','$compile',function ($timeout, $compile) {
+                return {
+                    restrict: 'E',
+                    templateUrl: 'demo.template.html',
+                    scope: {
+                        "num": "@"
+                    },
+                    link: function (scope, ele, attr) {
+
+                        var arc = d3.svg.arc()
+                                .innerRadius(20)
+                                .outerRadius(40)
+                                .startAngle(Math.PI * 2 * 1 / 3)
+                                .endAngle(Math.PI * 2 * 1 / 3 + (Math.PI * 2 * (scope.num / 10) ));
+                        scope.path = arc();
+                        //$compile(ele.contents())(scope);
+                    }
+                }
+            }])
+</script>
+</html>
