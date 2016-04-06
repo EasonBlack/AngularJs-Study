@@ -44,12 +44,20 @@
                         "num": "@"
                     },
                     link: function (scope, ele, attr) {
+                        
+                        var arcBottom = d3.svg.arc()
+                                .innerRadius(21)
+                                .outerRadius(38)
+                                .startAngle(0)
+                                .endAngle(Math.PI * 2);
 
                         var arc = d3.svg.arc()
                                 .innerRadius(20)
                                 .outerRadius(40)
                                 .startAngle(Math.PI * 2 * 1 / 3)
                                 .endAngle(Math.PI * 2 * 1 / 3 + (Math.PI * 2 * (scope.num / 10) ));
+
+                        scope.pathBottom = arcBottom();
                         scope.path = arc();
                         //$compile(ele.contents())(scope);
                     }
