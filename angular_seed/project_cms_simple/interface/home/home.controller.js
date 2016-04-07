@@ -1,4 +1,4 @@
 angular.module('app')
-    .controller('HomeController', ['$scope', 'lodash', '$q', 'homeService', function ($scope, _, $q, $Service) {
+    .controller('HomeController', ['$scope', 'lodash', '$q', function ($scope, _, $q) {
 
     }])
