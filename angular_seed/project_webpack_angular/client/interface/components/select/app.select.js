@@ -1,15 +1,17 @@
 import angular from 'angular';
 
 angular.module('app')
-.directive('appInput',function(){
+    .directive('appSelect',function(){
         return {
             restrict : 'E',
             scope : {
                 val: '=',
-                title: '='
+                title: '=',
+                items: '='
             },
-            templateUrl: 'interface/directive/input/app.input.html',
+            templateUrl: 'interface/components/select/app.select.html',
             link: function(scope,ele,attr) {
+
             }
         }
     })

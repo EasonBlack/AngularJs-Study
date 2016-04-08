@@ -11,6 +11,11 @@ export default ($routeProvider)=> {
             templateUrl: 'interface/home/add.html',
             controller: 'addCtrl'
         })
+        .when('/list',
+        {
+            templateUrl: 'interface/home/list.html',
+            controller: 'listCtrl'
+        })
         .when('/temp1',
         {
             templateUrl: 'interface/temp1/index.html',

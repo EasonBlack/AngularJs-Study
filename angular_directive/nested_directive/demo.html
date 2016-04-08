@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <out-ele name="name" result="result" ></out-ele>
+    <div>
+        <button class="btn btn-primary" ng-click="check()">Check</button>
+    </div>
+</div>
+
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                $scope.name = "Eeeeeee";
+                $scope.result = "";
+                $scope.check = function(){
+                    alert($scope.result);
+                }
+            }])
+            .directive('outEle', function () {
+                return {
+                    restrict: "E",
+                    scope: {
+                        name: '=',
+                        result: '='
+                    },
+                    templateUrl: "demo.out.template.html",
+                    transclude: true,
+                    controller: function($scope) {
+                        $scope.m1 = 'a';
+                        $scope.m2= 'b';
+                        $scope.getResult = function(){
+                            $scope.result = $scope.m1 + $scope.m2;
+                        }
+                    },
+                    link: function () {
+
+                    }
+                }
+            })
+            .directive('innerEle', function () {
+                return {
+                    restrict: "E",
+                    scope: {
+                        val: '=',
+                    },
+                    templateUrl: "demo.inner.template.html",
+                    transclude: true,
+                    require: '^outEle',
+                    link: function () {
+
+                    }
+                }
+            })
+</script>
+</html>
