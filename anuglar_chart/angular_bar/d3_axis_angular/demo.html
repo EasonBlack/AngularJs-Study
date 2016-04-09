@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #container {
+            border: 1px solid #777777;
+            width:500px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+<div id="container" ng-app="app" ng-controller="appCtrl">
+   <svg width="500" height="300">
+       <g class="axis-container" chart-axis></g>
+
+       <g ng-repeat="item in items" transform="translate(30,250)">
+          <g transform="translate({{$index *80}},-{{item}})">
+              <rect width="20" height="{{item}}" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+          </g>
+       </g>
+   </svg>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/angular-sanitize.js"></script>
+<script src="../../../vendor/d3.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
+                $scope.items= [10,30,50]
+
+            }])
+            .directive('chartAxis',function(){
+                return {
+                    restrict: 'A',
+                    template: '<g class="axis-container"></g>',
+                    link: function(){
+                        var widthScale = d3.scale.linear()
+                                .domain([0, 160])
+                                .range([0,480]);
+
+                        var heightScale = d3.scale.linear()
+                                .domain([160, 0])
+                                .range([0,280]);
+
+                        var axis = d3.svg.axis()
+                                .ticks(3)
+                                .scale(widthScale);
+
+                        var yaxis = d3.svg.axis()
+                                .ticks(10)
+                                .orient("left")
+                                .scale(heightScale);
+
+                        var canvas = d3.select('.axis-container')
+                                .attr('transform','translate(30,0)');
+
+                        canvas.append('g')
+                                .call(axis)
+                                .attr({
+                                    'fill':'none',
+                                    'stroke':'#000',
+                                    'transform':'translate(0,250)'
+                                }).style({
+                                    'font-size':'10px'
+                                });
+
+                        canvas.append('g')
+                                .call(yaxis)
+                                .attr({
+                                    'fill':'none',
+                                    'stroke':'#000',
+                                    'transform':'translate(0,-30)'
+                                }).style({
+                                    'font-size':'10px'
+                                });
+                    }
+                }
+            })
+</script>
+</html>
