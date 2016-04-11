@@ -12,8 +12,10 @@ angular.module('app')
             link: function(scope,ele,attr) {
                 scope.addTag = () => {
                     scope.val = scope.val || [];
-                    scope.val.push(scope.newTag);
-                    console.log(scope.val);
+                    if(scope.val.indexOf(scope.newTag)==-1 && scope.newTag) {
+                        scope.val.push(scope.newTag);
+                        scope.newTag = '';
+                    }
                 }
             }
         }
