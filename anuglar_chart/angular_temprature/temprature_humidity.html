@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="row">
+        <div class="col-md-6">
+            <temperature val="temp"></temperature>
+        </div>
+        <div class="col-md-6">
+            <humidity val='temp'></humidity>
+        </div>
+    </div>
+    <div class="row">
+        <div  class="col-md-2">
+            <input type=range min="0" max="100" ng-model="temp">
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/d3.js"></script>
+<script src="jquery.eason.tempgauge.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+                $scope.temp = 20;
+            }])
+            .directive('temperature', function () {
+                return {
+                    restrict: 'E',
+                    template: '<div></div>',
+                    scope: {
+                        val: '='
+                    },
+                    link: function (scope, ele) {
+                        $(ele).html(scope.val + '&deg;C');
+                        $(ele).tempGauge({
+                            width: 70,
+                            borderWidth: 3,
+                            showLabel: false,
+                            fillColor: '#1ABC9C',
+                            borderColor: '#1591C1'
+                        });
+
+                    }
+                }
+            })
+            .directive('humidity', function () {
+                return {
+                    restrict: 'E',
+                    templateUrl: 'humidity.template.html',
+                    scope: {
+                        val: '='
+                    },
+                    link: function (scope, ele) {
+
+                    }
+                }
+            })
+</script>
+</html>

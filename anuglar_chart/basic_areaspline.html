@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .row {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <highchart id="chart1" config="highchartsNG"></highchart>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/bootstrap.js"></script>
+<script src="../vendor/paging.js"></script>
+<script src="../vendor/ng-lodash.js"></script>
+<script src="../vendor/angular-route.js"></script>
+<script src="../vendor/highcharts.src.js"></script>
+<script src="../vendor/highcharts-ng.js"></script>
+<script>
+    angular.module('app', ["highcharts-ng"])
+            .controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
+                var _xAxis = ['2001', '2002', '2003', '2004', '2005'];
+                $scope.highchartsNG = {
+                    options: {
+                        chart: {
+                            type: 'areaspline'
+                        },
+                        legend: {
+                            enabled: false
+                        }
+                    },
+                    xAxis: {
+                        visible: false
+                    },
+                    yAxis : {
+                        visible: false,
+                        gridLineColor: 'transparent'
+                    },
+                    series: [
+                        {
+                            name: 'xxxx',
+                            data: [10, 15, 12, 8, 7]
+                        },
+                        {
+                            name: 'yyyy',
+                            data: [2, 7, 11, 18, 19]
+                        },
+                        {
+                            name: 'zzzz',
+                            data: [10, 8, 12, 1, 7]
+                        }
+                    ],
+
+                    title: {
+                        text: 'Hello'
+                    },
+                    loading: false
+                }
+
+
+            }])
+</script>
+</html>
