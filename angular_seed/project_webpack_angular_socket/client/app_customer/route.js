@@ -1,11 +1,21 @@
 
 export default ($routeProvider)=> {
     $routeProvider
-        .when('/home',
+        .when('/main',
         {
             templateUrl: 'interface/customer/index.html',
-            controller: 'appCtrl'
+            controller: 'mainCtrl'
         })
-        .otherwise({redirectTo: '/home'});
+        .when('/pay',
+        {
+            templateUrl: 'interface/pay/index.html',
+            controller: 'payCtrl'
+        })
+        .when('/confirm',
+        {
+            templateUrl: 'interface/confirm/index.html',
+            controller: 'confirmCtrl'
+        })
+        .otherwise({redirectTo: '/main'});
 
 }
