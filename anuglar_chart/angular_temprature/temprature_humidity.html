@@ -22,9 +22,13 @@
         </div>
     </div>
     <div class="row">
-        <div  class="col-md-2">
+        <div  class="col-md-6">
             <input type=range min="0" max="100" ng-model="temp">
         </div>
+        <div  class="col-md-6">
+            <temperature-svg val="temp"></temperature-svg>
+        </div>
+
     </div>
 
 </div>
@@ -55,6 +59,18 @@
                             fillColor: '#1ABC9C',
                             borderColor: '#1591C1'
                         });
+
+                    }
+                }
+            })
+            .directive('temperatureSvg',function(){
+                return {
+                    restrict: 'E',
+                    templateUrl: 'temperature.template.html',
+                    scope: {
+                        val: '='
+                    },
+                    link: function (scope, ele) {
 
                     }
                 }
