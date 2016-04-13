@@ -6,10 +6,10 @@ export default ($routeProvider)=> {
             templateUrl: 'interface/manager/index.html',
             controller: 'mainCtrl'
         })
-        .when('/customerlist',
+        .when('/pay-list',
         {
-            templateUrl: 'interface/customerList/index.html',
-            controller: 'customerListCtrl'
+            templateUrl: 'interface/pay-list/index.html',
+            controller: 'payListCtrl'
         })
         .when('/confirm',
         {

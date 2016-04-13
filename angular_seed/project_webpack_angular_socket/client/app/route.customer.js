@@ -8,7 +8,7 @@ export default ($routeProvider)=> {
         })
         .when('/pay',
         {
-            templateUrl: 'interface/pay/index.html',
+            templateUrl: 'interface/customer/pay.html',
             controller: 'payCtrl'
         })
         .when('/confirm',
