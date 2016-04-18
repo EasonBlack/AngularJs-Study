@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../vendor/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div ui-calendar="uiConfig.calendar" ng-model="eventSources">
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/moment.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/angular-ui-calendar/calendar.js"></script>
+<script src="../../vendor/fullcalendar/fullcalendar.js"></script>
+<script>
+    angular.module('app',['ui.calendar'])
+            .controller('appCtrl',['$scope',function($scope){
+                $scope.uiConfig = {
+                    calendar:{
+                        height: 450,
+                        editable: true,
+                        header:{
+                            left: 'month basicWeek basicDay agendaWeek agendaDay',
+                            center: 'title',
+                            right: 'today prev,next'
+                        },
+                        dayClick: $scope.alertEventOnClick,
+                        eventDrop: $scope.alertOnDrop,
+                        eventResize: $scope.alertOnResize,
+                        events: [
+                            {
+                                title: 'All Day Event',
+                                start: '2016-04-01'
+                            },
+                            {
+                                title: 'Long Event',
+                                start: '2016-04-07',
+                                end: '2016-04-10'
+                            },
+                        ]
+                    }
+                };
+            }])
+</script>
+</html>
