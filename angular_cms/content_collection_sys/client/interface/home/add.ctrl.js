@@ -22,9 +22,19 @@ angular.module('app')
             },
             leadto: {
                 title: 'LEAD TO',
+                source: [
+                    {id: 1, name: 'aaa'},
+                    {id: 2, name: 'bbb'},
+                    {id: 3, name: 'ccc'}
+                ]
             },
             relateto: {
-                title: 'RELATE TO'
+                title: 'RELATE TO',
+                source: [
+                    {id: 1, name: 'dddd'},
+                    {id: 2, name: 'eeee'},
+                    {id: 3, name: 'ffff'}
+                ]
             },
             content: {
                 title: 'CONTENT'

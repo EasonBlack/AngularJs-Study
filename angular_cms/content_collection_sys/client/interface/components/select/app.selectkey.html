@@ -1,0 +1,22 @@
+<div class="form-group app-selectkey">
+    <div>
+        <label class="col-md-4 control-label" >{{title}}</label>
+        <div class="col-md-4">
+            <select class="form-control"
+                    ng-model="current"
+                    ng-options="item.name for item in items"
+                    ng-init = "current = items[0]"
+                    >
+            </select>
+        </div>
+        <div class="col-md-1" >
+            <button class="btn btn-default" ng-click="addTag()">Click</button>
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+        <div class='box-label' ng-repeat=" tag in val">
+            <span ng-bind="tag.name"></span>
+            <span class="box-label-close" ng-click="delete(tag)">x</span>
+        </div>
+    </div>
+</div>

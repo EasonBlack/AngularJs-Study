@@ -17,6 +17,15 @@ angular.module('app')
                         scope.newTag = '';
                     }
                 }
+
+                scope.delete=(tag)=> {
+                    var len = scope.val.length;
+                    for(var i=len-1;i>=0;i--) {
+                        if(scope.val[i] == tag) {
+                            scope.val.splice(i, 1);
+                        }
+                    }
+                }
             }
         }
     })
