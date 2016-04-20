@@ -12,5 +12,6 @@ import './interface/components/input/app.textarea.js'
 import './interface/components/select/app.select.js'
 import './interface/components/select/app.selectkey.js'
 import './interface/components/list/app.list.js'
+import './interface/components/check/app.singlecheck.js'
 
 
