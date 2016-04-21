@@ -23,6 +23,7 @@
 <script>
     angular.module('app',['ui.calendar'])
             .controller('appCtrl',['$scope',function($scope){
+                $scope.eventSources = [];
                 $scope.uiConfig = {
                     calendar:{
                         height: 450,
