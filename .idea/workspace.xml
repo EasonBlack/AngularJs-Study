@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b70eb971-ff2c-4a68-943f-bea046c06b42" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/AngularJs-Study.iml" afterPath="$PROJECT_DIR$/.idea/AngularJs-Study.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/anuglar_chart/angular_chartservices/scripts/controller.js" afterPath="$PROJECT_DIR$/anuglar_chart/angular_chartservices/scripts/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/anuglar_chart/angular_chartservices/demo.html" afterPath="$PROJECT_DIR$/anuglar_chart/angular_chartservices/demo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -26,28 +24,7 @@
     <favorites_list name="AngularJs-Study" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="charservices.customBar.service.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.customBar.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3453159">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/scripts/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,57 +40,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/demo.select.html" />
-        <option value="$PROJECT_DIR$/angular_route/demo_route_controlleras.html" />
-        <option value="$PROJECT_DIR$/angular_route/demo_route_static.html" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_star/yellow-star.svg" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_star/demo.html" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_funnel/funnel.directive.js" />
-        <option value="$PROJECT_DIR$/angular_static/demo/demo.html" />
-        <option value="$PROJECT_DIR$/angular_static/demo/page/demo.template1.js" />
-        <option value="$PROJECT_DIR$/../projecttest/server.js" />
-        <option value="$PROJECT_DIR$/angular_directive/directive_class_dynamic.html" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.line.service.js" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.area.service.js" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.bar.service.js" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.pie.service.js" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.combine.service.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms/index.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms/app/app.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms/app/route.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp2/index.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp2/temp2.controller.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/app/mainController.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/style/main.less" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/app/app.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/home/home.service.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/component/List/list.directive.template.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/component/List/list.directive.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/temp1.service.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/home/home.controller.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/home/index.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/component/List/list.directive.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/index.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/temp1.controller.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/app/route.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/edit/edit.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/edit/temp1.edit.controller.js" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/index.html" />
-        <option value="$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/list/temp1.controller.js" />
-        <option value="$PROJECT_DIR$/angular_test/simple.html" />
-        <option value="$PROJECT_DIR$/angular_test/simple/simple.html" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/angular_test/simple/appCtrl.js" />
-        <option value="$PROJECT_DIR$/angular_test/karma_simple/source/appCtrl.js" />
-        <option value="$PROJECT_DIR$/angular_test/karma_simple/karma.config.js" />
-        <option value="$PROJECT_DIR$/angular_test/karma_simple/source/appCtrl.test.js" />
-        <option value="$PROJECT_DIR$/angular_select/demo_array.html" />
-        <option value="$PROJECT_DIR$/angular_select/multi_condition/main.less" />
-        <option value="$PROJECT_DIR$/angular_select/multi_condition/demo.html" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/demo.html" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/data/chart.json" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.customBar.service.js" />
-        <option value="$PROJECT_DIR$/anuglar_chart/angular_chartservices/scripts/controller.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/server/config/webpack.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/server/config/socket.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/server/server.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/customer/index.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/customer/client.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/manager/index.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/manager/client.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/client.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/app.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/route.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/index.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/server/controller/server.ctrl.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/server/config/routes.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app_customer/route.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app_manager/route.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/customer/index.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/manager/index.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/webpack.config.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/customer.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/manager.html" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/app.manager.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/app.customer.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/route.customer.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/pay-list/pay-list.ctrl.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/route.manager.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/customer.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/manager.js" />
+        <option value="$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/pay-list/index.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/index.html" />
+        <option value="$PROJECT_DIR$/anuglar_date/angular-ui-calendar/basic.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.key.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.key.less" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.textarea.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.textarea.less" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.select.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.select-key.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.select-key.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.selectkey.less" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.selectkey.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/home/add.ctrl.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/check/app.singlecheck.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/client.js" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/check/app.singlecheck.less" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/check/app.singlecheck.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.input.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.textarea.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.selectkey.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.key.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.select.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/home/add.html" />
+        <option value="$PROJECT_DIR$/angular_cms/content_collection_sys/client/style/main.less" />
       </list>
     </option>
   </component>
@@ -125,10 +102,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1924" />
-    <option name="height" value="1056" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1164" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -137,7 +114,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -169,7 +146,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Demo" />
+              <option name="myItemId" value="Angular-Study" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -179,29 +156,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Demo" />
+              <option name="myItemId" value="Angular-Study" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="anuglar_chart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Study" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anuglar_chart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular_chartservices" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,19 +170,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Demo" />
+              <option name="myItemId" value="Angular-Study" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="anuglar_chart" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angular_chartservices" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
+              <option name="myItemId" value="fullcalendar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -233,41 +188,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Demo" />
+              <option name="myItemId" value="Angular-Study" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="anuglar_chart" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angular_chartservices" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Study" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJs-Demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anuglar_chart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular_chartservices" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="angular-ui-calendar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -277,46 +206,49 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test/angular-seed-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../asiapayment" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="editorconfig.notification" value="Applied .editorconfig settings" />
     <property name="FullScreen" value="false" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="JavaScriptLanguageLevel" value="ES6" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\myproject\git\AngularJs-Demo\anuglar_chart\angular_chartservices\style" />
-      <recent name="F:\myproject\git\AngularJs-Demo\angular_select" />
-      <recent name="F:\myproject\git\AngularJs-Demo\angular_test\karma_simple\source" />
-      <recent name="F:\myproject\git\AngularJs-Demo\vendor" />
-      <recent name="F:\myproject\git\AngularJs-Demo\angular_test" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\vendor\fullcalendar" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\vendor" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\vendor\angular-ui-calendar" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\angular_seed\project_webpack_angular_socket\client\interface" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\angular_seed\project_webpack_angular_socket\client\manager_app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Eason\Work\myproject\Angular-Study\vendor\fullcalendar" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\angular_seed\project_webpack_angular_socket\client\interface\customer" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\angular_seed\project_webpack_angular_socket\client\app" />
+      <recent name="C:\Eason\Work\myproject\Angular-Study\anuglar_chart\d3_pie" />
       <recent name="F:\myproject\git\AngularJs-Demo\angular_test\simple" />
-      <recent name="F:\myproject\git\AngularJs-Demo\angular_seed\project_cms_simple\interface\temp1\list" />
-      <recent name="F:\myproject\git\AngularJs-Demo\anuglar_date\datepicker" />
-      <recent name="F:\myproject\git\AngularJs-Demo\anuglar_datepicker" />
-      <recent name="F:\myproject\git\AngularJs-Demo\data" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.demo.html (2)">
-    <configuration default="false" name="simple.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/angular_test/simple/simple.html">
+  <component name="RunManager" selected="JavaScript Debug.basic.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/angular_seed/project_cms_simple/index.html">
       <method />
     </configuration>
-    <configuration default="false" name="demo.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/angular_select/multi_condition/demo.html">
+    <configuration default="false" name="demo_show_code.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/angular_others/angular_code/demo/demo_show_code.html">
       <method />
     </configuration>
-    <configuration default="false" name="demo_array.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/angular_select/demo_array.html">
+    <configuration default="false" name="temprature_humidity.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/anuglar_chart/angular_temprature/temprature_humidity.html">
       <method />
     </configuration>
-    <configuration default="false" name="demo.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/anuglar_chart/angular_star/demo.html">
+    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/node_modules/angular-ui-calendar/demo/index.html">
       <method />
     </configuration>
-    <configuration default="false" name="demo.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/anuglar_chart/angular_chartservices/demo.html">
+    <configuration default="false" name="basic.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AngularJs-Study/anuglar_date/angular-ui-calendar/basic.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -358,19 +290,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.simple.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.demo.html (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.demo_array.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.demo.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.demo.html (2)" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.demo_show_code.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.temprature_humidity.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.basic.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.demo.html (2)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.demo.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.demo.html (1)" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.demo_array.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.simple.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.basic.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.temprature_humidity.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.demo_show_code.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -388,15 +320,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1924" height="1056" extended-state="1" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1928" height="1164" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17557652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834426" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -407,7 +339,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32834426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -420,11 +352,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834426" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17588727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32834426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -444,366 +376,368 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular_directive/basic_watch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.678571">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_directive/temp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.535714">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_directive/attribute.directive.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_directive/basic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33255813">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/paging.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39324617">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_directive/attribute.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64044946">
-          <caret line="30" column="16" selection-start-line="22" selection-start-column="13" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/temp1.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33115467">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/component/List/list.directive.js">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/customer/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/home/index.html">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/manager/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/component/List/list.directive.html">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.1684729">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/app/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31045753">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/edit/edit.html">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/customer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/home/home.controller.js">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/manager.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="7" />
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/edit/temp1.edit.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.020697167">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/list/temp1.controller.js">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/app.customer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/interface/temp1/list/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.021348314">
-          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_seed/project_cms_simple/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular-mocks.js">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/customer/pay.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/pay-list/pay-list.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1494382">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/karma-jasmine/package.json">
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/route.manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.241573">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/route.customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/app/app.manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/client/interface/pay-list/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018719211">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_seed/project_webpack_angular_socket/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.142858">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-calendar/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_translate/basic_demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7685393">
-          <caret line="36" column="72" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_test/simple/appCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10348584">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_test/karma_simple/source/appCtrl.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-calendar/src/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <caret line="342" column="0" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_test/simple/simple.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86067414">
-          <caret line="41" column="7" selection-start-line="16" selection-start-column="4" selection-end-line="41" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_test/karma_simple/karma.config.js">
+    <entry file="file://$PROJECT_DIR$/vendor/fullcalendar/fullcalendar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular_seed/simple.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.321428">
-          <caret line="27" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="7" />
+        <state vertical-scroll-proportion="-2.7142856">
+          <caret line="4" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_test/karma_simple/source/appCtrl.test.js">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/temp/temp.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53812635">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_table/angular_table_drag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8146067">
+        <state vertical-scroll-proportion="-0.38255033">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_table/simple_table_drag.html">
+    <entry file="file://$PROJECT_DIR$/anuglar_date/angular-ui-calendar/basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26206896">
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_table/angular_table_drag_by_jq_plugin.html">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/server/config/webpack.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_authority/basic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7271157">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/cascade/demo_watch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0357144">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/demo_child.html">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/demo_child.partial.html">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/app/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.textarea.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.textarea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18216683">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/server/controller/server.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/demo_init.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.214286">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/demo_select2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/demo_select_onchange.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/cascade/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.035714">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular_select/demo_array.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.678571">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/switch/basic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.08539326">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/multi_condition/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_select/multi_condition/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.821428">
-          <caret line="118" column="47" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.bar.service.js">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.selectkey.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="8" />
-          <folding />
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.combine.service.js">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.key.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.area.service.js">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/check/app.singlecheck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/demo.html">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39101124">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.23681687">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/scripts/controller.js">
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.key.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/check/app.singlecheck.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.071429">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.input.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/home/add.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="16" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/check/app.singlecheck.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.037438422">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.input.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.074876845">
+          <caret line="4" column="99" selection-start-line="4" selection-start-column="99" selection-end-line="4" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.textarea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056157634">
+          <caret line="3" column="92" selection-start-line="3" selection-start-column="92" selection-end-line="3" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/list/app.list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11231527">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/input/app.key.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056157634">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056157634">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.selectkey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3096836">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/components/select/app.selectkey.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056157634">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/fullcalendar/fullcalendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3480345">
+          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anuglar_chart/angular_chartservices/services/charservices.customBar.service.js">
+    <entry file="file://$PROJECT_DIR$/vendor/angular-ui-calendar/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3453159">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.70669293">
+          <caret line="245" column="11" selection-start-line="245" selection-start-column="11" selection-end-line="245" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/style/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54285717">
+          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_cms/content_collection_sys/client/interface/home/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39310345">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="34" />
           <folding />
         </state>
       </provider>
