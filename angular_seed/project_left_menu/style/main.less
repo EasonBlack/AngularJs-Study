@@ -1,0 +1,43 @@
+* {
+  margin:0;
+  padding:0;
+}
+ul {
+  list-style: none;
+}
+
+
+#wrapper {
+  transition: all 0.5s ease;
+  #sidebar-wrapper {
+    position:fixed;
+    left:250px;
+    margin-left:-250px;
+    width:250px;
+    height:100%;
+    background-color: #000;
+    color: white;
+    transition: all 0.5s ease;
+  }
+
+  #page-content-wrapper {
+    margin-left:250px;
+    height:100%;
+    transition: all 0.5s ease;
+  }
+}
+
+
+#wrapper.toggle {
+  #sidebar-wrapper {
+    left:0px !important;
+  }
+
+  #page-content-wrapper {
+    margin-left:0px !important;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #wrapper.toggle
+}
