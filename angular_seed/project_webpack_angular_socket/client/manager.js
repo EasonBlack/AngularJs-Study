@@ -1,6 +1,7 @@
 import   'jquery';
 
 import './app/app.manager';
+import './app/route.manager';
 
 import './service/socket.factory.js'
 
