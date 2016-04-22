@@ -5,6 +5,35 @@
 ul {
   list-style: none;
 }
+.sidebar-nav {
+  margin-left: 20px;
+}
+.sidebar-nav li {
+  transition: all 0.5s ease;
+}
+.sidebar-nav a {
+  color: white;
+}
+.sidebar-nav a:visited {
+  color: white;
+}
+.sidebar-nav .logo-wrapper {
+  height: 60px;
+  line-height: 60px;
+}
+.sidebar-nav .menus-wrapper .nav-submenu {
+  overflow: hidden;
+  max-height: 0;
+  margin-left: 10px;
+  transition: all 0.8s ease;
+}
+.sidebar-nav .menus-wrapper .nav-submenu.subactive {
+  overflow: hidden;
+  display: block;
+  max-height: 500px;
+  background-color: #28342f;
+  transition: all 0.8s ease;
+}
 #wrapper {
   transition: all 0.5s ease;
 }

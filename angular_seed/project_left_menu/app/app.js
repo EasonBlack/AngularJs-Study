@@ -1,4 +1,5 @@
-angular.module('app',['ngLodash', 'ngRoute', 'bw.paging', 'ngSanitize'])
-    .config(['$routeProvider', function ($routeProvider) {
-        window.xroutes.general($routeProvider);
-    }]);
+import angular from 'angular'
+import 'angular-route';
+import 'angular-sanitize'
+
+angular.module('app',['ngRoute','ngSanitize'])
