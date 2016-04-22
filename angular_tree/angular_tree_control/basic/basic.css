@@ -1,0 +1,14 @@
+
+.a1 li {
+    display: block;
+}
+.a1 li:before {
+    background-image: url(32px.png);
+    background-position: -68px -4px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    content: '';
+    position:absolute;
+    left: -5px;
+}

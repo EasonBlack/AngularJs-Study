@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../vendor/angular-tree-control/style/tree-control.css" rel="stylesheet"/>
+    <link href="../../../vendor/angular-tree-control/style/tree-control-attribute.css" rel="stylesheet"/>
+    <link href="basic.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <treecontrol class="tree-classic"
+                 tree-model="dataForTheTree"
+                 options="treeOptions"
+                 on-selection="showSelected(node)"
+                 selected-node="node1">
+        employee: {{node.name}} age {{node.age}}
+    </treecontrol>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/angular-tree-control/angular-tree-control.js"></script>
+<script src="../../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash', 'treeControl'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                $scope.treeOptions = {
+                    nodeChildren: "children",
+                    dirSelectable: true,
+                    injectClasses: {
+                        ul: "a1",
+                        li: "a2",
+                        liSelected: "a7",
+                        iExpanded: "a3",
+                        iCollapsed: "a4",
+                        iLeaf: "a5",
+                        label: "a6",
+                        labelSelected: "a8"
+                    }
+                }
+                $scope.dataForTheTree =
+                        [
+                            {
+                                "name": "Joe", "age": "21", "children": [
+                                {"name": "Smith", "age": "42", "children": []},
+                                {
+                                    "name": "Gary", "age": "21", "children": [
+                                    {
+                                        "name": "Jenifer", "age": "23", "children": [
+                                        {"name": "Dani", "age": "32", "children": []},
+                                        {"name": "Max", "age": "34", "children": []}
+                                    ]
+                                    }
+                                ]
+                                }
+                            ]
+                            },
+                            {"name": "Albert", "age": "33", "children": []},
+                            {"name": "Ron", "age": "29", "children": []}
+                        ];
+            }])
+</script>
+</html>
