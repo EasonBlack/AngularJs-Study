@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+
+        .mask {
+            position:fixed;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            background-color: rgba(0,0,0,0.1);
+            z-index:3;
+            text-align: center;
+            padding-top: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="container"  ng-controller="appCtrl">
+   <div ng-bind="text"></div>
+
+    <div class='mask' ng-if="false">
+          <img src="loading_spinner.gif">
+    </div>
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    var app = angular.module('app', ['ngLodash'])
+
+    setTimeout(
+            function asyncBootstrap() {
+                angular.bootstrap( document, [ "app" ] );
+            },
+            ( 2 * 1000 )
+    );
+
+    app.controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+         $scope.text = 'aaaaaa';
+    }])
+</script>
+</html>
