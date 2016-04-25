@@ -48,6 +48,7 @@
     "moment": "^2.13.0",
     "mongoose": "^4.4.11",
     "multer": "^1.1.0",
+    "ng-dialog": "^0.6.0",
     "ng-fx": "^2.0.4",
     "node-uuid": "^1.4.7",
     "socket.io": "^1.4.5",
