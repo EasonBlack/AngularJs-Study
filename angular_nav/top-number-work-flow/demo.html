@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="demo.css" type="text/css" rel="stylesheet">
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="plan-container container" ng-app="app" ng-controller="appCtrl">
+    <div class="title-wrapper">
+        <div class="title-section">
+            New Plan: Untitle
+        </div>
+        <div class="button-section">
+            <button>Back to List</button>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <ul class="number-wrapper">
+            <li ng-class="{true:'active',false:''}[step_number>=1]">
+                <span ng-if="step_number<=1">1</span>
+                <span ng-if="step_number>1" class="glyphicon glyphicon-ok"></span>
+
+                <div class="number-title">Basic Info</div>
+            </li>
+            <li ng-class="{true:'active',false:''}[step_number>=2]">
+                <span ng-if="step_number<=2">2</span>
+                <span ng-if="step_number>2" class="glyphicon glyphicon-ok"></span>
+
+                <div class="number-title">Instructions</div>
+            </li>
+            <li ng-class="{true:'active',false:''}[step_number>=3]">
+                <span ng-if="step_number<=3">3</span>
+                <span ng-if="step_number>3" class="glyphicon glyphicon-ok"></span>
+
+                <div class="number-title">Location & Assets</div>
+            </li>
+            <li ng-class="{true:'active',false:''}[step_number>=4]">
+                <span ng-if="step_number<=4">4</span>
+                <span ng-if="step_number>4" class="glyphicon glyphicon-ok"></span>
+
+                <div class="number-title">Confirmation</div>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div ng-switch="step_number">
+            <div ng-switch-when="1">
+                <div ng-class="{true:'active_step'}[step_number==1]" ng-include="'step_1.html'"></div>
+            </div>
+            <div ng-switch-when="2">
+                <div ng-class="{true:'active_step'}[step_number==2]" ng-include="'step_2.html'"></div>
+            </div>
+            <div ng-switch-when="3">
+                <div ng-class="{true:'active_step'}[step_number==3]" ng-include="'step_3.html'"></div>
+            </div>
+            <div ng-switch-when="4">
+                <div ng-class="{true:'active_step'}[step_number==4]" ng-include="'step_4.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                $scope.step_number = 1;
+                $scope.nextStep = function (num) {
+                    $scope.step_number = num;
+                }
+            }])
+</script>
+
+</html>
