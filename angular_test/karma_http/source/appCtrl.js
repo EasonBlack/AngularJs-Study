@@ -4,7 +4,7 @@ angular.module('app', []).controller('appCtrl', ['$scope', 'appService',function
     }
     this.getServiceName = function(){
         appService.get().then(function(res){
-            $scope.another = res.value;
+            $scope.another = res.data.value;
         })
     }
     this.getServiceName();
