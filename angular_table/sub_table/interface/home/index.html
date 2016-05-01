@@ -2,7 +2,7 @@
     <section class="nav-section">
         <span ng-repeat="nav in navs" >
             <span ng-if="$index!=0"> > </span>
-            <a ng-bind="nav.title" ng-click="goto(nav.id)"></a>   <!-- not finish -->
+            <a href='javascript:void(0)' ng-click="goto(nav.ids)">{{nav.title}}</a>
         </span>
     </section>
     <table class="table">
