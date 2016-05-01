@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+<div class="container">
+   <table class="table">
+       <thead>
+          <th ng-repeat="header in headers">{{header}}</th>
+       </thead>
+       <tbody>
+          <tr ng-repeat="row in rows">
+              <td ng-repeat = 'header in headers'>
+                   <span ng-if="!isTask(row[header])">{{row[header]}}</span>
+                    <ul ng-if="isTask(row[header])" class="task-wrapper">
+                          <li ng-repeat="task in row[header]">{{task.title}}</li>
+                    </ul>
+              </td>
+          </tr>
+       </tbody>
+   </table>
+</div>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>
