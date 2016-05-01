@@ -1,0 +1,30 @@
+<div>
+    <section class="nav-section">
+        <span ng-repeat="nav in navs" >
+            <span ng-if="$index!=0"> > </span>
+            <a ng-bind="nav.title" ng-click="goto(nav.id)"></a>   <!-- not finish -->
+        </span>
+    </section>
+    <table class="table">
+        <thead>
+        <th ng-repeat="head in headers" ng-bind="head.title"></th>
+        </thead>
+        <tbody ng-repeat="row in rows">
+        <tr ng-click="showSub(row)">
+            <td ng-repeat="head in headers">
+                <span class="glyphicon glyphicon-folder-close" ng-if="head.id=='name' && row.subrow" ng-click="gotoSub($event, row)"></span>
+                <span class="glyphicon glyphicon-map-marker" ng-if="head.id=='name' && !row.subrow"></span>
+                {{row[head.id] || '--'}}
+            </td>
+        </tr>
+        <tr ng-repeat="subrow in row.subrow"
+            ng-class="{'sub-table': true, 'active': row.showsub, 'unactive': !row.showsub}">
+            <td ng-repeat="head in headers">
+                <span class="glyphicon glyphicon-folder-close" ng-if="head.id=='name' && subrow.subrow"></span>
+                <span class="glyphicon glyphicon-map-marker" ng-if="head.id=='name' && !subrow.subrow"></span>
+                {{subrow[head.id] || '--'}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

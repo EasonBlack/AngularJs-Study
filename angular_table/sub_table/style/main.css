@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.nav-section {
+  padding: 8px;
+}
+.sub-table.active {
+  display: table-row;
+}
+.sub-table.unactive {
+  display: none;
+}
