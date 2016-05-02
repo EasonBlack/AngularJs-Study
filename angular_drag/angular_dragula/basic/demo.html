@@ -3,46 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
-    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
-    <link href='dragula.css' rel='stylesheet' type='text/css' />
+    <link href="../../../style/bootstrap.3.3.6.css" rel="stylesheet"/>
+    <link href='dragula.css' rel='stylesheet' type='text/css'/>
     <style>
-        .items-container {
+        .items-container, .boxes-container {
             position: relative;
-            margin:auto auto;
-            width:100%;
-            min-height:500px;
-            display:block;
+            margin: auto auto;
+            width: 100%;
+            display: block;
         }
 
-        .item-wrapper {
-            display:block;
-            width:100px;
-            height:50px;
-            line-height:50px;
-            border:1px solid #006699;
-            text-align: center;
-            margin-left:50px;
-            z-index:1;
+        .button-wrapper {
+            margin: 10px 0px 0px 50px;
         }
+
+        .item-wrapper, .box-wrapper {
+            display: block;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #006699;
+            text-align: center;
+            margin-left: 50px;
+            z-index: 1;
+        }
+
+        .box-wrapper {
+            width: 400px;
+            border: none;
+        }
+
+        .box-wrapper input {
+            height: 30px;
+            line-height: 30px;
+        }
+
         .handle {
-            cursor:move;
-            z-index:10;
+            cursor: move;
+            z-index: 10;
+        }
+
+        <!--
+        -->
+
+        .camera {
+            border: 1px solid #ccc;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 30px;
+            margin-top: -5px;
+        }
+
+        .camera.active {
+            color: blue;
+        }
+
+        .camera.unactive {
+            color: #ccc;
         }
     </style>
 </head>
 <body>
 <div ng-app="app" ng-controller="appCtrl">
-    <div dragula='"bag-one"' class='items-container'  dragula-model='items'>
-        <div ng-repeat='item in items' class="item-wrapper" >
-            <span class="glyphicon glyphicon-align-justify handle"></span>
-            <label ng-bind="item.title"></label>
-            <span class="glyphicon glyphicon-trash"></span>
+    <div class="row">
+        <div class="col-md-5">
+            <div dragula='"bag-one"' class='items-container' dragula-model='items'>
+                <div ng-repeat='item in items' class="item-wrapper">
+                    <span class="glyphicon glyphicon-menu-hamburger handle"></span>
+                    <label ng-bind="item.title"/></label>
+                    <span class="glyphicon glyphicon-trash"></span>
+                </div>
+            </div>
         </div>
     </div>
-    <div>
-        <button ng-click="confirm()">Click Me</button>
+    <div class="row">
+        <div class="col-md-5 button-wrapper">
+            <button ng-click="confirm()">Click Me</button>
+        </div>
     </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-2">
+            <a ng-click="addNew()">+ New Instruction</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div dragula='"bag-two"' class='boxes-container' dragula-model='boxes'>
+                <div ng-repeat='box in boxes' class="box-wrapper">
+                    <span class="glyphicon glyphicon-menu-hamburger handle"></span>
+                    <input type="text" ng-model="box.title"/>
+                    <span class="glyphicon glyphicon-camera camera"
+                          ng-class="{active: box.camera, unactive: !box.camera}"
+                            ng-click="toggleCamera(box)">
+                    </span>
+                    <span class="glyphicon glyphicon-trash" ng-click="delete(box.id)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 </body>
 <script src="build/bundle.js"></script>
