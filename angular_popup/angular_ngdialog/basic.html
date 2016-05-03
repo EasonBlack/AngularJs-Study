@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../style/ngDialog-css/ngDialog.css" rel="stylesheet" />
+    <link href="../../style/ngDialog-css/ngDialog-theme-default.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+
+        .ngdialog-content {
+            background: white !important;
+            border-radius: 0px !important;
+        }
+
+        .content-wrapper {
+            position:relative;
+        }
+
+        .title-wrapper {
+            margin-bottom:10px;
+        }
+        .content-wrapper {
+            height: 40px;
+        }
+        .button-wrapper {
+            margin-bottom:10px;
+        }
+
+        .col1 {
+            float:left;
+            width:30%;
+        }
+        .col2 {
+            float:right;
+            width:70%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+ <button class="btn btn-primary" ng-click="clickToOpen()">Click Me</button>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script src="../../vendor/ngDialog.js"></script>
+<script>
+    angular.module('app',['ngLodash', 'ngDialog'])
+            .controller('appCtrl',['$scope','lodash','ngDialog',function($scope, _, ngDialog){
+                $scope.clickToOpen = function () {
+                    ngDialog.open({ template: 'basic.template.html' });
+                };
+
+            }])
+</script>
+</html>
