@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+ <div class="container">
+     <div class="btn-wrapper">
+         <div class="btn btn-primary select-button"
+              ngf-multiple="true"
+              ngf-select ng-model="files"
+              ngf-pattern="'video/*'">Select</div>
+     </div>
+     <div ng-repeat="v in files">
+         <video controls ngf-src="v"></video>
+     </div>
+
+ </div>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>

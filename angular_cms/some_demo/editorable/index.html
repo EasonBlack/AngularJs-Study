@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+    <div class="container">
+        <div class="row outrow">
+            <div class="col-xs-6">
+                <a ng-click="switchEdit()">Edit</a>
+            </div>
+        </div>
+        <div class="row outrow">
+            <div class="col-xs-6 basic-info-wrapper">
+                <app-editable-input
+                        val="info.school.val"
+                        title="info.school.title"
+                        editable="editable">
+                </app-editable-input>
+                <app-editable-input
+                        val="info.degree.val"
+                        title="info.degree.title"
+                        editable="editable">
+                </app-editable-input>
+            </div>
+        </div>
+        <div class="row outrow">
+            <div class="col-xs-6">
+                <a class="button confirm-button" ng-click="confirm()">Confirm</a>
+            </div>
+        </div>
+        <div class="row outrow">
+            <div class="col-xs-6">
+                {{info.school | json}}
+            </div>
+        </div>
+        <div class="row outrow">
+            <div class="col-xs-6">
+                {{info.degree | json}}
+            </div>
+        </div>
+    </div>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>

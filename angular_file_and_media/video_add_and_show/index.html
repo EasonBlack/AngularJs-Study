@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+ <div class="container">
+     <div class="btn-wrapper">
+         <a class="btn btn-danger del-button" ng-click="deleteFile()">Delete</a>
+         <div class="btn btn-primary select-button" ngf-select ng-model="file" ngf-pattern="'video/*'">Select</div>
+     </div>
+     <div>
+         <video controls ngf-src="file"></video>
+     </div>
+
+ </div>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>

@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.size {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.row {
+  margin-top: 30px;
+}
+.container {
+  position: relative;
+}
+img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.container:hover .img-mask {
+  opacity: 1;
+}
+.img-mask {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  z-index: 5;
+  transition: all 0.2s ease-in-out;
+}
+.button {
+  display: block;
+  position: relative;
+  margin: auto auto;
+  width: 120px;
+  height: 40px;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.button:hover {
+  color: white;
+}
+.view-button {
+  margin-top: 60px;
+  background-color: darkgreen;
+}
+.delete-button {
+  margin-top: 15px;
+  background-color: orangered;
+}

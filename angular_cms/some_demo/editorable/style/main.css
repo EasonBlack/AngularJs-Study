@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding-top: 50px;
+}
+.outrow {
+  margin-top: 20px;
+}
+.component-row {
+  margin-bottom: 10px;
+}
+.button {
+  display: block;
+  width: 60px;
+  height: 20px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.button:hover {
+  color: white;
+}
+.confirm-button {
+  background-color: #000066;
+}
