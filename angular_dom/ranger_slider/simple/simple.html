@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="simple.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="box">
+        <app-slider max="200" model='result'></app-slider>
+    </div>
+    <div>
+        {{result}}
+    </div>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+                $scope.result = 120;
+            }])
+            .directive('appSlider', ['$timeout', function ($timeout) {
+                return {
+                    restrict: 'E',
+                    scope: {
+                        model: '=',
+                        max: '=',
+                    },
+                    templateUrl: 'simple.directive.html',
+                    link: function (scope, ele, attr) {
+
+                        var setSlider = function (dom, v) {
+                            dom.style.background = "-moz-linear-gradient(left,  #3071a9 0%, #3071a9 " + v + "%, #ccc " + v + "%, #ccc 100%)";
+                            dom.style.background = "-webkit-gradient(linear, left top, right top, color-stop(0%,#3071a9), color-stop(" + v + "%,#3071a9), color-stop(" + v + "%,#ccc), color-stop(100%,#ccc))";
+                            dom.style.background = "-webkit-linear-gradient(left,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                            dom.style.background = "-o-linear-gradient(left,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                            dom.style.background = "-ms-linear-gradient(left,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                            dom.style.background = "linear-gradient(to right,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                        }
+
+                        var init = function () {
+                            var v = scope.model * (100 / attr.max)
+                            setSlider(ele.find('input')[0], v);
+                            ele.find('input').val(v);
+                        }
+
+                        init();
+
+                        ele.on('$destroy', function() {
+                            ele.off('input', 'input');
+                        });
+
+                        ele.on('input', 'input', function () {
+                            var v = this.value;
+                            setSlider(this, v);
+                            $timeout(function () {
+                                scope.model = v * ( attr.max / 100);
+                            })
+                        })
+
+                    }
+                }
+            }])
+</script>
+</html>
