@@ -1,0 +1,9 @@
+<div class="group-btn">
+    <div class="group-label">{{$ctrl.title}}</div>
+    <div ng-if="$ctrl.uneditable">{{$ctrl.getText()}}</div>
+    <select class="button-text"
+            ng-model="$ctrl.val"   ng-if="!$ctrl.uneditable"
+            ng-options="item.id as item.name for item in $ctrl.list"
+            ng-init="!$ctrl.val&&( $ctrl.val=$ctrl.list[0].id) ">
+    </select>
+</div>
