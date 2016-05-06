@@ -1,0 +1,5 @@
+<div class="group-btn-textarea"  ng-class="{uneditable: $ctrl.uneditable}">
+    <div class="group-label">{{$ctrl.title}}</div>
+    <div ng-bind="$ctrl.val" ng-if="$ctrl.uneditable"></div>
+    <textarea type="text" class="textarea-text" ng-model="$ctrl.val" ng-readonly="$ctrl.uneditable" ng-if="!$ctrl.uneditable"></textarea>
+</div>
