@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.3.3.6.css" rel="stylesheet"/>
+    <link href='dragula.css' rel='stylesheet' type='text/css'/>
+    <style>
+        .boxes-container {
+            position: relative;
+            margin: auto auto;
+            width: 100%;
+            display: block;
+        }
+
+        .box-wrapper {
+            display: block;
+            width: 400px;
+            height: 50px;
+            line-height: 50px;
+            border: none;
+            text-align: center;
+            margin-left: 50px;
+            z-index: 1;
+        }
+
+        a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .box-wrapper input {
+            width: 240px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+        }
+
+        .handle {
+            cursor: move;
+            z-index: 10;
+        }
+
+        .camera {
+            border: 1px solid #ccc;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 30px;
+            margin-top: -5px;
+        }
+
+        .camera.active {
+            color: blue;
+        }
+
+        .camera.unactive {
+            color: #ccc;
+        }
+
+        .uneditable input {
+            background-color: #FFFFFF;
+            border: solid 1px #FFFFFF;
+
+        }
+
+        .uneditable input:focus {
+            outline: none;
+        }
+
+        .notdisplay {
+            display: none !important;
+        }
+
+        .notshow {
+            visibility: hidden !important;
+        }
+
+        .num-wrapper {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #006699;
+            color: white;
+            line-height: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div ng-app="app" ng-controller="appCtrl">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-2">
+            <a ng-click="toggleEditable()">Edit</a> <a ng-click="addNew()">New Instruction</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <drag-box list="info.boxes" uneditable="info.uneditable"></drag-box>
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="build/bundle.js"></script>
+</html>

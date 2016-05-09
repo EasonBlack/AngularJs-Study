@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+
+        textarea {
+            resize: none;
+            overflow: hidden;
+        }
+
+        .uneditable textarea {
+            background-color: #FFFFFF;
+            border: solid 1px #FFFFFF;
+        }
+
+        .uneditable textarea:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div><a ng-click="toggleEdit()">Toggle Edit</a></div>
+    <app-textarea title="Description" val="value" uneditable="uneditable"></app-textarea>
+    <div>{{value}}</div>
+</div>
+
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+
+                $scope.uneditable = false;
+                $scope.toggleEdit = function () {
+                    $scope.uneditable = !$scope.uneditable;
+                }
+            }])
+            .component('appTextarea', {
+                templateUrl: 'demo.textarea.html',
+                bindings: {
+                    val: '=',
+                    uneditable: '<',
+                    title: '@'
+                },
+                controller: function ($scope, $element, $attrs) {
+
+                }
+            })
+
+</script>
+</html>

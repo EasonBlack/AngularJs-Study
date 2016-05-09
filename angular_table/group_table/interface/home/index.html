@@ -1,0 +1,44 @@
+<div>
+    <section class="nav-section">
+        <span ng-repeat="nav in navs">
+            <span ng-if="$index!=0"> > </span>
+            <a href='javascript:void(0)' ng-click="goto(nav.ids)">{{nav.title}}</a>
+        </span>
+    </section>
+    <table class="table">
+        <thead>
+        <th><input type="checkbox"/></th>
+        <th ng-repeat="head in headers" ng-bind="head.title" width="{{head.width}}"></th>
+        </thead>
+        <tbody ng-repeat="row in rows">
+        <tr ng-click="showSub(row)">
+            <td>
+                <span class="glyphicon glyphicon-triangle-right" ng-if="!row.showsub"></span>
+                <span class="glyphicon glyphicon-triangle-bottom" ng-if="row.showsub"></span>
+            </td>
+            <td colspan="5">
+                {{row['task']}} ({{row.subrow.length}} Task)
+            </td>
+        </tr>
+        <tr ng-repeat-start="sub in row.subrow"
+                 ng-class="{'sub-table': true, 'active': row.showsub, 'unactive': !row.showsub}">
+            <td rowspan="{{sub.asset.length}}"><input type="checkbox"/></td>
+            <td rowspan="{{sub.asset.length}}">{{sub.task}}</td>
+            <td rowspan="{{sub.asset.length}}">
+                <ul>
+                    <li ng-repeat="time in sub.time"> {{time.day}} {{time.time}}</li>
+                </ul>
+            </td>
+            <td>{{sub.asset[0].name}}</td>
+            <td>{{sub.asset[0].employee}}</td>
+            <td>{{sub.asset[0].status}}</td>
+        </tr>
+        <tr ng-repeat-end ng-repeat='asset in sub.asset.slice(1)'
+            ng-class="{'sub-table': true, 'active': row.showsub, 'unactive': !row.showsub}">
+            <td>{{asset.name}}</td>
+            <td>{{asset.employee}}</td>
+            <td>{{asset.status}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

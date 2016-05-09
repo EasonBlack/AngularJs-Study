@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div><a ng-click="toggleEdit()">Toggle Edit</a></div>
+    <app-select title="Type" list="list" val="num" uneditable="uneditable"></app-select>
+    <div>{{num}}</div>
+</div>
+
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+                $scope.list = [
+                    {id: 1, name: 'aaa'},
+                    {id: 2, name: 'bbb'},
+                    {id: 3, name: 'ccc'},
+                    {id: 4, name: 'ddd'}
+                ]
+                $scope.num = 2;
+                $scope.uneditable = true;
+                $scope.toggleEdit = function () {
+                    $scope.uneditable = !$scope.uneditable;
+                }
+            }])
+            .component('appSelect', {
+                templateUrl: 'demo.select.html',
+                bindings: {
+                    val: '=',
+                    list: '<',
+                    uneditable: '<',
+                    title: '@'
+                },
+                controller: function ($scope, $element, $attrs) {
+                    var ctrl = this;
+                    ctrl.getText = function () {
+                        var _text = '';
+                        ctrl.list.map(function (c) {
+                            if(c.id == ctrl.val) {
+                                _text = c.name;
+                            }
+                        })
+                        return _text;
+                    }
+                }
+            });
+</script>
+</html>

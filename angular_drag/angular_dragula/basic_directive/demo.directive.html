@@ -1,0 +1,12 @@
+<div dragula='"drag-container"' class='boxes-container' dragula-model='list' ng-class="{uneditable: uneditable}" >
+    <div ng-repeat='box in list' class="box-wrapper">
+        <span class="glyphicon glyphicon-menu-hamburger handle" ng-class="{notdisplay: uneditable}"></span>
+        <span class="num-wrapper" ng-class="{notdisplay: !uneditable}">{{$index}}</span>
+        <input type="text" ng-model="box.title" ng-readonly="uneditable"/>
+                    <span class="glyphicon glyphicon-camera camera"
+                          ng-class="{active: box.camera, unactive: !box.camera, notshow: !box.camera && uneditable}"
+                          ng-click="toggleCamera(box)"  >
+                    </span>
+        <span class="glyphicon glyphicon-trash" ng-click="delete(box.id)" ng-class="{notshow: uneditable}"></span>
+    </div>
+</div>
