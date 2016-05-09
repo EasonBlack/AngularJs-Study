@@ -69,7 +69,7 @@
 	
 	_angular2.default.module('app', [(0, _angularDragula2.default)(_angular2.default)]).controller('appCtrl', ['$scope', 'dragulaService', function ($scope, dragulaService) {
 	    $scope.info = {
-	        boxes: [{ id: _nodeUuid2.default.v1(), title: 'aaaaa', camera: false }, { id: _nodeUuid2.default.v1(), title: 'bbbbb', camera: false }]
+	        boxes: [{ id: _nodeUuid2.default.v1(), title: '', camera: false }, { id: _nodeUuid2.default.v1(), title: '', camera: false }]
 	    };
 	    $scope.addNew = function () {
 	        $scope.info.boxes.push({ id: _nodeUuid2.default.v1(), title: '', camera: false });

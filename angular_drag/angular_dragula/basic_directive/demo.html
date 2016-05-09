@@ -6,39 +6,34 @@
     <link href="../../../style/bootstrap.3.3.6.css" rel="stylesheet"/>
     <link href='dragula.css' rel='stylesheet' type='text/css'/>
     <style>
-        .items-container, .boxes-container {
+        .boxes-container {
             position: relative;
             margin: auto auto;
             width: 100%;
             display: block;
         }
 
-        .button-wrapper {
-            margin: 10px 0px 0px 50px;
-        }
-
-        .item-wrapper, .box-wrapper {
+        .box-wrapper {
             display: block;
-            width: 100px;
+            width: 400px;
             height: 50px;
             line-height: 50px;
-            border: 1px solid #006699;
+            border: none;
             text-align: center;
             margin-left: 50px;
             z-index: 1;
         }
+
         a {
-            display:inline-block;
-            margin-right:10px;
-        }
-        .box-wrapper {
-            width: 400px;
-            border: none;
+            display: inline-block;
+            margin-right: 10px;
         }
 
         .box-wrapper input {
-            height: 30px;
-            line-height: 30px;
+            width: 240px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
         }
 
         .handle {
@@ -67,25 +62,29 @@
         .uneditable input {
             background-color: #FFFFFF;
             border: solid 1px #FFFFFF;
+
         }
-        .uneditable  input:focus {
-            outline:none;
+
+        .uneditable input:focus {
+            outline: none;
         }
 
         .notdisplay {
-          display:none !important;
+            display: none !important;
         }
+
         .notshow {
-            visibility:  hidden !important;
+            visibility: hidden !important;
         }
+
         .num-wrapper {
-            display:inline-block;
-            width:20px;
-            height:20px;
-            background-color:#006699;
-            color:white;
-            line-height:20px;
-            text-align:center;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #006699;
+            color: white;
+            line-height: 20px;
+            text-align: center;
         }
 
     </style>
@@ -99,7 +98,7 @@
     </div>
     <div class="row">
         <div class="col-md-5">
-           <drag-box list="info.boxes" uneditable="info.uneditable"></drag-box>
+            <drag-box list="info.boxes" uneditable="info.uneditable"></drag-box>
         </div>
     </div>
 

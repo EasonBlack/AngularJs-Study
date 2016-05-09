@@ -7,8 +7,8 @@ angular.module('app', [angularDragula(angular)])
     .controller('appCtrl', ['$scope', 'dragulaService', function ($scope, dragulaService) {
         $scope.info = {
             boxes: [
-                {id: uuid.v1(), title: 'aaaaa', camera: false},
-                {id: uuid.v1(), title: 'bbbbb', camera: false}
+                {id: uuid.v1(), title: '', camera: false},
+                {id: uuid.v1(), title: '', camera: false}
             ]
         }
         $scope.addNew = function () {

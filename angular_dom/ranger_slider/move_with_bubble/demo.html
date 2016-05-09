@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="demo.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <app-slider max="200" model='result' top="top" left="left"></app-slider>
+    <div>
+        {{result}}
+    </div>
+    <div>
+        {{left}}
+    </div>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+                $scope.result = 120;
+                $scope.top = 25;
+                $scope.left = 64;
+            }])
+            .directive('appSlider', ['$timeout', function ($timeout) {
+                return {
+                    restrict: 'E',
+                    scope: {
+                        model: '=',
+                        max: '=',
+                        left: '=',
+                        top: '='
+                    },
+                    templateUrl: 'demo.directive.html',
+                    link: function (scope, ele, attr) {
+                        var rangeLength = 200;
+                        var circleHalf = 13;
+                        var arrowLeft = 38;
+                        var arrowHalf = 10;
+                        var comments = [
+                            {min: 0,max: 10, comment: 'aaaaaaa'},
+                            {min:10,max: 30, comment: 'bbbbbbb'},
+                            {min: 30,max: 50,comment: 'ccccccc'},
+                            {min: 50,max: 80, comment: 'ddddddd'},
+                            {min: 80,max: 100, comment: 'eeeeeee'}
+                        ];
+
+                        var setSlider = function (dom, v) {
+                            dom.style.background = "-moz-linear-gradient(left,  #3071a9 0%, #3071a9 " + v + "%, #ccc " + v + "%, #ccc 100%)";
+                            dom.style.background = "-webkit-gradient(linear, left top, right top, color-stop(0%,#3071a9), color-stop(" + v + "%,#3071a9), color-stop(" + v + "%,#ccc), color-stop(100%,#ccc))";
+                            dom.style.background = "-webkit-linear-gradient(left,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                            dom.style.background = "-o-linear-gradient(left,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                            dom.style.background = "-ms-linear-gradient(left,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                            dom.style.background = "linear-gradient(to right,  #3071a9 0%,#3071a9 " + v + "%,#ccc " + v + "%,#ccc 100%)";
+                        }
+
+                        var setPositionComment = (v)=>{
+                            var realleft = v * ( (rangeLength - 2 * circleHalf) / 100) - arrowLeft - arrowHalf + circleHalf;
+                            var comment = comments.filter((c) => v>= c.min && v<= c.max )[0].comment;
+                            $timeout(function () {
+                                scope.comment = comment;
+                                scope.realleft = realleft;
+                            });
+                        }
+
+                        var init = function () {
+                            var v = scope.model * (100 / attr.max)
+                            setSlider(ele.find('input')[0], v);
+                            ele.find('input').val(v);
+                            setPositionComment(v);
+                        }
+
+                        init();
+
+                        ele.on('$destroy', function () {
+                            ele.off('input', 'input');
+                        });
+
+                        ele.on('input', 'input', function () {
+                            var v = this.value;
+                            setSlider(this, v);
+                            setPositionComment(v);
+                            $timeout(function () {
+                                scope.model = v * ( attr.max / 100);
+                            })
+                        })
+
+                    }
+                }
+            }])
+</script>
+</html>
