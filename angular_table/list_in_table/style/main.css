@@ -3,7 +3,23 @@
   padding: 0;
 }
 .container {
-  padding-top: 50px;
+  padding: 0;
+  position: absolute;
+}
+table thead tr {
+  height: 50px;
+}
+.headerAction {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ccc;
+  transition: all 0.5s linear;
+}
+.headerAction.hide {
+  top: -50px;
 }
 ul {
   list-style: none;
@@ -15,7 +31,8 @@ ul li {
 ul li:last-child {
   margin-bottom: 0px;
 }
-.btn-wrapper .btn {
-  float: left;
+.btn-wrapper button {
   display: block;
+  bottom: 0px;
+  margin-right: 50px;
 }

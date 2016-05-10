@@ -9,22 +9,35 @@
 </head>
 <body ng-app="app" ng-controller="MainController">
 <div class="container">
-   <table class="table">
-       <thead>
-          <th ng-repeat="header in headers">{{header}}</th>
-       </thead>
-       <tbody>
-          <tr ng-repeat="row in rows">
-              <td ng-repeat = 'header in headers'>
-                   <span ng-if="!isTask(row[header])">{{row[header]}}</span>
-                    <ul ng-if="isTask(row[header])" class="task-wrapper">
-                          <li ng-repeat="task in row[header]">{{task.title}}</li>
-                    </ul>
-              </td>
-          </tr>
-       </tbody>
-   </table>
+    <table class="table">
+        <thead ng-if="headerAction">
+        <th colspan="{{headers.length}}">xxxx</th>
+        </thead>
+        <thead ng-if="!headerAction">
+        <th ng-repeat="header in headers">{{header}}</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rows">
+            <td ng-repeat='header in headers'>
+                <span ng-if="!isTask(row[header])">{{row[header]}}</span>
+                <ul ng-if="isTask(row[header])" class="task-wrapper">
+                    <li ng-repeat="task in row[header]">{{task.title}}</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="headerAction" ng-class="{'hide':!action2,'active':action2}"></div>
+    <div class="btn-wrapper">
+        <div>
+            <button ng-click="toggleHeader()">Toggle Header</button>
+            <button ng-click="toggleHeader2()">Toggle Header 2</button>
+        </div>
+
+    </div>
 </div>
+
+
 </body>
 <script src="build/bundle.js"></script>
 
