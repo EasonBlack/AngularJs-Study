@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+<ul>
+    <li class="item-wrap" ng-repeat="item in items">
+        <label>{{item}}</label>
+        <button ng-click="remove($index)">remove</button>
+    </li>
+</ul>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>

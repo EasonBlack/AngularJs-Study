@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.item-wrap {
+  transition: 1s linear all;
+}
+.item-wrap.ng-leave {
+  opacity: 1;
+}
+.item-wrap.ng-leave-active {
+  opacity: 0;
+}
