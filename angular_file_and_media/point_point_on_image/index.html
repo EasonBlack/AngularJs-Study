@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+  <div class="row">
+      <div class="col-xs-offset-2 col-xs-3 container">
+          <div class="image-wrapper">
+              <img src="../../images/500x500.png" width="250" ng-click="getPosition($event)"/>
+              <div class="point" ng-style="{'top':top + 'px', 'left': left + 'px'}"></div>
+          </div>
+          <div class="button-wrapper"><button>Point</button></div>
+      </div>
+      <div class="col-xs-offset-2 col-xs-3 container">
+          <div class="image-wrapper">
+              <img src="../../images/500x500.png" />
+              <div class="point" ng-style="{'top':nativetop + 'px', 'left': nativeleft + 'px'}"></div>
+          </div>
+
+      </div>
+  </div>
+  <div class="row">
+
+  </div>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>
