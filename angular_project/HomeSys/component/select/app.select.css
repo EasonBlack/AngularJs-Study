@@ -1,0 +1,11 @@
+.app-select-container {
+  display: flex;
+  margin-bottom: 10px;
+  width: 400px;
+}
+.app-select-container .input-label {
+  flex: 1;
+}
+.app-select-container .input-content {
+  flex: 1;
+}

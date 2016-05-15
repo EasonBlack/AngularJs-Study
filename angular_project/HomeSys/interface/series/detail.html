@@ -1,0 +1,36 @@
+<div class="series-detail-container">
+    <div class="header-section">
+
+    </div>
+    <div class="detail-section">
+        <a href='javascript:void(0)' ng-click="edit()">{{control.detail_editable? 'Finish': 'Edit'}}</a>
+        <app-input type="text" val="series.name" title="Name" editable="control.detail_editable"></app-input>
+        <app-input type="date"  val="series.date" title="Date" editable="control.detail_editable" ></app-input>
+        <app-select list="series_status" val="series.selected_status" showcol="name" title="Status" editable="control.detail_editable"></app-select>
+    </div>
+    <div class="detail-items-section">
+        <a href='javascript:void(0)' ng-click="editEp()">{{control.episode_editable? 'Finish': 'Edit Episode'}}</a>
+        <a href='javascript:void(0)' ng-if="control.episode_editable" ng-click="addEp()">Add Item</a>
+        <ul class="series-items-wrapper">
+            <li ng-repeat="item in series.items" style="width:400px;">
+                <div>
+                    <app-input type="text" val="item.num"  editable="control.episode_editable"></app-input>
+                </div>
+                <div>
+                    <app-input type="date" val="item.date"  editable="control.episode_editable"></app-input>
+                </div>
+                <div>
+                    <app-input type="text" val="item.comment"  editable="control.episode_editable"></app-input>
+                </div>
+                <div ng-if="control.episode_editable">
+                    <a href="javascript:void(0)" ng-click="series.updateItem(item)" ng-if="item._id">Change</a>
+                    <a href="javascript:void(0)" ng-click="series.addItem(item)" ng-if="!item._id">Add</a>
+                    <a href="javascript:void(0)" ng-click="series.deleteItem(item)">Delete</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="button-section">
+        <a href="javascript:void(0)" class="confirm-button" ng-click="series.update()">CONFIRM</a>
+    </div>
+</div>

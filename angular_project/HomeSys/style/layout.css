@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+body {
+  display: flex;
+  flex-direction: row;
+}
+.left-container {
+  height: 100%;
+  width: 320px;
+  background-color: #3f5185;
+  color: white;
+}
+.left-container ul {
+  margin-left: 20px;
+}
+.left-container li {
+  margin-bottom: 10px;
+  color: white;
+}
+.left-container li a {
+  color: white;
+  text-transform: none;
+  text-decoration: none;
+}
+.left-container .logo {
+  height: 60px;
+  width: 100%;
+}
+.right-container {
+  height: 100%;
+  flex: 1;
+}

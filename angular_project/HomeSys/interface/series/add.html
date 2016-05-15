@@ -1,0 +1,19 @@
+<div class="series-add-container">
+    <div class="form-container">
+        <app-input title="Name" val="newseries.name" placeholder="Type series name"></app-input>
+    </div>
+    <div>
+        <button ng-click="add()">Add</button>
+    </div>
+
+
+    <div class="form-container">
+        <app-select list="series" title='Series' val="selectedseries" placeholder="select one series" ></app-select>
+        <app-input list="num" title="Number" val="newitem.num" placeholder="episode num"></app-input>
+        <app-input list="comment" title="Comment" val="newitem.comment" placeholder="episode num"></app-input>
+        <app-input list="date" title="Date" val="newitem.date" placeholder="date"></app-input>
+    </div>
+    <div>
+        <button ng-click="addItem()">Add Item</button>
+    </div>
+</div>

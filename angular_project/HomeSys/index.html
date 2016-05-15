@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap-table.css" rel="stylesheet"/>
+    <link href="../../vendor/angular-datepicker/angular-datepicker.css" rel="stylesheet"/>
+    <link href="style/select2.css" rel="stylesheet"/>
+    <link href="style/select.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+
+<div class="left-container">
+    <div class="logo"></div>
+    <ul>
+        <li ng-repeat = 'nav in navs'>
+            <a href="#/{{nav.href}}" >{{nav.title}}</a>
+        </li>
+    </ul>
+</div>
+<div class="right-container">
+    <ng-view></ng-view>
+</div>
+
+</body>
+<script src="build/bundle.js"></script>
+
+</html>

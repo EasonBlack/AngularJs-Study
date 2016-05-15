@@ -1,0 +1,11 @@
+.app-input-container {
+  display: flex;
+  margin-bottom: 10px;
+  width: 400px;
+}
+.app-input-container .input-label {
+  flex: 1;
+}
+.app-input-container .input-content {
+  flex: 1;
+}

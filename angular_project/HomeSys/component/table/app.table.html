@@ -1,0 +1,23 @@
+<div class="app-table-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th ng-repeat="header in  $ctrl.list.headers">
+                {{header.title}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in $ctrl.list.rows">
+            <td ng-repeat="header in $ctrl.list.headers">
+                   <span ng-if="header.clickable">
+                       <a href="{{header.href}}{{row['_id']}}"> {{row[header.name]}}</a>
+                   </span>
+                     <span ng-if="!header.clickable">
+                        {{row[header.name]}}
+                   </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
