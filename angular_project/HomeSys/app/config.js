@@ -6,6 +6,16 @@ angular.module('app')
                 templateUrl: 'interface/dashboard/index.html',
                 controller: 'dashboardCtrl'
             })
+            .when('/daily',
+            {
+                templateUrl: 'interface/daily/index.html',
+                controller: 'dailyCtrl'
+            })
+            .when('/daily/detail/:date',
+            {
+                templateUrl: 'interface/daily/detail.html',
+                controller: 'dailyDetailCtrl'
+            })
             .when('/series',
             {
                 templateUrl: 'interface/series/index.html',

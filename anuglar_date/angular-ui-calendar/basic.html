@@ -33,22 +33,27 @@
                             center: 'title',
                             right: 'today prev,next'
                         },
-                        dayClick: $scope.alertEventOnClick,
+                        dayClick: function(date, jsEvent, view){
+                            $scope.alertEventOnClick(date, jsEvent, view)
+                        },
                         eventDrop: $scope.alertOnDrop,
                         eventResize: $scope.alertOnResize,
                         events: [
                             {
                                 title: 'All Day Event',
-                                start: '2016-04-01'
+                                start: '2016-05-01'
                             },
                             {
                                 title: 'Long Event',
-                                start: '2016-04-07',
-                                end: '2016-04-10'
+                                start: '2016-05-07',
+                                end: '2016-05-10'
                             },
                         ]
                     }
                 };
+                $scope.alertEventOnClick = function(date, jsEvent, view){
+                    alert(date);
+                }
             }])
 </script>
 </html>

@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
@@ -8,6 +9,13 @@ module.exports = {
         publicPath: '/'
     },
     devtool: 'source-map',
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+    ],
     module: {
         loaders: [
             {
