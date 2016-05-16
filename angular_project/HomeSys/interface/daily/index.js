@@ -17,15 +17,6 @@ angular.module('app')
                 eventDrop: $scope.alertOnDrop,
                 eventResize: $scope.alertOnResize,
                 events: [
-                    {
-                        title: 'All Day Event',
-                        start: '2016-05-01'
-                    },
-                    {
-                        title: 'Long Event',
-                        start: '2016-04-07',
-                        end: '2016-05-10'
-                    },
                 ]
             }
         };

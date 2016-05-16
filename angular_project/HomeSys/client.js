@@ -22,6 +22,7 @@ import './interface/daily/detail'
 
 import './service/seriesList.service'
 import './service/series.service'
+import './service/daily.service'
 
 import './component/input/app.input'
 import './component/select/app.select'

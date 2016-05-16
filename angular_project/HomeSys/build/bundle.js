@@ -44,61 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	var _jquery = __webpack_require__(1);
-	
-	var _jquery2 = _interopRequireDefault(_jquery);
-	
-	var _angular = __webpack_require__(2);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	__webpack_require__(4);
-	
-	__webpack_require__(6);
-	
-	__webpack_require__(8);
-	
-	__webpack_require__(10);
-	
-	__webpack_require__(113);
-	
-	__webpack_require__(114);
-	
-	__webpack_require__(115);
-	
-	__webpack_require__(116);
-	
-	__webpack_require__(117);
-	
-	__webpack_require__(118);
-	
-	__webpack_require__(119);
-	
-	__webpack_require__(120);
-	
-	__webpack_require__(121);
-	
-	__webpack_require__(122);
-	
-	__webpack_require__(123);
-	
-	__webpack_require__(124);
-	
-	__webpack_require__(125);
-	
-	__webpack_require__(126);
-	
-	__webpack_require__(127);
-	
-	__webpack_require__(128);
-	
-	__webpack_require__(129);
-	
-	__webpack_require__(130);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
 /***/ },
 /* 1 */
@@ -9961,11 +9907,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/**
-	 * @license AngularJS v1.5.3
+	 * @license AngularJS v1.5.5
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
-	(function(window, document, undefined) {'use strict';
+	(function(window) {'use strict';
 	
 	/**
 	 * @description
@@ -10019,7 +9965,7 @@
 	      return match;
 	    });
 	
-	    message += '\nhttp://errors.angularjs.org/1.5.3/' +
+	    message += '\nhttp://errors.angularjs.org/1.5.5/' +
 	      (module ? module + '/' : '') + code;
 	
 	    for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -10133,6 +10079,7 @@
 	 * @ngdoc module
 	 * @name ng
 	 * @module ng
+	 * @installation
 	 * @description
 	 *
 	 * # ng (core module)
@@ -10199,7 +10146,7 @@
 	 * documentMode is an IE-only property
 	 * http://msdn.microsoft.com/en-us/library/ie/cc196988(v=vs.85).aspx
 	 */
-	msie = document.documentMode;
+	msie = window.document.documentMode;
 	
 	
 	/**
@@ -11009,6 +10956,41 @@
 	 * @param {*} o1 Object or value to compare.
 	 * @param {*} o2 Object or value to compare.
 	 * @returns {boolean} True if arguments are equal.
+	 *
+	 * @example
+	   <example module="equalsExample" name="equalsExample">
+	     <file name="index.html">
+	      <div ng-controller="ExampleController">
+	        <form novalidate>
+	          <h3>User 1</h3>
+	          Name: <input type="text" ng-model="user1.name">
+	          Age: <input type="number" ng-model="user1.age">
+	
+	          <h3>User 2</h3>
+	          Name: <input type="text" ng-model="user2.name">
+	          Age: <input type="number" ng-model="user2.age">
+	
+	          <div>
+	            <br/>
+	            <input type="button" value="Compare" ng-click="compare()">
+	          </div>
+	          User 1: <pre>{{user1 | json}}</pre>
+	          User 2: <pre>{{user2 | json}}</pre>
+	          Equal: <pre>{{result}}</pre>
+	        </form>
+	      </div>
+	    </file>
+	    <file name="script.js">
+	        angular.module('equalsExample', []).controller('ExampleController', ['$scope', function($scope) {
+	          $scope.user1 = {};
+	          $scope.user2 = {};
+	          $scope.result;
+	          $scope.compare = function() {
+	            $scope.result = angular.equals($scope.user1, $scope.user2);
+	          };
+	        }]);
+	    </file>
+	  </example>
 	 */
 	function equals(o1, o2) {
 	  if (o1 === o2) return true;
@@ -11055,8 +11037,8 @@
 	  if (!isDefined(csp.rules)) {
 	
 	
-	    var ngCspElement = (document.querySelector('[ng-csp]') ||
-	                    document.querySelector('[data-ng-csp]'));
+	    var ngCspElement = (window.document.querySelector('[ng-csp]') ||
+	                    window.document.querySelector('[data-ng-csp]'));
 	
 	    if (ngCspElement) {
 	      var ngCspAttribute = ngCspElement.getAttribute('ng-csp') ||
@@ -11131,7 +11113,7 @@
 	  var i, ii = ngAttrPrefixes.length, prefix, name;
 	  for (i = 0; i < ii; ++i) {
 	    prefix = ngAttrPrefixes[i];
-	    if (el = document.querySelector('[' + prefix.replace(':', '\\:') + 'jq]')) {
+	    if (el = window.document.querySelector('[' + prefix.replace(':', '\\:') + 'jq]')) {
 	      name = el.getAttribute(prefix + 'jq');
 	      break;
 	    }
@@ -11196,7 +11178,7 @@
 	    val = undefined;
 	  } else if (isWindow(value)) {
 	    val = '$WINDOW';
-	  } else if (value &&  document === value) {
+	  } else if (value &&  window.document === value) {
 	    val = '$DOCUMENT';
 	  } else if (isScope(value)) {
 	    val = '$SCOPE';
@@ -11648,11 +11630,11 @@
 	    element = jqLite(element);
 	
 	    if (element.injector()) {
-	      var tag = (element[0] === document) ? 'document' : startingTag(element);
+	      var tag = (element[0] === window.document) ? 'document' : startingTag(element);
 	      //Encode angle brackets to prevent input from being sanitized to empty string #8683
 	      throw ngMinErr(
 	          'btstrpd',
-	          "App Already Bootstrapped with this Element '{0}'",
+	          "App already bootstrapped with this element '{0}'",
 	          tag.replace(/</,'&lt;').replace(/>/,'&gt;'));
 	    }
 	
@@ -12099,9 +12081,9 @@
 	           * @ngdoc method
 	           * @name angular.Module#decorator
 	           * @module ng
-	           * @param {string} The name of the service to decorate.
-	           * @param {Function} This function will be invoked when the service needs to be
-	           *                                    instantiated and should return the decorated service instance.
+	           * @param {string} name The name of the service to decorate.
+	           * @param {Function} decorFn This function will be invoked when the service needs to be
+	           *                           instantiated and should return the decorated service instance.
 	           * @description
 	           * See {@link auto.$provide#decorator $provide.decorator()}.
 	           */
@@ -12405,11 +12387,11 @@
 	 * - `codeName` – `{string}` – Code name of the release, such as "jiggling-armfat".
 	 */
 	var version = {
-	  full: '1.5.3',    // all of these placeholder strings will be replaced by grunt's
+	  full: '1.5.5',    // all of these placeholder strings will be replaced by grunt's
 	  major: 1,    // package task
 	  minor: 5,
-	  dot: 3,
-	  codeName: 'diplohaplontic-meiosis'
+	  dot: 5,
+	  codeName: 'material-conspiration'
 	};
 	
 	
@@ -12666,6 +12648,9 @@
 	 * - `inheritedData()` - same as `data()`, but walks up the DOM until a value is found or the top
 	 *   parent element is reached.
 	 *
+	 * @knownIssue You cannot spy on `angular.element` if you are using Jasmine version 1.x. See
+	 * https://github.com/angular/angular.js/issues/14251 for more information.
+	 *
 	 * @param {string|DOMElement} element HTML string or DOMElement to be wrapped into jQuery.
 	 * @returns {Object} jQuery object.
 	 */
@@ -12792,7 +12777,7 @@
 	}
 	
 	function jqLiteParseHTML(html, context) {
-	  context = context || document;
+	  context = context || window.document;
 	  var parsed;
 	
 	  if ((parsed = SINGLE_TAG_REGEXP.exec(html))) {
@@ -12818,7 +12803,7 @@
 	
 	
 	// IE9-11 has no method "contains" in SVG element and in Node.prototype. Bug #10259.
-	var jqLiteContains = Node.prototype.contains || function(arg) {
+	var jqLiteContains = window.Node.prototype.contains || function(arg) {
 	  // jshint bitwise: false
 	  return !!(this.compareDocumentPosition(arg) & 16);
 	  // jshint bitwise: true
@@ -13090,8 +13075,8 @@
 	    }
 	
 	    // check if document is already loaded
-	    if (document.readyState === 'complete') {
-	      setTimeout(trigger);
+	    if (window.document.readyState === 'complete') {
+	      window.setTimeout(trigger);
 	    } else {
 	      this.on('DOMContentLoaded', trigger); // works for modern browsers and IE9
 	      // we can not use jqLite since we are not done loading and jQuery could be loaded later.
@@ -13781,6 +13766,7 @@
 	/**
 	 * @ngdoc module
 	 * @name auto
+	 * @installation
 	 * @description
 	 *
 	 * Implicit module which gets automatically added to each {@link auto.$injector $injector}.
@@ -13794,7 +13780,7 @@
 	var $injectorMinErr = minErr('$injector');
 	
 	function extractArgs(fn) {
-	  var fnText = fn.toString().replace(STRIP_COMMENTS, ''),
+	  var fnText = Function.prototype.toString.call(fn).replace(STRIP_COMMENTS, ''),
 	      args = fnText.match(ARROW_ARG) || fnText.match(FN_ARGS);
 	  return args;
 	}
@@ -15214,6 +15200,9 @@
 	       * // remove all the animation event listeners listening for `enter`
 	       * $animate.off('enter');
 	       *
+	       * // remove listeners for all animation events from the container element
+	       * $animate.off(container);
+	       *
 	       * // remove all the animation event listeners listening for `enter` on the given element and its children
 	       * $animate.off('enter', container);
 	       *
@@ -15222,7 +15211,9 @@
 	       * $animate.off('enter', container, callback);
 	       * ```
 	       *
-	       * @param {string} event the animation event (e.g. enter, leave, move, addClass, removeClass, etc...)
+	       * @param {string|DOMElement} event|container the animation event (e.g. enter, leave, move,
+	       * addClass, removeClass, etc...), or the container element. If it is the element, all other
+	       * arguments are ignored.
 	       * @param {DOMElement=} container the container element the event listener was placed on
 	       * @param {Function=} callback the callback function that was registered as the listener
 	       */
@@ -16795,8 +16786,8 @@
 	 *   this element). This is a good place to put initialization code for your controller.
 	 * * `$onChanges(changesObj)` - Called whenever one-way (`<`) or interpolation (`@`) bindings are updated. The
 	 *   `changesObj` is a hash whose keys are the names of the bound properties that have changed, and the values are an
-	 *   object of the form `{ currentValue: ..., previousValue: ... }`. Use this hook to trigger updates within a component
-	 *   such as cloning the bound value to prevent accidental mutation of the outer value.
+	 *   object of the form `{ currentValue, previousValue, isFirstChange() }`. Use this hook to trigger updates within a
+	 *   component such as cloning the bound value to prevent accidental mutation of the outer value.
 	 * * `$onDestroy()` - Called on a controller when its containing scope is destroyed. Use this hook for releasing
 	 *   external resources, watches and event handlers. Note that components have their `$onDestroy()` hooks called in
 	 *   the same order as the `$scope.$broadcast` events are triggered, which is top down. This means that parent
@@ -17343,6 +17334,9 @@
 	
 	var $compileMinErr = minErr('$compile');
 	
+	function UNINITIALIZED_VALUE() {}
+	var _UNINITIALIZED_VALUE = new UNINITIALIZED_VALUE();
+	
 	/**
 	 * @ngdoc provider
 	 * @name $compileProvider
@@ -17367,7 +17361,7 @@
 	  function parseIsolateBindings(scope, directiveName, isController) {
 	    var LOCAL_REGEXP = /^\s*([@&<]|=(\*?))(\??)\s*(\w*)\s*$/;
 	
-	    var bindings = {};
+	    var bindings = createMap();
 	
 	    forEach(scope, function(definition, scopeName) {
 	      if (definition in bindingCache) {
@@ -17541,6 +17535,9 @@
 	   *      See {@link ng.$compile#-bindtocontroller- `bindToController`}.
 	   *    - `transclude` – `{boolean=}` – whether {@link $compile#transclusion content transclusion} is enabled.
 	   *      Disabled by default.
+	   *    - `require` - `{Object<string, string>=}` - requires the controllers of other directives and binds them to
+	   *      this component's controller. The object keys specify the property names under which the required
+	   *      controllers (object values) will be bound. See {@link ng.$compile#-require- `require`}.
 	   *    - `$...` – additional properties to attach to the directive factory function and the controller
 	   *      constructor function. (This is used by the component router to annotate)
 	   *
@@ -17586,7 +17583,7 @@
 	   * See also {@link ng.$compileProvider#directive $compileProvider.directive()}.
 	   */
 	  this.component = function registerComponent(name, options) {
-	    var controller = options.controller || noop;
+	    var controller = options.controller || function() {};
 	
 	    function factory($injector) {
 	      function makeInjectable(fn) {
@@ -17600,7 +17597,7 @@
 	      }
 	
 	      var template = (!options.template && !options.templateUrl ? '' : options.template);
-	      return {
+	      var ddo = {
 	        controller: controller,
 	        controllerAs: identifierForController(options.controller) || options.controllerAs || '$ctrl',
 	        template: makeInjectable(template),
@@ -17611,14 +17608,27 @@
 	        restrict: 'E',
 	        require: options.require
 	      };
+	
+	      // Copy annotations (starting with $) over to the DDO
+	      forEach(options, function(val, key) {
+	        if (key.charAt(0) === '$') ddo[key] = val;
+	      });
+	
+	      return ddo;
 	    }
 	
-	    // Copy any annotation properties (starting with $) over to the factory function
+	    // TODO(pete) remove the following `forEach` before we release 1.6.0
+	    // The component-router@0.2.0 looks for the annotations on the controller constructor
+	    // Nothing in Angular looks for annotations on the factory function but we can't remove
+	    // it from 1.5.x yet.
+	
+	    // Copy any annotation properties (starting with $) over to the factory and controller constructor functions
 	    // These could be used by libraries such as the new component router
 	    forEach(options, function(val, key) {
 	      if (key.charAt(0) === '$') {
 	        factory[key] = val;
-	        controller[key] = val;
+	        // Don't try to copy over annotations to named controller
+	        if (isFunction(controller)) controller[key] = val;
 	      }
 	    });
 	
@@ -17755,7 +17765,7 @@
 	             $controller,   $rootScope,   $sce,   $animate,   $$sanitizeUri) {
 	
 	    var SIMPLE_ATTR_NAME = /^\w/;
-	    var specialAttrHolder = document.createElement('div');
+	    var specialAttrHolder = window.document.createElement('div');
 	
 	
 	
@@ -18086,7 +18096,7 @@
 	      if (debugInfoEnabled) {
 	        content = ' ' + (directiveName || '') + ': ' + (comment || '') + ' ';
 	      }
-	      return document.createComment(content);
+	      return window.document.createComment(content);
 	    };
 	
 	    return compile;
@@ -18109,7 +18119,7 @@
 	        var domNode = $compileNodes[i];
 	
 	        if (domNode.nodeType === NODE_TYPE_TEXT && domNode.nodeValue.match(NOT_EMPTY) /* non-empty */) {
-	          jqLiteWrapNode(domNode, $compileNodes[i] = document.createElement('span'));
+	          jqLiteWrapNode(domNode, $compileNodes[i] = window.document.createElement('span'));
 	        }
 	      }
 	
@@ -18802,7 +18812,9 @@
 	            replaceDirective = directive;
 	          }
 	
+	          /* jshint -W021 */
 	          nodeLinkFn = compileTemplateUrl(directives.splice(i, directives.length - i), $compileNode,
+	          /* jshint +W021 */
 	              templateAttrs, jqCollection, hasTranscludeDirective && childTranscludeFn, preLinkFns, postLinkFns, {
 	                controllerDirectives: controllerDirectives,
 	                newScopeDirective: (newScopeDirective !== directive) && newScopeDirective,
@@ -18866,7 +18878,7 @@
 	
 	      function nodeLinkFn(childLinkFn, scope, linkNode, $rootElement, boundTranscludeFn) {
 	        var i, ii, linkFn, isolateScope, controllerScope, elementControllers, transcludeFn, $element,
-	            attrs, removeScopeBindingWatches, removeControllerBindingWatches;
+	            attrs, scopeBindingInfo;
 	
 	        if (compileNode === linkNode) {
 	          attrs = templateAttrs;
@@ -18905,11 +18917,11 @@
 	          compile.$$addScopeClass($element, true);
 	          isolateScope.$$isolateBindings =
 	              newIsolateScopeDirective.$$isolateBindings;
-	          removeScopeBindingWatches = initializeDirectiveBindings(scope, attrs, isolateScope,
+	          scopeBindingInfo = initializeDirectiveBindings(scope, attrs, isolateScope,
 	                                        isolateScope.$$isolateBindings,
 	                                        newIsolateScopeDirective);
-	          if (removeScopeBindingWatches) {
-	            isolateScope.$on('$destroy', removeScopeBindingWatches);
+	          if (scopeBindingInfo.removeWatches) {
+	            isolateScope.$on('$destroy', scopeBindingInfo.removeWatches);
 	          }
 	        }
 	
@@ -18920,8 +18932,10 @@
 	          var bindings = controllerDirective.$$bindings.bindToController;
 	
 	          if (controller.identifier && bindings) {
-	            removeControllerBindingWatches =
+	            controller.bindingInfo =
 	              initializeDirectiveBindings(controllerScope, attrs, controller.instance, bindings, controllerDirective);
+	          } else {
+	            controller.bindingInfo = {};
 	          }
 	
 	          var controllerResult = controller();
@@ -18930,8 +18944,8 @@
 	            // from setupControllers
 	            controller.instance = controllerResult;
 	            $element.data('$' + controllerDirective.name + 'Controller', controllerResult);
-	            removeControllerBindingWatches && removeControllerBindingWatches();
-	            removeControllerBindingWatches =
+	            controller.bindingInfo.removeWatches && controller.bindingInfo.removeWatches();
+	            controller.bindingInfo =
 	              initializeDirectiveBindings(controllerScope, attrs, controller.instance, bindings, controllerDirective);
 	          }
 	        }
@@ -18947,6 +18961,9 @@
 	        // Handle the init and destroy lifecycle hooks on all controllers that have them
 	        forEach(elementControllers, function(controller) {
 	          var controllerInstance = controller.instance;
+	          if (isFunction(controllerInstance.$onChanges)) {
+	            controllerInstance.$onChanges(controller.bindingInfo.initialChanges);
+	          }
 	          if (isFunction(controllerInstance.$onInit)) {
 	            controllerInstance.$onInit();
 	          }
@@ -19403,7 +19420,7 @@
 	      switch (type) {
 	      case 'svg':
 	      case 'math':
-	        var wrapper = document.createElement('div');
+	        var wrapper = window.document.createElement('div');
 	        wrapper.innerHTML = '<' + type + '>' + template + '</' + type + '>';
 	        return wrapper.childNodes[0].childNodes;
 	      default:
@@ -19547,7 +19564,7 @@
 	      // - remove them from the DOM
 	      // - allow them to still be traversed with .nextSibling
 	      // - allow a single fragment.qSA to fetch all elements being removed
-	      var fragment = document.createDocumentFragment();
+	      var fragment = window.document.createDocumentFragment();
 	      for (i = 0; i < removeCount; i++) {
 	        fragment.appendChild(elementsToRemove[i]);
 	      }
@@ -19593,6 +19610,7 @@
 	    // only occurs for isolate scopes and new scopes with controllerAs.
 	    function initializeDirectiveBindings(scope, attrs, destination, bindings, directive) {
 	      var removeWatchCollection = [];
+	      var initialChanges = {};
 	      var changes;
 	      forEach(bindings, function initializeBinding(definition, scopeName) {
 	        var attrName = definition.attrName,
@@ -19608,7 +19626,7 @@
 	              destination[scopeName] = attrs[attrName] = void 0;
 	            }
 	            attrs.$observe(attrName, function(value) {
-	              if (isString(value)) {
+	              if (isString(value) || isBoolean(value)) {
 	                var oldValue = destination[scopeName];
 	                recordChanges(scopeName, value, oldValue);
 	                destination[scopeName] = value;
@@ -19625,6 +19643,7 @@
 	              // the value to boolean rather than a string, so we special case this situation
 	              destination[scopeName] = lastValue;
 	            }
+	            initialChanges[scopeName] = new SimpleChange(_UNINITIALIZED_VALUE, destination[scopeName]);
 	            break;
 	
 	          case '=':
@@ -19680,11 +19699,16 @@
 	            parentGet = $parse(attrs[attrName]);
 	
 	            destination[scopeName] = parentGet(scope);
+	            initialChanges[scopeName] = new SimpleChange(_UNINITIALIZED_VALUE, destination[scopeName]);
 	
-	            removeWatch = scope.$watch(parentGet, function parentValueWatchAction(newParentValue) {
-	              var oldValue = destination[scopeName];
-	              recordChanges(scopeName, newParentValue, oldValue);
-	              destination[scopeName] = newParentValue;
+	            removeWatch = scope.$watch(parentGet, function parentValueWatchAction(newValue, oldValue) {
+	              if (newValue === oldValue) {
+	                // If the new and old values are identical then this is the first time the watch has been triggered
+	                // So instead we use the current value on the destination as the old value
+	                oldValue = destination[scopeName];
+	              }
+	              recordChanges(scopeName, newValue, oldValue);
+	              destination[scopeName] = newValue;
 	            }, parentGet.literal);
 	
 	            removeWatchCollection.push(removeWatch);
@@ -19721,7 +19745,7 @@
 	            previousValue = changes[key].previousValue;
 	          }
 	          // Store this change
-	          changes[key] = {previousValue: previousValue, currentValue: currentValue};
+	          changes[key] = new SimpleChange(previousValue, currentValue);
 	        }
 	      }
 	
@@ -19731,14 +19755,24 @@
 	        changes = undefined;
 	      }
 	
-	      return removeWatchCollection.length && function removeWatches() {
-	        for (var i = 0, ii = removeWatchCollection.length; i < ii; ++i) {
-	          removeWatchCollection[i]();
+	      return {
+	        initialChanges: initialChanges,
+	        removeWatches: removeWatchCollection.length && function removeWatches() {
+	          for (var i = 0, ii = removeWatchCollection.length; i < ii; ++i) {
+	            removeWatchCollection[i]();
+	          }
 	        }
 	      };
 	    }
 	  }];
 	}
+	
+	function SimpleChange(previous, current) {
+	  this.previousValue = previous;
+	  this.currentValue = current;
+	}
+	SimpleChange.prototype.isFirstChange = function() { return this.previousValue === _UNINITIALIZED_VALUE; };
+	
 	
 	var PREFIX_REGEXP = /^((?:x|data)[\:\-_])/i;
 	/**
@@ -20679,7 +20713,7 @@
 	     * That means changes to the properties of `data` are not local to the transform function (since Javascript passes objects by reference).
 	     * For example, when calling `$http.get(url, $scope.myObject)`, modifications to the object's properties in a transformRequest
 	     * function will be reflected on the scope and in any templates where the object is data-bound.
-	     * To prevent his, transform functions should have no side-effects.
+	     * To prevent this, transform functions should have no side-effects.
 	     * If you need to modify properties, it is recommended to make a copy of the data, or create new object to return.
 	     * </div>
 	     *
@@ -20925,6 +20959,12 @@
 	     *    - **headers** – `{Object}` – Map of strings or functions which return strings representing
 	     *      HTTP headers to send to the server. If the return value of a function is null, the
 	     *      header will not be sent. Functions accept a config object as an argument.
+	     *    - **eventHandlers** - `{Object}` - Event listeners to be bound to the XMLHttpRequest object.
+	     *      To bind events to the XMLHttpRequest upload object, use `uploadEventHandlers`.
+	     *      The handler will be called in the context of a `$apply` block.
+	     *    - **uploadEventHandlers** - `{Object}` - Event listeners to be bound to the XMLHttpRequest upload
+	     *      object. To bind events to the XMLHttpRequest object, use `eventHandlers`.
+	     *      The handler will be called in the context of a `$apply` block.
 	     *    - **xsrfHeaderName** – `{string}` – Name of HTTP header to populate with the XSRF token.
 	     *    - **xsrfCookieName** – `{string}` – Name of cookie containing the XSRF token.
 	     *    - **transformRequest** –
@@ -21383,10 +21423,34 @@
 	        }
 	
 	        $httpBackend(config.method, url, reqData, done, reqHeaders, config.timeout,
-	            config.withCredentials, config.responseType);
+	            config.withCredentials, config.responseType,
+	            createApplyHandlers(config.eventHandlers),
+	            createApplyHandlers(config.uploadEventHandlers));
 	      }
 	
 	      return promise;
+	
+	      function createApplyHandlers(eventHandlers) {
+	        if (eventHandlers) {
+	          var applyHandlers = {};
+	          forEach(eventHandlers, function(eventHandler, key) {
+	            applyHandlers[key] = function(event) {
+	              if (useApplyAsync) {
+	                $rootScope.$applyAsync(callEventHandler);
+	              } else if ($rootScope.$$phase) {
+	                callEventHandler();
+	              } else {
+	                $rootScope.$apply(callEventHandler);
+	              }
+	
+	              function callEventHandler() {
+	                eventHandler(event);
+	              }
+	            };
+	          });
+	          return applyHandlers;
+	        }
+	      }
 	
 	
 	      /**
@@ -21508,7 +21572,7 @@
 	
 	function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDocument) {
 	  // TODO(vojta): fix the signature
-	  return function(method, url, post, callback, headers, timeout, withCredentials, responseType) {
+	  return function(method, url, post, callback, headers, timeout, withCredentials, responseType, eventHandlers, uploadEventHandlers) {
 	    $browser.$$incOutstandingRequestCount();
 	    url = url || $browser.url();
 	
@@ -21567,6 +21631,14 @@
 	
 	      xhr.onerror = requestError;
 	      xhr.onabort = requestError;
+	
+	      forEach(eventHandlers, function(value, key) {
+	          xhr.addEventListener(key, value);
+	      });
+	
+	      forEach(uploadEventHandlers, function(value, key) {
+	        xhr.upload.addEventListener(key, value);
+	      });
 	
 	      if (withCredentials) {
 	        xhr.withCredentials = true;
@@ -23546,7 +23618,7 @@
 	        this.readString(ch);
 	      } else if (this.isNumber(ch) || ch === '.' && this.isNumber(this.peek())) {
 	        this.readNumber();
-	      } else if (this.isIdent(ch)) {
+	      } else if (this.isIdentifierStart(this.peekMultichar())) {
 	        this.readIdent();
 	      } else if (this.is(ch, '(){}[].,;:?')) {
 	        this.tokens.push({index: this.index, text: ch});
@@ -23590,10 +23662,47 @@
 	            ch === '\n' || ch === '\v' || ch === '\u00A0');
 	  },
 	
-	  isIdent: function(ch) {
+	  isIdentifierStart: function(ch) {
+	    return this.options.isIdentifierStart ?
+	        this.options.isIdentifierStart(ch, this.codePointAt(ch)) :
+	        this.isValidIdentifierStart(ch);
+	  },
+	
+	  isValidIdentifierStart: function(ch) {
 	    return ('a' <= ch && ch <= 'z' ||
 	            'A' <= ch && ch <= 'Z' ||
 	            '_' === ch || ch === '$');
+	  },
+	
+	  isIdentifierContinue: function(ch) {
+	    return this.options.isIdentifierContinue ?
+	        this.options.isIdentifierContinue(ch, this.codePointAt(ch)) :
+	        this.isValidIdentifierContinue(ch);
+	  },
+	
+	  isValidIdentifierContinue: function(ch, cp) {
+	    return this.isValidIdentifierStart(ch, cp) || this.isNumber(ch);
+	  },
+	
+	  codePointAt: function(ch) {
+	    if (ch.length === 1) return ch.charCodeAt(0);
+	    /*jshint bitwise: false*/
+	    return (ch.charCodeAt(0) << 10) + ch.charCodeAt(1) - 0x35FDC00;
+	    /*jshint bitwise: true*/
+	  },
+	
+	  peekMultichar: function() {
+	    var ch = this.text.charAt(this.index);
+	    var peek = this.peek();
+	    if (!peek) {
+	      return ch;
+	    }
+	    var cp1 = ch.charCodeAt(0);
+	    var cp2 = peek.charCodeAt(0);
+	    if (cp1 >= 0xD800 && cp1 <= 0xDBFF && cp2 >= 0xDC00 && cp2 <= 0xDFFF) {
+	      return ch + peek;
+	    }
+	    return ch;
 	  },
 	
 	  isExpOperator: function(ch) {
@@ -23644,12 +23753,13 @@
 	
 	  readIdent: function() {
 	    var start = this.index;
+	    this.index += this.peekMultichar().length;
 	    while (this.index < this.text.length) {
-	      var ch = this.text.charAt(this.index);
-	      if (!(this.isIdent(ch) || this.isNumber(ch))) {
+	      var ch = this.peekMultichar();
+	      if (!this.isIdentifierContinue(ch)) {
 	        break;
 	      }
-	      this.index++;
+	      this.index += ch.length;
 	    }
 	    this.tokens.push({
 	      index: start,
@@ -24579,7 +24689,13 @@
 	  },
 	
 	  nonComputedMember: function(left, right) {
-	    return left + '.' + right;
+	    var SAFE_IDENTIFIER = /[$_a-zA-Z][$_a-zA-Z0-9]*/;
+	    var UNSAFE_CHARACTERS = /[^$_a-zA-Z0-9]/g;
+	    if (SAFE_IDENTIFIER.test(right)) {
+	      return left + '.' + right;
+	    } else {
+	      return left  + '["' + right.replace(UNSAFE_CHARACTERS, this.stringEscapeFn) + '"]';
+	    }
 	  },
 	
 	  computedMember: function(left, right) {
@@ -25142,6 +25258,7 @@
 	    'null': null,
 	    'undefined': undefined
 	  };
+	  var identStart, identContinue;
 	
 	  /**
 	   * @ngdoc method
@@ -25158,17 +25275,50 @@
 	    literals[literalName] = literalValue;
 	  };
 	
+	 /**
+	  * @ngdoc method
+	  * @name $parseProvider#setIdentifierFns
+	  * @description
+	  *
+	  * Allows defining the set of characters that are allowed in Angular expressions. The function
+	  * `identifierStart` will get called to know if a given character is a valid character to be the
+	  * first character for an identifier. The function `identifierContinue` will get called to know if
+	  * a given character is a valid character to be a follow-up identifier character. The functions
+	  * `identifierStart` and `identifierContinue` will receive as arguments the single character to be
+	  * identifier and the character code point. These arguments will be `string` and `numeric`. Keep in
+	  * mind that the `string` parameter can be two characters long depending on the character
+	  * representation. It is expected for the function to return `true` or `false`, whether that
+	  * character is allowed or not.
+	  *
+	  * Since this function will be called extensivelly, keep the implementation of these functions fast,
+	  * as the performance of these functions have a direct impact on the expressions parsing speed.
+	  *
+	  * @param {function=} identifierStart The function that will decide whether the given character is
+	  *   a valid identifier start character.
+	  * @param {function=} identifierContinue The function that will decide whether the given character is
+	  *   a valid identifier continue character.
+	  */
+	  this.setIdentifierFns = function(identifierStart, identifierContinue) {
+	    identStart = identifierStart;
+	    identContinue = identifierContinue;
+	    return this;
+	  };
+	
 	  this.$get = ['$filter', function($filter) {
 	    var noUnsafeEval = csp().noUnsafeEval;
 	    var $parseOptions = {
 	          csp: noUnsafeEval,
 	          expensiveChecks: false,
-	          literals: copy(literals)
+	          literals: copy(literals),
+	          isIdentifierStart: isFunction(identStart) && identStart,
+	          isIdentifierContinue: isFunction(identContinue) && identContinue
 	        },
 	        $parseOptionsExpensive = {
 	          csp: noUnsafeEval,
 	          expensiveChecks: true,
-	          literals: copy(literals)
+	          literals: copy(literals),
+	          isIdentifierStart: isFunction(identStart) && identStart,
+	          isIdentifierContinue: isFunction(identContinue) && identContinue
 	        };
 	    var runningChecksEnabled = false;
 	
@@ -28963,7 +29113,7 @@
 	// doesn't know about mocked locations and resolves URLs to the real document - which is
 	// exactly the behavior needed here.  There is little value is mocking these out for this
 	// service.
-	var urlParsingNode = document.createElement("a");
+	var urlParsingNode = window.document.createElement("a");
 	var originUrl = urlResolve(window.location.href);
 	
 	
@@ -29663,7 +29813,9 @@
 	 * @param {(number|string)=} fractionSize Number of decimal places to round the number to.
 	 * If this is not provided then the fraction size is computed from the current locale's number
 	 * formatting pattern. In the case of the default locale, it will be 3.
-	 * @returns {string} Number rounded to fractionSize and places a “,” after each third digit.
+	 * @returns {string} Number rounded to `fractionSize` appropriately formatted based on the current
+	 *                   locale (e.g., in the en_US locale it will have "." as the decimal separator and
+	 *                   include "," group separators after each third digit).
 	 *
 	 * @example
 	   <example module="numberFilterExample">
@@ -33892,7 +34044,11 @@
 	              updateClasses(oldClasses, newClasses);
 	            }
 	          }
-	          oldVal = shallowCopy(newVal);
+	          if (isArray(newVal)) {
+	            oldVal = newVal.map(function(v) { return shallowCopy(v); });
+	          } else {
+	            oldVal = shallowCopy(newVal);
+	          }
 	        }
 	      }
 	    };
@@ -35608,7 +35764,7 @@
 	          // support innerHTML, so detect this here and try to generate the contents
 	          // specially.
 	          $element.empty();
-	          $compile(jqLiteBuildFragment(ctrl.template, document).childNodes)(scope,
+	          $compile(jqLiteBuildFragment(ctrl.template, window.document).childNodes)(scope,
 	              function namespaceAdaptedClone(clone) {
 	            $element.append(clone);
 	          }, {futureParentElement: $element});
@@ -37522,7 +37678,7 @@
 	// jshint maxlen: 100
 	
 	
-	var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
+	var ngOptionsDirective = ['$compile', '$document', '$parse', function($compile, $document, $parse) {
 	
 	  function parseOptionsExpression(optionsExp, selectElement, scope) {
 	
@@ -37683,8 +37839,8 @@
 	
 	  // we can't just jqLite('<option>') since jqLite is not smart enough
 	  // to create it in <select> and IE barfs otherwise.
-	  var optionTemplate = document.createElement('option'),
-	      optGroupTemplate = document.createElement('optgroup');
+	  var optionTemplate = window.document.createElement('option'),
+	      optGroupTemplate = window.document.createElement('optgroup');
 	
 	    function ngOptionsPostLink(scope, selectElement, attr, ctrls) {
 	
@@ -37709,7 +37865,10 @@
 	
 	      var options;
 	      var ngOptions = parseOptionsExpression(attr.ngOptions, selectElement, scope);
-	
+	      // This stores the newly created options before they are appended to the select.
+	      // Since the contents are removed from the fragment when it is appended,
+	      // we only need to create it once.
+	      var listFragment = $document[0].createDocumentFragment();
 	
 	      var renderEmptyOption = function() {
 	        if (!providedEmptyOption) {
@@ -37744,7 +37903,7 @@
 	        selectCtrl.writeValue = function writeNgOptionsValue(value) {
 	          var option = options.getOptionFromViewValue(value);
 	
-	          if (option && !option.disabled) {
+	          if (option) {
 	            // Don't update the option when it is already selected.
 	            // For example, the browser will select the first option by default. In that case,
 	            // most properties are set automatically - except the `selected` attribute, which we
@@ -37806,7 +37965,7 @@
 	          if (value) {
 	            value.forEach(function(item) {
 	              var option = options.getOptionFromViewValue(item);
-	              if (option && !option.disabled) option.element.selected = true;
+	              if (option) option.element.selected = true;
 	            });
 	          }
 	        };
@@ -37858,6 +38017,8 @@
 	        emptyOption = jqLite(optionTemplate.cloneNode(false));
 	      }
 	
+	      selectElement.empty();
+	
 	      // We need to do this here to ensure that the options object is defined
 	      // when we first hit it in writeNgOptionsValue
 	      updateOptions();
@@ -37866,6 +38027,12 @@
 	      scope.$watchCollection(ngOptions.getWatchables, updateOptions);
 	
 	      // ------------------------------------------------------------------ //
+	
+	      function addOptionElement(option, parent) {
+	        var optionElement = optionTemplate.cloneNode(false);
+	        parent.appendChild(optionElement);
+	        updateOptionElement(option, optionElement);
+	      }
 	
 	
 	      function updateOptionElement(option, element) {
@@ -37883,133 +38050,66 @@
 	        if (option.value !== element.value) element.value = option.selectValue;
 	      }
 	
-	      function addOrReuseElement(parent, current, type, templateElement) {
-	        var element;
-	        // Check whether we can reuse the next element
-	        if (current && lowercase(current.nodeName) === type) {
-	          // The next element is the right type so reuse it
-	          element = current;
-	        } else {
-	          // The next element is not the right type so create a new one
-	          element = templateElement.cloneNode(false);
-	          if (!current) {
-	            // There are no more elements so just append it to the select
-	            parent.appendChild(element);
-	          } else {
-	            // The next element is not a group so insert the new one
-	            parent.insertBefore(element, current);
-	          }
-	        }
-	        return element;
-	      }
-	
-	
-	      function removeExcessElements(current) {
-	        var next;
-	        while (current) {
-	          next = current.nextSibling;
-	          jqLiteRemove(current);
-	          current = next;
-	        }
-	      }
-	
-	
-	      function skipEmptyAndUnknownOptions(current) {
-	        var emptyOption_ = emptyOption && emptyOption[0];
-	        var unknownOption_ = unknownOption && unknownOption[0];
-	
-	        // We cannot rely on the extracted empty option being the same as the compiled empty option,
-	        // because the compiled empty option might have been replaced by a comment because
-	        // it had an "element" transclusion directive on it (such as ngIf)
-	        if (emptyOption_ || unknownOption_) {
-	          while (current &&
-	                (current === emptyOption_ ||
-	                current === unknownOption_ ||
-	                current.nodeType === NODE_TYPE_COMMENT ||
-	                (nodeName_(current) === 'option' && current.value === ''))) {
-	            current = current.nextSibling;
-	          }
-	        }
-	        return current;
-	      }
-	
-	
 	      function updateOptions() {
-	
 	        var previousValue = options && selectCtrl.readValue();
+	
+	        // We must remove all current options, but cannot simply set innerHTML = null
+	        // since the providedEmptyOption might have an ngIf on it that inserts comments which we
+	        // must preserve.
+	        // Instead, iterate over the current option elements and remove them or their optgroup
+	        // parents
+	        if (options) {
+	
+	          for (var i = options.items.length - 1; i >= 0; i--) {
+	            var option = options.items[i];
+	            if (option.group) {
+	              jqLiteRemove(option.element.parentNode);
+	            } else {
+	              jqLiteRemove(option.element);
+	            }
+	          }
+	        }
 	
 	        options = ngOptions.getOptions();
 	
-	        var groupMap = {};
-	        var currentElement = selectElement[0].firstChild;
+	        var groupElementMap = {};
 	
 	        // Ensure that the empty option is always there if it was explicitly provided
 	        if (providedEmptyOption) {
 	          selectElement.prepend(emptyOption);
 	        }
 	
-	        currentElement = skipEmptyAndUnknownOptions(currentElement);
-	
-	        options.items.forEach(function updateOption(option) {
-	          var group;
+	        options.items.forEach(function addOption(option) {
 	          var groupElement;
-	          var optionElement;
 	
 	          if (isDefined(option.group)) {
 	
 	            // This option is to live in a group
 	            // See if we have already created this group
-	            group = groupMap[option.group];
+	            groupElement = groupElementMap[option.group];
 	
-	            if (!group) {
+	            if (!groupElement) {
 	
-	              // We have not already created this group
-	              groupElement = addOrReuseElement(selectElement[0],
-	                                               currentElement,
-	                                               'optgroup',
-	                                               optGroupTemplate);
-	              // Move to the next element
-	              currentElement = groupElement.nextSibling;
+	              groupElement = optGroupTemplate.cloneNode(false);
+	              listFragment.appendChild(groupElement);
 	
 	              // Update the label on the group element
 	              groupElement.label = option.group;
 	
 	              // Store it for use later
-	              group = groupMap[option.group] = {
-	                groupElement: groupElement,
-	                currentOptionElement: groupElement.firstChild
-	              };
-	
+	              groupElementMap[option.group] = groupElement;
 	            }
 	
-	            // So now we have a group for this option we add the option to the group
-	            optionElement = addOrReuseElement(group.groupElement,
-	                                              group.currentOptionElement,
-	                                              'option',
-	                                              optionTemplate);
-	            updateOptionElement(option, optionElement);
-	            // Move to the next element
-	            group.currentOptionElement = optionElement.nextSibling;
+	            addOptionElement(option, groupElement);
 	
 	          } else {
 	
 	            // This option is not in a group
-	            optionElement = addOrReuseElement(selectElement[0],
-	                                              currentElement,
-	                                              'option',
-	                                              optionTemplate);
-	            updateOptionElement(option, optionElement);
-	            // Move to the next element
-	            currentElement = optionElement.nextSibling;
+	            addOptionElement(option, listFragment);
 	          }
 	        });
 	
-	
-	        // Now remove all excess options and group
-	        Object.keys(groupMap).forEach(function(key) {
-	          removeExcessElements(groupMap[key].currentOptionElement);
-	        });
-	        removeExcessElements(currentElement);
+	        selectElement[0].appendChild(listFragment);
 	
 	        ngModelCtrl.$render();
 	
@@ -39704,7 +39804,7 @@
 	  //
 	  // We can't just jqLite('<option>') since jqLite is not smart enough
 	  // to create it in <select> and IE barfs otherwise.
-	  self.unknownOption = jqLite(document.createElement('option'));
+	  self.unknownOption = jqLite(window.document.createElement('option'));
 	  self.renderUnknownOption = function(val) {
 	    var unknownVal = '? ' + hashKey(val) + ' ?';
 	    self.unknownOption.val(unknownVal);
@@ -40667,11 +40767,11 @@
 	});
 	}]);
 	
-	  jqLite(document).ready(function() {
-	    angularInit(document, bootstrap);
+	  jqLite(window.document).ready(function() {
+	    angularInit(window.document, bootstrap);
 	  });
 	
-	})(window, document);
+	})(window);
 	
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -40689,11 +40789,11 @@
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.5.3
+	 * @license AngularJS v1.5.5
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
-	(function(window, angular, undefined) {'use strict';
+	(function(window, angular) {'use strict';
 	
 	/**
 	 * @ngdoc module
@@ -40712,11 +40812,7 @@
 	 */
 	 /* global -ngRouteModule */
 	var ngRouteModule = angular.module('ngRoute', ['ng']).
-	                        provider('$route', $RouteProvider).
-	                        // Ensure `$route` will be instantiated in time to capture the initial
-	                        // `$locationChangeSuccess` event. This is necessary in case `ngView` is
-	                        // included in an asynchronously loaded template.
-	                        run(['$route', angular.noop]),
+	                        provider('$route', $RouteProvider),
 	    $routeMinErr = angular.$$minErr('ngRoute');
 	
 	/**
@@ -41450,6 +41546,13 @@
 	 *
 	 * The enter and leave animation occur concurrently.
 	 *
+	 * @knownIssue If `ngView` is contained in an asynchronously loaded template (e.g. in another
+	 *             directive's templateUrl or in a template loaded using `ngInclude`), then you need to
+	 *             make sure that `$route` is instantiated in time to capture the initial
+	 *             `$locationChangeStart` event and load the appropriate view. One way to achieve this
+	 *             is to have it as a dependency in a `.run` block:
+	 *             `myModule.run(['$route', function() {}]);`
+	 *
 	 * @scope
 	 * @priority 400
 	 * @param {string=} onload Expression to evaluate whenever the view updates.
@@ -41725,11 +41828,11 @@
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.5.3
+	 * @license AngularJS v1.5.5
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
-	(function(window, angular, undefined) {'use strict';
+	(function(window, angular) {'use strict';
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 *     Any commits to this file should be reviewed with security in mind.  *
@@ -42075,7 +42178,7 @@
 	    mXSSAttempts--;
 	
 	    // strip custom-namespaced attributes on IE<=11
-	    if (document.documentMode <= 11) {
+	    if (window.document.documentMode) {
 	      stripCustomNsAttrs(inertBodyElement);
 	    }
 	    html = inertBodyElement.innerHTML; //trigger mXSS
@@ -42215,7 +42318,7 @@
 	 * @param node Root element to process
 	 */
 	function stripCustomNsAttrs(node) {
-	  if (node.nodeType === Node.ELEMENT_NODE) {
+	  if (node.nodeType === window.Node.ELEMENT_NODE) {
 	    var attrs = node.attributes;
 	    for (var i = 0, l = attrs.length; i < l; i++) {
 	      var attrNode = attrs[i];
@@ -58343,959 +58446,78 @@
 /* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-	
-	(function (global, factory) {
-	  'use strict';
-	  var fnc;fnc = ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory(__webpack_require__(2), __webpack_require__(10)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2), __webpack_require__(10)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.angular, global.moment);
-	})(undefined, function (angular, moment) {
-	  //(function (global, factory) {
-	  //  'use strict';
-	  //  var fnc;
-	  //  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
-	  //        (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
-	  //        factory(global.angular, global.moment);
-	  //}(this, function (angular, moment) {
-	  var Module = angular.module('datePicker', []);
-	
-	  Module.constant('datePickerConfig', {
-	    template: 'templates/datepicker.html',
-	    view: 'month',
-	    views: ['year', 'month', 'date', 'hours', 'minutes'],
-	    momentNames: {
-	      year: 'year',
-	      month: 'month',
-	      date: 'day',
-	      hours: 'hours',
-	      minutes: 'minutes'
-	    },
-	    viewConfig: {
-	      year: ['years', 'isSameYear'],
-	      month: ['months', 'isSameMonth'],
-	      hours: ['hours', 'isSameHour'],
-	      minutes: ['minutes', 'isSameMinutes']
-	    },
-	    step: 5
-	  });
-	
-	  //Moment format filter.
-	  Module.filter('mFormat', function () {
-	    return function (m, format, tz) {
-	      if (!moment.isMoment(m)) {
-	        return m ? moment(m).format(format) : '';
-	      }
-	      return tz ? moment.tz(m, tz).format(format) : m.format(format);
-	    };
-	  });
-	
-	  Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function datePickerDirective(datePickerConfig, datePickerUtils) {
-	
-	    //noinspection JSUnusedLocalSymbols
-	    return {
-	      // this is a bug ?
-	      require: '?ngModel',
-	      template: '<div ng-include="template"></div>',
-	      scope: {
-	        model: '=datePicker',
-	        after: '=?',
-	        before: '=?'
-	      },
-	      link: function link(scope, element, attrs, ngModel) {
-	        function prepareViews() {
-	          scope.views = datePickerConfig.views.concat();
-	          scope.view = attrs.view || datePickerConfig.view;
-	
-	          scope.views = scope.views.slice(scope.views.indexOf(attrs.maxView || 'year'), scope.views.indexOf(attrs.minView || 'minutes') + 1);
-	
-	          if (scope.views.length === 1 || scope.views.indexOf(scope.view) === -1) {
-	            scope.view = scope.views[0];
-	          }
-	        }
-	
-	        function getDate(name) {
-	          return datePickerUtils.getDate(scope, attrs, name);
-	        }
-	
-	        var arrowClick = false,
-	            tz = scope.tz = attrs.timezone,
-	            createMoment = datePickerUtils.createMoment,
-	            eventIsForPicker = datePickerUtils.eventIsForPicker,
-	            step = parseInt(attrs.step || datePickerConfig.step, 10),
-	            partial = !!attrs.partial,
-	            minDate = getDate('minDate'),
-	            maxDate = getDate('maxDate'),
-	            pickerID = element[0].id,
-	            now = scope.now = createMoment(),
-	            selected = scope.date = createMoment(scope.model || now),
-	            autoclose = attrs.autoClose === 'true',
-	
-	        // Either gets the 1st day from the attributes, or asks moment.js to give it to us as it is localized.
-	        firstDay = attrs.firstDay && attrs.firstDay >= 0 && attrs.firstDay <= 6 ? parseInt(attrs.firstDay, 10) : moment().weekday(0).day(),
-	            setDate,
-	            prepareViewData,
-	            isSame,
-	            clipDate,
-	            isNow,
-	            inValidRange;
-	
-	        datePickerUtils.setParams(tz, firstDay);
-	
-	        if (!scope.model) {
-	          selected.minute(Math.ceil(selected.minute() / step) * step).second(0);
-	        }
-	
-	        scope.template = attrs.template || datePickerConfig.template;
-	
-	        scope.watchDirectChanges = attrs.watchDirectChanges !== undefined;
-	        scope.callbackOnSetDate = attrs.dateChange ? datePickerUtils.findFunction(scope, attrs.dateChange) : undefined;
-	
-	        prepareViews();
-	
-	        scope.setView = function (nextView) {
-	          if (scope.views.indexOf(nextView) !== -1) {
-	            scope.view = nextView;
-	          }
-	        };
-	
-	        scope.selectDate = function (date) {
-	          if (attrs.disabled) {
-	            return false;
-	          }
-	          if (isSame(scope.date, date)) {
-	            date = scope.date;
-	          }
-	          date = clipDate(date);
-	          if (!date) {
-	            return false;
-	          }
-	          scope.date = date;
-	
-	          var nextView = scope.views[scope.views.indexOf(scope.view) + 1];
-	          if (!nextView || partial || scope.model) {
-	            setDate(date);
-	          }
-	
-	          if (nextView) {
-	            scope.setView(nextView);
-	          } else if (autoclose) {
-	            element.addClass('hidden');
-	            scope.$emit('hidePicker');
-	          } else {
-	            prepareViewData();
-	          }
-	        };
-	
-	        setDate = function setDate(date) {
-	          if (date) {
-	            scope.model = date;
-	            if (ngModel) {
-	              ngModel.$setViewValue(date);
-	            }
-	          }
-	          scope.$emit('setDate', scope.model, scope.view);
-	
-	          //This is duplicated in the new functionality.
-	          if (scope.callbackOnSetDate) {
-	            scope.callbackOnSetDate(attrs.datePicker, scope.date);
-	          }
-	        };
-	
-	        function update() {
-	          var view = scope.view;
-	          datePickerUtils.setParams(tz, firstDay);
-	
-	          if (scope.model && !arrowClick) {
-	            scope.date = createMoment(scope.model);
-	            arrowClick = false;
-	          }
-	
-	          var date = scope.date;
-	
-	          switch (view) {
-	            case 'year':
-	              scope.years = datePickerUtils.getVisibleYears(date);
-	              break;
-	            case 'month':
-	              scope.months = datePickerUtils.getVisibleMonths(date);
-	              break;
-	            case 'date':
-	              scope.weekdays = scope.weekdays || datePickerUtils.getDaysOfWeek();
-	              scope.weeks = datePickerUtils.getVisibleWeeks(date);
-	              break;
-	            case 'hours':
-	              scope.hours = datePickerUtils.getVisibleHours(date);
-	              break;
-	            case 'minutes':
-	              scope.minutes = datePickerUtils.getVisibleMinutes(date, step);
-	              break;
-	          }
-	
-	          prepareViewData();
-	        }
-	
-	        function watch() {
-	          if (scope.view !== 'date') {
-	            return scope.view;
-	          }
-	          return scope.date ? scope.date.month() : null;
-	        }
-	
-	        scope.$watch(watch, update);
-	
-	        if (scope.watchDirectChanges) {
-	          scope.$watch('model', function () {
-	            arrowClick = false;
-	            update();
-	          });
-	        }
-	
-	        prepareViewData = function prepareViewData() {
-	          var view = scope.view,
-	              date = scope.date,
-	              classes = [],
-	              classList = '',
-	              i,
-	              j;
-	
-	          datePickerUtils.setParams(tz, firstDay);
-	
-	          if (view === 'date') {
-	            var weeks = scope.weeks,
-	                week;
-	            for (i = 0; i < weeks.length; i++) {
-	              week = weeks[i];
-	              classes.push([]);
-	              for (j = 0; j < week.length; j++) {
-	                classList = '';
-	                if (datePickerUtils.isSameDay(date, week[j])) {
-	                  classList += 'active';
-	                }
-	                if (isNow(week[j], view)) {
-	                  classList += ' now';
-	                }
-	                //if (week[j].month() !== date.month()) classList += ' disabled';
-	                if (week[j].month() !== date.month() || !inValidRange(week[j])) {
-	                  classList += ' disabled';
-	                }
-	                classes[i].push(classList);
-	              }
-	            }
-	          } else {
-	            var params = datePickerConfig.viewConfig[view],
-	                dates = scope[params[0]],
-	                compareFunc = params[1];
-	
-	            for (i = 0; i < dates.length; i++) {
-	              classList = '';
-	              if (datePickerUtils[compareFunc](date, dates[i])) {
-	                classList += 'active';
-	              }
-	              if (isNow(dates[i], view)) {
-	                classList += ' now';
-	              }
-	              if (!inValidRange(dates[i])) {
-	                classList += ' disabled';
-	              }
-	              classes.push(classList);
-	            }
-	          }
-	          scope.classes = classes;
-	        };
-	
-	        scope.next = function (delta) {
-	          var date = moment(scope.date);
-	          delta = delta || 1;
-	          switch (scope.view) {
-	            case 'year':
-	            /*falls through*/
-	            case 'month':
-	              date.year(date.year() + delta);
-	              break;
-	            case 'date':
-	              date.month(date.month() + delta);
-	              break;
-	            case 'hours':
-	            /*falls through*/
-	            case 'minutes':
-	              date.hours(date.hours() + delta);
-	              break;
-	          }
-	          date = clipDate(date);
-	          if (date) {
-	            scope.date = date;
-	            setDate(date);
-	            arrowClick = true;
-	            update();
-	          }
-	        };
-	
-	        inValidRange = function inValidRange(date) {
-	          var valid = true;
-	          if (minDate && minDate.isAfter(date)) {
-	            valid = isSame(minDate, date);
-	          }
-	          if (maxDate && maxDate.isBefore(date)) {
-	            valid &= isSame(maxDate, date);
-	          }
-	          return valid;
-	        };
-	
-	        isSame = function isSame(date1, date2) {
-	          return date1.isSame(date2, datePickerConfig.momentNames[scope.view]) ? true : false;
-	        };
-	
-	        clipDate = function clipDate(date) {
-	          if (minDate && minDate.isAfter(date)) {
-	            return minDate;
-	          } else if (maxDate && maxDate.isBefore(date)) {
-	            return maxDate;
-	          } else {
-	            return date;
-	          }
-	        };
-	
-	        isNow = function isNow(date, view) {
-	          var is = true;
-	
-	          switch (view) {
-	            case 'minutes':
-	              is &= ~ ~(now.minutes() / step) === ~ ~(date.minutes() / step);
-	            /* falls through */
-	            case 'hours':
-	              is &= now.hours() === date.hours();
-	            /* falls through */
-	            case 'date':
-	              is &= now.date() === date.date();
-	            /* falls through */
-	            case 'month':
-	              is &= now.month() === date.month();
-	            /* falls through */
-	            case 'year':
-	              is &= now.year() === date.year();
-	          }
-	          return is;
-	        };
-	
-	        scope.prev = function (delta) {
-	          return scope.next(-delta || -1);
-	        };
-	
-	        if (pickerID) {
-	          scope.$on('pickerUpdate', function (event, pickerIDs, data) {
-	            if (eventIsForPicker(pickerIDs, pickerID)) {
-	              var updateViews = false,
-	                  updateViewData = false;
-	
-	              if (angular.isDefined(data.minDate)) {
-	                minDate = data.minDate ? data.minDate : false;
-	                updateViewData = true;
-	              }
-	              if (angular.isDefined(data.maxDate)) {
-	                maxDate = data.maxDate ? data.maxDate : false;
-	                updateViewData = true;
-	              }
-	
-	              if (angular.isDefined(data.minView)) {
-	                attrs.minView = data.minView;
-	                updateViews = true;
-	              }
-	              if (angular.isDefined(data.maxView)) {
-	                attrs.maxView = data.maxView;
-	                updateViews = true;
-	              }
-	              attrs.view = data.view || attrs.view;
-	
-	              if (updateViews) {
-	                prepareViews();
-	              }
-	
-	              if (updateViewData) {
-	                update();
-	              }
-	            }
-	          });
-	        }
-	      }
-	    };
-	  }]);
-	  //}));
-	
-	  //(function (global, factory) {
-	  //  'use strict';
-	  //  var fnc;
-	  //  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
-	  //    (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
-	  //      factory(global.angular, global.moment);
-	  //}(this, function (angular, moment) {
-	  angular.module('datePicker').factory('datePickerUtils', function () {
-	    var tz, firstDay;
-	    var createNewDate = function createNewDate(year, month, day, hour, minute) {
-	      var utc = Date.UTC(year | 0, month | 0, day | 0, hour | 0, minute | 0);
-	      return tz ? moment.tz(utc, tz) : moment(utc);
-	    };
-	
-	    return {
-	      getVisibleMinutes: function getVisibleMinutes(m, step) {
-	        var year = m.year(),
-	            month = m.month(),
-	            day = m.date(),
-	            hour = m.hours(),
-	            pushedDate,
-	            offset = m.utcOffset() / 60,
-	            minutes = [],
-	            minute;
-	
-	        for (minute = 0; minute < 60; minute += step) {
-	          pushedDate = createNewDate(year, month, day, hour - offset, minute);
-	          minutes.push(pushedDate);
-	        }
-	        return minutes;
-	      },
-	      getVisibleWeeks: function getVisibleWeeks(m) {
-	        m = moment(m);
-	        var startYear = m.year(),
-	            startMonth = m.month();
-	
-	        //Set date to the first day of the month
-	        m.date(1);
-	
-	        //Grab day of the week
-	        var day = m.day();
-	
-	        //Go back the required number of days to arrive at the previous week start
-	        m.date(firstDay - (day + (firstDay >= day ? 6 : -1)));
-	
-	        var weeks = [];
-	
-	        while (weeks.length < 6) {
-	          if (m.year() === startYear && m.month() > startMonth) {
-	            break;
-	          }
-	          weeks.push(this.getDaysOfWeek(m));
-	          m.add(7, 'd');
-	        }
-	        return weeks;
-	      },
-	      getVisibleYears: function getVisibleYears(d) {
-	        var m = moment(d),
-	            year = m.year();
-	
-	        m.year(year - year % 10);
-	        year = m.year();
-	
-	        var offset = m.utcOffset() / 60,
-	            years = [],
-	            pushedDate,
-	            actualOffset;
-	
-	        for (var i = 0; i < 12; i++) {
-	          pushedDate = createNewDate(year, 0, 1, 0 - offset);
-	          actualOffset = pushedDate.utcOffset() / 60;
-	          if (actualOffset !== offset) {
-	            pushedDate = createNewDate(year, 0, 1, 0 - actualOffset);
-	            offset = actualOffset;
-	          }
-	          years.push(pushedDate);
-	          year++;
-	        }
-	        return years;
-	      },
-	      getDaysOfWeek: function getDaysOfWeek(m) {
-	        m = m ? m : tz ? moment.tz(tz).day(firstDay) : moment().day(firstDay);
-	
-	        var year = m.year(),
-	            month = m.month(),
-	            day = m.date(),
-	            days = [],
-	            pushedDate,
-	            offset = m.utcOffset() / 60,
-	            actualOffset;
-	
-	        for (var i = 0; i < 7; i++) {
-	          pushedDate = createNewDate(year, month, day, 0 - offset, 0, false);
-	          actualOffset = pushedDate.utcOffset() / 60;
-	          if (actualOffset !== offset) {
-	            pushedDate = createNewDate(year, month, day, 0 - actualOffset, 0, false);
-	          }
-	          days.push(pushedDate);
-	          day++;
-	        }
-	        return days;
-	      },
-	      getVisibleMonths: function getVisibleMonths(m) {
-	        var year = m.year(),
-	            offset = m.utcOffset() / 60,
-	            months = [],
-	            pushedDate,
-	            actualOffset;
-	
-	        for (var month = 0; month < 12; month++) {
-	          pushedDate = createNewDate(year, month, 1, 0 - offset, 0, false);
-	          actualOffset = pushedDate.utcOffset() / 60;
-	          if (actualOffset !== offset) {
-	            pushedDate = createNewDate(year, month, 1, 0 - actualOffset, 0, false);
-	          }
-	          months.push(pushedDate);
-	        }
-	        return months;
-	      },
-	      getVisibleHours: function getVisibleHours(m) {
-	        var year = m.year(),
-	            month = m.month(),
-	            day = m.date(),
-	            hours = [],
-	            hour,
-	            pushedDate,
-	            actualOffset,
-	            offset = m.utcOffset() / 60;
-	
-	        for (hour = 0; hour < 24; hour++) {
-	          pushedDate = createNewDate(year, month, day, hour - offset, 0, false);
-	          actualOffset = pushedDate.utcOffset() / 60;
-	          if (actualOffset !== offset) {
-	            pushedDate = createNewDate(year, month, day, hour - actualOffset, 0, false);
-	          }
-	          hours.push(pushedDate);
-	        }
-	
-	        return hours;
-	      },
-	      isAfter: function isAfter(model, date) {
-	        return model && model.unix() >= date.unix();
-	      },
-	      isBefore: function isBefore(model, date) {
-	        return model.unix() <= date.unix();
-	      },
-	      isSameYear: function isSameYear(model, date) {
-	        return model && model.year() === date.year();
-	      },
-	      isSameMonth: function isSameMonth(model, date) {
-	        return this.isSameYear(model, date) && model.month() === date.month();
-	      },
-	      isSameDay: function isSameDay(model, date) {
-	        return this.isSameMonth(model, date) && model.date() === date.date();
-	      },
-	      isSameHour: function isSameHour(model, date) {
-	        return this.isSameDay(model, date) && model.hours() === date.hours();
-	      },
-	      isSameMinutes: function isSameMinutes(model, date) {
-	        return this.isSameHour(model, date) && model.minutes() === date.minutes();
-	      },
-	      setParams: function setParams(zone, fd) {
-	        tz = zone;
-	        firstDay = fd;
-	      },
-	      scopeSearch: function scopeSearch(scope, name, comparisonFn) {
-	        var parentScope = scope,
-	            nameArray = name.split('.'),
-	            target,
-	            i,
-	            j = nameArray.length;
-	
-	        do {
-	          target = parentScope = parentScope.$parent;
-	
-	          //Loop through provided names.
-	          for (i = 0; i < j; i++) {
-	            target = target[nameArray[i]];
-	            if (!target) {
-	              continue;
-	            }
-	          }
-	
-	          //If we reached the end of the list for this scope,
-	          //and something was found, trigger the comparison
-	          //function. If the comparison function is happy, return
-	          //found result. Otherwise, continue to the next parent scope
-	          if (target && comparisonFn(target)) {
-	            return target;
-	          }
-	        } while (parentScope.$parent);
-	
-	        return false;
-	      },
-	      findFunction: function findFunction(scope, name) {
-	        //Search scope ancestors for a matching function.
-	        return this.scopeSearch(scope, name, function (target) {
-	          //Property must also be a function
-	          return angular.isFunction(target);
-	        });
-	      },
-	      findParam: function findParam(scope, name) {
-	        //Search scope ancestors for a matching parameter.
-	        return this.scopeSearch(scope, name, function () {
-	          //As long as the property exists, we're good
-	          return true;
-	        });
-	      },
-	      createMoment: function createMoment(m) {
-	        if (tz) {
-	          return moment.tz(m, tz);
-	        } else {
-	          //If input is a moment, and we have no TZ info, we need to remove TZ
-	          //info from the moment, otherwise the newly created moment will take
-	          //the timezone of the input moment. The easiest way to do that is to
-	          //take the unix timestamp, and use that to create a new moment.
-	          //The new moment will use the local timezone of the user machine.
-	          return moment.isMoment(m) ? moment.unix(m.unix()) : moment(m);
-	        }
-	      },
-	      getDate: function getDate(scope, attrs, name) {
-	        var result = false;
-	        if (attrs[name]) {
-	          result = this.createMoment(attrs[name]);
-	          if (!result.isValid()) {
-	            result = this.findParam(scope, attrs[name]);
-	            if (result) {
-	              result = this.createMoment(result);
-	            }
-	          }
-	        }
-	
-	        return result;
-	      },
-	      eventIsForPicker: function eventIsForPicker(targetIDs, pickerID) {
-	        //Checks if an event targeted at a specific picker, via either a string name, or an array of strings.
-	        return angular.isArray(targetIDs) && targetIDs.indexOf(pickerID) > -1 || targetIDs === pickerID;
-	      }
-	    };
-	  });
-	  //}));
-	
-	  //(function (global, factory) {
-	  //  'use strict';
-	  //  var fnc;
-	  //  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
-	  //    (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
-	  //      factory(global.angular, global.moment);
-	  //}(this, function (angular, moment) {
-	  var Module = angular.module('datePicker');
-	
-	  Module.directive('dateRange', ['$compile', 'datePickerUtils', 'dateTimeConfig', function ($compile, datePickerUtils, dateTimeConfig) {
-	    function getTemplate(attrs, id, model, min, max) {
-	      return dateTimeConfig.template(angular.extend(attrs, {
-	        ngModel: model,
-	        minDate: min && moment.isMoment(min) ? min.format() : false,
-	        maxDate: max && moment.isMoment(max) ? max.format() : false
-	      }), id);
-	    }
-	
-	    function randomName() {
-	      return 'picker' + Math.random().toString().substr(2);
-	    }
-	
-	    return {
-	      scope: {
-	        start: '=',
-	        end: '='
-	      },
-	      link: function link(scope, element, attrs) {
-	        var dateChange = null,
-	            pickerRangeID = element[0].id,
-	            pickerIDs = [randomName(), randomName()],
-	            createMoment = datePickerUtils.createMoment,
-	            eventIsForPicker = datePickerUtils.eventIsForPicker;
-	
-	        scope.dateChange = function (modelName, newDate) {
-	          //Notify user if callback exists.
-	          if (dateChange) {
-	            dateChange(modelName, newDate);
-	          }
-	        };
-	
-	        function setMax(date) {
-	          scope.$broadcast('pickerUpdate', pickerIDs[0], {
-	            maxDate: date
-	          });
-	        }
-	
-	        function setMin(date) {
-	          scope.$broadcast('pickerUpdate', pickerIDs[1], {
-	            minDate: date
-	          });
-	        }
-	
-	        if (pickerRangeID) {
-	          scope.$on('pickerUpdate', function (event, targetIDs, data) {
-	            if (eventIsForPicker(targetIDs, pickerRangeID)) {
-	              //If we received an update event, dispatch it to the inner pickers using their IDs.
-	              scope.$broadcast('pickerUpdate', pickerIDs, data);
-	            }
-	          });
-	        }
-	
-	        datePickerUtils.setParams(attrs.timezone);
-	
-	        scope.start = createMoment(scope.start);
-	        scope.end = createMoment(scope.end);
-	
-	        scope.$watchGroup(['start', 'end'], function (dates) {
-	          //Scope data changed, update picker min/max
-	          setMin(dates[0]);
-	          setMax(dates[1]);
-	        });
-	
-	        if (angular.isDefined(attrs.dateChange)) {
-	          dateChange = datePickerUtils.findFunction(scope, attrs.dateChange);
-	        }
-	
-	        attrs.onSetDate = 'dateChange';
-	
-	        var template = '<div><table class="date-range"><tr><td valign="top">' + getTemplate(attrs, pickerIDs[0], 'start', false, scope.end) + '</td><td valign="top">' + getTemplate(attrs, pickerIDs[1], 'end', scope.start, false) + '</td></tr></table></div>';
-	
-	        var picker = $compile(template)(scope);
-	        element.append(picker);
-	      }
-	    };
-	  }]);
-	  //}));
-	
-	  //(function (global, factory) {
-	  //  'use strict';
-	  //  var fnc;
-	  //  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
-	  //    (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
-	  //      factory(global.angular, global.moment);
-	  //}(this, function (angular, moment) {
-	  var PRISTINE_CLASS = 'ng-pristine',
-	      DIRTY_CLASS = 'ng-dirty';
-	
-	  var Module = angular.module('datePicker');
-	
-	  Module.constant('dateTimeConfig', {
-	    template: function template(attrs, id) {
-	      return '' + '<div ' + (id ? 'id="' + id + '" ' : '') + 'date-picker="' + attrs.ngModel + '" ' + (attrs.view ? 'view="' + attrs.view + '" ' : '') + (attrs.maxView ? 'max-view="' + attrs.maxView + '" ' : '') + (attrs.maxDate ? 'max-date="' + attrs.maxDate + '" ' : '') + (attrs.autoClose ? 'auto-close="' + attrs.autoClose + '" ' : '') + (attrs.template ? 'template="' + attrs.template + '" ' : '') + (attrs.minView ? 'min-view="' + attrs.minView + '" ' : '') + (attrs.minDate ? 'min-date="' + attrs.minDate + '" ' : '') + (attrs.partial ? 'partial="' + attrs.partial + '" ' : '') + (attrs.step ? 'step="' + attrs.step + '" ' : '') + (attrs.onSetDate ? 'date-change="' + attrs.onSetDate + '" ' : '') + (attrs.ngModel ? 'ng-model="' + attrs.ngModel + '" ' : '') + (attrs.firstDay ? 'first-day="' + attrs.firstDay + '" ' : '') + (attrs.timezone ? 'timezone="' + attrs.timezone + '" ' : '') + 'class="date-picker-date-time"></div>';
-	    },
-	    format: 'YYYY-MM-DD HH:mm',
-	    views: ['date', 'year', 'month', 'hours', 'minutes'],
-	    autoClose: false,
-	    position: 'relative'
-	  });
-	
-	  Module.directive('dateTimeAppend', function () {
-	    return {
-	      link: function link(scope, element) {
-	        element.bind('click', function () {
-	          element.find('input')[0].focus();
-	        });
-	      }
-	    };
-	  });
-	
-	  Module.directive('dateTime', ['$compile', '$document', '$filter', 'dateTimeConfig', '$parse', 'datePickerUtils', function ($compile, $document, $filter, dateTimeConfig, $parse, datePickerUtils) {
-	    var body = $document.find('body');
-	    var dateFilter = $filter('mFormat');
-	
-	    return {
-	      require: 'ngModel',
-	      scope: true,
-	      link: function link(scope, element, attrs, ngModel) {
-	        var format = attrs.format || dateTimeConfig.format,
-	            parentForm = element.inheritedData('$formController'),
-	            views = $parse(attrs.views)(scope) || dateTimeConfig.views.concat(),
-	            view = attrs.view || views[0],
-	            index = views.indexOf(view),
-	            dismiss = attrs.autoClose ? $parse(attrs.autoClose)(scope) : dateTimeConfig.autoClose,
-	            picker = null,
-	            pickerID = element[0].id,
-	            position = attrs.position || dateTimeConfig.position,
-	            container = null,
-	            minDate = null,
-	            minValid = null,
-	            maxDate = null,
-	            maxValid = null,
-	            timezone = attrs.timezone || false,
-	            eventIsForPicker = datePickerUtils.eventIsForPicker,
-	            dateChange = null,
-	            shownOnce = false,
-	            template;
-	
-	        if (index === -1) {
-	          views.splice(index, 1);
-	        }
-	
-	        views.unshift(view);
-	
-	        function formatter(value) {
-	          return dateFilter(value, format, timezone);
-	        }
-	
-	        function parser(viewValue) {
-	          if (viewValue.length === format.length) {
-	            return viewValue;
-	          }
-	          return viewValue.length === 0 ? viewValue : undefined;
-	        }
-	
-	        function setMin(date) {
-	          minDate = date;
-	          attrs.minDate = date ? date.format() : date;
-	          minValid = moment.isMoment(date);
-	        }
-	
-	        function setMax(date) {
-	          maxDate = date;
-	          attrs.maxDate = date ? date.format() : date;
-	          maxValid = moment.isMoment(date);
-	        }
-	
-	        ngModel.$formatters.push(formatter);
-	        ngModel.$parsers.unshift(parser);
-	
-	        if (angular.isDefined(attrs.minDate)) {
-	          setMin(datePickerUtils.findParam(scope, attrs.minDate));
-	
-	          ngModel.$validators.min = function (value) {
-	            //If we don't have a min / max value, then any value is valid.
-	            return minValid ? moment.isMoment(value) && (minDate.isSame(value) || minDate.isBefore(value)) : true;
-	          };
-	        }
-	
-	        if (angular.isDefined(attrs.maxDate)) {
-	          setMax(datePickerUtils.findParam(scope, attrs.maxDate));
-	
-	          ngModel.$validators.max = function (value) {
-	            return maxValid ? moment.isMoment(value) && (maxDate.isSame(value) || maxDate.isAfter(value)) : true;
-	          };
-	        }
-	
-	        if (angular.isDefined(attrs.dateChange)) {
-	          dateChange = datePickerUtils.findFunction(scope, attrs.dateChange);
-	        }
-	
-	        function getTemplate() {
-	          template = dateTimeConfig.template(attrs);
-	        }
-	
-	        function updateInput(event) {
-	          event.stopPropagation();
-	          if (ngModel.$pristine) {
-	            ngModel.$dirty = true;
-	            ngModel.$pristine = false;
-	            element.removeClass(PRISTINE_CLASS).addClass(DIRTY_CLASS);
-	            if (parentForm) {
-	              parentForm.$setDirty();
-	            }
-	            ngModel.$render();
-	          }
-	        }
-	
-	        function clear() {
-	          if (picker) {
-	            picker.remove();
-	            picker = null;
-	          }
-	          if (container) {
-	            container.remove();
-	            container = null;
-	          }
-	        }
-	
-	        if (pickerID) {
-	          scope.$on('pickerUpdate', function (event, pickerIDs, data) {
-	            if (eventIsForPicker(pickerIDs, pickerID)) {
-	              if (picker) {
-	                //Need to handle situation where the data changed but the picker is currently open.
-	                //To handle this, we can create the inner picker with a random ID, then forward
-	                //any events received to it.
-	              } else {
-	                  var validateRequired = false;
-	                  if (angular.isDefined(data.minDate)) {
-	                    setMin(data.minDate);
-	                    validateRequired = true;
-	                  }
-	                  if (angular.isDefined(data.maxDate)) {
-	                    setMax(data.maxDate);
-	                    validateRequired = true;
-	                  }
-	
-	                  if (angular.isDefined(data.minView)) {
-	                    attrs.minView = data.minView;
-	                  }
-	                  if (angular.isDefined(data.maxView)) {
-	                    attrs.maxView = data.maxView;
-	                  }
-	                  attrs.view = data.view || attrs.view;
-	
-	                  if (validateRequired) {
-	                    ngModel.$validate();
-	                  }
-	                  if (angular.isDefined(data.format)) {
-	                    format = attrs.format = data.format || dateTimeConfig.format;
-	                    ngModel.$modelValue = -1; //Triggers formatters. This value will be discarded.
-	                  }
-	                  getTemplate();
-	                }
-	            }
-	          });
-	        }
-	
-	        function showPicker() {
-	          if (picker) {
-	            return;
-	          }
-	          // create picker element
-	          picker = $compile(template)(scope);
-	          scope.$digest();
-	
-	          //If the picker has already been shown before then we shouldn't be binding to events, as these events are already bound to in this scope.
-	          if (!shownOnce) {
-	            scope.$on('setDate', function (event, date, view) {
-	              updateInput(event);
-	              if (dateChange) {
-	                dateChange(attrs.ngModel, date);
-	              }
-	              if (dismiss && views[views.length - 1] === view) {
-	                clear();
-	              }
-	            });
-	
-	            scope.$on('hidePicker', function () {
-	              element.triggerHandler('blur');
-	            });
-	
-	            scope.$on('$destroy', clear);
-	
-	            shownOnce = true;
-	          }
-	
-	          // move picker below input element
-	
-	          if (position === 'absolute') {
-	            var pos = element[0].getBoundingClientRect();
-	            // Support IE8
-	            var height = pos.height || element[0].offsetHeight;
-	            picker.css({ top: pos.top + height + 'px', left: pos.left + 'px', display: 'block', position: position });
-	            body.append(picker);
-	          } else {
-	            // relative
-	            container = angular.element('<div date-picker-wrapper></div>');
-	            element[0].parentElement.insertBefore(container[0], element[0]);
-	            container.append(picker);
-	            //          this approach doesn't work
-	            //          element.before(picker);
-	            picker.css({ top: element[0].offsetHeight + 'px', display: 'block' });
-	          }
-	          picker.bind('mousedown', function (evt) {
-	            evt.preventDefault();
-	          });
-	        }
-	
-	        element.bind('focus', showPicker);
-	        element.bind('click', showPicker);
-	        element.bind('blur', clear);
-	        getTemplate();
-	      }
-	    };
-	  }]);
-	  //}));
-	
-	  angular.module('datePicker').run(['$templateCache', function ($templateCache) {
-	    $templateCache.put('templates/datepicker.html', "<div ng-switch=\"view\">\r" + "\n" + "  <div ng-switch-when=\"date\">\r" + "\n" + "    <table>\r" + "\n" + "      <thead>\r" + "\n" + "      <tr>\r" + "\n" + "        <th ng-click=\"prev()\">&lsaquo;</th>\r" + "\n" + "        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('month')\" ng-bind=\"date|mFormat:'YYYY MMMM':tz\"></th>\r" + "\n" + "        <th ng-click=\"next()\">&rsaquo;</i></th>\r" + "\n" + "      </tr>\r" + "\n" + "      <tr>\r" + "\n" + "        <th ng-repeat=\"day in weekdays\" style=\"overflow: hidden\" ng-bind=\"day|mFormat:'ddd':tz\"></th>\r" + "\n" + "      </tr>\r" + "\n" + "      </thead>\r" + "\n" + "      <tbody>\r" + "\n" + "      <tr ng-repeat=\"week in weeks\" ng-init=\"$index2 = $index\">\r" + "\n" + "        <td ng-repeat=\"day in week\">\r" + "\n" + "          <span\r" + "\n" + "            ng-class=\"classes[$index2][$index]\"\r" + "\n" + "            ng-click=\"selectDate(day)\" ng-bind=\"day|mFormat:'DD':tz\"></span>\r" + "\n" + "        </td>\r" + "\n" + "      </tr>\r" + "\n" + "      </tbody>\r" + "\n" + "    </table>\r" + "\n" + "  </div>\r" + "\n" + "  <div ng-switch-when=\"year\">\r" + "\n" + "    <table>\r" + "\n" + "      <thead>\r" + "\n" + "      <tr>\r" + "\n" + "        <th ng-click=\"prev(10)\">&lsaquo;</th>\r" + "\n" + "        <th colspan=\"5\" class=\"switch\"ng-bind=\"years[0].year()+' - '+years[years.length-1].year()\"></th>\r" + "\n" + "        <th ng-click=\"next(10)\">&rsaquo;</i></th>\r" + "\n" + "      </tr>\r" + "\n" + "      </thead>\r" + "\n" + "      <tbody>\r" + "\n" + "      <tr>\r" + "\n" + "        <td colspan=\"7\">\r" + "\n" + "          <span ng-class=\"classes[$index]\"\r" + "\n" + "                ng-repeat=\"year in years\"\r" + "\n" + "                ng-click=\"selectDate(year)\" ng-bind=\"year.year()\"></span>\r" + "\n" + "        </td>\r" + "\n" + "      </tr>\r" + "\n" + "      </tbody>\r" + "\n" + "    </table>\r" + "\n" + "  </div>\r" + "\n" + "  <div ng-switch-when=\"month\">\r" + "\n" + "    <table>\r" + "\n" + "      <thead>\r" + "\n" + "      <tr>\r" + "\n" + "        <th ng-click=\"prev()\">&lsaquo;</th>\r" + "\n" + "        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('year')\" ng-bind=\"date|mFormat:'YYYY':tz\"></th>\r" + "\n" + "        <th ng-click=\"next()\">&rsaquo;</i></th>\r" + "\n" + "      </tr>\r" + "\n" + "      </thead>\r" + "\n" + "      <tbody>\r" + "\n" + "      <tr>\r" + "\n" + "        <td colspan=\"7\">\r" + "\n" + "          <span ng-repeat=\"month in months\"\r" + "\n" + "                ng-class=\"classes[$index]\"\r" + "\n" + "                ng-click=\"selectDate(month)\"\r" + "\n" + "                ng-bind=\"month|mFormat:'MMM':tz\"></span>\r" + "\n" + "        </td>\r" + "\n" + "      </tr>\r" + "\n" + "      </tbody>\r" + "\n" + "    </table>\r" + "\n" + "  </div>\r" + "\n" + "  <div ng-switch-when=\"hours\">\r" + "\n" + "    <table>\r" + "\n" + "      <thead>\r" + "\n" + "      <tr>\r" + "\n" + "        <th ng-click=\"prev(24)\">&lsaquo;</th>\r" + "\n" + "        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('date')\" ng-bind=\"date|mFormat:'DD MMMM YYYY':tz\"></th>\r" + "\n" + "        <th ng-click=\"next(24)\">&rsaquo;</i></th>\r" + "\n" + "      </tr>\r" + "\n" + "      </thead>\r" + "\n" + "      <tbody>\r" + "\n" + "      <tr>\r" + "\n" + "        <td colspan=\"7\">\r" + "\n" + "          <span ng-repeat=\"hour in hours\"\r" + "\n" + "                ng-class=\"classes[$index]\"\r" + "\n" + "                ng-click=\"selectDate(hour)\" ng-bind=\"hour|mFormat:'HH:mm':tz\"></span>\r" + "\n" + "        </td>\r" + "\n" + "      </tr>\r" + "\n" + "      </tbody>\r" + "\n" + "    </table>\r" + "\n" + "  </div>\r" + "\n" + "  <div ng-switch-when=\"minutes\">\r" + "\n" + "    <table>\r" + "\n" + "      <thead>\r" + "\n" + "      <tr>\r" + "\n" + "        <th ng-click=\"prev()\">&lsaquo;</th>\r" + "\n" + "        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('hours')\" ng-bind=\"date|mFormat:'DD MMMM YYYY':tz\"></th>\r" + "\n" + "        <th ng-click=\"next()\">&rsaquo;</i></th>\r" + "\n" + "      </tr>\r" + "\n" + "      </thead>\r" + "\n" + "      <tbody>\r" + "\n" + "      <tr>\r" + "\n" + "        <td colspan=\"7\">\r" + "\n" + "          <span ng-repeat=\"minute in minutes\"\r" + "\n" + "                ng-class=\"classes[$index]\"\r" + "\n" + "                ng-click=\"selectDate(minute)\"\r" + "\n" + "                ng-bind=\"minute|mFormat:'HH:mm':tz\"></span>\r" + "\n" + "        </td>\r" + "\n" + "      </tr>\r" + "\n" + "      </tbody>\r" + "\n" + "    </table>\r" + "\n" + "  </div>\r" + "\n" + "</div>");
-	  }]);
-	});
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};(function(global,factory){'use strict';var fnc;fnc=( false?'undefined':_typeof(exports))==='object'&&typeof module!=='undefined'?module.exports=factory(__webpack_require__(2),__webpack_require__(10)): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2),__webpack_require__(10)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):factory(global.angular,global.moment);})(undefined,function(angular,moment){ //(function (global, factory) {
+	//  'use strict';
+	//  var fnc;
+	//  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
+	//        (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
+	//        factory(global.angular, global.moment);
+	//}(this, function (angular, moment) {
+	var Module=angular.module('datePicker',[]);Module.constant('datePickerConfig',{template:'templates/datepicker.html',view:'month',views:['year','month','date','hours','minutes'],momentNames:{year:'year',month:'month',date:'day',hours:'hours',minutes:'minutes'},viewConfig:{year:['years','isSameYear'],month:['months','isSameMonth'],hours:['hours','isSameHour'],minutes:['minutes','isSameMinutes']},step:5}); //Moment format filter.
+	Module.filter('mFormat',function(){return function(m,format,tz){if(!moment.isMoment(m)){return m?moment(m).format(format):'';}return tz?moment.tz(m,tz).format(format):m.format(format);};});Module.directive('datePicker',['datePickerConfig','datePickerUtils',function datePickerDirective(datePickerConfig,datePickerUtils){ //noinspection JSUnusedLocalSymbols
+	return { // this is a bug ?
+	require:'?ngModel',template:'<div ng-include="template"></div>',scope:{model:'=datePicker',after:'=?',before:'=?'},link:function link(scope,element,attrs,ngModel){function prepareViews(){scope.views=datePickerConfig.views.concat();scope.view=attrs.view||datePickerConfig.view;scope.views=scope.views.slice(scope.views.indexOf(attrs.maxView||'year'),scope.views.indexOf(attrs.minView||'minutes')+1);if(scope.views.length===1||scope.views.indexOf(scope.view)===-1){scope.view=scope.views[0];}}function getDate(name){return datePickerUtils.getDate(scope,attrs,name);}var arrowClick=false,tz=scope.tz=attrs.timezone,createMoment=datePickerUtils.createMoment,eventIsForPicker=datePickerUtils.eventIsForPicker,step=parseInt(attrs.step||datePickerConfig.step,10),partial=!!attrs.partial,minDate=getDate('minDate'),maxDate=getDate('maxDate'),pickerID=element[0].id,now=scope.now=createMoment(),selected=scope.date=createMoment(scope.model||now),autoclose=attrs.autoClose==='true', // Either gets the 1st day from the attributes, or asks moment.js to give it to us as it is localized.
+	firstDay=attrs.firstDay&&attrs.firstDay>=0&&attrs.firstDay<=6?parseInt(attrs.firstDay,10):moment().weekday(0).day(),setDate,prepareViewData,isSame,clipDate,isNow,inValidRange;datePickerUtils.setParams(tz,firstDay);if(!scope.model){selected.minute(Math.ceil(selected.minute()/step)*step).second(0);}scope.template=attrs.template||datePickerConfig.template;scope.watchDirectChanges=attrs.watchDirectChanges!==undefined;scope.callbackOnSetDate=attrs.dateChange?datePickerUtils.findFunction(scope,attrs.dateChange):undefined;prepareViews();scope.setView=function(nextView){if(scope.views.indexOf(nextView)!==-1){scope.view=nextView;}};scope.selectDate=function(date){if(attrs.disabled){return false;}if(isSame(scope.date,date)){date=scope.date;}date=clipDate(date);if(!date){return false;}scope.date=date;var nextView=scope.views[scope.views.indexOf(scope.view)+1];if(!nextView||partial||scope.model){setDate(date);}if(nextView){scope.setView(nextView);}else if(autoclose){element.addClass('hidden');scope.$emit('hidePicker');}else {prepareViewData();}};setDate=function setDate(date){if(date){scope.model=date;if(ngModel){ngModel.$setViewValue(date);}}scope.$emit('setDate',scope.model,scope.view); //This is duplicated in the new functionality.
+	if(scope.callbackOnSetDate){scope.callbackOnSetDate(attrs.datePicker,scope.date);}};function update(){var view=scope.view;datePickerUtils.setParams(tz,firstDay);if(scope.model&&!arrowClick){scope.date=createMoment(scope.model);arrowClick=false;}var date=scope.date;switch(view){case 'year':scope.years=datePickerUtils.getVisibleYears(date);break;case 'month':scope.months=datePickerUtils.getVisibleMonths(date);break;case 'date':scope.weekdays=scope.weekdays||datePickerUtils.getDaysOfWeek();scope.weeks=datePickerUtils.getVisibleWeeks(date);break;case 'hours':scope.hours=datePickerUtils.getVisibleHours(date);break;case 'minutes':scope.minutes=datePickerUtils.getVisibleMinutes(date,step);break;}prepareViewData();}function watch(){if(scope.view!=='date'){return scope.view;}return scope.date?scope.date.month():null;}scope.$watch(watch,update);if(scope.watchDirectChanges){scope.$watch('model',function(){arrowClick=false;update();});}prepareViewData=function prepareViewData(){var view=scope.view,date=scope.date,classes=[],classList='',i,j;datePickerUtils.setParams(tz,firstDay);if(view==='date'){var weeks=scope.weeks,week;for(i=0;i<weeks.length;i++){week=weeks[i];classes.push([]);for(j=0;j<week.length;j++){classList='';if(datePickerUtils.isSameDay(date,week[j])){classList+='active';}if(isNow(week[j],view)){classList+=' now';} //if (week[j].month() !== date.month()) classList += ' disabled';
+	if(week[j].month()!==date.month()||!inValidRange(week[j])){classList+=' disabled';}classes[i].push(classList);}}}else {var params=datePickerConfig.viewConfig[view],dates=scope[params[0]],compareFunc=params[1];for(i=0;i<dates.length;i++){classList='';if(datePickerUtils[compareFunc](date,dates[i])){classList+='active';}if(isNow(dates[i],view)){classList+=' now';}if(!inValidRange(dates[i])){classList+=' disabled';}classes.push(classList);}}scope.classes=classes;};scope.next=function(delta){var date=moment(scope.date);delta=delta||1;switch(scope.view){case 'year': /*falls through*/case 'month':date.year(date.year()+delta);break;case 'date':date.month(date.month()+delta);break;case 'hours': /*falls through*/case 'minutes':date.hours(date.hours()+delta);break;}date=clipDate(date);if(date){scope.date=date;setDate(date);arrowClick=true;update();}};inValidRange=function inValidRange(date){var valid=true;if(minDate&&minDate.isAfter(date)){valid=isSame(minDate,date);}if(maxDate&&maxDate.isBefore(date)){valid&=isSame(maxDate,date);}return valid;};isSame=function isSame(date1,date2){return date1.isSame(date2,datePickerConfig.momentNames[scope.view])?true:false;};clipDate=function clipDate(date){if(minDate&&minDate.isAfter(date)){return minDate;}else if(maxDate&&maxDate.isBefore(date)){return maxDate;}else {return date;}};isNow=function isNow(date,view){var is=true;switch(view){case 'minutes':is&=~ ~(now.minutes()/step)===~ ~(date.minutes()/step); /* falls through */case 'hours':is&=now.hours()===date.hours(); /* falls through */case 'date':is&=now.date()===date.date(); /* falls through */case 'month':is&=now.month()===date.month(); /* falls through */case 'year':is&=now.year()===date.year();}return is;};scope.prev=function(delta){return scope.next(-delta||-1);};if(pickerID){scope.$on('pickerUpdate',function(event,pickerIDs,data){if(eventIsForPicker(pickerIDs,pickerID)){var updateViews=false,updateViewData=false;if(angular.isDefined(data.minDate)){minDate=data.minDate?data.minDate:false;updateViewData=true;}if(angular.isDefined(data.maxDate)){maxDate=data.maxDate?data.maxDate:false;updateViewData=true;}if(angular.isDefined(data.minView)){attrs.minView=data.minView;updateViews=true;}if(angular.isDefined(data.maxView)){attrs.maxView=data.maxView;updateViews=true;}attrs.view=data.view||attrs.view;if(updateViews){prepareViews();}if(updateViewData){update();}}});}}};}]); //}));
+	//(function (global, factory) {
+	//  'use strict';
+	//  var fnc;
+	//  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
+	//    (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
+	//      factory(global.angular, global.moment);
+	//}(this, function (angular, moment) {
+	angular.module('datePicker').factory('datePickerUtils',function(){var tz,firstDay;var createNewDate=function createNewDate(year,month,day,hour,minute){var utc=Date.UTC(year|0,month|0,day|0,hour|0,minute|0);return tz?moment.tz(utc,tz):moment(utc);};return {getVisibleMinutes:function getVisibleMinutes(m,step){var year=m.year(),month=m.month(),day=m.date(),hour=m.hours(),pushedDate,offset=m.utcOffset()/60,minutes=[],minute;for(minute=0;minute<60;minute+=step){pushedDate=createNewDate(year,month,day,hour-offset,minute);minutes.push(pushedDate);}return minutes;},getVisibleWeeks:function getVisibleWeeks(m){m=moment(m);var startYear=m.year(),startMonth=m.month(); //Set date to the first day of the month
+	m.date(1); //Grab day of the week
+	var day=m.day(); //Go back the required number of days to arrive at the previous week start
+	m.date(firstDay-(day+(firstDay>=day?6:-1)));var weeks=[];while(weeks.length<6){if(m.year()===startYear&&m.month()>startMonth){break;}weeks.push(this.getDaysOfWeek(m));m.add(7,'d');}return weeks;},getVisibleYears:function getVisibleYears(d){var m=moment(d),year=m.year();m.year(year-year%10);year=m.year();var offset=m.utcOffset()/60,years=[],pushedDate,actualOffset;for(var i=0;i<12;i++){pushedDate=createNewDate(year,0,1,0-offset);actualOffset=pushedDate.utcOffset()/60;if(actualOffset!==offset){pushedDate=createNewDate(year,0,1,0-actualOffset);offset=actualOffset;}years.push(pushedDate);year++;}return years;},getDaysOfWeek:function getDaysOfWeek(m){m=m?m:tz?moment.tz(tz).day(firstDay):moment().day(firstDay);var year=m.year(),month=m.month(),day=m.date(),days=[],pushedDate,offset=m.utcOffset()/60,actualOffset;for(var i=0;i<7;i++){pushedDate=createNewDate(year,month,day,0-offset,0,false);actualOffset=pushedDate.utcOffset()/60;if(actualOffset!==offset){pushedDate=createNewDate(year,month,day,0-actualOffset,0,false);}days.push(pushedDate);day++;}return days;},getVisibleMonths:function getVisibleMonths(m){var year=m.year(),offset=m.utcOffset()/60,months=[],pushedDate,actualOffset;for(var month=0;month<12;month++){pushedDate=createNewDate(year,month,1,0-offset,0,false);actualOffset=pushedDate.utcOffset()/60;if(actualOffset!==offset){pushedDate=createNewDate(year,month,1,0-actualOffset,0,false);}months.push(pushedDate);}return months;},getVisibleHours:function getVisibleHours(m){var year=m.year(),month=m.month(),day=m.date(),hours=[],hour,pushedDate,actualOffset,offset=m.utcOffset()/60;for(hour=0;hour<24;hour++){pushedDate=createNewDate(year,month,day,hour-offset,0,false);actualOffset=pushedDate.utcOffset()/60;if(actualOffset!==offset){pushedDate=createNewDate(year,month,day,hour-actualOffset,0,false);}hours.push(pushedDate);}return hours;},isAfter:function isAfter(model,date){return model&&model.unix()>=date.unix();},isBefore:function isBefore(model,date){return model.unix()<=date.unix();},isSameYear:function isSameYear(model,date){return model&&model.year()===date.year();},isSameMonth:function isSameMonth(model,date){return this.isSameYear(model,date)&&model.month()===date.month();},isSameDay:function isSameDay(model,date){return this.isSameMonth(model,date)&&model.date()===date.date();},isSameHour:function isSameHour(model,date){return this.isSameDay(model,date)&&model.hours()===date.hours();},isSameMinutes:function isSameMinutes(model,date){return this.isSameHour(model,date)&&model.minutes()===date.minutes();},setParams:function setParams(zone,fd){tz=zone;firstDay=fd;},scopeSearch:function scopeSearch(scope,name,comparisonFn){var parentScope=scope,nameArray=name.split('.'),target,i,j=nameArray.length;do {target=parentScope=parentScope.$parent; //Loop through provided names.
+	for(i=0;i<j;i++){target=target[nameArray[i]];if(!target){continue;}} //If we reached the end of the list for this scope,
+	//and something was found, trigger the comparison
+	//function. If the comparison function is happy, return
+	//found result. Otherwise, continue to the next parent scope
+	if(target&&comparisonFn(target)){return target;}}while(parentScope.$parent);return false;},findFunction:function findFunction(scope,name){ //Search scope ancestors for a matching function.
+	return this.scopeSearch(scope,name,function(target){ //Property must also be a function
+	return angular.isFunction(target);});},findParam:function findParam(scope,name){ //Search scope ancestors for a matching parameter.
+	return this.scopeSearch(scope,name,function(){ //As long as the property exists, we're good
+	return true;});},createMoment:function createMoment(m){if(tz){return moment.tz(m,tz);}else { //If input is a moment, and we have no TZ info, we need to remove TZ
+	//info from the moment, otherwise the newly created moment will take
+	//the timezone of the input moment. The easiest way to do that is to
+	//take the unix timestamp, and use that to create a new moment.
+	//The new moment will use the local timezone of the user machine.
+	return moment.isMoment(m)?moment.unix(m.unix()):moment(m);}},getDate:function getDate(scope,attrs,name){var result=false;if(attrs[name]){result=this.createMoment(attrs[name]);if(!result.isValid()){result=this.findParam(scope,attrs[name]);if(result){result=this.createMoment(result);}}}return result;},eventIsForPicker:function eventIsForPicker(targetIDs,pickerID){ //Checks if an event targeted at a specific picker, via either a string name, or an array of strings.
+	return angular.isArray(targetIDs)&&targetIDs.indexOf(pickerID)>-1||targetIDs===pickerID;}};}); //}));
+	//(function (global, factory) {
+	//  'use strict';
+	//  var fnc;
+	//  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
+	//    (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
+	//      factory(global.angular, global.moment);
+	//}(this, function (angular, moment) {
+	var Module=angular.module('datePicker');Module.directive('dateRange',['$compile','datePickerUtils','dateTimeConfig',function($compile,datePickerUtils,dateTimeConfig){function getTemplate(attrs,id,model,min,max){return dateTimeConfig.template(angular.extend(attrs,{ngModel:model,minDate:min&&moment.isMoment(min)?min.format():false,maxDate:max&&moment.isMoment(max)?max.format():false}),id);}function randomName(){return 'picker'+Math.random().toString().substr(2);}return {scope:{start:'=',end:'='},link:function link(scope,element,attrs){var dateChange=null,pickerRangeID=element[0].id,pickerIDs=[randomName(),randomName()],createMoment=datePickerUtils.createMoment,eventIsForPicker=datePickerUtils.eventIsForPicker;scope.dateChange=function(modelName,newDate){ //Notify user if callback exists.
+	if(dateChange){dateChange(modelName,newDate);}};function setMax(date){scope.$broadcast('pickerUpdate',pickerIDs[0],{maxDate:date});}function setMin(date){scope.$broadcast('pickerUpdate',pickerIDs[1],{minDate:date});}if(pickerRangeID){scope.$on('pickerUpdate',function(event,targetIDs,data){if(eventIsForPicker(targetIDs,pickerRangeID)){ //If we received an update event, dispatch it to the inner pickers using their IDs.
+	scope.$broadcast('pickerUpdate',pickerIDs,data);}});}datePickerUtils.setParams(attrs.timezone);scope.start=createMoment(scope.start);scope.end=createMoment(scope.end);scope.$watchGroup(['start','end'],function(dates){ //Scope data changed, update picker min/max
+	setMin(dates[0]);setMax(dates[1]);});if(angular.isDefined(attrs.dateChange)){dateChange=datePickerUtils.findFunction(scope,attrs.dateChange);}attrs.onSetDate='dateChange';var template='<div><table class="date-range"><tr><td valign="top">'+getTemplate(attrs,pickerIDs[0],'start',false,scope.end)+'</td><td valign="top">'+getTemplate(attrs,pickerIDs[1],'end',scope.start,false)+'</td></tr></table></div>';var picker=$compile(template)(scope);element.append(picker);}};}]); //}));
+	//(function (global, factory) {
+	//  'use strict';
+	//  var fnc;
+	//  fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :
+	//    (typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :
+	//      factory(global.angular, global.moment);
+	//}(this, function (angular, moment) {
+	var PRISTINE_CLASS='ng-pristine',DIRTY_CLASS='ng-dirty';var Module=angular.module('datePicker');Module.constant('dateTimeConfig',{template:function template(attrs,id){return ''+'<div '+(id?'id="'+id+'" ':'')+'date-picker="'+attrs.ngModel+'" '+(attrs.view?'view="'+attrs.view+'" ':'')+(attrs.maxView?'max-view="'+attrs.maxView+'" ':'')+(attrs.maxDate?'max-date="'+attrs.maxDate+'" ':'')+(attrs.autoClose?'auto-close="'+attrs.autoClose+'" ':'')+(attrs.template?'template="'+attrs.template+'" ':'')+(attrs.minView?'min-view="'+attrs.minView+'" ':'')+(attrs.minDate?'min-date="'+attrs.minDate+'" ':'')+(attrs.partial?'partial="'+attrs.partial+'" ':'')+(attrs.step?'step="'+attrs.step+'" ':'')+(attrs.onSetDate?'date-change="'+attrs.onSetDate+'" ':'')+(attrs.ngModel?'ng-model="'+attrs.ngModel+'" ':'')+(attrs.firstDay?'first-day="'+attrs.firstDay+'" ':'')+(attrs.timezone?'timezone="'+attrs.timezone+'" ':'')+'class="date-picker-date-time"></div>';},format:'YYYY-MM-DD HH:mm',views:['date','year','month','hours','minutes'],autoClose:false,position:'relative'});Module.directive('dateTimeAppend',function(){return {link:function link(scope,element){element.bind('click',function(){element.find('input')[0].focus();});}};});Module.directive('dateTime',['$compile','$document','$filter','dateTimeConfig','$parse','datePickerUtils',function($compile,$document,$filter,dateTimeConfig,$parse,datePickerUtils){var body=$document.find('body');var dateFilter=$filter('mFormat');return {require:'ngModel',scope:true,link:function link(scope,element,attrs,ngModel){var format=attrs.format||dateTimeConfig.format,parentForm=element.inheritedData('$formController'),views=$parse(attrs.views)(scope)||dateTimeConfig.views.concat(),view=attrs.view||views[0],index=views.indexOf(view),dismiss=attrs.autoClose?$parse(attrs.autoClose)(scope):dateTimeConfig.autoClose,picker=null,pickerID=element[0].id,position=attrs.position||dateTimeConfig.position,container=null,minDate=null,minValid=null,maxDate=null,maxValid=null,timezone=attrs.timezone||false,eventIsForPicker=datePickerUtils.eventIsForPicker,dateChange=null,shownOnce=false,template;if(index===-1){views.splice(index,1);}views.unshift(view);function formatter(value){return dateFilter(value,format,timezone);}function parser(viewValue){if(viewValue.length===format.length){return viewValue;}return viewValue.length===0?viewValue:undefined;}function setMin(date){minDate=date;attrs.minDate=date?date.format():date;minValid=moment.isMoment(date);}function setMax(date){maxDate=date;attrs.maxDate=date?date.format():date;maxValid=moment.isMoment(date);}ngModel.$formatters.push(formatter);ngModel.$parsers.unshift(parser);if(angular.isDefined(attrs.minDate)){setMin(datePickerUtils.findParam(scope,attrs.minDate));ngModel.$validators.min=function(value){ //If we don't have a min / max value, then any value is valid.
+	return minValid?moment.isMoment(value)&&(minDate.isSame(value)||minDate.isBefore(value)):true;};}if(angular.isDefined(attrs.maxDate)){setMax(datePickerUtils.findParam(scope,attrs.maxDate));ngModel.$validators.max=function(value){return maxValid?moment.isMoment(value)&&(maxDate.isSame(value)||maxDate.isAfter(value)):true;};}if(angular.isDefined(attrs.dateChange)){dateChange=datePickerUtils.findFunction(scope,attrs.dateChange);}function getTemplate(){template=dateTimeConfig.template(attrs);}function updateInput(event){event.stopPropagation();if(ngModel.$pristine){ngModel.$dirty=true;ngModel.$pristine=false;element.removeClass(PRISTINE_CLASS).addClass(DIRTY_CLASS);if(parentForm){parentForm.$setDirty();}ngModel.$render();}}function clear(){if(picker){picker.remove();picker=null;}if(container){container.remove();container=null;}}if(pickerID){scope.$on('pickerUpdate',function(event,pickerIDs,data){if(eventIsForPicker(pickerIDs,pickerID)){if(picker){ //Need to handle situation where the data changed but the picker is currently open.
+	//To handle this, we can create the inner picker with a random ID, then forward
+	//any events received to it.
+	}else {var validateRequired=false;if(angular.isDefined(data.minDate)){setMin(data.minDate);validateRequired=true;}if(angular.isDefined(data.maxDate)){setMax(data.maxDate);validateRequired=true;}if(angular.isDefined(data.minView)){attrs.minView=data.minView;}if(angular.isDefined(data.maxView)){attrs.maxView=data.maxView;}attrs.view=data.view||attrs.view;if(validateRequired){ngModel.$validate();}if(angular.isDefined(data.format)){format=attrs.format=data.format||dateTimeConfig.format;ngModel.$modelValue=-1; //Triggers formatters. This value will be discarded.
+	}getTemplate();}}});}function showPicker(){if(picker){return;} // create picker element
+	picker=$compile(template)(scope);scope.$digest(); //If the picker has already been shown before then we shouldn't be binding to events, as these events are already bound to in this scope.
+	if(!shownOnce){scope.$on('setDate',function(event,date,view){updateInput(event);if(dateChange){dateChange(attrs.ngModel,date);}if(dismiss&&views[views.length-1]===view){clear();}});scope.$on('hidePicker',function(){element.triggerHandler('blur');});scope.$on('$destroy',clear);shownOnce=true;} // move picker below input element
+	if(position==='absolute'){var pos=element[0].getBoundingClientRect(); // Support IE8
+	var height=pos.height||element[0].offsetHeight;picker.css({top:pos.top+height+'px',left:pos.left+'px',display:'block',position:position});body.append(picker);}else { // relative
+	container=angular.element('<div date-picker-wrapper></div>');element[0].parentElement.insertBefore(container[0],element[0]);container.append(picker); //          this approach doesn't work
+	//          element.before(picker);
+	picker.css({top:element[0].offsetHeight+'px',display:'block'});}picker.bind('mousedown',function(evt){evt.preventDefault();});}element.bind('focus',showPicker);element.bind('click',showPicker);element.bind('blur',clear);getTemplate();}};}]); //}));
+	angular.module('datePicker').run(['$templateCache',function($templateCache){$templateCache.put('templates/datepicker.html',"<div ng-switch=\"view\">\r"+"\n"+"  <div ng-switch-when=\"date\">\r"+"\n"+"    <table>\r"+"\n"+"      <thead>\r"+"\n"+"      <tr>\r"+"\n"+"        <th ng-click=\"prev()\">&lsaquo;</th>\r"+"\n"+"        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('month')\" ng-bind=\"date|mFormat:'YYYY MMMM':tz\"></th>\r"+"\n"+"        <th ng-click=\"next()\">&rsaquo;</i></th>\r"+"\n"+"      </tr>\r"+"\n"+"      <tr>\r"+"\n"+"        <th ng-repeat=\"day in weekdays\" style=\"overflow: hidden\" ng-bind=\"day|mFormat:'ddd':tz\"></th>\r"+"\n"+"      </tr>\r"+"\n"+"      </thead>\r"+"\n"+"      <tbody>\r"+"\n"+"      <tr ng-repeat=\"week in weeks\" ng-init=\"$index2 = $index\">\r"+"\n"+"        <td ng-repeat=\"day in week\">\r"+"\n"+"          <span\r"+"\n"+"            ng-class=\"classes[$index2][$index]\"\r"+"\n"+"            ng-click=\"selectDate(day)\" ng-bind=\"day|mFormat:'DD':tz\"></span>\r"+"\n"+"        </td>\r"+"\n"+"      </tr>\r"+"\n"+"      </tbody>\r"+"\n"+"    </table>\r"+"\n"+"  </div>\r"+"\n"+"  <div ng-switch-when=\"year\">\r"+"\n"+"    <table>\r"+"\n"+"      <thead>\r"+"\n"+"      <tr>\r"+"\n"+"        <th ng-click=\"prev(10)\">&lsaquo;</th>\r"+"\n"+"        <th colspan=\"5\" class=\"switch\"ng-bind=\"years[0].year()+' - '+years[years.length-1].year()\"></th>\r"+"\n"+"        <th ng-click=\"next(10)\">&rsaquo;</i></th>\r"+"\n"+"      </tr>\r"+"\n"+"      </thead>\r"+"\n"+"      <tbody>\r"+"\n"+"      <tr>\r"+"\n"+"        <td colspan=\"7\">\r"+"\n"+"          <span ng-class=\"classes[$index]\"\r"+"\n"+"                ng-repeat=\"year in years\"\r"+"\n"+"                ng-click=\"selectDate(year)\" ng-bind=\"year.year()\"></span>\r"+"\n"+"        </td>\r"+"\n"+"      </tr>\r"+"\n"+"      </tbody>\r"+"\n"+"    </table>\r"+"\n"+"  </div>\r"+"\n"+"  <div ng-switch-when=\"month\">\r"+"\n"+"    <table>\r"+"\n"+"      <thead>\r"+"\n"+"      <tr>\r"+"\n"+"        <th ng-click=\"prev()\">&lsaquo;</th>\r"+"\n"+"        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('year')\" ng-bind=\"date|mFormat:'YYYY':tz\"></th>\r"+"\n"+"        <th ng-click=\"next()\">&rsaquo;</i></th>\r"+"\n"+"      </tr>\r"+"\n"+"      </thead>\r"+"\n"+"      <tbody>\r"+"\n"+"      <tr>\r"+"\n"+"        <td colspan=\"7\">\r"+"\n"+"          <span ng-repeat=\"month in months\"\r"+"\n"+"                ng-class=\"classes[$index]\"\r"+"\n"+"                ng-click=\"selectDate(month)\"\r"+"\n"+"                ng-bind=\"month|mFormat:'MMM':tz\"></span>\r"+"\n"+"        </td>\r"+"\n"+"      </tr>\r"+"\n"+"      </tbody>\r"+"\n"+"    </table>\r"+"\n"+"  </div>\r"+"\n"+"  <div ng-switch-when=\"hours\">\r"+"\n"+"    <table>\r"+"\n"+"      <thead>\r"+"\n"+"      <tr>\r"+"\n"+"        <th ng-click=\"prev(24)\">&lsaquo;</th>\r"+"\n"+"        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('date')\" ng-bind=\"date|mFormat:'DD MMMM YYYY':tz\"></th>\r"+"\n"+"        <th ng-click=\"next(24)\">&rsaquo;</i></th>\r"+"\n"+"      </tr>\r"+"\n"+"      </thead>\r"+"\n"+"      <tbody>\r"+"\n"+"      <tr>\r"+"\n"+"        <td colspan=\"7\">\r"+"\n"+"          <span ng-repeat=\"hour in hours\"\r"+"\n"+"                ng-class=\"classes[$index]\"\r"+"\n"+"                ng-click=\"selectDate(hour)\" ng-bind=\"hour|mFormat:'HH:mm':tz\"></span>\r"+"\n"+"        </td>\r"+"\n"+"      </tr>\r"+"\n"+"      </tbody>\r"+"\n"+"    </table>\r"+"\n"+"  </div>\r"+"\n"+"  <div ng-switch-when=\"minutes\">\r"+"\n"+"    <table>\r"+"\n"+"      <thead>\r"+"\n"+"      <tr>\r"+"\n"+"        <th ng-click=\"prev()\">&lsaquo;</th>\r"+"\n"+"        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('hours')\" ng-bind=\"date|mFormat:'DD MMMM YYYY':tz\"></th>\r"+"\n"+"        <th ng-click=\"next()\">&rsaquo;</i></th>\r"+"\n"+"      </tr>\r"+"\n"+"      </thead>\r"+"\n"+"      <tbody>\r"+"\n"+"      <tr>\r"+"\n"+"        <td colspan=\"7\">\r"+"\n"+"          <span ng-repeat=\"minute in minutes\"\r"+"\n"+"                ng-class=\"classes[$index]\"\r"+"\n"+"                ng-click=\"selectDate(minute)\"\r"+"\n"+"                ng-bind=\"minute|mFormat:'HH:mm':tz\"></span>\r"+"\n"+"        </td>\r"+"\n"+"      </tr>\r"+"\n"+"      </tbody>\r"+"\n"+"    </table>\r"+"\n"+"  </div>\r"+"\n"+"</div>");}]);});
 
 /***/ },
 /* 114 */
@@ -61611,9 +60833,7 @@
 /* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
-	
-	/*
+	/* WEBPACK VAR INJECTION */(function($) {'use strict'; /*
 	*  AngularJs Fullcalendar Wrapper for the JQuery FullCalendar
 	*  API @ http://arshaw.com/fullcalendar/
 	*
@@ -61621,670 +60841,132 @@
 	*       Can also take in multiple event urls as a source object(s) and feed the events per view.
 	*       The calendar will watch any eventSource array and update itself when a change is made.
 	*
-	*/
-	
-	angular.module('ui.calendar', []).constant('uiCalendarConfig', { calendars: {} }).controller('uiCalendarCtrl', ['$scope', '$locale', function ($scope, $locale) {
-	
-	  var sources = $scope.eventSources,
-	      extraEventSignature = $scope.calendarWatchEvent ? $scope.calendarWatchEvent : angular.noop,
-	      wrapFunctionWithScopeApply = function wrapFunctionWithScopeApply(functionToWrap) {
-	    return function () {
-	      // This may happen outside of angular context, so create one if outside.
-	
-	      if ($scope.$root.$$phase) {
-	        return functionToWrap.apply(this, arguments);
-	      } else {
-	        var args = arguments;
-	        var self = this;
-	        return $scope.$root.$apply(function () {
-	          return functionToWrap.apply(self, args);
-	        });
-	      }
-	    };
-	  };
-	
-	  var eventSerialId = 1;
-	  // @return {String} fingerprint of the event object and its properties
-	  this.eventFingerprint = function (e) {
-	    if (!e._id) {
-	      e._id = eventSerialId++;
-	    }
-	
-	    var extraSignature = extraEventSignature({ event: e }) || '';
-	    var start = moment.isMoment(e.start) ? e.start.unix() : e.start ? moment(e.start).unix() : '';
-	    var end = moment.isMoment(e.end) ? e.end.unix() : e.end ? moment(e.end).unix() : '';
-	
-	    // This extracts all the information we need from the event. http://jsperf.com/angular-calendar-events-fingerprint/3
-	    return "" + e._id + (e.id || '') + (e.title || '') + (e.url || '') + start + end + (e.allDay || '') + (e.className || '') + extraSignature;
-	  };
-	
-	  var sourceSerialId = 1,
-	      sourceEventsSerialId = 1;
-	  // @return {String} fingerprint of the source object and its events array
-	  this.sourceFingerprint = function (source) {
-	    var fp = '' + (source.__id || (source.__id = sourceSerialId++)),
-	        events = angular.isObject(source) && source.events;
-	    if (events) {
-	      fp = fp + '-' + (events.__id || (events.__id = sourceEventsSerialId++));
-	    }
-	    return fp;
-	  };
-	
-	  // @return {Array} all events from all sources
-	  this.allEvents = function () {
-	    // do sources.map(&:events).flatten(), but we don't have flatten
-	    var arraySources = [];
-	    for (var i = 0, srcLen = sources.length; i < srcLen; i++) {
-	      var source = sources[i];
-	      if (angular.isArray(source)) {
-	        // event source as array
-	        arraySources.push(source);
-	      } else if (angular.isObject(source) && angular.isArray(source.events)) {
-	        // event source as object, ie extended form
-	        var extEvent = {};
-	        for (var key in source) {
-	          if (key !== '_id' && key !== 'events') {
-	            extEvent[key] = source[key];
-	          }
-	        }
-	        for (var eI = 0; eI < source.events.length; eI++) {
-	          angular.extend(source.events[eI], extEvent);
-	        }
-	        arraySources.push(source.events);
-	      }
-	    }
-	    return Array.prototype.concat.apply([], arraySources);
-	  };
-	
-	  // Track changes in array of objects by assigning id tokens to each element and watching the scope for changes in the tokens
-	  // @param {Array|Function} arraySource array of objects to watch
-	  // @param tokenFn {Function} that returns the token for a given object
-	  // @return {Object}
-	  //  subscribe: function(scope, function(newTokens, oldTokens))
-	  //    called when source has changed. return false to prevent individual callbacks from firing
-	  //  onAdded/Removed/Changed:
-	  //    when set to a callback, called each item where a respective change is detected
-	  this.changeWatcher = function (arraySource, tokenFn) {
-	    var self;
-	    var getTokens = function getTokens() {
-	      var array = angular.isFunction(arraySource) ? arraySource() : arraySource;
-	      var result = [],
-	          token,
-	          el;
-	      for (var i = 0, n = array.length; i < n; i++) {
-	        el = array[i];
-	        token = tokenFn(el);
-	        map[token] = el;
-	        result.push(token);
-	      }
-	      return result;
-	    };
-	
-	    // @param {Array} a
-	    // @param {Array} b
-	    // @return {Array} elements in that are in a but not in b
-	    // @example
-	    //  subtractAsSets([6, 100, 4, 5], [4, 5, 7]) // [6, 100]
-	    var subtractAsSets = function subtractAsSets(a, b) {
-	      var result = [],
-	          inB = {},
-	          i,
-	          n;
-	      for (i = 0, n = b.length; i < n; i++) {
-	        inB[b[i]] = true;
-	      }
-	      for (i = 0, n = a.length; i < n; i++) {
-	        if (!inB[a[i]]) {
-	          result.push(a[i]);
-	        }
-	      }
-	      return result;
-	    };
-	
-	    // Map objects to tokens and vice-versa
-	    var map = {};
-	
-	    // Compare newTokens to oldTokens and call onAdded, onRemoved, and onChanged handlers for each affected event respectively.
-	    var applyChanges = function applyChanges(newTokens, oldTokens) {
-	      var i, n, el, token;
-	      var replacedTokens = {};
-	      var removedTokens = subtractAsSets(oldTokens, newTokens);
-	      for (i = 0, n = removedTokens.length; i < n; i++) {
-	        var removedToken = removedTokens[i];
-	        el = map[removedToken];
-	        delete map[removedToken];
-	        var newToken = tokenFn(el);
-	        // if the element wasn't removed but simply got a new token, its old token will be different from the current one
-	        if (newToken === removedToken) {
-	          self.onRemoved(el);
-	        } else {
-	          replacedTokens[newToken] = removedToken;
-	          self.onChanged(el);
-	        }
-	      }
-	
-	      var addedTokens = subtractAsSets(newTokens, oldTokens);
-	      for (i = 0, n = addedTokens.length; i < n; i++) {
-	        token = addedTokens[i];
-	        el = map[token];
-	        if (!replacedTokens[token]) {
-	          self.onAdded(el);
-	        }
-	      }
-	    };
-	    return self = {
-	      subscribe: function subscribe(scope, onArrayChanged) {
-	        scope.$watch(getTokens, function (newTokens, oldTokens) {
-	          var notify = !(onArrayChanged && onArrayChanged(newTokens, oldTokens) === false);
-	          if (notify) {
-	            applyChanges(newTokens, oldTokens);
-	          }
-	        }, true);
-	      },
-	      onAdded: angular.noop,
-	      onChanged: angular.noop,
-	      onRemoved: angular.noop
-	    };
-	  };
-	
-	  this.getFullCalendarConfig = function (calendarSettings, uiCalendarConfig) {
-	    var config = {};
-	
-	    angular.extend(config, uiCalendarConfig);
-	    angular.extend(config, calendarSettings);
-	
-	    angular.forEach(config, function (value, key) {
-	      if (typeof value === 'function') {
-	        config[key] = wrapFunctionWithScopeApply(config[key]);
-	      }
-	    });
-	
-	    return config;
-	  };
-	
-	  this.getLocaleConfig = function (fullCalendarConfig) {
-	    if (!fullCalendarConfig.lang || fullCalendarConfig.useNgLocale) {
-	      // Configure to use locale names by default
-	      var tValues = function tValues(data) {
-	        // convert {0: "Jan", 1: "Feb", ...} to ["Jan", "Feb", ...]
-	        var r, k;
-	        r = [];
-	        for (k in data) {
-	          r[k] = data[k];
-	        }
-	        return r;
-	      };
-	      var dtf = $locale.DATETIME_FORMATS;
-	      return {
-	        monthNames: tValues(dtf.MONTH),
-	        monthNamesShort: tValues(dtf.SHORTMONTH),
-	        dayNames: tValues(dtf.DAY),
-	        dayNamesShort: tValues(dtf.SHORTDAY)
-	      };
-	    }
-	    return {};
-	  };
-	}]).directive('uiCalendar', ['uiCalendarConfig', function (uiCalendarConfig) {
-	  return {
-	    restrict: 'A',
-	    scope: { eventSources: '=ngModel', calendarWatchEvent: '&' },
-	    controller: 'uiCalendarCtrl',
-	    link: function link(scope, elm, attrs, controller) {
-	
-	      var sources = scope.eventSources,
-	          sourcesChanged = false,
-	          calendar,
-	          eventSourcesWatcher = controller.changeWatcher(sources, controller.sourceFingerprint),
-	          eventsWatcher = controller.changeWatcher(controller.allEvents, controller.eventFingerprint),
-	          options = null;
-	
-	      function getOptions() {
-	        var calendarSettings = attrs.uiCalendar ? scope.$parent.$eval(attrs.uiCalendar) : {},
-	            fullCalendarConfig;
-	
-	        fullCalendarConfig = controller.getFullCalendarConfig(calendarSettings, uiCalendarConfig);
-	
-	        var localeFullCalendarConfig = controller.getLocaleConfig(fullCalendarConfig);
-	        angular.extend(localeFullCalendarConfig, fullCalendarConfig);
-	        options = { eventSources: sources };
-	        angular.extend(options, localeFullCalendarConfig);
-	        //remove calendars from options
-	        options.calendars = null;
-	
-	        var options2 = {};
-	        for (var o in options) {
-	          if (o !== 'eventSources') {
-	            options2[o] = options[o];
-	          }
-	        }
-	        return JSON.stringify(options2);
-	      }
-	
-	      scope.destroyCalendar = function () {
-	        if (calendar && calendar.fullCalendar) {
-	          calendar.fullCalendar('destroy');
-	        }
-	        if (attrs.calendar) {
-	          calendar = uiCalendarConfig.calendars[attrs.calendar] = $(elm).html('');
-	        } else {
-	          calendar = $(elm).html('');
-	        }
-	      };
-	
-	      scope.initCalendar = function () {
-	        if (!calendar) {
-	          calendar = angular.element(elm).html('');
-	        }
-	        calendar.fullCalendar(options);
-	        if (attrs.calendar) {
-	          uiCalendarConfig.calendars[attrs.calendar] = calendar;
-	        }
-	      };
-	      scope.$on('$destroy', function () {
-	        scope.destroyCalendar();
-	      });
-	
-	      eventSourcesWatcher.onAdded = function (source) {
-	        if (calendar && calendar.fullCalendar) {
-	          calendar.fullCalendar(options);
-	          if (attrs.calendar) {
-	            uiCalendarConfig.calendars[attrs.calendar] = calendar;
-	          }
-	          calendar.fullCalendar('addEventSource', source);
-	          sourcesChanged = true;
-	        }
-	      };
-	
-	      eventSourcesWatcher.onRemoved = function (source) {
-	        if (calendar && calendar.fullCalendar) {
-	          calendar.fullCalendar('removeEventSource', source);
-	          sourcesChanged = true;
-	        }
-	      };
-	
-	      eventSourcesWatcher.onChanged = function () {
-	        if (calendar && calendar.fullCalendar) {
-	          calendar.fullCalendar('refetchEvents');
-	          sourcesChanged = true;
-	        }
-	      };
-	
-	      eventsWatcher.onAdded = function (event) {
-	        if (calendar && calendar.fullCalendar) {
-	          calendar.fullCalendar('renderEvent', event, event.stick ? true : false);
-	        }
-	      };
-	
-	      eventsWatcher.onRemoved = function (event) {
-	        if (calendar && calendar.fullCalendar) {
-	          calendar.fullCalendar('removeEvents', event._id);
-	        }
-	      };
-	
-	      eventsWatcher.onChanged = function (event) {
-	        if (calendar && calendar.fullCalendar) {
-	          var clientEvents = calendar.fullCalendar('clientEvents', event._id);
-	          for (var i = 0; i < clientEvents.length; i++) {
-	            var clientEvent = clientEvents[i];
-	            clientEvent = angular.extend(clientEvent, event);
-	            calendar.fullCalendar('updateEvent', clientEvent);
-	          }
-	        }
-	      };
-	
-	      eventSourcesWatcher.subscribe(scope);
-	      eventsWatcher.subscribe(scope, function () {
-	        if (sourcesChanged === true) {
-	          sourcesChanged = false;
-	          // return false to prevent onAdded/Removed/Changed handlers from firing in this case
-	          return false;
-	        }
-	      });
-	
-	      scope.$watch(getOptions, function (newValue, oldValue) {
-	        if (newValue !== oldValue) {
-	          scope.destroyCalendar();
-	          scope.initCalendar();
-	        } else if (newValue && angular.isUndefined(calendar)) {
-	          scope.initCalendar();
-	        }
-	      });
-	    }
-	  };
-	}]);
+	*/angular.module('ui.calendar',[]).constant('uiCalendarConfig',{calendars:{}}).controller('uiCalendarCtrl',['$scope','$locale',function($scope,$locale){var sources=$scope.eventSources,extraEventSignature=$scope.calendarWatchEvent?$scope.calendarWatchEvent:angular.noop,wrapFunctionWithScopeApply=function wrapFunctionWithScopeApply(functionToWrap){return function(){ // This may happen outside of angular context, so create one if outside.
+	if($scope.$root.$$phase){return functionToWrap.apply(this,arguments);}else {var args=arguments;var self=this;return $scope.$root.$apply(function(){return functionToWrap.apply(self,args);});}};};var eventSerialId=1; // @return {String} fingerprint of the event object and its properties
+	this.eventFingerprint=function(e){if(!e._id){e._id=eventSerialId++;}var extraSignature=extraEventSignature({event:e})||'';var start=moment.isMoment(e.start)?e.start.unix():e.start?moment(e.start).unix():'';var end=moment.isMoment(e.end)?e.end.unix():e.end?moment(e.end).unix():''; // This extracts all the information we need from the event. http://jsperf.com/angular-calendar-events-fingerprint/3
+	return ""+e._id+(e.id||'')+(e.title||'')+(e.url||'')+start+end+(e.allDay||'')+(e.className||'')+extraSignature;};var sourceSerialId=1,sourceEventsSerialId=1; // @return {String} fingerprint of the source object and its events array
+	this.sourceFingerprint=function(source){var fp=''+(source.__id||(source.__id=sourceSerialId++)),events=angular.isObject(source)&&source.events;if(events){fp=fp+'-'+(events.__id||(events.__id=sourceEventsSerialId++));}return fp;}; // @return {Array} all events from all sources
+	this.allEvents=function(){ // do sources.map(&:events).flatten(), but we don't have flatten
+	var arraySources=[];for(var i=0,srcLen=sources.length;i<srcLen;i++){var source=sources[i];if(angular.isArray(source)){ // event source as array
+	arraySources.push(source);}else if(angular.isObject(source)&&angular.isArray(source.events)){ // event source as object, ie extended form
+	var extEvent={};for(var key in source){if(key!=='_id'&&key!=='events'){extEvent[key]=source[key];}}for(var eI=0;eI<source.events.length;eI++){angular.extend(source.events[eI],extEvent);}arraySources.push(source.events);}}return Array.prototype.concat.apply([],arraySources);}; // Track changes in array of objects by assigning id tokens to each element and watching the scope for changes in the tokens
+	// @param {Array|Function} arraySource array of objects to watch
+	// @param tokenFn {Function} that returns the token for a given object
+	// @return {Object}
+	//  subscribe: function(scope, function(newTokens, oldTokens))
+	//    called when source has changed. return false to prevent individual callbacks from firing
+	//  onAdded/Removed/Changed:
+	//    when set to a callback, called each item where a respective change is detected
+	this.changeWatcher=function(arraySource,tokenFn){var self;var getTokens=function getTokens(){var array=angular.isFunction(arraySource)?arraySource():arraySource;var result=[],token,el;for(var i=0,n=array.length;i<n;i++){el=array[i];token=tokenFn(el);map[token]=el;result.push(token);}return result;}; // @param {Array} a
+	// @param {Array} b
+	// @return {Array} elements in that are in a but not in b
+	// @example
+	//  subtractAsSets([6, 100, 4, 5], [4, 5, 7]) // [6, 100]
+	var subtractAsSets=function subtractAsSets(a,b){var result=[],inB={},i,n;for(i=0,n=b.length;i<n;i++){inB[b[i]]=true;}for(i=0,n=a.length;i<n;i++){if(!inB[a[i]]){result.push(a[i]);}}return result;}; // Map objects to tokens and vice-versa
+	var map={}; // Compare newTokens to oldTokens and call onAdded, onRemoved, and onChanged handlers for each affected event respectively.
+	var applyChanges=function applyChanges(newTokens,oldTokens){var i,n,el,token;var replacedTokens={};var removedTokens=subtractAsSets(oldTokens,newTokens);for(i=0,n=removedTokens.length;i<n;i++){var removedToken=removedTokens[i];el=map[removedToken];delete map[removedToken];var newToken=tokenFn(el); // if the element wasn't removed but simply got a new token, its old token will be different from the current one
+	if(newToken===removedToken){self.onRemoved(el);}else {replacedTokens[newToken]=removedToken;self.onChanged(el);}}var addedTokens=subtractAsSets(newTokens,oldTokens);for(i=0,n=addedTokens.length;i<n;i++){token=addedTokens[i];el=map[token];if(!replacedTokens[token]){self.onAdded(el);}}};return self={subscribe:function subscribe(scope,onArrayChanged){scope.$watch(getTokens,function(newTokens,oldTokens){var notify=!(onArrayChanged&&onArrayChanged(newTokens,oldTokens)===false);if(notify){applyChanges(newTokens,oldTokens);}},true);},onAdded:angular.noop,onChanged:angular.noop,onRemoved:angular.noop};};this.getFullCalendarConfig=function(calendarSettings,uiCalendarConfig){var config={};angular.extend(config,uiCalendarConfig);angular.extend(config,calendarSettings);angular.forEach(config,function(value,key){if(typeof value==='function'){config[key]=wrapFunctionWithScopeApply(config[key]);}});return config;};this.getLocaleConfig=function(fullCalendarConfig){if(!fullCalendarConfig.lang||fullCalendarConfig.useNgLocale){ // Configure to use locale names by default
+	var tValues=function tValues(data){ // convert {0: "Jan", 1: "Feb", ...} to ["Jan", "Feb", ...]
+	var r,k;r=[];for(k in data){r[k]=data[k];}return r;};var dtf=$locale.DATETIME_FORMATS;return {monthNames:tValues(dtf.MONTH),monthNamesShort:tValues(dtf.SHORTMONTH),dayNames:tValues(dtf.DAY),dayNamesShort:tValues(dtf.SHORTDAY)};}return {};};}]).directive('uiCalendar',['uiCalendarConfig',function(uiCalendarConfig){return {restrict:'A',scope:{eventSources:'=ngModel',calendarWatchEvent:'&'},controller:'uiCalendarCtrl',link:function link(scope,elm,attrs,controller){var sources=scope.eventSources,sourcesChanged=false,calendar,eventSourcesWatcher=controller.changeWatcher(sources,controller.sourceFingerprint),eventsWatcher=controller.changeWatcher(controller.allEvents,controller.eventFingerprint),options=null;function getOptions(){var calendarSettings=attrs.uiCalendar?scope.$parent.$eval(attrs.uiCalendar):{},fullCalendarConfig;fullCalendarConfig=controller.getFullCalendarConfig(calendarSettings,uiCalendarConfig);var localeFullCalendarConfig=controller.getLocaleConfig(fullCalendarConfig);angular.extend(localeFullCalendarConfig,fullCalendarConfig);options={eventSources:sources};angular.extend(options,localeFullCalendarConfig); //remove calendars from options
+	options.calendars=null;var options2={};for(var o in options){if(o!=='eventSources'){options2[o]=options[o];}}return JSON.stringify(options2);}scope.destroyCalendar=function(){if(calendar&&calendar.fullCalendar){calendar.fullCalendar('destroy');}if(attrs.calendar){calendar=uiCalendarConfig.calendars[attrs.calendar]=$(elm).html('');}else {calendar=$(elm).html('');}};scope.initCalendar=function(){if(!calendar){calendar=angular.element(elm).html('');}calendar.fullCalendar(options);if(attrs.calendar){uiCalendarConfig.calendars[attrs.calendar]=calendar;}};scope.$on('$destroy',function(){scope.destroyCalendar();});eventSourcesWatcher.onAdded=function(source){if(calendar&&calendar.fullCalendar){calendar.fullCalendar(options);if(attrs.calendar){uiCalendarConfig.calendars[attrs.calendar]=calendar;}calendar.fullCalendar('addEventSource',source);sourcesChanged=true;}};eventSourcesWatcher.onRemoved=function(source){if(calendar&&calendar.fullCalendar){calendar.fullCalendar('removeEventSource',source);sourcesChanged=true;}};eventSourcesWatcher.onChanged=function(){if(calendar&&calendar.fullCalendar){calendar.fullCalendar('refetchEvents');sourcesChanged=true;}};eventsWatcher.onAdded=function(event){if(calendar&&calendar.fullCalendar){calendar.fullCalendar('renderEvent',event,event.stick?true:false);}};eventsWatcher.onRemoved=function(event){if(calendar&&calendar.fullCalendar){calendar.fullCalendar('removeEvents',event._id);}};eventsWatcher.onChanged=function(event){if(calendar&&calendar.fullCalendar){var clientEvents=calendar.fullCalendar('clientEvents',event._id);for(var i=0;i<clientEvents.length;i++){var clientEvent=clientEvents[i];clientEvent=angular.extend(clientEvent,event);calendar.fullCalendar('updateEvent',clientEvent);}}};eventSourcesWatcher.subscribe(scope);eventsWatcher.subscribe(scope,function(){if(sourcesChanged===true){sourcesChanged=false; // return false to prevent onAdded/Removed/Changed handlers from firing in this case
+	return false;}});scope.$watch(getOptions,function(newValue,oldValue){if(newValue!==oldValue){scope.destroyCalendar();scope.initCalendar();}else if(newValue&&angular.isUndefined(calendar)){scope.initCalendar();}});}};}]);
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 116 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app', ['ngRoute', 'ngSanitize', 'ui.select', 'datePicker', 'ui.calendar']);
+	'use strict';angular.module('app',['ngRoute','ngSanitize','ui.select','datePicker','ui.calendar']);
 
 /***/ },
 /* 117 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').controller('MainController', ['$scope', function ($scope) {
-	    $scope.navs = [{ id: 1, href: 'dashboard', title: 'DASHBOARD' }, { id: 2, href: 'series', title: 'SERIES' }, { id: 3, href: 'daily', title: 'DAILY' }];
-	}]);
+	'use strict';angular.module('app').controller('MainController',['$scope',function($scope){$scope.navs=[{id:1,href:'dashboard',title:'DASHBOARD'},{id:2,href:'series',title:'SERIES'},{id:3,href:'daily',title:'DAILY'}];}]);
 
 /***/ },
 /* 118 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').config(['$routeProvider', function ($routeProvider) {
-	    $routeProvider.when('/dashboard', {
-	        templateUrl: 'interface/dashboard/index.html',
-	        controller: 'dashboardCtrl'
-	    }).when('/daily', {
-	        templateUrl: 'interface/daily/index.html',
-	        controller: 'dailyCtrl'
-	    }).when('/daily/detail/:date', {
-	        templateUrl: 'interface/daily/detail.html',
-	        controller: 'dailyDetailCtrl'
-	    }).when('/series', {
-	        templateUrl: 'interface/series/index.html',
-	        controller: 'seriesCtrl'
-	    }).when('/series/add', {
-	        templateUrl: 'interface/series/add.html',
-	        controller: 'seriesAddCtrl'
-	    }).when('/series/detail/:id', {
-	        templateUrl: 'interface/series/detail.html',
-	        controller: 'seriesDetailCtrl'
-	    }).otherwise({ redirectTo: '/dashboard' });
-	}]);
+	'use strict';angular.module('app').config(['$routeProvider',function($routeProvider){$routeProvider.when('/dashboard',{templateUrl:'interface/dashboard/index.html',controller:'dashboardCtrl'}).when('/daily',{templateUrl:'interface/daily/index.html',controller:'dailyCtrl'}).when('/daily/detail/:date',{templateUrl:'interface/daily/detail.html',controller:'dailyDetailCtrl'}).when('/series',{templateUrl:'interface/series/index.html',controller:'seriesCtrl'}).when('/series/add',{templateUrl:'interface/series/add.html',controller:'seriesAddCtrl'}).when('/series/detail/:id',{templateUrl:'interface/series/detail.html',controller:'seriesDetailCtrl'}).otherwise({redirectTo:'/dashboard'});}]);
 
 /***/ },
 /* 119 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').constant('appConstant', {
-	    series_status: [{ id: 'finish', name: 'Finish' }, { id: 'giveup', name: 'Give Up' }, { id: 'watching', name: 'Watching' }]
-	}).run(function ($rootScope, appConstant) {
-	    $rootScope.series_status = appConstant.series_status;
-	});
+	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'aaaa',name:'aaaaa'},{id:'bbbb',name:'bbbbb'},{id:'cccc',name:'ccccc'},{id:'dddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
 
 /***/ },
 /* 120 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').controller('dashboardCtrl', ['$scope', function ($scope) {}]);
+	'use strict';angular.module('app').controller('dashboardCtrl',['$scope',function($scope){}]);
 
 /***/ },
 /* 121 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').controller('seriesCtrl', ['$scope', '$location', 'seriesListService', function ($scope, $location, seriesListService) {
-	    $scope.add = function () {
-	        $location.path('series/add');
-	    };
-	
-	    $scope.list = new seriesListService();
-	}]);
+	'use strict';angular.module('app').controller('seriesCtrl',['$scope','$location','seriesListService',function($scope,$location,seriesListService){$scope.add=function(){$location.path('series/add');};$scope.list=new seriesListService();}]);
 
 /***/ },
 /* 122 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').controller('seriesAddCtrl', ['$scope', '$location', '$http', '$timeout', function ($scope, $location, $http, $timeout) {
-	    $scope.newseries = {};
-	    $scope.selectedseries = {};
-	    $scope.add = function () {
-	        var obj = {};
-	        obj.name = $scope.newseries.name;
-	        $http.post('http://localhost:2003/series', obj).then(function (res) {
-	            console.log(res);
-	        });
-	    };
-	
-	    $http.get('http://localhost:2003/series').then(function (res) {
-	        console.log(res.data);
-	        $scope.series = res.data;
-	    });
-	
-	    $scope.addItem = function () {
-	        var obj = {};
-	        obj = $scope.newitem;
-	        console.log(obj);
-	        $http.post('http://localhost:2003/series?id=' + $scope.selectedseries._id, obj).then(function (res) {
-	            console.log(res);
-	        });
-	        console.log($scope.selectedseries);
-	    };
-	}]);
+	'use strict';angular.module('app').controller('seriesAddCtrl',['$scope','$location','$http','$timeout',function($scope,$location,$http,$timeout){$scope.newseries={};$scope.selectedseries={};$scope.add=function(){var obj={};obj.name=$scope.newseries.name;$http.post('http://localhost:2003/series',obj).then(function(res){console.log(res);});};$http.get('http://localhost:2003/series').then(function(res){console.log(res.data);$scope.series=res.data;});$scope.addItem=function(){var obj={};obj=$scope.newitem;console.log(obj);$http.post('http://localhost:2003/series?id='+$scope.selectedseries._id,obj).then(function(res){console.log(res);});console.log($scope.selectedseries);};}]);
 
 /***/ },
 /* 123 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').controller('seriesDetailCtrl', ['$scope', '$location', '$routeParams', 'seriesService', function ($scope, $location, $routeParams, seriesService) {
-	    var id = $routeParams.id;
-	    $scope.series = new seriesService(id);
-	    $scope.control = {
-	        detail_editable: false,
-	        episode_editable: false
-	    };
-	    $scope.edit = function () {
-	        $scope.control.detail_editable = !$scope.control.detail_editable;
-	    };
-	    $scope.editEp = function () {
-	        $scope.control.episode_editable = !$scope.control.episode_editable;
-	    };
-	
-	    $scope.addEp = function () {
-	        $scope.series.addNew();
-	    };
-	}]);
+	'use strict';angular.module('app').controller('seriesDetailCtrl',['$scope','$location','$routeParams','seriesService',function($scope,$location,$routeParams,seriesService){var id=$routeParams.id;$scope.series=new seriesService(id);$scope.control={detail_editable:false,episode_editable:false};$scope.edit=function(){$scope.control.detail_editable=!$scope.control.detail_editable;};$scope.editEp=function(){$scope.control.episode_editable=!$scope.control.episode_editable;};$scope.addEp=function(){$scope.series.addNew();};}]);
 
 /***/ },
 /* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	var _moment = __webpack_require__(10);
-	
-	var _moment2 = _interopRequireDefault(_moment);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	angular.module('app').controller('dailyCtrl', ['$scope', '$location', function ($scope, $location) {
-	    $scope.eventSources = [];
-	    $scope.uiConfig = {
-	        calendar: {
-	            height: 450,
-	            editable: true,
-	            header: {
-	                left: 'month basicWeek basicDay agendaWeek agendaDay',
-	                center: 'title',
-	                right: 'today prev,next'
-	            },
-	            dayClick: function dayClick(date, jsEvent, view) {
-	                $scope.alertEventOnClick(date, jsEvent, view);
-	            },
-	            eventDrop: $scope.alertOnDrop,
-	            eventResize: $scope.alertOnResize,
-	            events: [{
-	                title: 'All Day Event',
-	                start: '2016-05-01'
-	            }, {
-	                title: 'Long Event',
-	                start: '2016-04-07',
-	                end: '2016-05-10'
-	            }]
-	        }
-	    };
-	    $scope.alertEventOnClick = function (date, jsEvent, view) {
-	        var _date = (0, _moment2.default)(date).format('YYYY-MM-DD');
-	        $location.path('/daily/detail/' + _date);
-	    };
-	}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('dailyCtrl',['$scope','$location',function($scope,$location){$scope.eventSources=[];$scope.uiConfig={calendar:{height:450,editable:true,header:{left:'month basicWeek basicDay agendaWeek agendaDay',center:'title',right:'today prev,next'},dayClick:function dayClick(date,jsEvent,view){$scope.alertEventOnClick(date,jsEvent,view);},eventDrop:$scope.alertOnDrop,eventResize:$scope.alertOnResize,events:[]}};$scope.alertEventOnClick=function(date,jsEvent,view){var _date=(0,_moment2.default)(date).format('YYYY-MM-DD');$location.path('/daily/detail/'+_date);};}]);
 
 /***/ },
 /* 125 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').controller('dailyDetailCtrl', ['$scope', function ($scope) {}]);
+	'use strict';angular.module('app').controller('dailyDetailCtrl',['$scope','$routeParams','dailyService',function($scope,$routeParams,dailyService){var self=this;self.date=$routeParams.date;$scope.control={item_editable:false};$scope.newItem={};$scope.daily=new dailyService(self.date);}]);
 
 /***/ },
 /* 126 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').factory('seriesListService', ['$http', function ($http) {
-	    var SeriesList = function SeriesList(id, name) {
-	        var self = this;
-	        var headers = [{ id: 1, name: 'name', title: 'NAME', clickable: true, href: '#/series/detail/' }, { id: 2, name: 'date', title: 'DATE' }, { id: 3, name: 'status', title: 'STATUS' }];
-	
-	        this.initialize = function () {
-	            $http.get('http://localhost:2003/series').then(function (res) {
-	                self.rows = res.data;
-	                self.headers = headers;
-	            });
-	        };
-	        this.initialize();
-	    };
-	
-	    return SeriesList;
-	}]);
+	'use strict';angular.module('app').factory('seriesListService',['$http',function($http){var SeriesList=function SeriesList(id,name){var self=this;var headers=[{id:1,name:'name',title:'NAME',clickable:true,href:'#/series/detail/'},{id:2,name:'date',title:'DATE'},{id:3,name:'status',title:'STATUS'}];this.initialize=function(){$http.get('http://localhost:2003/series').then(function(res){self.rows=res.data;self.headers=headers;});};this.initialize();};return SeriesList;}]);
 
 /***/ },
 /* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	var _moment = __webpack_require__(10);
-	
-	var _moment2 = _interopRequireDefault(_moment);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	angular.module('app').factory('seriesService', ['$http', '$rootScope', function ($http, $rootScope) {
-	    var Series = function Series(id) {
-	        var self = this;
-	        this.initialize = function () {
-	            $http.get('http://localhost:2003/series/' + id).then(function (res) {
-	                console.log(res.data);
-	                self._id = res.data._id;
-	                self.name = res.data.name;
-	                self.date = res.data.date;
-	                self.status = res.data.status;
-	                self.items = res.data.items;
-	                self.selected_status = self.status ? $rootScope.series_status.filter(function (s) {
-	                    return s.id == self.status;
-	                })[0] : $rootScope.series_status[2];
-	            });
-	        };
-	
-	        this.addNew = function () {
-	            self.items.push({ num: null, date: (0, _moment2.default)(new Date()).format('YYYY-MM-DD') });
-	        };
-	
-	        this.addItem = function (item) {
-	            item.date = (0, _moment2.default)(item.date).format('YYYY-MM-DD');
-	            $http.post('http://localhost:2003/series/' + self._id, item).then(function (res) {
-	                self.items = res.data;
-	                alert('Success');
-	            });
-	        };
-	
-	        this.update = function () {
-	            self.date = (0, _moment2.default)(self.date).format('YYYY-MM-DD');
-	            self.status = self.selected_status.id;
-	            $http.put('http://localhost:2003/series/' + id, self).then(function (res) {
-	                self.name = res.data.name;
-	                self.date = res.data.date;
-	                self.status = res.data.status;
-	                alert('Success');
-	            });
-	        };
-	
-	        this.deleteItem = function (item) {
-	            $http.delete('http://localhost:2003/series/' + self._id + '/' + item._id).then(function (res) {
-	                self.items = res.data;
-	                alert('Success');
-	            });
-	        };
-	
-	        this.updateItem = function (item) {
-	            $http.post('http://localhost:2003/series/' + self._id + '/' + item._id, item).then(function (res) {
-	                alert('Success');
-	            });
-	        };
-	
-	        this.initialize();
-	    };
-	
-	    return Series;
-	}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('seriesService',['$http','$rootScope',function($http,$rootScope){var Series=function Series(id){var self=this;this.initialize=function(){$http.get('http://localhost:2003/series/'+id).then(function(res){console.log(res.data);self._id=res.data._id;self.name=res.data.name;self.date=res.data.date;self.status=res.data.status;self.items=res.data.items;self.selected_status=self.status?$rootScope.series_status.filter(function(s){return s.id==self.status;})[0]:$rootScope.series_status[2];});};this.addNew=function(){self.items.push({num:null,date:(0,_moment2.default)(new Date()).format('YYYY-MM-DD')});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series/'+self._id,item).then(function(res){self.items=res.data;alert('Success');});};this.update=function(){self.date=(0,_moment2.default)(self.date).format('YYYY-MM-DD');self.status=self.selected_status.id;$http.put('http://localhost:2003/series/'+id,self).then(function(res){self.name=res.data.name;self.date=res.data.date;self.status=res.data.status;alert('Success');});};this.deleteItem=function(item){$http.delete('http://localhost:2003/series/'+self._id+'/'+item._id).then(function(res){self.items=res.data;alert('Success');});};this.updateItem=function(item){$http.post('http://localhost:2003/series/'+self._id+'/'+item._id,item).then(function(res){alert('Success');});};this.initialize();};return Series;}]);
 
 /***/ },
 /* 128 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	angular.module('app').component('appInput', {
-	    templateUrl: 'component/input/app.input.html',
-	    bindings: {
-	        val: '=',
-	        type: '@',
-	        editable: '<',
-	        title: '@',
-	        placeholder: '@'
-	    }
-	});
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope',function($http,$rootScope){var Daily=function Daily(date){var self=this;self.selectedtype={};this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;});};this.addItem=function(newitem){newitem.type=self.selectedtype.id;$http.post('http://localhost:2003/daily/'+date,newitem).then(function(res){console.log(res.data);self.items=res.data.items;newitem={};});};this.initialize();};return Daily;}]);
 
 /***/ },
 /* 129 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').component('appSelect', {
-	    templateUrl: 'component/select/app.select.html',
-	    bindings: {
-	        val: '=',
-	        list: '<',
-	        editable: '<',
-	        title: '@',
-	        placeholder: '@',
-	        showcol: '@'
-	    }
-	});
+	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
 
 /***/ },
 /* 130 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	angular.module('app').component('appTable', {
-	    templateUrl: 'component/table/app.table.html',
-	    bindings: {
-	        list: '<'
-	    }
-	});
+	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
+
+/***/ },
+/* 131 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
 
 /***/ }
 /******/ ]);

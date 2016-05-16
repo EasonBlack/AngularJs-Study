@@ -10,7 +10,7 @@
       </ui-select>
   </span>
   <span class="input-content" ng-if="!$ctrl.editable">
-         {{$ctrl.val[$ctrl.showcol]}}
+         {{$ctrl.showcol ? $ctrl.val[$ctrl.showcol] : $ctrl.getName($ctrl.val)}}
   </span>
 
 </div>

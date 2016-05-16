@@ -5,6 +5,12 @@
 .detail-items-section li {
   display: flex;
 }
+.detail-items-section li .app-input-container {
+  width: 60px;
+}
+.detail-items-section li .app-select-container {
+  width: 60px;
+}
 .detail-items-section li div {
   flex: 1;
 }
@@ -18,7 +24,7 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #3f5185;
+  background-color: #3F5185;
   color: white;
   text-transform: none;
   text-decoration: none;
