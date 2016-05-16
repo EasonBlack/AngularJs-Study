@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
+                $http.get('https://nano.nevaventures.com/v1/servicePlaces', {
+                    headers: {'Authorization': ''}
+                })
+                .then(function (res) {
+                    console.log(res)
+                })
+            }])
+</script>
+</html>
