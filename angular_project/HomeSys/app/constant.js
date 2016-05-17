@@ -6,8 +6,8 @@ angular.module('app')
             {id: 'watching', name: 'Watching'}
         ],
         daily_type: [
-            {id: 'aaaa', name: 'aaaaa'},
-            {id: 'bbbb', name: 'bbbbb'},
+            {id: 'series', name: 'Series'},
+            {id: 'book', name: 'Book'},
             {id: 'cccc', name: 'ccccc'},
             {id: 'dddd', name: 'ddddd'}
         ]

@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 angular.module('app')
     .controller('seriesAddCtrl', ['$scope', '$location', '$http', '$timeout',function ($scope, $location, $http,$timeout) {
         $scope.newseries = {};
@@ -7,13 +9,12 @@ angular.module('app')
             obj.name = $scope.newseries.name;
             $http.post('http://localhost:2003/series', obj)
                 .then((res)=> {
-                    console.log(res);
+                    $scope.series = res.data;
                 })
         }
 
         $http.get('http://localhost:2003/series')
             .then((res)=> {
-                console.log(res.data);
                 $scope.series = res.data;
             })
 
@@ -21,7 +22,7 @@ angular.module('app')
         $scope.addItem = ()=> {
             var obj = {}
             obj = $scope.newitem;
-            console.log(obj);
+            obj.date = moment(obj.date).format('YYYY-MM-DD');
             $http.post('http://localhost:2003/series?id='+ $scope.selectedseries._id , obj)
                 .then((res)=> {
                     console.log(res);

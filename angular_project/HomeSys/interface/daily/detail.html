@@ -22,7 +22,10 @@
         </div>
         <div class="type-item-wrapper" ng-switch="daily.selectedtype.id">
             <div ng-switch-when="series">
-                aaaaaaa
+                <ng-include src="'interface/section/series.edit.html'" ></ng-include>
+            </div>
+            <div ng-switch-when="book">
+                <ng-include src="'interface/section/book.edit.html'" ></ng-include>
             </div>
         </div>
     </div>

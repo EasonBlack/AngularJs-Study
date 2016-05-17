@@ -60894,7 +60894,7 @@
 /* 119 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'aaaa',name:'aaaaa'},{id:'bbbb',name:'bbbbb'},{id:'cccc',name:'ccccc'},{id:'dddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
+	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'cccc',name:'ccccc'},{id:'dddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
 
 /***/ },
 /* 120 */
@@ -60910,9 +60910,9 @@
 
 /***/ },
 /* 122 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').controller('seriesAddCtrl',['$scope','$location','$http','$timeout',function($scope,$location,$http,$timeout){$scope.newseries={};$scope.selectedseries={};$scope.add=function(){var obj={};obj.name=$scope.newseries.name;$http.post('http://localhost:2003/series',obj).then(function(res){console.log(res);});};$http.get('http://localhost:2003/series').then(function(res){console.log(res.data);$scope.series=res.data;});$scope.addItem=function(){var obj={};obj=$scope.newitem;console.log(obj);$http.post('http://localhost:2003/series?id='+$scope.selectedseries._id,obj).then(function(res){console.log(res);});console.log($scope.selectedseries);};}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('seriesAddCtrl',['$scope','$location','$http','$timeout',function($scope,$location,$http,$timeout){$scope.newseries={};$scope.selectedseries={};$scope.add=function(){var obj={};obj.name=$scope.newseries.name;$http.post('http://localhost:2003/series',obj).then(function(res){$scope.series=res.data;});};$http.get('http://localhost:2003/series').then(function(res){$scope.series=res.data;});$scope.addItem=function(){var obj={};obj=$scope.newitem;obj.date=(0,_moment2.default)(obj.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series?id='+$scope.selectedseries._id,obj).then(function(res){console.log(res);});console.log($scope.selectedseries);};}]);
 
 /***/ },
 /* 123 */
