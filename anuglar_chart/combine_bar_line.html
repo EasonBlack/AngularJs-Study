@@ -31,7 +31,7 @@
                             itemWidth: 30,
                             itemDistance: 30,
                             labelFormatter: function () {
-                                if(this.name == 'd' || this.name =='e') {
+                                if (this.name == 'd' || this.name == 'e') {
                                     return this.name;
                                 } else {
                                     return '';
@@ -40,7 +40,9 @@
                             }
                         }
                     },
-
+                    xAxis: {
+                        categories: ['2001', '2002', '2003', '2004', '2005'],
+                    },
                     series: [
                         {
                             grouping: false,
@@ -55,25 +57,25 @@
                             color: 'green',
                             marker: {
                                 lineWidth: 2,
-                                lineColor:  'green',
+                                lineColor: 'green',
                                 fillColor: 'green',
                                 symbol: 'circle'
                             },
-                            zIndex:10
+                            zIndex: 10
                         }, {
                             grouping: false,
                             type: 'column',
                             name: 'Actual',
-                            data: [4, 3, 3, 9, 0],
+                            data: [4, 3, 3],
                             color: '#006699'
-                        },{
+                        }, {
                             type: 'line',
                             name: 'e',
-                            data: [4, 3, 3, 9, 0],
+                            data: [4, 3, 3],
                             color: '#006699',
                             marker: {
                                 lineWidth: 2,
-                                lineColor:  '#006699',
+                                lineColor: '#006699',
                                 fillColor: '#006699',
                                 symbol: 'circle'
                             }
