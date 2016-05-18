@@ -19,7 +19,7 @@ body {
 .left-container {
   height: 100%;
   width: 320px;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
 }
 .left-container ul {
@@ -72,7 +72,7 @@ body {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
   text-transform: none;
   text-decoration: none;
@@ -85,7 +85,6 @@ body {
 .app-input-container {
   display: flex;
   margin-bottom: 10px;
-  width: 400px;
   flex: 1;
 }
 .app-input-container .input-label {
@@ -97,7 +96,6 @@ body {
 .app-select-container {
   display: flex;
   margin-bottom: 10px;
-  width: 400px;
 }
 .app-select-container .input-label {
   flex: 1;
@@ -117,8 +115,15 @@ body {
 .daily-detail-container .detail-items-section .daily-items-wrapper table {
   width: 100%;
 }
-.daily-detail-container .detail-items-section .new-item-wrapper {
+.daily-detail-container .detail-items-section .new-item-wrapper,
+.daily-detail-container .detail-items-section .type-item-wrapper {
   flex: 1;
+}
+.daily-detail-container .detail-items-section .new-item-wrapper .app-input-container .input-label,
+.daily-detail-container .detail-items-section .type-item-wrapper .app-input-container .input-label,
+.daily-detail-container .detail-items-section .new-item-wrapper .app-select-container .input-label,
+.daily-detail-container .detail-items-section .type-item-wrapper .app-select-container .input-label {
+  flex: 0.3;
 }
 .daily-detail-container .detail-items-section .type-item-wrapper {
   flex: 1;

@@ -1,0 +1,35 @@
+<div class="daily-series-container">
+    <div class="form-container">
+        <app-input type="text" title="Name" val="$ctrl.newseries.name" placeholder="Type series name"
+                   editable="true"></app-input>
+        <button ng-click="$ctrl.seriesList.add($ctrl.newseries.name)">Add</button>
+    </div>
+
+    <div class="form-container">
+        <div>
+            <label>Series</label>
+            <ui-select ng-model="$ctrl.selectedseries" style="width: 100px;" theme="select2" search-enabled="false"
+                       title="Choose a country">
+                <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="item._id as item in $ctrl.seriesList.rows | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div>
+            <label class="input-label">Number</label>
+            <input type="text" placeholder="number" ng-model="$ctrl.newseriesitem.num">
+        </div>
+        <div>
+            <label class="input-label">Comment</label>
+            <input type="text" placeholder="comment" ng-model="$ctrl.newseriesitem.comment">
+        </div>
+        <div>
+            <a ng-click="$ctrl.seriesList.addItem($ctrl.selectedseries, $ctrl.newseriesitem, $ctrl.afterAddItem)">Add Item</a>
+        </div>
+        <div>
+            {{$ctrl.newseriesitem|json}}
+        </div>
+    </div>
+
+</div>

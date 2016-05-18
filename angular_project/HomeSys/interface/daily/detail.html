@@ -31,19 +31,31 @@
         </div>
 
         <div class="new-item-wrapper">
-            <app-select list="daily_type" title='Type' val="daily.selectedtype" placeholder="select type"
-                        editable="true"></app-select>
+            <div>
+                <label class="input-label">Type</label>
+                <ui-select ng-model="daily.selectedtype" style="width: 100px;" theme="select2" search-enabled="false"
+                           title="Choose a country">
+                    <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="item.id as item in daily_type | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+
             <app-input type="text" title="Time" val="daily.newitem.time" placeholder="time" editable="true"></app-input>
             <app-input type="text" title="Trophy" val="daily.newitem.trophy" placeholder="trophy" editable="true"></app-input>
             <a herf="javascript:void(0)" ng-click="daily.addItem()">Confirm</a>
+            <a herf="javascript:void(0)" ng-click="daily.newItem()">New</a>
         </div>
         <div class="type-item-wrapper" ng-switch="daily.selectedtype">
             <div ng-switch-when="series">
-                <ng-include src="'interface/section/series.edit.html'"></ng-include>
+                <app-series-edit date="daily.date" dailyitemid="daily.newitem._id" newseriesitem="daily.newsub"></app-series-edit>
+                <!--<ng-include src="'interface/section/series.edit.html'"></ng-include>-->
             </div>
             <div ng-switch-when="book">
                 <ng-include src="'interface/section/book.edit.html'"></ng-include>
             </div>
+
         </div>
     </div>
 

@@ -1,9 +1,11 @@
 import moment from 'moment'
 
 angular.module('app')
-    .controller('seriesAddCtrl', ['$scope', '$location', '$http', '$timeout',function ($scope, $location, $http,$timeout) {
+    .controller('seriesAddCtrl', ['$scope', '$location', '$http', '$timeout', 'seriesService', function ($scope, $location, $http,$timeout, seriesService) {
         $scope.newseries = {};
         $scope.selectedseries = {};
+
+
         $scope.add = ()=> {
             var obj = {}
             obj.name = $scope.newseries.name;

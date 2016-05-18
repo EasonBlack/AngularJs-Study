@@ -5,7 +5,10 @@ angular.module('app')
         $scope.control= {
             item_editable:false
         }
-        $scope.newItem = {};
+        $scope.newitem = {};
+        $scope.newsub = {
+            date: self.date
+        };
         $scope.daily = new dailyService(self.date);
 
     }]);

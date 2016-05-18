@@ -27,6 +27,10 @@ angular.module('app')
                     })
             }
 
+            this.newItem = function(){
+                self.newitem = {};
+            }
+
             this.getItem = function(item){
                 self.items.forEach(function(i){
                     if(i._id == item._id) {

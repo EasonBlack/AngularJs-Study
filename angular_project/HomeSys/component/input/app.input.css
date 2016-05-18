@@ -1,7 +1,6 @@
 .app-input-container {
   display: flex;
   margin-bottom: 10px;
-  width: 400px;
   flex: 1;
 }
 .app-input-container .input-label {

@@ -27,6 +27,7 @@ import './service/daily.service'
 import './component/input/app.input'
 import './component/select/app.select'
 import './component/table/app.table'
+import './component/series/series.component'
 
 
 

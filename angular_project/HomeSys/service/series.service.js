@@ -2,7 +2,7 @@ import moment from 'moment';
 
 angular.module('app')
     .factory('seriesService', ['$http', '$rootScope', function ($http, $rootScope) {
-        var Series = function (id) {
+        var Series = function () {
             var self = this;
             this.initialize = function () {
                 $http.get('http://localhost:2003/series/' + id)
@@ -18,13 +18,13 @@ angular.module('app')
             };
 
             this.addNew = ()=> {
-                self.items.push({num: null, date: moment(new Date()).format('YYYY-MM-DD') });
+                self.items.push({num: null, date: moment(new Date()).format('YYYY-MM-DD')});
             }
 
             this.addItem = (item)=> {
                 item.date = moment(item.date).format('YYYY-MM-DD');
                 $http.post('http://localhost:2003/series/' + self._id, item)
-                    .then((res)=>{
+                    .then((res)=> {
                         self.items = res.data;
                         alert('Success');
                     });
@@ -32,7 +32,7 @@ angular.module('app')
 
             this.update = ()=> {
                 self.date = moment(self.date).format('YYYY-MM-DD');
-                self.status = self.selected_status.id;
+                self.status = self.selected_status;
                 $http.put('http://localhost:2003/series/' + id, self)
                     .then((res)=> {
                         self.name = res.data.name;
@@ -42,9 +42,9 @@ angular.module('app')
                     });
             }
 
-            this.deleteItem =(item)=> {
+            this.deleteItem = (item)=> {
                 $http.delete('http://localhost:2003/series/' + self._id + '/' + item._id)
-                .then((res)=>{
+                    .then((res)=> {
                         self.items = res.data;
                         alert('Success');
                     })
@@ -52,7 +52,7 @@ angular.module('app')
 
             this.updateItem = (item)=> {
                 $http.post('http://localhost:2003/series/' + self._id + '/' + item._id, item)
-                .then((res)=>{
+                    .then((res)=> {
                         alert('Success');
                     });
             }

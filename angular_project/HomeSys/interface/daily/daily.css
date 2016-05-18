@@ -7,8 +7,15 @@
 .daily-detail-container .detail-items-section .daily-items-wrapper table {
   width: 100%;
 }
-.daily-detail-container .detail-items-section .new-item-wrapper {
+.daily-detail-container .detail-items-section .new-item-wrapper,
+.daily-detail-container .detail-items-section .type-item-wrapper {
   flex: 1;
+}
+.daily-detail-container .detail-items-section .new-item-wrapper .app-input-container .input-label,
+.daily-detail-container .detail-items-section .type-item-wrapper .app-input-container .input-label,
+.daily-detail-container .detail-items-section .new-item-wrapper .app-select-container .input-label,
+.daily-detail-container .detail-items-section .type-item-wrapper .app-select-container .input-label {
+  flex: 0.3;
 }
 .daily-detail-container .detail-items-section .type-item-wrapper {
   flex: 1;
