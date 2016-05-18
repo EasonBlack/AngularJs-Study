@@ -1,31 +1,48 @@
 <div class="daily-detail-container">
     <div class="header-section">
-        <app-input type="date"  val="daily.date" title="" editable="control.detail_editable" ></app-input>
+        <app-input type="date" val="daily.date" title="" editable="control.detail_editable"></app-input>
     </div>
 
     <div class="detail-items-section">
         <div class="daily-items-wrapper">
-            <ul>
-                <li ng-repeat="item in daily.items" >
-                    <app-select type="text" val="item.type" list="daily_type"  editable="control.item_editable"></app-select>
-                    <app-input type="text" val="item.time"  editable="control.item_editable"></app-input>
-                    <app-input type="text" val="item.trophy"  editable="control.item_editable"></app-input>
-                </li>
-            </ul>
+            <table>
+                <thead>
+                   <tr>
+                       <th style="width:30%">TYPE</th>
+                       <th style="width:30%"> TIME</th>
+                       <th style="width:30%">TROPHY</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr ng-repeat="item in daily.items">
+                       <td>
+                           <a href="javascript:void(0)" ng-click="daily.getItem(item)"> {{item.type}}</a>
+                       </td>
+                       <td>
+                           {{item.time}}
+                       </td>
+                       <td>
+                           {{item.trophy}}
+                       </td>
+                   </tr>
+                </tbody>
+            </table>
+
         </div>
 
         <div class="new-item-wrapper">
-            <app-select list="daily_type" title='Type' val="daily.selectedtype" placeholder="select type"  editable="true"></app-select>
-            <app-input  type="text" title="Time" val="newitem.time" placeholder="time" editable="true" ></app-input>
-            <app-input  type="text" title="Trophy" val="newitem.trophy" placeholder="trophy" editable="true"></app-input>
-            <a herf="javascript:void(0)" ng-click="daily.addItem(newitem)">Add</a>
+            <app-select list="daily_type" title='Type' val="daily.selectedtype" placeholder="select type"
+                        editable="true"></app-select>
+            <app-input type="text" title="Time" val="daily.newitem.time" placeholder="time" editable="true"></app-input>
+            <app-input type="text" title="Trophy" val="daily.newitem.trophy" placeholder="trophy" editable="true"></app-input>
+            <a herf="javascript:void(0)" ng-click="daily.addItem()">Confirm</a>
         </div>
-        <div class="type-item-wrapper" ng-switch="daily.selectedtype.id">
+        <div class="type-item-wrapper" ng-switch="daily.selectedtype">
             <div ng-switch-when="series">
-                <ng-include src="'interface/section/series.edit.html'" ></ng-include>
+                <ng-include src="'interface/section/series.edit.html'"></ng-include>
             </div>
             <div ng-switch-when="book">
-                <ng-include src="'interface/section/book.edit.html'" ></ng-include>
+                <ng-include src="'interface/section/book.edit.html'"></ng-include>
             </div>
         </div>
     </div>
