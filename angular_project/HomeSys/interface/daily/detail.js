@@ -7,4 +7,5 @@ angular.module('app')
         }
         $scope.newItem = {};
         $scope.daily = new dailyService(self.date);
+
     }]);

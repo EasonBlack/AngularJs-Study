@@ -60948,7 +60948,7 @@
 /* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope',function($http,$rootScope){var Daily=function Daily(date){var self=this;self.selectedtype={};this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;});};this.addItem=function(newitem){newitem.type=self.selectedtype.id;$http.post('http://localhost:2003/daily/'+date,newitem).then(function(res){console.log(res.data);self.items=res.data.items;newitem={};});};this.initialize();};return Daily;}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope',function($http,$rootScope){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;});};this.addItem=function(newitem){this.newitem.type=self.selectedtype.id;$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;newitem={};});};this.getItem=function(item){self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;return;}});};this.initialize();};return Daily;}]);
 
 /***/ },
 /* 129 */
