@@ -2,7 +2,7 @@
   display: flex;
 }
 .daily-detail-container .detail-items-section .daily-items-wrapper {
-  flex: 2;
+  flex: 1;
 }
 .daily-detail-container .detail-items-section .daily-items-wrapper table {
   width: 100%;

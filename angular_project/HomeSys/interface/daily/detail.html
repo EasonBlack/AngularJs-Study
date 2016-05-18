@@ -35,9 +35,9 @@
                         editable="true"></app-select>
             <app-input type="text" title="Time" val="daily.newitem.time" placeholder="time" editable="true"></app-input>
             <app-input type="text" title="Trophy" val="daily.newitem.trophy" placeholder="trophy" editable="true"></app-input>
-            <a herf="javascript:void(0)" ng-click="daily.addItem()">Add</a>
+            <a herf="javascript:void(0)" ng-click="daily.addItem()">Confirm</a>
         </div>
-        <div class="type-item-wrapper" ng-switch="daily.selectedtype.id">
+        <div class="type-item-wrapper" ng-switch="daily.selectedtype">
             <div ng-switch-when="series">
                 <ng-include src="'interface/section/series.edit.html'"></ng-include>
             </div>

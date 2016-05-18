@@ -17,7 +17,8 @@ angular.module('app')
             };
 
             this.addItem = function (newitem) {
-                this.newitem.type = self.selectedtype.id;
+                self.newitem.type = self.selectedtype;
+                console.log(self.newitem);
                 $http.post('http://localhost:2003/daily/' + date, self.newitem)
                     .then((res)=> {
                         console.log(res.data);
@@ -30,6 +31,7 @@ angular.module('app')
                 self.items.forEach(function(i){
                     if(i._id == item._id) {
                         self.newitem = i;
+                        self.selectedtype = i.type;
                         return ;
                     }
                  });
