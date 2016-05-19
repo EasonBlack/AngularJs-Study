@@ -8,15 +8,19 @@
             <table>
                 <thead>
                    <tr>
-                       <th style="width:30%">TYPE</th>
-                       <th style="width:30%"> TIME</th>
-                       <th style="width:30%">TROPHY</th>
+                       <th style="width:20%">TYPE</th>
+                       <th style="width:40%">CONTENT</th>
+                       <th style="width:20%"> TIME</th>
+                       <th style="width:20%">TROPHY</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr ng-repeat="item in daily.items">
                        <td>
                            <a href="javascript:void(0)" ng-click="daily.getItem(item)"> {{item.type}}</a>
+                       </td>
+                       <td>
+                           {{item.content}}
                        </td>
                        <td>
                            {{item.time}}
@@ -31,7 +35,7 @@
         </div>
 
         <div class="new-item-wrapper">
-            <div>
+            <div class="input-section">
                 <label class="input-label">Type</label>
                 <ui-select ng-model="daily.selectedtype" style="width: 100px;" theme="select2" search-enabled="false"
                            title="Choose a country">
@@ -41,11 +45,20 @@
                     </ui-select-choices>
                 </ui-select>
             </div>
-
-            <app-input type="text" title="Time" val="daily.newitem.time" placeholder="time" editable="true"></app-input>
-            <app-input type="text" title="Trophy" val="daily.newitem.trophy" placeholder="trophy" editable="true"></app-input>
-            <a herf="javascript:void(0)" ng-click="daily.addItem()">Confirm</a>
-            <a herf="javascript:void(0)" ng-click="daily.newItem()">New</a>
+            <div  class="input-section">
+                <label class="input-label">Content</label>
+                <input type="text" placeholder="time" ng-model="daily.newitem.content">
+            </div>
+            <div  class="input-section">
+                <label class="input-label">Time</label>
+                <input type="text" placeholder="time" ng-model="daily.newitem.time">
+            </div>
+            <div  class="input-section">
+                <label class="input-label">Trophy</label>
+                <input type="text" placeholder="trophy" ng-model="daily.newitem.trophy">
+            </div>
+            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.addItem()">Confirm</a>
+            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.newItem()">New</a>
         </div>
         <div class="type-item-wrapper" ng-switch="daily.selectedtype">
             <div ng-switch-when="series">

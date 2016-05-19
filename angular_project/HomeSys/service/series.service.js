@@ -2,7 +2,7 @@ import moment from 'moment';
 
 angular.module('app')
     .factory('seriesService', ['$http', '$rootScope', function ($http, $rootScope) {
-        var Series = function () {
+        var Series = function (id) {
             var self = this;
             this.initialize = function () {
                 $http.get('http://localhost:2003/series/' + id)

@@ -7,15 +7,21 @@
 .daily-detail-container .detail-items-section .daily-items-wrapper table {
   width: 100%;
 }
+.daily-detail-container .detail-items-section .daily-items-wrapper table tr {
+  height: 30px;
+}
 .daily-detail-container .detail-items-section .new-item-wrapper,
 .daily-detail-container .detail-items-section .type-item-wrapper {
-  flex: 1;
+  flex: 0.5;
 }
-.daily-detail-container .detail-items-section .new-item-wrapper .app-input-container .input-label,
-.daily-detail-container .detail-items-section .type-item-wrapper .app-input-container .input-label,
-.daily-detail-container .detail-items-section .new-item-wrapper .app-select-container .input-label,
-.daily-detail-container .detail-items-section .type-item-wrapper .app-select-container .input-label {
-  flex: 0.3;
+.daily-detail-container .detail-items-section .new-item-wrapper label,
+.daily-detail-container .detail-items-section .type-item-wrapper label {
+  display: inline-block;
+  width: 70px;
+}
+.daily-detail-container .detail-items-section .new-item-wrapper input,
+.daily-detail-container .detail-items-section .type-item-wrapper input {
+  width: 180px;
 }
 .daily-detail-container .detail-items-section .type-item-wrapper {
   flex: 1;

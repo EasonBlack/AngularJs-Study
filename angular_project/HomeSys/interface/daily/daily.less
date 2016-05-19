@@ -5,13 +5,21 @@
       flex: 1;
       table {
         width:100%;
+
+        tr {
+          height:30px;
+        }
       }
 
     }
     .new-item-wrapper,.type-item-wrapper {
-      flex: 1;
-      .app-input-container .input-label,.app-select-container .input-label {
-        flex:0.3
+      flex: 0.5;
+      label {
+        display: inline-block;
+        width:70px;
+      }
+      input {
+        width:180px;
       }
     }
     .type-item-wrapper {

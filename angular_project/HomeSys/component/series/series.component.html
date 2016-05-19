@@ -1,12 +1,14 @@
 <div class="daily-series-container">
     <div class="form-container">
-        <app-input type="text" title="Name" val="$ctrl.newseries.name" placeholder="Type series name"
-                   editable="true"></app-input>
-        <button ng-click="$ctrl.seriesList.add($ctrl.newseries.name)">Add</button>
+        <div class="input-section">
+            <label class="input-label">Name</label>
+            <input type="text" placeholder="Type series name" ng-model="$ctrl.newseries.num">
+        </div>
+        <a class='app-btn' ng-click="$ctrl.seriesList.add($ctrl.newseries.name)">Add Series</a>
     </div>
 
     <div class="form-container">
-        <div>
+        <div class="input-section">
             <label>Series</label>
             <ui-select ng-model="$ctrl.selectedseries" style="width: 100px;" theme="select2" search-enabled="false"
                        title="Choose a country">
@@ -16,19 +18,16 @@
                 </ui-select-choices>
             </ui-select>
         </div>
-        <div>
+        <div class="input-section">
             <label class="input-label">Number</label>
             <input type="text" placeholder="number" ng-model="$ctrl.newseriesitem.num">
         </div>
-        <div>
+        <div class="input-section">
             <label class="input-label">Comment</label>
             <input type="text" placeholder="comment" ng-model="$ctrl.newseriesitem.comment">
         </div>
         <div>
-            <a ng-click="$ctrl.seriesList.addItem($ctrl.selectedseries, $ctrl.newseriesitem, $ctrl.afterAddItem)">Add Item</a>
-        </div>
-        <div>
-            {{$ctrl.newseriesitem|json}}
+            <a class='app-btn' ng-click="$ctrl.seriesList.addItem($ctrl.selectedseries, $ctrl.newseriesitem, $ctrl.afterAddItem)">Add Item</a>
         </div>
     </div>
 

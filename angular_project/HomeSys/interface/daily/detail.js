@@ -6,9 +6,7 @@ angular.module('app')
             item_editable:false
         }
         $scope.newitem = {};
-        $scope.newsub = {
-            date: self.date
-        };
+
         $scope.daily = new dailyService(self.date);
 
     }]);

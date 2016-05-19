@@ -8,8 +8,9 @@ angular.module('app')
         },
         controller: ['seriesListService',function (seriesListService) {
             var ctrl = this;
-            //ctrl.newseriesitem.date = ctrl.date;
-            //ctrl.newseriesitem.ref = ctrl.dailyitemid;
+            ctrl.newseriesitem.date = ctrl.date;
+            ctrl.newseriesitem.ref = ctrl.dailyitemid;
+            console.log(ctrl.newseriesitem);
             ctrl.seriesList = new seriesListService();
             ctrl.afterAddItem = function(){
 

@@ -6,6 +6,7 @@ angular.module('app')
             var self = this;
             self.selectedtype = {};
             self.newitem = {};
+            self.newsub = {};
             this.initialize = function () {
                 $http.get('http://localhost:2003/daily/' + date)
                     .then((res)=> {
