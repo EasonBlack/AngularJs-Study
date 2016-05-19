@@ -1,9 +1,9 @@
+
 angular.module('app')
-    .component('appSeriesEdit', {
-        templateUrl: 'component/series/series.component.html',
+    .component('appBookEdit', {
+        templateUrl: 'component/series/book.component.html',
         bindings: {
-            newseriesitem: '=',
-            selectedseries: '<',
+            newitem: '=',
             date: '<',
             dailyitemid: '<'
         },

@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(../../../fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(../../../fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(../../../fonts/SFUIText-Semibold.ttf);
+}
 .detail-section,
 .detail-items-section {
   margin-left: 30px;
@@ -24,7 +36,7 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #3f5185;
+  background-color: #3F5185;
   color: white;
   text-transform: none;
   text-decoration: none;

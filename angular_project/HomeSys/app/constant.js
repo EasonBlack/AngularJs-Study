@@ -8,7 +8,7 @@ angular.module('app')
         daily_type: [
             {id: 'series', name: 'Series'},
             {id: 'book', name: 'Book'},
-            {id: 'cccc', name: 'ccccc'},
+            {id: 'it', name: 'IT'},
             {id: 'dddd', name: 'ddddd'}
         ]
     })

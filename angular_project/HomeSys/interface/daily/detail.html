@@ -1,6 +1,6 @@
 <div class="daily-detail-container">
     <div class="header-section">
-        <app-input type="date" val="daily.date" title="" editable="control.detail_editable"></app-input>
+        {{daily.date}}
     </div>
 
     <div class="detail-items-section">
@@ -9,9 +9,9 @@
                 <thead>
                    <tr>
                        <th style="width:20%">TYPE</th>
-                       <th style="width:40%">CONTENT</th>
-                       <th style="width:20%"> TIME</th>
+                       <th style="width:20%">TIME</th>
                        <th style="width:20%">TROPHY</th>
+                       <th style="width:40%">CONTENT</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -20,13 +20,13 @@
                            <a href="javascript:void(0)" ng-click="daily.getItem(item)"> {{item.type}}</a>
                        </td>
                        <td>
-                           {{item.content}}
-                       </td>
-                       <td>
                            {{item.time}}
                        </td>
                        <td>
                            {{item.trophy}}
+                       </td>
+                       <td>
+                           {{item.content}}
                        </td>
                    </tr>
                 </tbody>
@@ -46,10 +46,6 @@
                 </ui-select>
             </div>
             <div  class="input-section">
-                <label class="input-label">Content</label>
-                <input type="text" placeholder="time" ng-model="daily.newitem.content">
-            </div>
-            <div  class="input-section">
                 <label class="input-label">Time</label>
                 <input type="text" placeholder="time" ng-model="daily.newitem.time">
             </div>
@@ -57,16 +53,22 @@
                 <label class="input-label">Trophy</label>
                 <input type="text" placeholder="trophy" ng-model="daily.newitem.trophy">
             </div>
-            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.addItem()">Confirm</a>
-            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.newItem()">New</a>
+            <div  class="input-section">
+                <label class="input-label">Content</label>
+                <input type="text" placeholder="content" ng-model="daily.newitem.content">
+            </div>
+            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.addItem()" >{{daily.newitem._id ? 'Update': 'Add'}}</a>
+            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.newItem()" ng-if="daily.newitem._id">New</a>
         </div>
         <div class="type-item-wrapper" ng-switch="daily.selectedtype">
             <div ng-switch-when="series">
-                <app-series-edit date="daily.date" dailyitemid="daily.newitem._id" newseriesitem="daily.newsub"></app-series-edit>
-                <!--<ng-include src="'interface/section/series.edit.html'"></ng-include>-->
+                <app-series-edit date="daily.date" dailyitemid="daily.newitem._id" newseriesitem="daily.newsub" ></app-series-edit>
             </div>
             <div ng-switch-when="book">
-                <ng-include src="'interface/section/book.edit.html'"></ng-include>
+                <app-book-edit date="daily.date" dailyitemid="daily.newitem._id" newitem="daily.newsub" ></app-book-edit>
+            </div>
+            <div ng-switch-when="it">
+                <app-it-edit  val="daily.newitem.content"></app-it-edit>
             </div>
 
         </div>

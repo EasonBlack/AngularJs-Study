@@ -2,7 +2,7 @@
   display: flex;
 }
 .daily-detail-container .detail-items-section .daily-items-wrapper {
-  flex: 1;
+  flex: 0.8;
 }
 .daily-detail-container .detail-items-section .daily-items-wrapper table {
   width: 100%;
@@ -12,7 +12,7 @@
 }
 .daily-detail-container .detail-items-section .new-item-wrapper,
 .daily-detail-container .detail-items-section .type-item-wrapper {
-  flex: 0.5;
+  flex: 0.7;
 }
 .daily-detail-container .detail-items-section .new-item-wrapper label,
 .daily-detail-container .detail-items-section .type-item-wrapper label {

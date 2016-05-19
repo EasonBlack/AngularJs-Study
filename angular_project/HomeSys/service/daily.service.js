@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 angular.module('app')
-    .factory('dailyService', ['$http', '$rootScope', function ($http, $rootScope) {
+    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService',function ($http, $rootScope, seriesItemService, bookService) {
         var Daily = function (date) {
             var self = this;
             self.selectedtype = {};
@@ -30,13 +30,29 @@ angular.module('app')
 
             this.newItem = function(){
                 self.newitem = {};
+                self.selectedtype = null;
+                self.newsub = {};
             }
 
             this.getItem = function(item){
+                self.newitem = {};
+                self.selectedtype = null;
+                self.newsub = {};
                 self.items.forEach(function(i){
                     if(i._id == item._id) {
                         self.newitem = i;
                         self.selectedtype = i.type;
+                        if(i.type=='series') {
+                            self.newsub = new seriesItemService(item._id);
+                            self.newsub.date = date;
+                            self.newsub.ref= item._id;
+                        } else if (i.type=='book') {
+                            self.newsub = new bookService(item._id);
+                            self.newsub.date = date;
+                            self.newsub.ref= item._id;
+                        } else if (i.type=='it') {
+
+                        }
                         return ;
                     }
                  });

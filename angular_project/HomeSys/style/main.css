@@ -1,7 +1,19 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(../../../fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(../../../fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(../../../fonts/SFUIText-Semibold.ttf);
+}
 * {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'sf regular';
   font-size: 14px;
 }
 body,
@@ -57,6 +69,9 @@ body {
 .header-section {
   height: 50px;
   width: 100%;
+  margin-left: 30px;
+  line-height: 50px;
+  font-size: 21px;
 }
 .detail-section,
 .detail-items-section {
@@ -115,6 +130,14 @@ body {
 .app-select-container .input-content {
   flex: 1;
 }
+.daily-series-container .add-type-section {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  height: 100px;
+  margin-bottom: 20px;
+}
 .detail-items-section .series-items-wrapper input {
   width: 90px;
 }
@@ -122,7 +145,7 @@ body {
   display: flex;
 }
 .daily-detail-container .detail-items-section .daily-items-wrapper {
-  flex: 1;
+  flex: 0.8;
 }
 .daily-detail-container .detail-items-section .daily-items-wrapper table {
   width: 100%;
@@ -132,7 +155,7 @@ body {
 }
 .daily-detail-container .detail-items-section .new-item-wrapper,
 .daily-detail-container .detail-items-section .type-item-wrapper {
-  flex: 0.5;
+  flex: 0.7;
 }
 .daily-detail-container .detail-items-section .new-item-wrapper label,
 .daily-detail-container .detail-items-section .type-item-wrapper label {

@@ -9,23 +9,17 @@
         <app-select list="series_status" val="series.selected_status" showcol="name" title="Status" editable="control.detail_editable"></app-select>
     </div>
     <div class="detail-items-section">
-        <a href='javascript:void(0)' ng-click="editEp()">{{control.episode_editable? 'Finish': 'Edit Episode'}}</a>
-        <a href='javascript:void(0)' ng-if="control.episode_editable" ng-click="addEp()">Add Item</a>
+        <div style=" margin-bottom:10px;">Info</div>
         <ul class="series-items-wrapper">
-            <li ng-repeat="item in series.items" style="width:400px;">
-                <div>
-                    <app-input type="text" val="item.num"  editable="control.episode_editable"></app-input>
+            <li ng-repeat="item in series.items" style="width:400px; margin-bottom:10px;">
+                <div style="flex:0.5">
+                    {{item.num}}
                 </div>
                 <div>
-                    <app-input type="date" val="item.date"  editable="control.episode_editable"></app-input>
+                    {{item.date}}
                 </div>
                 <div>
-                    <app-input type="text" val="item.comment"  editable="control.episode_editable"></app-input>
-                </div>
-                <div ng-if="control.episode_editable">
-                    <a href="javascript:void(0)" ng-click="series.updateItem(item)" ng-if="item._id">Change</a>
-                    <a href="javascript:void(0)" ng-click="series.addItem(item)" ng-if="!item._id">Add</a>
-                    <a href="javascript:void(0)" ng-click="series.deleteItem(item)">Delete</a>
+                    {{item.comment}}
                 </div>
             </li>
         </ul>

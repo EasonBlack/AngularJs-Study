@@ -1,0 +1,23 @@
+<div class="daily-book-container">
+    <div class="form-container">
+        <div class="input-section">
+            <label class="input-label">daily id</label>
+            <span>{{$ctrl.dailyitemid}}</span>
+        </div>
+        <div class="input-section">
+            <label>Book</label>
+            <input type="text" placeholder="book name" ng-model="$ctrl.newitem.name">
+        </div>
+        <div class="input-section">
+            <label class="input-label">Authoer</label>
+            <input type="text" placeholder="number" ng-model="$ctrl.newitem.author">
+        </div>
+        <div class="input-section">
+            <label class="input-label">Comment</label>
+            <input type="text" placeholder="comment" ng-model="$ctrl.newitem.comment">
+        </div>
+        <div>
+            <a class='app-btn' ng-click="$ctrl.newitem.addItem($ctrl.newitem)">Add Item</a>
+        </div>
+    </div>
+</div>

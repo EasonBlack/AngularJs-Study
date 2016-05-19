@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
+	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
 /***/ },
 /* 1 */
@@ -60894,7 +60894,7 @@
 /* 119 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'cccc',name:'ccccc'},{id:'dddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
+	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'it',name:'IT'},{id:'dddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
 
 /***/ },
 /* 120 */
@@ -60936,7 +60936,7 @@
 /* 126 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').factory('seriesListService',['$http',function($http){var SeriesList=function SeriesList(id,name){var self=this;var headers=[{id:1,name:'name',title:'NAME',clickable:true,href:'#/series/detail/'},{id:2,name:'date',title:'DATE'},{id:3,name:'status',title:'STATUS'}];this.initialize=function(){$http.get('http://localhost:2003/series').then(function(res){console.log(res.data);self.rows=res.data;self.headers=headers;});};this.add=function(name){var obj={};if(!name)return;obj.name=name;console.log('add series '+name);$http.post('http://localhost:2003/series',obj).then(function(res){self.rows=res.data;});};this.addItem=function(id,item,cb){$http.post('http://localhost:2003/series/'+id,item).then(function(res){alert('Success');cb();});};this.initialize();};return SeriesList;}]);
+	'use strict';angular.module('app').factory('seriesListService',['$http',function($http){var SeriesList=function SeriesList(id,name){var self=this;var headers=[{id:1,name:'name',title:'NAME',clickable:true,href:'#/series/detail/'},{id:2,name:'date',title:'DATE'},{id:3,name:'status',title:'STATUS'}];this.initialize=function(){$http.get('http://localhost:2003/series').then(function(res){console.log(res.data);self.rows=res.data;self.headers=headers;});};this.add=function(name){var obj={};if(!name)return;obj.name=name;console.log('add series '+name);$http.post('http://localhost:2003/series',obj).then(function(res){self.rows=res.data;});};this.addItem=function(id,item){$http.post('http://localhost:2003/series/'+id,item).then(function(res){alert('Success');});};this.initialize();};return SeriesList;}]);
 
 /***/ },
 /* 127 */
@@ -60948,31 +60948,61 @@
 /* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope',function($http,$rootScope){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};self.newsub={};this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;});};this.addItem=function(newitem){self.newitem.type=self.selectedtype;console.log(self.newitem);$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;newitem={};});};this.newItem=function(){self.newitem={};};this.getItem=function(item){self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;self.selectedtype=i.type;return;}});};this.initialize();};return Daily;}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('seriesItemService',['$http','$rootScope',function($http,$rootScope){var SeriesItem=function SeriesItem(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/series/items/'+id).then(function(res){if(!res.data)return;self.seriesid=res.data.seriesid;self.num=res.data.item.num;self.comment=res.data.item.comment;});};this.initialize();};return SeriesItem;}]);
 
 /***/ },
 /* 129 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope','seriesItemService','bookService',function($http,$rootScope,seriesItemService,bookService){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};self.newsub={};this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;});};this.addItem=function(newitem){self.newitem.type=self.selectedtype;console.log(self.newitem);$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;newitem={};});};this.newItem=function(){self.newitem={};self.selectedtype=null;self.newsub={};};this.getItem=function(item){self.newitem={};self.selectedtype=null;self.newsub={};self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;self.selectedtype=i.type;if(i.type=='series'){self.newsub=new seriesItemService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='book'){self.newsub=new bookService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='it'){}return;}});};this.initialize();};return Daily;}]);
 
 /***/ },
 /* 130 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('bookService',['$http','$rootScope',function($http,$rootScope){var Book=function Book(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/book/'+id).then(function(res){console.log(res.data);self.name=res.data.name;res.data.data&&(self.date=res.data.date);self.author=res.data.author;self.comment=res.data.comment;if(res.data.ref)self.ref=res.data.ref;});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/book',item).then(function(res){self.items=res.data;alert('Success');});};this.initialize();};return Book;}]);
 
 /***/ },
 /* 131 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itService',['$http','$rootScope',function($http,$rootScope){var IT=function IT(){var self=this;this.initialize=function(){$http.get('http://localhost:2003/it').then(function(res){console.log(res);self.rows=res.data;});};this.add=function(name){if(!name)return;var obj={};obj.name=name;$http.post('http://localhost:2003/it',obj).then(function(res){self.rows=res.data;});};this.initialize();};return IT;}]);
 
 /***/ },
 /* 132 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',date:'<',dailyitemid:'<'},controller:['seriesListService',function(seriesListService){var ctrl=this;ctrl.newseriesitem.date=ctrl.date;ctrl.newseriesitem.ref=ctrl.dailyitemid;console.log(ctrl.newseriesitem);ctrl.seriesList=new seriesListService();ctrl.afterAddItem=function(){};}]});
+	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
+
+/***/ },
+/* 133 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
+
+/***/ },
+/* 134 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
+
+/***/ },
+/* 135 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',selectedseries:'<',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;ctrl.seriesList=new seriesListService();}]});
+
+/***/ },
+/* 136 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appBookEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;ctrl.seriesList=new seriesListService();}]});
+
+/***/ },
+/* 137 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appItEdit',{templateUrl:'component/series/it.component.html',bindings:{val:'='},controller:['itService',function(itService){var ctrl=this;ctrl.itList=new itService();}]});
 
 /***/ }
 /******/ ]);

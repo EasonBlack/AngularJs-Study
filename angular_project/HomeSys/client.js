@@ -22,12 +22,17 @@ import './interface/daily/detail'
 
 import './service/seriesList.service'
 import './service/series.service'
+import './service/seriesItem.service'
 import './service/daily.service'
+import './service/book.service'
+import './service/it.service'
 
 import './component/input/app.input'
 import './component/select/app.select'
 import './component/table/app.table'
 import './component/series/series.component'
+import './component/series/book.component'
+import './component/series/it.component'
 
 
 
