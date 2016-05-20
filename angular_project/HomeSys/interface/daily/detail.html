@@ -26,7 +26,7 @@
                            {{item.trophy}}
                        </td>
                        <td>
-                           {{item.content}}
+                           {{item.contentName}}
                        </td>
                    </tr>
                 </tbody>
@@ -70,7 +70,9 @@
             <div ng-switch-when="it">
                 <app-it-edit  val="daily.newitem.content"></app-it-edit>
             </div>
-
+            <div ng-switch-when="film">
+                <app-film-edit ></app-film-edit>
+            </div>
         </div>
     </div>
 

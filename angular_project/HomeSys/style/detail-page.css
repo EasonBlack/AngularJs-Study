@@ -26,6 +26,12 @@
 .detail-items-section li div {
   flex: 1;
 }
+.detail-items-section .daily-items-wrapper {
+  margin-left: 10px;
+}
+.detail-items-section .new-item-wrapper {
+  margin-left: 10px;
+}
 .button-section {
   display: flex;
   align-items: center;

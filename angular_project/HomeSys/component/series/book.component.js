@@ -9,6 +9,5 @@ angular.module('app')
         },
         controller: ['seriesListService','seriesItemService',function (seriesListService, seriesItemService) {
             var ctrl = this;
-            ctrl.seriesList = new seriesListService();
         }]
     })

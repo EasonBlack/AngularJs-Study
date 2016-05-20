@@ -4,8 +4,12 @@ angular.module('app')
         bindings: {
             val: '='
         },
-        controller: ['itService',function (itService) {
+        controller: ['listService',function (listService) {
             var ctrl = this;
-            ctrl.itList = new itService();
+            ctrl.itList = new listService('it');
+            ctrl.addIt = ()=>{
+                console.log(ctrl.newName);
+                ctrl.itList.add({name: ctrl.newName});
+            }
         }]
     })

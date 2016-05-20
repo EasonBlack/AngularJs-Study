@@ -1,0 +1,19 @@
+<div class="daily-book-container">
+    <div class="form-container">
+        <div class="input-section">
+            <label class="input-label">daily id</label>
+            <span>{{$ctrl.dailyitemid}}</span>
+        </div>
+        <div class="input-section">
+            <label>Film</label>
+            <input type="text" placeholder="film name" ng-model="$ctrl.newitem.name">
+        </div>
+        <div class="input-section">
+            <label class="input-label">Comment</label>
+            <input type="text" placeholder="comment" ng-model="$ctrl.newitem.comment">
+        </div>
+        <div>
+            <a class='app-btn' ng-click="$ctrl.add()">Add Item</a>
+        </div>
+    </div>
+</div>

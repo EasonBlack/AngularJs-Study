@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
+	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);__webpack_require__(138);__webpack_require__(139);__webpack_require__(140);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
 /***/ },
 /* 1 */
@@ -60894,115 +60894,133 @@
 /* 119 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'it',name:'IT'},{id:'dddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
+	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'it',name:'IT'},{id:'film',name:'Film'},{id:'dddddddd',name:'ddddd'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
 
 /***/ },
 /* 120 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').controller('dashboardCtrl',['$scope',function($scope){}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('listService',['$http','$rootScope',function($http,$rootScope){var List=function List(path){var self=this;this.initialize=function(){$http.get('http://localhost:2003/'+path).then(function(res){console.log(res);self.rows=res.data;});};this.add=function(obj){if(!obj)return;$http.post('http://localhost:2003/'+path,obj).then(function(res){self.rows=res.data;});};this.initialize();};return List;}]);
 
 /***/ },
 /* 121 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').controller('seriesCtrl',['$scope','$location','seriesListService',function($scope,$location,seriesListService){$scope.add=function(){$location.path('series/add');};$scope.list=new seriesListService();}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itemService',['$http','$rootScope',function($http,$rootScope){var ItemService=function ItemService(){this.getItem=function(path,id){return $http.get('http://localhost:2003/'+path+'/'+id);};};return ItemService;}]);
 
 /***/ },
 /* 122 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('seriesAddCtrl',['$scope','$location','$http','$timeout','seriesService',function($scope,$location,$http,$timeout,seriesService){$scope.newseries={};$scope.selectedseries={};$scope.add=function(){var obj={};obj.name=$scope.newseries.name;$http.post('http://localhost:2003/series',obj).then(function(res){$scope.series=res.data;});};$http.get('http://localhost:2003/series').then(function(res){$scope.series=res.data;});$scope.addItem=function(){var obj={};obj=$scope.newitem;obj.date=(0,_moment2.default)(obj.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series?id='+$scope.selectedseries._id,obj).then(function(res){console.log(res);});console.log($scope.selectedseries);};}]);
-
-/***/ },
-/* 123 */
-/***/ function(module, exports) {
-
-	'use strict';angular.module('app').controller('seriesDetailCtrl',['$scope','$location','$routeParams','seriesService',function($scope,$location,$routeParams,seriesService){var id=$routeParams.id;$scope.series=new seriesService(id);$scope.control={detail_editable:false,episode_editable:false};$scope.edit=function(){$scope.control.detail_editable=!$scope.control.detail_editable;};$scope.editEp=function(){$scope.control.episode_editable=!$scope.control.episode_editable;};$scope.addEp=function(){$scope.series.addNew();};}]);
-
-/***/ },
-/* 124 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('dailyCtrl',['$scope','$location',function($scope,$location){$scope.eventSources=[];$scope.uiConfig={calendar:{height:450,editable:true,header:{left:'month basicWeek basicDay agendaWeek agendaDay',center:'title',right:'today prev,next'},dayClick:function dayClick(date,jsEvent,view){$scope.alertEventOnClick(date,jsEvent,view);},eventDrop:$scope.alertOnDrop,eventResize:$scope.alertOnResize,events:[]}};$scope.alertEventOnClick=function(date,jsEvent,view){var _date=(0,_moment2.default)(date).format('YYYY-MM-DD');$location.path('/daily/detail/'+_date);};}]);
-
-/***/ },
-/* 125 */
-/***/ function(module, exports) {
-
-	'use strict';angular.module('app').controller('dailyDetailCtrl',['$scope','$routeParams','dailyService',function($scope,$routeParams,dailyService){var self=this;self.date=$routeParams.date;$scope.control={item_editable:false};$scope.newitem={};$scope.daily=new dailyService(self.date);}]);
-
-/***/ },
-/* 126 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').factory('seriesListService',['$http',function($http){var SeriesList=function SeriesList(id,name){var self=this;var headers=[{id:1,name:'name',title:'NAME',clickable:true,href:'#/series/detail/'},{id:2,name:'date',title:'DATE'},{id:3,name:'status',title:'STATUS'}];this.initialize=function(){$http.get('http://localhost:2003/series').then(function(res){console.log(res.data);self.rows=res.data;self.headers=headers;});};this.add=function(name){var obj={};if(!name)return;obj.name=name;console.log('add series '+name);$http.post('http://localhost:2003/series',obj).then(function(res){self.rows=res.data;});};this.addItem=function(id,item){$http.post('http://localhost:2003/series/'+id,item).then(function(res){alert('Success');});};this.initialize();};return SeriesList;}]);
 
 /***/ },
-/* 127 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('seriesService',['$http','$rootScope',function($http,$rootScope){var Series=function Series(id){var self=this;this.initialize=function(){$http.get('http://localhost:2003/series/'+id).then(function(res){console.log(res.data);self._id=res.data._id;self.name=res.data.name;self.date=res.data.date;self.status=res.data.status;self.items=res.data.items;self.selected_status=self.status?$rootScope.series_status.filter(function(s){return s.id==self.status;})[0]:$rootScope.series_status[2];});};this.addNew=function(){self.items.push({num:null,date:(0,_moment2.default)(new Date()).format('YYYY-MM-DD')});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series/'+self._id,item).then(function(res){self.items=res.data;alert('Success');});};this.update=function(){self.date=(0,_moment2.default)(self.date).format('YYYY-MM-DD');self.status=self.selected_status;$http.put('http://localhost:2003/series/'+id,self).then(function(res){self.name=res.data.name;self.date=res.data.date;self.status=res.data.status;alert('Success');});};this.deleteItem=function(item){$http.delete('http://localhost:2003/series/'+self._id+'/'+item._id).then(function(res){self.items=res.data;alert('Success');});};this.updateItem=function(item){$http.post('http://localhost:2003/series/'+self._id+'/'+item._id,item).then(function(res){alert('Success');});};this.initialize();};return Series;}]);
 
 /***/ },
-/* 128 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('seriesItemService',['$http','$rootScope',function($http,$rootScope){var SeriesItem=function SeriesItem(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/series/items/'+id).then(function(res){if(!res.data)return;self.seriesid=res.data.seriesid;self.num=res.data.item.num;self.comment=res.data.item.comment;});};this.initialize();};return SeriesItem;}]);
 
 /***/ },
-/* 129 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope','seriesItemService','bookService',function($http,$rootScope,seriesItemService,bookService){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};self.newsub={};this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;});};this.addItem=function(newitem){self.newitem.type=self.selectedtype;console.log(self.newitem);$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;newitem={};});};this.newItem=function(){self.newitem={};self.selectedtype=null;self.newsub={};};this.getItem=function(item){self.newitem={};self.selectedtype=null;self.newsub={};self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;self.selectedtype=i.type;if(i.type=='series'){self.newsub=new seriesItemService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='book'){self.newsub=new bookService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='it'){}return;}});};this.initialize();};return Daily;}]);
-
-/***/ },
-/* 130 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('bookService',['$http','$rootScope',function($http,$rootScope){var Book=function Book(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/book/'+id).then(function(res){console.log(res.data);self.name=res.data.name;res.data.data&&(self.date=res.data.date);self.author=res.data.author;self.comment=res.data.comment;if(res.data.ref)self.ref=res.data.ref;});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/book',item).then(function(res){self.items=res.data;alert('Success');});};this.initialize();};return Book;}]);
 
 /***/ },
-/* 131 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itService',['$http','$rootScope',function($http,$rootScope){var IT=function IT(){var self=this;this.initialize=function(){$http.get('http://localhost:2003/it').then(function(res){console.log(res);self.rows=res.data;});};this.add=function(name){if(!name)return;var obj={};obj.name=name;$http.post('http://localhost:2003/it',obj).then(function(res){self.rows=res.data;});};this.initialize();};return IT;}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itService',['$http','$rootScope',function($http,$rootScope){var IT=function IT(){var self=this;this.getItem=function(id){return $http.get('http://localhost:2003/it/'+id);};};return IT;}]);
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope','seriesItemService','bookService','itemService','itService',function($http,$rootScope,seriesItemService,bookService,itemService,itService){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};self.newsub={};var itSerivce=new itService();var itemFactory=new itemService();this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;self.items.forEach(function(item){recodeItem(item,function(result){item.contentName=result;});});});};this.addItem=function(newitem){self.newitem.type=self.selectedtype;console.log(self.newitem);$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;self.items.forEach(function(item){recodeItem(item,function(result){item.contentName=result;});});newitem={};});};this.newItem=function(){self.newitem={};self.selectedtype=null;self.newsub={};};this.getItem=function(item){self.newitem={};self.selectedtype=null;self.newsub={};self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;self.selectedtype=i.type;if(i.type=='series'){self.newsub=new seriesItemService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='book'){self.newsub=new bookService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='it'){}return;}});};var recodeItem=function recodeItem(item,cb){switch(item.type){case 'series':itemFactory.getItem('series/items',item._id).then(function(res){var result=res.data.seriesname+' '+res.data.item.num;cb(result);});break;case 'book':itemFactory.getItem('book',item._id).then(function(res){cb(res.data.name);});break;case 'it':itSerivce.getItem(item.content).then(function(res){var result=res.data.name;cb(result);});break;}};this.initialize();};return Daily;}]);
+
+/***/ },
+/* 128 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').controller('dashboardCtrl',['$scope',function($scope){}]);
+
+/***/ },
+/* 129 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').controller('seriesCtrl',['$scope','$location','seriesListService',function($scope,$location,seriesListService){$scope.add=function(){$location.path('series/add');};$scope.list=new seriesListService();}]);
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('seriesAddCtrl',['$scope','$location','$http','$timeout','seriesService',function($scope,$location,$http,$timeout,seriesService){$scope.newseries={};$scope.selectedseries={};$scope.add=function(){var obj={};obj.name=$scope.newseries.name;$http.post('http://localhost:2003/series',obj).then(function(res){$scope.series=res.data;});};$http.get('http://localhost:2003/series').then(function(res){$scope.series=res.data;});$scope.addItem=function(){var obj={};obj=$scope.newitem;obj.date=(0,_moment2.default)(obj.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series?id='+$scope.selectedseries._id,obj).then(function(res){console.log(res);});console.log($scope.selectedseries);};}]);
+
+/***/ },
+/* 131 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').controller('seriesDetailCtrl',['$scope','$location','$routeParams','seriesService',function($scope,$location,$routeParams,seriesService){var id=$routeParams.id;$scope.series=new seriesService(id);$scope.control={detail_editable:false,episode_editable:false};$scope.edit=function(){$scope.control.detail_editable=!$scope.control.detail_editable;};$scope.editEp=function(){$scope.control.episode_editable=!$scope.control.episode_editable;};$scope.addEp=function(){$scope.series.addNew();};}]);
 
 /***/ },
 /* 132 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('dailyCtrl',['$scope','$location',function($scope,$location){$scope.eventSources=[];$scope.uiConfig={calendar:{height:450,editable:true,header:{left:'month basicWeek basicDay agendaWeek agendaDay',center:'title',right:'today prev,next'},dayClick:function dayClick(date,jsEvent,view){$scope.alertEventOnClick(date,jsEvent,view);},eventDrop:$scope.alertOnDrop,eventResize:$scope.alertOnResize,events:[]}};$scope.alertEventOnClick=function(date,jsEvent,view){var _date=(0,_moment2.default)(date).format('YYYY-MM-DD');$location.path('/daily/detail/'+_date);};}]);
 
 /***/ },
 /* 133 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
+	'use strict';angular.module('app').controller('dailyDetailCtrl',['$scope','$routeParams','dailyService',function($scope,$routeParams,dailyService){var self=this;self.date=$routeParams.date;$scope.control={item_editable:false};$scope.newitem={};$scope.daily=new dailyService(self.date);}]);
 
 /***/ },
 /* 134 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
+	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
 
 /***/ },
 /* 135 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',selectedseries:'<',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;ctrl.seriesList=new seriesListService();}]});
+	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
 
 /***/ },
 /* 136 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appBookEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;ctrl.seriesList=new seriesListService();}]});
+	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
 
 /***/ },
 /* 137 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appItEdit',{templateUrl:'component/series/it.component.html',bindings:{val:'='},controller:['itService',function(itService){var ctrl=this;ctrl.itList=new itService();}]});
+	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',selectedseries:'<',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;ctrl.seriesList=new seriesListService();}]});
+
+/***/ },
+/* 138 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appBookEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;}]});
+
+/***/ },
+/* 139 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appItEdit',{templateUrl:'component/series/it.component.html',bindings:{val:'='},controller:['listService',function(listService){var ctrl=this;ctrl.itList=new listService('it');ctrl.addIt=function(){console.log(ctrl.newName);ctrl.itList.add({name:ctrl.newName});};}]});
+
+/***/ },
+/* 140 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appFilmEdit',{templateUrl:'component/series/film.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['listService',function(listService){var ctrl=this;ctrl.add=function(){};}]});
 
 /***/ }
 /******/ ]);
