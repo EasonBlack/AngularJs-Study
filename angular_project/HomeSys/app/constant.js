@@ -10,7 +10,8 @@ angular.module('app')
             {id: 'book', name: 'Book'},
             {id: 'it', name: 'IT'},
             {id: 'film', name: 'Film'},
-            {id: 'dddddddd', name: 'ddddd'}
+            {id: 'house', name: 'House'},
+            {id: 'study', name: 'Study'}
         ]
     })
     .run(function ($rootScope, appConstant) {

@@ -1,7 +1,8 @@
 import moment from 'moment';
 
 angular.module('app')
-    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService',  'itemService', 'itService', function ($http, $rootScope, seriesItemService, bookService,itemService, itService ) {
+    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService',  'itemService', 'itService', 'filmService',
+        function ($http, $rootScope, seriesItemService, bookService,itemService, itService,filmService ) {
             var Daily = function (date) {
                 var self = this;
                 self.selectedtype = {};
@@ -65,6 +66,11 @@ angular.module('app')
                                 self.newsub.ref = item._id;
                             } else if (i.type == 'it') {
 
+                            }else if (i.type == 'film') {
+                                filmService.getItem(item._id)
+                                .then((res)=>{
+                                        self.newsub = res.data;
+                                    })
                             }
                             return;
                         }
@@ -91,6 +97,12 @@ angular.module('app')
                                 .then((res)=> {
                                     var result = res.data.name;
                                     cb(result);
+                                });
+                            break;
+                        case 'film':
+                            itemFactory.getItem('film', item._id)
+                                .then((res)=> {
+                                    cb(res.data.name);
                                 });
                             break;
                     }

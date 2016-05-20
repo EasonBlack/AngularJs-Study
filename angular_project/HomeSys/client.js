@@ -21,6 +21,8 @@ import './service/seriesItem.service'
 import './service/book.service'
 import './service/it.service'
 import './service/daily.service'
+import './service/film.service'
+import './service/model.service'
 
 import './interface/dashboard/index'
 import './interface/series/index'
@@ -38,6 +40,7 @@ import './component/series/series.component'
 import './component/series/book.component'
 import './component/series/it.component'
 import './component/series/film.component'
+import './component/series/item.component'
 
 
 

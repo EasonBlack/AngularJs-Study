@@ -71,7 +71,13 @@
                 <app-it-edit  val="daily.newitem.content"></app-it-edit>
             </div>
             <div ng-switch-when="film">
-                <app-film-edit ></app-film-edit>
+                <app-film-edit date="daily.date" dailyitemid="daily.newitem._id"  newitem="daily.newsub"></app-film-edit>
+            </div>
+            <div ng-switch-when="house">
+               <app-item-edit type="House" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
+            </div>
+            <div ng-switch-when="study">
+                <app-item-edit type="Study" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
             </div>
         </div>
     </div>

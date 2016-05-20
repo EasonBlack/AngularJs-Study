@@ -13,7 +13,8 @@
             <input type="text" placeholder="comment" ng-model="$ctrl.newitem.comment">
         </div>
         <div>
-            <a class='app-btn' ng-click="$ctrl.add()">Add Item</a>
+            <a class='app-btn' ng-click="$ctrl.add()" ng-if="!$ctrl.newitem._id">Add</a>
+            <a class='app-btn' ng-click="$ctrl.update()"  ng-if="$ctrl.newitem._id">Update</a>
         </div>
     </div>
 </div>
