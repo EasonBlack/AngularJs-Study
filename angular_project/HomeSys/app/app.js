@@ -1,1 +1,1 @@
-angular.module('app', ['ngRoute', 'ngSanitize', 'ui.select', 'datePicker','ui.calendar'])
+angular.module('app', ['ngRoute', 'ngSanitize', 'ui.select', 'datePicker','ui.calendar', 'ngDialog'])

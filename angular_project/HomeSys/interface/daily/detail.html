@@ -59,6 +59,7 @@
             </div>
             <a herf="javascript:void(0)" class="app-btn" ng-click="daily.addItem()" >{{daily.newitem._id ? 'Update': 'Add'}}</a>
             <a herf="javascript:void(0)" class="app-btn" ng-click="daily.newItem()" ng-if="daily.newitem._id">New</a>
+            <a herf="javascript:void(0)" class="app-btn delete-btn" ng-click="daily.deleteItem()" ng-if="daily.newitem._id">Delete</a>
         </div>
         <div class="type-item-wrapper" ng-switch="daily.selectedtype">
             <div ng-switch-when="series">
@@ -78,6 +79,9 @@
             </div>
             <div ng-switch-when="study">
                 <app-item-edit type="Study" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
+            </div>
+            <div ng-switch-when="job">
+                <app-item-edit type="Job" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
             </div>
         </div>
     </div>

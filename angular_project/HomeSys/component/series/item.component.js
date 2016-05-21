@@ -11,10 +11,11 @@ angular.module('app')
             ctrl.add = ()=>{
                 modelService.addItem(ctrl.type,{name: ctrl.newName})
                 .then((res)=>{
-                        console.log(res);
                         alert('Success');
+                        getlist();
                     })
             }
+
             var getlist = () => {
                 console.log('get list xxxx')
                 modelService.getList(ctrl.type)

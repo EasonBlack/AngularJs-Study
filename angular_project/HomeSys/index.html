@@ -6,6 +6,8 @@
     <link href="../../style/bootstrap-table.css" rel="stylesheet"/>
     <link href="../../vendor/angular-datepicker/angular-datepicker.css" rel="stylesheet"/>
     <link href="../../vendor/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="../../style/ngDialog-css/ngDialog.css" rel="stylesheet" />
+    <link href="../../style/ngDialog-css/ngDialog-theme-default.css" rel="stylesheet" />
     <link href="style/select2.css" rel="stylesheet"/>
     <link href="style/select.css" rel="stylesheet"/>
     <link href="style/main.css" rel="stylesheet"/>
@@ -14,9 +16,15 @@
 
 <div class="left-container">
     <div class="logo"></div>
-    <ul>
-        <li ng-repeat = 'nav in navs'>
-            <a href="#/{{nav.href}}" >{{nav.title}}</a>
+    <ul  class="sidebar-nav">
+        <li ng-repeat = 'nav in navs' class="menus-wrapper">
+            <a href="{{nav.href}}"  ng-click="getSub(nav)">{{nav.title}}</a>
+            <ul ng-if="nav.submenu" ng-class="{'nav-submenu': true, 'subactive': nav.opensub }">
+                <li ng-repeat="sub in nav.submenu">
+                    <a href="{{sub.href}}" ng-bind="sub.title" >
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

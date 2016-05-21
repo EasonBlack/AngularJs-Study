@@ -7,6 +7,7 @@ import 'moment'
 import '../../vendor/angular-datepicker/angular-datepicker'
 import '../../vendor/fullcalendar/fullcalendar'
 import '../../vendor/angular-ui-calendar/calendar'
+import '../../vendor/ngDialog'
 
 import './app/app'
 import './app/app.ctrl'

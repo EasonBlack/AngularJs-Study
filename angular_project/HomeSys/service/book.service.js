@@ -1,11 +1,11 @@
 import moment from 'moment';
 
 angular.module('app')
-    .factory('bookService', ['$http', '$rootScope', function ($http, $rootScope) {
+    .factory('bookService', ['$http', '$rootScope', 'ngDialog', function ($http, $rootScope, ngDialog) {
         var Book = function (id) {
             var self = this;
             this.initialize = function () {
-                if(!id) return ;
+                if (!id) return;
                 $http.get('http://localhost:2003/book/' + id)
                     .then((res)=> {
                         console.log(res.data);
@@ -13,7 +13,7 @@ angular.module('app')
                         res.data.data && (self.date = res.data.date);
                         self.author = res.data.author;
                         self.comment = res.data.comment;
-                        if( res.data.ref)  self.ref = res.data.ref;
+                        if (res.data.ref)  self.ref = res.data.ref;
                     })
             };
 

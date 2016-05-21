@@ -1,8 +1,8 @@
 import moment from 'moment';
 
 angular.module('app')
-    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService',  'itemService', 'itService', 'filmService',
-        function ($http, $rootScope, seriesItemService, bookService,itemService, itService,filmService ) {
+    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService', 'itemService', 'itService', 'filmService', 'modelService',
+        function ($http, $rootScope, seriesItemService, bookService, itemService, itService, filmService, modelService) {
             var Daily = function (date) {
                 var self = this;
                 self.selectedtype = {};
@@ -48,6 +48,13 @@ angular.module('app')
                     self.newsub = {};
                 }
 
+                this.deleteItem = function () {
+                    $http.delete('http://localhost:2003/daily/' + date + '/' + self.newitem._id)
+                        .then((res)=> {
+                            self.initialize();
+                        })
+                }
+
                 this.getItem = function (item) {
                     self.newitem = {};
                     self.selectedtype = null;
@@ -66,9 +73,9 @@ angular.module('app')
                                 self.newsub.ref = item._id;
                             } else if (i.type == 'it') {
 
-                            }else if (i.type == 'film') {
+                            } else if (i.type == 'film') {
                                 filmService.getItem(item._id)
-                                .then((res)=>{
+                                    .then((res)=> {
                                         self.newsub = res.data;
                                     })
                             }
@@ -89,7 +96,7 @@ angular.module('app')
                         case 'book':
                             itemFactory.getItem('book', item._id)
                                 .then((res)=> {
-                                   cb(res.data.name);
+                                    cb(res.data.name);
                                 });
                             break;
                         case 'it':
@@ -104,6 +111,24 @@ angular.module('app')
                                 .then((res)=> {
                                     cb(res.data.name);
                                 });
+                            break;
+                        case 'house':
+                            modelService.getItem('House', item.content)
+                                .then((res)=> {
+                                    cb(res.data.name);
+                                })
+                            break;
+                        case 'study':
+                            modelService.getItem('Study', item.content)
+                                .then((res)=> {
+                                    cb(res.data.name);
+                                })
+                            break;
+                        case 'job':
+                            modelService.getItem('Job', item.content)
+                                .then((res)=> {
+                                    cb(res.data.name);
+                                })
                             break;
                     }
                 }

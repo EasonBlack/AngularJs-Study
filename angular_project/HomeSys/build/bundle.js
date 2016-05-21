@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);__webpack_require__(138);__webpack_require__(139);__webpack_require__(140);__webpack_require__(141);__webpack_require__(142);__webpack_require__(143);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
+	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);__webpack_require__(138);__webpack_require__(139);__webpack_require__(140);__webpack_require__(141);__webpack_require__(142);__webpack_require__(143);__webpack_require__(144);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
 /***/ },
 /* 1 */
@@ -9907,11 +9907,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/**
-	 * @license AngularJS v1.5.5
+	 * @license AngularJS v1.5.3
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
-	(function(window) {'use strict';
+	(function(window, document, undefined) {'use strict';
 	
 	/**
 	 * @description
@@ -9965,7 +9965,7 @@
 	      return match;
 	    });
 	
-	    message += '\nhttp://errors.angularjs.org/1.5.5/' +
+	    message += '\nhttp://errors.angularjs.org/1.5.3/' +
 	      (module ? module + '/' : '') + code;
 	
 	    for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -10079,7 +10079,6 @@
 	 * @ngdoc module
 	 * @name ng
 	 * @module ng
-	 * @installation
 	 * @description
 	 *
 	 * # ng (core module)
@@ -10146,7 +10145,7 @@
 	 * documentMode is an IE-only property
 	 * http://msdn.microsoft.com/en-us/library/ie/cc196988(v=vs.85).aspx
 	 */
-	msie = window.document.documentMode;
+	msie = document.documentMode;
 	
 	
 	/**
@@ -10956,41 +10955,6 @@
 	 * @param {*} o1 Object or value to compare.
 	 * @param {*} o2 Object or value to compare.
 	 * @returns {boolean} True if arguments are equal.
-	 *
-	 * @example
-	   <example module="equalsExample" name="equalsExample">
-	     <file name="index.html">
-	      <div ng-controller="ExampleController">
-	        <form novalidate>
-	          <h3>User 1</h3>
-	          Name: <input type="text" ng-model="user1.name">
-	          Age: <input type="number" ng-model="user1.age">
-	
-	          <h3>User 2</h3>
-	          Name: <input type="text" ng-model="user2.name">
-	          Age: <input type="number" ng-model="user2.age">
-	
-	          <div>
-	            <br/>
-	            <input type="button" value="Compare" ng-click="compare()">
-	          </div>
-	          User 1: <pre>{{user1 | json}}</pre>
-	          User 2: <pre>{{user2 | json}}</pre>
-	          Equal: <pre>{{result}}</pre>
-	        </form>
-	      </div>
-	    </file>
-	    <file name="script.js">
-	        angular.module('equalsExample', []).controller('ExampleController', ['$scope', function($scope) {
-	          $scope.user1 = {};
-	          $scope.user2 = {};
-	          $scope.result;
-	          $scope.compare = function() {
-	            $scope.result = angular.equals($scope.user1, $scope.user2);
-	          };
-	        }]);
-	    </file>
-	  </example>
 	 */
 	function equals(o1, o2) {
 	  if (o1 === o2) return true;
@@ -11037,8 +11001,8 @@
 	  if (!isDefined(csp.rules)) {
 	
 	
-	    var ngCspElement = (window.document.querySelector('[ng-csp]') ||
-	                    window.document.querySelector('[data-ng-csp]'));
+	    var ngCspElement = (document.querySelector('[ng-csp]') ||
+	                    document.querySelector('[data-ng-csp]'));
 	
 	    if (ngCspElement) {
 	      var ngCspAttribute = ngCspElement.getAttribute('ng-csp') ||
@@ -11113,7 +11077,7 @@
 	  var i, ii = ngAttrPrefixes.length, prefix, name;
 	  for (i = 0; i < ii; ++i) {
 	    prefix = ngAttrPrefixes[i];
-	    if (el = window.document.querySelector('[' + prefix.replace(':', '\\:') + 'jq]')) {
+	    if (el = document.querySelector('[' + prefix.replace(':', '\\:') + 'jq]')) {
 	      name = el.getAttribute(prefix + 'jq');
 	      break;
 	    }
@@ -11178,7 +11142,7 @@
 	    val = undefined;
 	  } else if (isWindow(value)) {
 	    val = '$WINDOW';
-	  } else if (value &&  window.document === value) {
+	  } else if (value &&  document === value) {
 	    val = '$DOCUMENT';
 	  } else if (isScope(value)) {
 	    val = '$SCOPE';
@@ -11630,11 +11594,11 @@
 	    element = jqLite(element);
 	
 	    if (element.injector()) {
-	      var tag = (element[0] === window.document) ? 'document' : startingTag(element);
+	      var tag = (element[0] === document) ? 'document' : startingTag(element);
 	      //Encode angle brackets to prevent input from being sanitized to empty string #8683
 	      throw ngMinErr(
 	          'btstrpd',
-	          "App already bootstrapped with this element '{0}'",
+	          "App Already Bootstrapped with this Element '{0}'",
 	          tag.replace(/</,'&lt;').replace(/>/,'&gt;'));
 	    }
 	
@@ -12081,9 +12045,9 @@
 	           * @ngdoc method
 	           * @name angular.Module#decorator
 	           * @module ng
-	           * @param {string} name The name of the service to decorate.
-	           * @param {Function} decorFn This function will be invoked when the service needs to be
-	           *                           instantiated and should return the decorated service instance.
+	           * @param {string} The name of the service to decorate.
+	           * @param {Function} This function will be invoked when the service needs to be
+	           *                                    instantiated and should return the decorated service instance.
 	           * @description
 	           * See {@link auto.$provide#decorator $provide.decorator()}.
 	           */
@@ -12387,11 +12351,11 @@
 	 * - `codeName` – `{string}` – Code name of the release, such as "jiggling-armfat".
 	 */
 	var version = {
-	  full: '1.5.5',    // all of these placeholder strings will be replaced by grunt's
+	  full: '1.5.3',    // all of these placeholder strings will be replaced by grunt's
 	  major: 1,    // package task
 	  minor: 5,
-	  dot: 5,
-	  codeName: 'material-conspiration'
+	  dot: 3,
+	  codeName: 'diplohaplontic-meiosis'
 	};
 	
 	
@@ -12648,9 +12612,6 @@
 	 * - `inheritedData()` - same as `data()`, but walks up the DOM until a value is found or the top
 	 *   parent element is reached.
 	 *
-	 * @knownIssue You cannot spy on `angular.element` if you are using Jasmine version 1.x. See
-	 * https://github.com/angular/angular.js/issues/14251 for more information.
-	 *
 	 * @param {string|DOMElement} element HTML string or DOMElement to be wrapped into jQuery.
 	 * @returns {Object} jQuery object.
 	 */
@@ -12777,7 +12738,7 @@
 	}
 	
 	function jqLiteParseHTML(html, context) {
-	  context = context || window.document;
+	  context = context || document;
 	  var parsed;
 	
 	  if ((parsed = SINGLE_TAG_REGEXP.exec(html))) {
@@ -12803,7 +12764,7 @@
 	
 	
 	// IE9-11 has no method "contains" in SVG element and in Node.prototype. Bug #10259.
-	var jqLiteContains = window.Node.prototype.contains || function(arg) {
+	var jqLiteContains = Node.prototype.contains || function(arg) {
 	  // jshint bitwise: false
 	  return !!(this.compareDocumentPosition(arg) & 16);
 	  // jshint bitwise: true
@@ -13075,8 +13036,8 @@
 	    }
 	
 	    // check if document is already loaded
-	    if (window.document.readyState === 'complete') {
-	      window.setTimeout(trigger);
+	    if (document.readyState === 'complete') {
+	      setTimeout(trigger);
 	    } else {
 	      this.on('DOMContentLoaded', trigger); // works for modern browsers and IE9
 	      // we can not use jqLite since we are not done loading and jQuery could be loaded later.
@@ -13766,7 +13727,6 @@
 	/**
 	 * @ngdoc module
 	 * @name auto
-	 * @installation
 	 * @description
 	 *
 	 * Implicit module which gets automatically added to each {@link auto.$injector $injector}.
@@ -13780,7 +13740,7 @@
 	var $injectorMinErr = minErr('$injector');
 	
 	function extractArgs(fn) {
-	  var fnText = Function.prototype.toString.call(fn).replace(STRIP_COMMENTS, ''),
+	  var fnText = fn.toString().replace(STRIP_COMMENTS, ''),
 	      args = fnText.match(ARROW_ARG) || fnText.match(FN_ARGS);
 	  return args;
 	}
@@ -15200,9 +15160,6 @@
 	       * // remove all the animation event listeners listening for `enter`
 	       * $animate.off('enter');
 	       *
-	       * // remove listeners for all animation events from the container element
-	       * $animate.off(container);
-	       *
 	       * // remove all the animation event listeners listening for `enter` on the given element and its children
 	       * $animate.off('enter', container);
 	       *
@@ -15211,9 +15168,7 @@
 	       * $animate.off('enter', container, callback);
 	       * ```
 	       *
-	       * @param {string|DOMElement} event|container the animation event (e.g. enter, leave, move,
-	       * addClass, removeClass, etc...), or the container element. If it is the element, all other
-	       * arguments are ignored.
+	       * @param {string} event the animation event (e.g. enter, leave, move, addClass, removeClass, etc...)
 	       * @param {DOMElement=} container the container element the event listener was placed on
 	       * @param {Function=} callback the callback function that was registered as the listener
 	       */
@@ -16786,8 +16741,8 @@
 	 *   this element). This is a good place to put initialization code for your controller.
 	 * * `$onChanges(changesObj)` - Called whenever one-way (`<`) or interpolation (`@`) bindings are updated. The
 	 *   `changesObj` is a hash whose keys are the names of the bound properties that have changed, and the values are an
-	 *   object of the form `{ currentValue, previousValue, isFirstChange() }`. Use this hook to trigger updates within a
-	 *   component such as cloning the bound value to prevent accidental mutation of the outer value.
+	 *   object of the form `{ currentValue: ..., previousValue: ... }`. Use this hook to trigger updates within a component
+	 *   such as cloning the bound value to prevent accidental mutation of the outer value.
 	 * * `$onDestroy()` - Called on a controller when its containing scope is destroyed. Use this hook for releasing
 	 *   external resources, watches and event handlers. Note that components have their `$onDestroy()` hooks called in
 	 *   the same order as the `$scope.$broadcast` events are triggered, which is top down. This means that parent
@@ -17334,9 +17289,6 @@
 	
 	var $compileMinErr = minErr('$compile');
 	
-	function UNINITIALIZED_VALUE() {}
-	var _UNINITIALIZED_VALUE = new UNINITIALIZED_VALUE();
-	
 	/**
 	 * @ngdoc provider
 	 * @name $compileProvider
@@ -17361,7 +17313,7 @@
 	  function parseIsolateBindings(scope, directiveName, isController) {
 	    var LOCAL_REGEXP = /^\s*([@&<]|=(\*?))(\??)\s*(\w*)\s*$/;
 	
-	    var bindings = createMap();
+	    var bindings = {};
 	
 	    forEach(scope, function(definition, scopeName) {
 	      if (definition in bindingCache) {
@@ -17535,9 +17487,6 @@
 	   *      See {@link ng.$compile#-bindtocontroller- `bindToController`}.
 	   *    - `transclude` – `{boolean=}` – whether {@link $compile#transclusion content transclusion} is enabled.
 	   *      Disabled by default.
-	   *    - `require` - `{Object<string, string>=}` - requires the controllers of other directives and binds them to
-	   *      this component's controller. The object keys specify the property names under which the required
-	   *      controllers (object values) will be bound. See {@link ng.$compile#-require- `require`}.
 	   *    - `$...` – additional properties to attach to the directive factory function and the controller
 	   *      constructor function. (This is used by the component router to annotate)
 	   *
@@ -17583,7 +17532,7 @@
 	   * See also {@link ng.$compileProvider#directive $compileProvider.directive()}.
 	   */
 	  this.component = function registerComponent(name, options) {
-	    var controller = options.controller || function() {};
+	    var controller = options.controller || noop;
 	
 	    function factory($injector) {
 	      function makeInjectable(fn) {
@@ -17597,7 +17546,7 @@
 	      }
 	
 	      var template = (!options.template && !options.templateUrl ? '' : options.template);
-	      var ddo = {
+	      return {
 	        controller: controller,
 	        controllerAs: identifierForController(options.controller) || options.controllerAs || '$ctrl',
 	        template: makeInjectable(template),
@@ -17608,27 +17557,14 @@
 	        restrict: 'E',
 	        require: options.require
 	      };
-	
-	      // Copy annotations (starting with $) over to the DDO
-	      forEach(options, function(val, key) {
-	        if (key.charAt(0) === '$') ddo[key] = val;
-	      });
-	
-	      return ddo;
 	    }
 	
-	    // TODO(pete) remove the following `forEach` before we release 1.6.0
-	    // The component-router@0.2.0 looks for the annotations on the controller constructor
-	    // Nothing in Angular looks for annotations on the factory function but we can't remove
-	    // it from 1.5.x yet.
-	
-	    // Copy any annotation properties (starting with $) over to the factory and controller constructor functions
+	    // Copy any annotation properties (starting with $) over to the factory function
 	    // These could be used by libraries such as the new component router
 	    forEach(options, function(val, key) {
 	      if (key.charAt(0) === '$') {
 	        factory[key] = val;
-	        // Don't try to copy over annotations to named controller
-	        if (isFunction(controller)) controller[key] = val;
+	        controller[key] = val;
 	      }
 	    });
 	
@@ -17765,7 +17701,7 @@
 	             $controller,   $rootScope,   $sce,   $animate,   $$sanitizeUri) {
 	
 	    var SIMPLE_ATTR_NAME = /^\w/;
-	    var specialAttrHolder = window.document.createElement('div');
+	    var specialAttrHolder = document.createElement('div');
 	
 	
 	
@@ -18096,7 +18032,7 @@
 	      if (debugInfoEnabled) {
 	        content = ' ' + (directiveName || '') + ': ' + (comment || '') + ' ';
 	      }
-	      return window.document.createComment(content);
+	      return document.createComment(content);
 	    };
 	
 	    return compile;
@@ -18119,7 +18055,7 @@
 	        var domNode = $compileNodes[i];
 	
 	        if (domNode.nodeType === NODE_TYPE_TEXT && domNode.nodeValue.match(NOT_EMPTY) /* non-empty */) {
-	          jqLiteWrapNode(domNode, $compileNodes[i] = window.document.createElement('span'));
+	          jqLiteWrapNode(domNode, $compileNodes[i] = document.createElement('span'));
 	        }
 	      }
 	
@@ -18812,9 +18748,7 @@
 	            replaceDirective = directive;
 	          }
 	
-	          /* jshint -W021 */
 	          nodeLinkFn = compileTemplateUrl(directives.splice(i, directives.length - i), $compileNode,
-	          /* jshint +W021 */
 	              templateAttrs, jqCollection, hasTranscludeDirective && childTranscludeFn, preLinkFns, postLinkFns, {
 	                controllerDirectives: controllerDirectives,
 	                newScopeDirective: (newScopeDirective !== directive) && newScopeDirective,
@@ -18878,7 +18812,7 @@
 	
 	      function nodeLinkFn(childLinkFn, scope, linkNode, $rootElement, boundTranscludeFn) {
 	        var i, ii, linkFn, isolateScope, controllerScope, elementControllers, transcludeFn, $element,
-	            attrs, scopeBindingInfo;
+	            attrs, removeScopeBindingWatches, removeControllerBindingWatches;
 	
 	        if (compileNode === linkNode) {
 	          attrs = templateAttrs;
@@ -18917,11 +18851,11 @@
 	          compile.$$addScopeClass($element, true);
 	          isolateScope.$$isolateBindings =
 	              newIsolateScopeDirective.$$isolateBindings;
-	          scopeBindingInfo = initializeDirectiveBindings(scope, attrs, isolateScope,
+	          removeScopeBindingWatches = initializeDirectiveBindings(scope, attrs, isolateScope,
 	                                        isolateScope.$$isolateBindings,
 	                                        newIsolateScopeDirective);
-	          if (scopeBindingInfo.removeWatches) {
-	            isolateScope.$on('$destroy', scopeBindingInfo.removeWatches);
+	          if (removeScopeBindingWatches) {
+	            isolateScope.$on('$destroy', removeScopeBindingWatches);
 	          }
 	        }
 	
@@ -18932,10 +18866,8 @@
 	          var bindings = controllerDirective.$$bindings.bindToController;
 	
 	          if (controller.identifier && bindings) {
-	            controller.bindingInfo =
+	            removeControllerBindingWatches =
 	              initializeDirectiveBindings(controllerScope, attrs, controller.instance, bindings, controllerDirective);
-	          } else {
-	            controller.bindingInfo = {};
 	          }
 	
 	          var controllerResult = controller();
@@ -18944,8 +18876,8 @@
 	            // from setupControllers
 	            controller.instance = controllerResult;
 	            $element.data('$' + controllerDirective.name + 'Controller', controllerResult);
-	            controller.bindingInfo.removeWatches && controller.bindingInfo.removeWatches();
-	            controller.bindingInfo =
+	            removeControllerBindingWatches && removeControllerBindingWatches();
+	            removeControllerBindingWatches =
 	              initializeDirectiveBindings(controllerScope, attrs, controller.instance, bindings, controllerDirective);
 	          }
 	        }
@@ -18961,9 +18893,6 @@
 	        // Handle the init and destroy lifecycle hooks on all controllers that have them
 	        forEach(elementControllers, function(controller) {
 	          var controllerInstance = controller.instance;
-	          if (isFunction(controllerInstance.$onChanges)) {
-	            controllerInstance.$onChanges(controller.bindingInfo.initialChanges);
-	          }
 	          if (isFunction(controllerInstance.$onInit)) {
 	            controllerInstance.$onInit();
 	          }
@@ -19420,7 +19349,7 @@
 	      switch (type) {
 	      case 'svg':
 	      case 'math':
-	        var wrapper = window.document.createElement('div');
+	        var wrapper = document.createElement('div');
 	        wrapper.innerHTML = '<' + type + '>' + template + '</' + type + '>';
 	        return wrapper.childNodes[0].childNodes;
 	      default:
@@ -19564,7 +19493,7 @@
 	      // - remove them from the DOM
 	      // - allow them to still be traversed with .nextSibling
 	      // - allow a single fragment.qSA to fetch all elements being removed
-	      var fragment = window.document.createDocumentFragment();
+	      var fragment = document.createDocumentFragment();
 	      for (i = 0; i < removeCount; i++) {
 	        fragment.appendChild(elementsToRemove[i]);
 	      }
@@ -19610,7 +19539,6 @@
 	    // only occurs for isolate scopes and new scopes with controllerAs.
 	    function initializeDirectiveBindings(scope, attrs, destination, bindings, directive) {
 	      var removeWatchCollection = [];
-	      var initialChanges = {};
 	      var changes;
 	      forEach(bindings, function initializeBinding(definition, scopeName) {
 	        var attrName = definition.attrName,
@@ -19626,7 +19554,7 @@
 	              destination[scopeName] = attrs[attrName] = void 0;
 	            }
 	            attrs.$observe(attrName, function(value) {
-	              if (isString(value) || isBoolean(value)) {
+	              if (isString(value)) {
 	                var oldValue = destination[scopeName];
 	                recordChanges(scopeName, value, oldValue);
 	                destination[scopeName] = value;
@@ -19643,7 +19571,6 @@
 	              // the value to boolean rather than a string, so we special case this situation
 	              destination[scopeName] = lastValue;
 	            }
-	            initialChanges[scopeName] = new SimpleChange(_UNINITIALIZED_VALUE, destination[scopeName]);
 	            break;
 	
 	          case '=':
@@ -19699,16 +19626,11 @@
 	            parentGet = $parse(attrs[attrName]);
 	
 	            destination[scopeName] = parentGet(scope);
-	            initialChanges[scopeName] = new SimpleChange(_UNINITIALIZED_VALUE, destination[scopeName]);
 	
-	            removeWatch = scope.$watch(parentGet, function parentValueWatchAction(newValue, oldValue) {
-	              if (newValue === oldValue) {
-	                // If the new and old values are identical then this is the first time the watch has been triggered
-	                // So instead we use the current value on the destination as the old value
-	                oldValue = destination[scopeName];
-	              }
-	              recordChanges(scopeName, newValue, oldValue);
-	              destination[scopeName] = newValue;
+	            removeWatch = scope.$watch(parentGet, function parentValueWatchAction(newParentValue) {
+	              var oldValue = destination[scopeName];
+	              recordChanges(scopeName, newParentValue, oldValue);
+	              destination[scopeName] = newParentValue;
 	            }, parentGet.literal);
 	
 	            removeWatchCollection.push(removeWatch);
@@ -19745,7 +19667,7 @@
 	            previousValue = changes[key].previousValue;
 	          }
 	          // Store this change
-	          changes[key] = new SimpleChange(previousValue, currentValue);
+	          changes[key] = {previousValue: previousValue, currentValue: currentValue};
 	        }
 	      }
 	
@@ -19755,24 +19677,14 @@
 	        changes = undefined;
 	      }
 	
-	      return {
-	        initialChanges: initialChanges,
-	        removeWatches: removeWatchCollection.length && function removeWatches() {
-	          for (var i = 0, ii = removeWatchCollection.length; i < ii; ++i) {
-	            removeWatchCollection[i]();
-	          }
+	      return removeWatchCollection.length && function removeWatches() {
+	        for (var i = 0, ii = removeWatchCollection.length; i < ii; ++i) {
+	          removeWatchCollection[i]();
 	        }
 	      };
 	    }
 	  }];
 	}
-	
-	function SimpleChange(previous, current) {
-	  this.previousValue = previous;
-	  this.currentValue = current;
-	}
-	SimpleChange.prototype.isFirstChange = function() { return this.previousValue === _UNINITIALIZED_VALUE; };
-	
 	
 	var PREFIX_REGEXP = /^((?:x|data)[\:\-_])/i;
 	/**
@@ -20713,7 +20625,7 @@
 	     * That means changes to the properties of `data` are not local to the transform function (since Javascript passes objects by reference).
 	     * For example, when calling `$http.get(url, $scope.myObject)`, modifications to the object's properties in a transformRequest
 	     * function will be reflected on the scope and in any templates where the object is data-bound.
-	     * To prevent this, transform functions should have no side-effects.
+	     * To prevent his, transform functions should have no side-effects.
 	     * If you need to modify properties, it is recommended to make a copy of the data, or create new object to return.
 	     * </div>
 	     *
@@ -20959,12 +20871,6 @@
 	     *    - **headers** – `{Object}` – Map of strings or functions which return strings representing
 	     *      HTTP headers to send to the server. If the return value of a function is null, the
 	     *      header will not be sent. Functions accept a config object as an argument.
-	     *    - **eventHandlers** - `{Object}` - Event listeners to be bound to the XMLHttpRequest object.
-	     *      To bind events to the XMLHttpRequest upload object, use `uploadEventHandlers`.
-	     *      The handler will be called in the context of a `$apply` block.
-	     *    - **uploadEventHandlers** - `{Object}` - Event listeners to be bound to the XMLHttpRequest upload
-	     *      object. To bind events to the XMLHttpRequest object, use `eventHandlers`.
-	     *      The handler will be called in the context of a `$apply` block.
 	     *    - **xsrfHeaderName** – `{string}` – Name of HTTP header to populate with the XSRF token.
 	     *    - **xsrfCookieName** – `{string}` – Name of cookie containing the XSRF token.
 	     *    - **transformRequest** –
@@ -21423,34 +21329,10 @@
 	        }
 	
 	        $httpBackend(config.method, url, reqData, done, reqHeaders, config.timeout,
-	            config.withCredentials, config.responseType,
-	            createApplyHandlers(config.eventHandlers),
-	            createApplyHandlers(config.uploadEventHandlers));
+	            config.withCredentials, config.responseType);
 	      }
 	
 	      return promise;
-	
-	      function createApplyHandlers(eventHandlers) {
-	        if (eventHandlers) {
-	          var applyHandlers = {};
-	          forEach(eventHandlers, function(eventHandler, key) {
-	            applyHandlers[key] = function(event) {
-	              if (useApplyAsync) {
-	                $rootScope.$applyAsync(callEventHandler);
-	              } else if ($rootScope.$$phase) {
-	                callEventHandler();
-	              } else {
-	                $rootScope.$apply(callEventHandler);
-	              }
-	
-	              function callEventHandler() {
-	                eventHandler(event);
-	              }
-	            };
-	          });
-	          return applyHandlers;
-	        }
-	      }
 	
 	
 	      /**
@@ -21572,7 +21454,7 @@
 	
 	function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDocument) {
 	  // TODO(vojta): fix the signature
-	  return function(method, url, post, callback, headers, timeout, withCredentials, responseType, eventHandlers, uploadEventHandlers) {
+	  return function(method, url, post, callback, headers, timeout, withCredentials, responseType) {
 	    $browser.$$incOutstandingRequestCount();
 	    url = url || $browser.url();
 	
@@ -21631,14 +21513,6 @@
 	
 	      xhr.onerror = requestError;
 	      xhr.onabort = requestError;
-	
-	      forEach(eventHandlers, function(value, key) {
-	          xhr.addEventListener(key, value);
-	      });
-	
-	      forEach(uploadEventHandlers, function(value, key) {
-	        xhr.upload.addEventListener(key, value);
-	      });
 	
 	      if (withCredentials) {
 	        xhr.withCredentials = true;
@@ -23618,7 +23492,7 @@
 	        this.readString(ch);
 	      } else if (this.isNumber(ch) || ch === '.' && this.isNumber(this.peek())) {
 	        this.readNumber();
-	      } else if (this.isIdentifierStart(this.peekMultichar())) {
+	      } else if (this.isIdent(ch)) {
 	        this.readIdent();
 	      } else if (this.is(ch, '(){}[].,;:?')) {
 	        this.tokens.push({index: this.index, text: ch});
@@ -23662,47 +23536,10 @@
 	            ch === '\n' || ch === '\v' || ch === '\u00A0');
 	  },
 	
-	  isIdentifierStart: function(ch) {
-	    return this.options.isIdentifierStart ?
-	        this.options.isIdentifierStart(ch, this.codePointAt(ch)) :
-	        this.isValidIdentifierStart(ch);
-	  },
-	
-	  isValidIdentifierStart: function(ch) {
+	  isIdent: function(ch) {
 	    return ('a' <= ch && ch <= 'z' ||
 	            'A' <= ch && ch <= 'Z' ||
 	            '_' === ch || ch === '$');
-	  },
-	
-	  isIdentifierContinue: function(ch) {
-	    return this.options.isIdentifierContinue ?
-	        this.options.isIdentifierContinue(ch, this.codePointAt(ch)) :
-	        this.isValidIdentifierContinue(ch);
-	  },
-	
-	  isValidIdentifierContinue: function(ch, cp) {
-	    return this.isValidIdentifierStart(ch, cp) || this.isNumber(ch);
-	  },
-	
-	  codePointAt: function(ch) {
-	    if (ch.length === 1) return ch.charCodeAt(0);
-	    /*jshint bitwise: false*/
-	    return (ch.charCodeAt(0) << 10) + ch.charCodeAt(1) - 0x35FDC00;
-	    /*jshint bitwise: true*/
-	  },
-	
-	  peekMultichar: function() {
-	    var ch = this.text.charAt(this.index);
-	    var peek = this.peek();
-	    if (!peek) {
-	      return ch;
-	    }
-	    var cp1 = ch.charCodeAt(0);
-	    var cp2 = peek.charCodeAt(0);
-	    if (cp1 >= 0xD800 && cp1 <= 0xDBFF && cp2 >= 0xDC00 && cp2 <= 0xDFFF) {
-	      return ch + peek;
-	    }
-	    return ch;
 	  },
 	
 	  isExpOperator: function(ch) {
@@ -23753,13 +23590,12 @@
 	
 	  readIdent: function() {
 	    var start = this.index;
-	    this.index += this.peekMultichar().length;
 	    while (this.index < this.text.length) {
-	      var ch = this.peekMultichar();
-	      if (!this.isIdentifierContinue(ch)) {
+	      var ch = this.text.charAt(this.index);
+	      if (!(this.isIdent(ch) || this.isNumber(ch))) {
 	        break;
 	      }
-	      this.index += ch.length;
+	      this.index++;
 	    }
 	    this.tokens.push({
 	      index: start,
@@ -24689,13 +24525,7 @@
 	  },
 	
 	  nonComputedMember: function(left, right) {
-	    var SAFE_IDENTIFIER = /[$_a-zA-Z][$_a-zA-Z0-9]*/;
-	    var UNSAFE_CHARACTERS = /[^$_a-zA-Z0-9]/g;
-	    if (SAFE_IDENTIFIER.test(right)) {
-	      return left + '.' + right;
-	    } else {
-	      return left  + '["' + right.replace(UNSAFE_CHARACTERS, this.stringEscapeFn) + '"]';
-	    }
+	    return left + '.' + right;
 	  },
 	
 	  computedMember: function(left, right) {
@@ -25258,7 +25088,6 @@
 	    'null': null,
 	    'undefined': undefined
 	  };
-	  var identStart, identContinue;
 	
 	  /**
 	   * @ngdoc method
@@ -25275,50 +25104,17 @@
 	    literals[literalName] = literalValue;
 	  };
 	
-	 /**
-	  * @ngdoc method
-	  * @name $parseProvider#setIdentifierFns
-	  * @description
-	  *
-	  * Allows defining the set of characters that are allowed in Angular expressions. The function
-	  * `identifierStart` will get called to know if a given character is a valid character to be the
-	  * first character for an identifier. The function `identifierContinue` will get called to know if
-	  * a given character is a valid character to be a follow-up identifier character. The functions
-	  * `identifierStart` and `identifierContinue` will receive as arguments the single character to be
-	  * identifier and the character code point. These arguments will be `string` and `numeric`. Keep in
-	  * mind that the `string` parameter can be two characters long depending on the character
-	  * representation. It is expected for the function to return `true` or `false`, whether that
-	  * character is allowed or not.
-	  *
-	  * Since this function will be called extensivelly, keep the implementation of these functions fast,
-	  * as the performance of these functions have a direct impact on the expressions parsing speed.
-	  *
-	  * @param {function=} identifierStart The function that will decide whether the given character is
-	  *   a valid identifier start character.
-	  * @param {function=} identifierContinue The function that will decide whether the given character is
-	  *   a valid identifier continue character.
-	  */
-	  this.setIdentifierFns = function(identifierStart, identifierContinue) {
-	    identStart = identifierStart;
-	    identContinue = identifierContinue;
-	    return this;
-	  };
-	
 	  this.$get = ['$filter', function($filter) {
 	    var noUnsafeEval = csp().noUnsafeEval;
 	    var $parseOptions = {
 	          csp: noUnsafeEval,
 	          expensiveChecks: false,
-	          literals: copy(literals),
-	          isIdentifierStart: isFunction(identStart) && identStart,
-	          isIdentifierContinue: isFunction(identContinue) && identContinue
+	          literals: copy(literals)
 	        },
 	        $parseOptionsExpensive = {
 	          csp: noUnsafeEval,
 	          expensiveChecks: true,
-	          literals: copy(literals),
-	          isIdentifierStart: isFunction(identStart) && identStart,
-	          isIdentifierContinue: isFunction(identContinue) && identContinue
+	          literals: copy(literals)
 	        };
 	    var runningChecksEnabled = false;
 	
@@ -29113,7 +28909,7 @@
 	// doesn't know about mocked locations and resolves URLs to the real document - which is
 	// exactly the behavior needed here.  There is little value is mocking these out for this
 	// service.
-	var urlParsingNode = window.document.createElement("a");
+	var urlParsingNode = document.createElement("a");
 	var originUrl = urlResolve(window.location.href);
 	
 	
@@ -29813,9 +29609,7 @@
 	 * @param {(number|string)=} fractionSize Number of decimal places to round the number to.
 	 * If this is not provided then the fraction size is computed from the current locale's number
 	 * formatting pattern. In the case of the default locale, it will be 3.
-	 * @returns {string} Number rounded to `fractionSize` appropriately formatted based on the current
-	 *                   locale (e.g., in the en_US locale it will have "." as the decimal separator and
-	 *                   include "," group separators after each third digit).
+	 * @returns {string} Number rounded to fractionSize and places a “,” after each third digit.
 	 *
 	 * @example
 	   <example module="numberFilterExample">
@@ -34044,11 +33838,7 @@
 	              updateClasses(oldClasses, newClasses);
 	            }
 	          }
-	          if (isArray(newVal)) {
-	            oldVal = newVal.map(function(v) { return shallowCopy(v); });
-	          } else {
-	            oldVal = shallowCopy(newVal);
-	          }
+	          oldVal = shallowCopy(newVal);
 	        }
 	      }
 	    };
@@ -35764,7 +35554,7 @@
 	          // support innerHTML, so detect this here and try to generate the contents
 	          // specially.
 	          $element.empty();
-	          $compile(jqLiteBuildFragment(ctrl.template, window.document).childNodes)(scope,
+	          $compile(jqLiteBuildFragment(ctrl.template, document).childNodes)(scope,
 	              function namespaceAdaptedClone(clone) {
 	            $element.append(clone);
 	          }, {futureParentElement: $element});
@@ -37678,7 +37468,7 @@
 	// jshint maxlen: 100
 	
 	
-	var ngOptionsDirective = ['$compile', '$document', '$parse', function($compile, $document, $parse) {
+	var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
 	
 	  function parseOptionsExpression(optionsExp, selectElement, scope) {
 	
@@ -37839,8 +37629,8 @@
 	
 	  // we can't just jqLite('<option>') since jqLite is not smart enough
 	  // to create it in <select> and IE barfs otherwise.
-	  var optionTemplate = window.document.createElement('option'),
-	      optGroupTemplate = window.document.createElement('optgroup');
+	  var optionTemplate = document.createElement('option'),
+	      optGroupTemplate = document.createElement('optgroup');
 	
 	    function ngOptionsPostLink(scope, selectElement, attr, ctrls) {
 	
@@ -37865,10 +37655,7 @@
 	
 	      var options;
 	      var ngOptions = parseOptionsExpression(attr.ngOptions, selectElement, scope);
-	      // This stores the newly created options before they are appended to the select.
-	      // Since the contents are removed from the fragment when it is appended,
-	      // we only need to create it once.
-	      var listFragment = $document[0].createDocumentFragment();
+	
 	
 	      var renderEmptyOption = function() {
 	        if (!providedEmptyOption) {
@@ -37903,7 +37690,7 @@
 	        selectCtrl.writeValue = function writeNgOptionsValue(value) {
 	          var option = options.getOptionFromViewValue(value);
 	
-	          if (option) {
+	          if (option && !option.disabled) {
 	            // Don't update the option when it is already selected.
 	            // For example, the browser will select the first option by default. In that case,
 	            // most properties are set automatically - except the `selected` attribute, which we
@@ -37965,7 +37752,7 @@
 	          if (value) {
 	            value.forEach(function(item) {
 	              var option = options.getOptionFromViewValue(item);
-	              if (option) option.element.selected = true;
+	              if (option && !option.disabled) option.element.selected = true;
 	            });
 	          }
 	        };
@@ -38017,8 +37804,6 @@
 	        emptyOption = jqLite(optionTemplate.cloneNode(false));
 	      }
 	
-	      selectElement.empty();
-	
 	      // We need to do this here to ensure that the options object is defined
 	      // when we first hit it in writeNgOptionsValue
 	      updateOptions();
@@ -38027,12 +37812,6 @@
 	      scope.$watchCollection(ngOptions.getWatchables, updateOptions);
 	
 	      // ------------------------------------------------------------------ //
-	
-	      function addOptionElement(option, parent) {
-	        var optionElement = optionTemplate.cloneNode(false);
-	        parent.appendChild(optionElement);
-	        updateOptionElement(option, optionElement);
-	      }
 	
 	
 	      function updateOptionElement(option, element) {
@@ -38050,66 +37829,133 @@
 	        if (option.value !== element.value) element.value = option.selectValue;
 	      }
 	
-	      function updateOptions() {
-	        var previousValue = options && selectCtrl.readValue();
-	
-	        // We must remove all current options, but cannot simply set innerHTML = null
-	        // since the providedEmptyOption might have an ngIf on it that inserts comments which we
-	        // must preserve.
-	        // Instead, iterate over the current option elements and remove them or their optgroup
-	        // parents
-	        if (options) {
-	
-	          for (var i = options.items.length - 1; i >= 0; i--) {
-	            var option = options.items[i];
-	            if (option.group) {
-	              jqLiteRemove(option.element.parentNode);
-	            } else {
-	              jqLiteRemove(option.element);
-	            }
+	      function addOrReuseElement(parent, current, type, templateElement) {
+	        var element;
+	        // Check whether we can reuse the next element
+	        if (current && lowercase(current.nodeName) === type) {
+	          // The next element is the right type so reuse it
+	          element = current;
+	        } else {
+	          // The next element is not the right type so create a new one
+	          element = templateElement.cloneNode(false);
+	          if (!current) {
+	            // There are no more elements so just append it to the select
+	            parent.appendChild(element);
+	          } else {
+	            // The next element is not a group so insert the new one
+	            parent.insertBefore(element, current);
 	          }
 	        }
+	        return element;
+	      }
+	
+	
+	      function removeExcessElements(current) {
+	        var next;
+	        while (current) {
+	          next = current.nextSibling;
+	          jqLiteRemove(current);
+	          current = next;
+	        }
+	      }
+	
+	
+	      function skipEmptyAndUnknownOptions(current) {
+	        var emptyOption_ = emptyOption && emptyOption[0];
+	        var unknownOption_ = unknownOption && unknownOption[0];
+	
+	        // We cannot rely on the extracted empty option being the same as the compiled empty option,
+	        // because the compiled empty option might have been replaced by a comment because
+	        // it had an "element" transclusion directive on it (such as ngIf)
+	        if (emptyOption_ || unknownOption_) {
+	          while (current &&
+	                (current === emptyOption_ ||
+	                current === unknownOption_ ||
+	                current.nodeType === NODE_TYPE_COMMENT ||
+	                (nodeName_(current) === 'option' && current.value === ''))) {
+	            current = current.nextSibling;
+	          }
+	        }
+	        return current;
+	      }
+	
+	
+	      function updateOptions() {
+	
+	        var previousValue = options && selectCtrl.readValue();
 	
 	        options = ngOptions.getOptions();
 	
-	        var groupElementMap = {};
+	        var groupMap = {};
+	        var currentElement = selectElement[0].firstChild;
 	
 	        // Ensure that the empty option is always there if it was explicitly provided
 	        if (providedEmptyOption) {
 	          selectElement.prepend(emptyOption);
 	        }
 	
-	        options.items.forEach(function addOption(option) {
+	        currentElement = skipEmptyAndUnknownOptions(currentElement);
+	
+	        options.items.forEach(function updateOption(option) {
+	          var group;
 	          var groupElement;
+	          var optionElement;
 	
 	          if (isDefined(option.group)) {
 	
 	            // This option is to live in a group
 	            // See if we have already created this group
-	            groupElement = groupElementMap[option.group];
+	            group = groupMap[option.group];
 	
-	            if (!groupElement) {
+	            if (!group) {
 	
-	              groupElement = optGroupTemplate.cloneNode(false);
-	              listFragment.appendChild(groupElement);
+	              // We have not already created this group
+	              groupElement = addOrReuseElement(selectElement[0],
+	                                               currentElement,
+	                                               'optgroup',
+	                                               optGroupTemplate);
+	              // Move to the next element
+	              currentElement = groupElement.nextSibling;
 	
 	              // Update the label on the group element
 	              groupElement.label = option.group;
 	
 	              // Store it for use later
-	              groupElementMap[option.group] = groupElement;
+	              group = groupMap[option.group] = {
+	                groupElement: groupElement,
+	                currentOptionElement: groupElement.firstChild
+	              };
+	
 	            }
 	
-	            addOptionElement(option, groupElement);
+	            // So now we have a group for this option we add the option to the group
+	            optionElement = addOrReuseElement(group.groupElement,
+	                                              group.currentOptionElement,
+	                                              'option',
+	                                              optionTemplate);
+	            updateOptionElement(option, optionElement);
+	            // Move to the next element
+	            group.currentOptionElement = optionElement.nextSibling;
 	
 	          } else {
 	
 	            // This option is not in a group
-	            addOptionElement(option, listFragment);
+	            optionElement = addOrReuseElement(selectElement[0],
+	                                              currentElement,
+	                                              'option',
+	                                              optionTemplate);
+	            updateOptionElement(option, optionElement);
+	            // Move to the next element
+	            currentElement = optionElement.nextSibling;
 	          }
 	        });
 	
-	        selectElement[0].appendChild(listFragment);
+	
+	        // Now remove all excess options and group
+	        Object.keys(groupMap).forEach(function(key) {
+	          removeExcessElements(groupMap[key].currentOptionElement);
+	        });
+	        removeExcessElements(currentElement);
 	
 	        ngModelCtrl.$render();
 	
@@ -39804,7 +39650,7 @@
 	  //
 	  // We can't just jqLite('<option>') since jqLite is not smart enough
 	  // to create it in <select> and IE barfs otherwise.
-	  self.unknownOption = jqLite(window.document.createElement('option'));
+	  self.unknownOption = jqLite(document.createElement('option'));
 	  self.renderUnknownOption = function(val) {
 	    var unknownVal = '? ' + hashKey(val) + ' ?';
 	    self.unknownOption.val(unknownVal);
@@ -40767,11 +40613,11 @@
 	});
 	}]);
 	
-	  jqLite(window.document).ready(function() {
-	    angularInit(window.document, bootstrap);
+	  jqLite(document).ready(function() {
+	    angularInit(document, bootstrap);
 	  });
 	
-	})(window);
+	})(window, document);
 	
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -40789,11 +40635,11 @@
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.5.5
+	 * @license AngularJS v1.5.3
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
-	(function(window, angular) {'use strict';
+	(function(window, angular, undefined) {'use strict';
 	
 	/**
 	 * @ngdoc module
@@ -40812,7 +40658,11 @@
 	 */
 	 /* global -ngRouteModule */
 	var ngRouteModule = angular.module('ngRoute', ['ng']).
-	                        provider('$route', $RouteProvider),
+	                        provider('$route', $RouteProvider).
+	                        // Ensure `$route` will be instantiated in time to capture the initial
+	                        // `$locationChangeSuccess` event. This is necessary in case `ngView` is
+	                        // included in an asynchronously loaded template.
+	                        run(['$route', angular.noop]),
 	    $routeMinErr = angular.$$minErr('ngRoute');
 	
 	/**
@@ -41546,13 +41396,6 @@
 	 *
 	 * The enter and leave animation occur concurrently.
 	 *
-	 * @knownIssue If `ngView` is contained in an asynchronously loaded template (e.g. in another
-	 *             directive's templateUrl or in a template loaded using `ngInclude`), then you need to
-	 *             make sure that `$route` is instantiated in time to capture the initial
-	 *             `$locationChangeStart` event and load the appropriate view. One way to achieve this
-	 *             is to have it as a dependency in a `.run` block:
-	 *             `myModule.run(['$route', function() {}]);`
-	 *
 	 * @scope
 	 * @priority 400
 	 * @param {string=} onload Expression to evaluate whenever the view updates.
@@ -41828,11 +41671,11 @@
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.5.5
+	 * @license AngularJS v1.5.3
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
-	(function(window, angular) {'use strict';
+	(function(window, angular, undefined) {'use strict';
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 *     Any commits to this file should be reviewed with security in mind.  *
@@ -42178,7 +42021,7 @@
 	    mXSSAttempts--;
 	
 	    // strip custom-namespaced attributes on IE<=11
-	    if (window.document.documentMode) {
+	    if (document.documentMode <= 11) {
 	      stripCustomNsAttrs(inertBodyElement);
 	    }
 	    html = inertBodyElement.innerHTML; //trigger mXSS
@@ -42318,7 +42161,7 @@
 	 * @param node Root element to process
 	 */
 	function stripCustomNsAttrs(node) {
-	  if (node.nodeType === window.Node.ELEMENT_NODE) {
+	  if (node.nodeType === Node.ELEMENT_NODE) {
 	    var attrs = node.attributes;
 	    for (var i = 0, l = attrs.length; i < l; i++) {
 	      var attrNode = attrs[i];
@@ -60874,171 +60717,226 @@
 
 /***/ },
 /* 116 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app',['ngRoute','ngSanitize','ui.select','datePicker','ui.calendar']);
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict'; /*
+	 * ngDialog - easy modals and popup windows
+	 * http://github.com/likeastore/ngDialog
+	 * (c) 2013-2015 MIT License, https://likeastore.com
+	 */(function(root,factory){if(typeof module!=='undefined'&&module.exports){ // CommonJS
+	if(typeof angular==='undefined'){factory(__webpack_require__(2));}else {factory(angular);}module.exports='ngDialog';}else if(true){ // AMD
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));}else { // Global Variables
+	factory(root.angular);}})(undefined,function(angular){'use strict';var m=angular.module('ngDialog',[]);var $el=angular.element;var isDef=angular.isDefined;var style=(document.body||document.documentElement).style;var animationEndSupport=isDef(style.animation)||isDef(style.WebkitAnimation)||isDef(style.MozAnimation)||isDef(style.MsAnimation)||isDef(style.OAnimation);var animationEndEvent='animationend webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend';var focusableElementSelector='a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';var disabledAnimationClass='ngdialog-disabled-animation';var forceElementsReload={html:false,body:false};var scopes={};var openIdStack=[];var keydownIsBound=false;var openOnePerName=false;m.provider('ngDialog',function(){var defaults=this.defaults={className:'ngdialog-theme-default',disableAnimation:false,plain:false,showClose:true,closeByDocument:true,closeByEscape:true,closeByNavigation:false,appendTo:false,preCloseCallback:false,overlay:true,cache:true,trapFocus:true,preserveFocus:true,ariaAuto:true,ariaRole:null,ariaLabelledById:null,ariaLabelledBySelector:null,ariaDescribedById:null,ariaDescribedBySelector:null};this.setForceHtmlReload=function(_useIt){forceElementsReload.html=_useIt||false;};this.setForceBodyReload=function(_useIt){forceElementsReload.body=_useIt||false;};this.setDefaults=function(newDefaults){angular.extend(defaults,newDefaults);};this.setOpenOnePerName=function(isOpenOne){openOnePerName=isOpenOne||false;};var globalID=0,dialogsCount=0,closeByDocumentHandler,defers={};this.$get=['$document','$templateCache','$compile','$q','$http','$rootScope','$timeout','$window','$controller','$injector',function($document,$templateCache,$compile,$q,$http,$rootScope,$timeout,$window,$controller,$injector){var $elements=[];var privateMethods={onDocumentKeydown:function onDocumentKeydown(event){if(event.keyCode===27){publicMethods.close('$escape');}},activate:function activate($dialog){var options=$dialog.data('$ngDialogOptions');if(options.trapFocus){$dialog.on('keydown',privateMethods.onTrapFocusKeydown); // Catch rogue changes (eg. after unfocusing everything by clicking a non-focusable element)
+	$elements.body.on('keydown',privateMethods.onTrapFocusKeydown);}},deactivate:function deactivate($dialog){$dialog.off('keydown',privateMethods.onTrapFocusKeydown);$elements.body.off('keydown',privateMethods.onTrapFocusKeydown);},deactivateAll:function deactivateAll(els){angular.forEach(els,function(el){var $dialog=angular.element(el);privateMethods.deactivate($dialog);});},setBodyPadding:function setBodyPadding(width){var originalBodyPadding=parseInt($elements.body.css('padding-right')||0,10);$elements.body.css('padding-right',originalBodyPadding+width+'px');$elements.body.data('ng-dialog-original-padding',originalBodyPadding);$rootScope.$broadcast('ngDialog.setPadding',width);},resetBodyPadding:function resetBodyPadding(){var originalBodyPadding=$elements.body.data('ng-dialog-original-padding');if(originalBodyPadding){$elements.body.css('padding-right',originalBodyPadding+'px');}else {$elements.body.css('padding-right','');}$rootScope.$broadcast('ngDialog.setPadding',0);},performCloseDialog:function performCloseDialog($dialog,value){var options=$dialog.data('$ngDialogOptions');var id=$dialog.attr('id');var scope=scopes[id];if(!scope){ // Already closed
+	return;}if(typeof $window.Hammer!=='undefined'){var hammerTime=scope.hammerTime;hammerTime.off('tap',closeByDocumentHandler);hammerTime.destroy&&hammerTime.destroy();delete scope.hammerTime;}else {$dialog.unbind('click');}if(dialogsCount===1){$elements.body.unbind('keydown',privateMethods.onDocumentKeydown);}if(!$dialog.hasClass('ngdialog-closing')){dialogsCount-=1;}var previousFocus=$dialog.data('$ngDialogPreviousFocus');if(previousFocus&&previousFocus.focus){previousFocus.focus();}$rootScope.$broadcast('ngDialog.closing',$dialog,value);dialogsCount=dialogsCount<0?0:dialogsCount;if(animationEndSupport&&!options.disableAnimation){scope.$destroy();$dialog.unbind(animationEndEvent).bind(animationEndEvent,function(){privateMethods.closeDialogElement($dialog,value);}).addClass('ngdialog-closing');}else {scope.$destroy();privateMethods.closeDialogElement($dialog,value);}if(defers[id]){defers[id].resolve({id:id,value:value,$dialog:$dialog,remainingDialogs:dialogsCount});delete defers[id];}if(scopes[id]){delete scopes[id];}openIdStack.splice(openIdStack.indexOf(id),1);if(!openIdStack.length){$elements.body.unbind('keydown',privateMethods.onDocumentKeydown);keydownIsBound=false;}},closeDialogElement:function closeDialogElement($dialog,value){$dialog.remove();if(dialogsCount===0){$elements.html.removeClass('ngdialog-open');$elements.body.removeClass('ngdialog-open');privateMethods.resetBodyPadding();}$rootScope.$broadcast('ngDialog.closed',$dialog,value);},closeDialog:function closeDialog($dialog,value){var preCloseCallback=$dialog.data('$ngDialogPreCloseCallback');if(preCloseCallback&&angular.isFunction(preCloseCallback)){var preCloseCallbackResult=preCloseCallback.call($dialog,value);if(angular.isObject(preCloseCallbackResult)){if(preCloseCallbackResult.closePromise){preCloseCallbackResult.closePromise.then(function(){privateMethods.performCloseDialog($dialog,value);});}else {preCloseCallbackResult.then(function(){privateMethods.performCloseDialog($dialog,value);},function(){return;});}}else if(preCloseCallbackResult!==false){privateMethods.performCloseDialog($dialog,value);}}else {privateMethods.performCloseDialog($dialog,value);}},onTrapFocusKeydown:function onTrapFocusKeydown(ev){var el=angular.element(ev.currentTarget);var $dialog;if(el.hasClass('ngdialog')){$dialog=el;}else {$dialog=privateMethods.getActiveDialog();if($dialog===null){return;}}var isTab=ev.keyCode===9;var backward=ev.shiftKey===true;if(isTab){privateMethods.handleTab($dialog,ev,backward);}},handleTab:function handleTab($dialog,ev,backward){var focusableElements=privateMethods.getFocusableElements($dialog);if(focusableElements.length===0){if(document.activeElement){document.activeElement.blur();}return;}var currentFocus=document.activeElement;var focusIndex=Array.prototype.indexOf.call(focusableElements,currentFocus);var isFocusIndexUnknown=focusIndex===-1;var isFirstElementFocused=focusIndex===0;var isLastElementFocused=focusIndex===focusableElements.length-1;var cancelEvent=false;if(backward){if(isFocusIndexUnknown||isFirstElementFocused){focusableElements[focusableElements.length-1].focus();cancelEvent=true;}}else {if(isFocusIndexUnknown||isLastElementFocused){focusableElements[0].focus();cancelEvent=true;}}if(cancelEvent){ev.preventDefault();ev.stopPropagation();}},autoFocus:function autoFocus($dialog){var dialogEl=$dialog[0]; // Browser's (Chrome 40, Forefix 37, IE 11) don't appear to honor autofocus on the dialog, but we should
+	var autoFocusEl=dialogEl.querySelector('*[autofocus]');if(autoFocusEl!==null){autoFocusEl.focus();if(document.activeElement===autoFocusEl){return;} // Autofocus element might was display: none, so let's continue
+	}var focusableElements=privateMethods.getFocusableElements($dialog);if(focusableElements.length>0){focusableElements[0].focus();return;} // We need to focus something for the screen readers to notice the dialog
+	var contentElements=privateMethods.filterVisibleElements(dialogEl.querySelectorAll('h1,h2,h3,h4,h5,h6,p,span'));if(contentElements.length>0){var contentElement=contentElements[0];$el(contentElement).attr('tabindex','-1').css('outline','0');contentElement.focus();}},getFocusableElements:function getFocusableElements($dialog){var dialogEl=$dialog[0];var rawElements=dialogEl.querySelectorAll(focusableElementSelector); // Ignore untabbable elements, ie. those with tabindex = -1
+	var tabbableElements=privateMethods.filterTabbableElements(rawElements);return privateMethods.filterVisibleElements(tabbableElements);},filterTabbableElements:function filterTabbableElements(els){var tabbableFocusableElements=[];for(var i=0;i<els.length;i++){var el=els[i];if($el(el).attr('tabindex')!=='-1'){tabbableFocusableElements.push(el);}}return tabbableFocusableElements;},filterVisibleElements:function filterVisibleElements(els){var visibleFocusableElements=[];for(var i=0;i<els.length;i++){var el=els[i];if(el.offsetWidth>0||el.offsetHeight>0){visibleFocusableElements.push(el);}}return visibleFocusableElements;},getActiveDialog:function getActiveDialog(){var dialogs=document.querySelectorAll('.ngdialog');if(dialogs.length===0){return null;} // TODO: This might be incorrect if there are a mix of open dialogs with different 'appendTo' values
+	return $el(dialogs[dialogs.length-1]);},applyAriaAttributes:function applyAriaAttributes($dialog,options){if(options.ariaAuto){if(!options.ariaRole){var detectedRole=privateMethods.getFocusableElements($dialog).length>0?'dialog':'alertdialog';options.ariaRole=detectedRole;}if(!options.ariaLabelledBySelector){options.ariaLabelledBySelector='h1,h2,h3,h4,h5,h6';}if(!options.ariaDescribedBySelector){options.ariaDescribedBySelector='article,section,p';}}if(options.ariaRole){$dialog.attr('role',options.ariaRole);}privateMethods.applyAriaAttribute($dialog,'aria-labelledby',options.ariaLabelledById,options.ariaLabelledBySelector);privateMethods.applyAriaAttribute($dialog,'aria-describedby',options.ariaDescribedById,options.ariaDescribedBySelector);},applyAriaAttribute:function applyAriaAttribute($dialog,attr,id,selector){if(id){$dialog.attr(attr,id);}if(selector){var dialogId=$dialog.attr('id');var firstMatch=$dialog[0].querySelector(selector);if(!firstMatch){return;}var generatedId=dialogId+'-'+attr;$el(firstMatch).attr('id',generatedId);$dialog.attr(attr,generatedId);return generatedId;}},detectUIRouter:function detectUIRouter(){ //Detect if ui-router module is installed if not return false
+	try{angular.module('ui.router');return true;}catch(err){return false;}},getRouterLocationEventName:function getRouterLocationEventName(){if(privateMethods.detectUIRouter()){return '$stateChangeSuccess';}return '$locationChangeSuccess';}};var publicMethods={__PRIVATE__:privateMethods, /*
+	                     * @param {Object} options:
+	                     * - template {String} - id of ng-template, url for partial, plain string (if enabled)
+	                     * - plain {Boolean} - enable plain string templates, default false
+	                     * - scope {Object}
+	                     * - controller {String}
+	                     * - controllerAs {String}
+	                     * - className {String} - dialog theme class
+	                     * - disableAnimation {Boolean} - set to true to disable animation
+	                     * - showClose {Boolean} - show close button, default true
+	                     * - closeByEscape {Boolean} - default true
+	                     * - closeByDocument {Boolean} - default true
+	                     * - preCloseCallback {String|Function} - user supplied function name/function called before closing dialog (if set)
+	                     * @return {Object} dialog
+	                     */open:function open(opts){var dialogID=null;opts=opts||{};if(openOnePerName&&opts.name){dialogID=opts.name+' dialog';if(this.isOpen(dialogID)){return;}}var options=angular.copy(defaults);var localID=++globalID;dialogID=dialogID||'ngdialog'+localID;openIdStack.push(dialogID);angular.extend(options,opts);var defer;defers[dialogID]=defer=$q.defer();var scope;scopes[dialogID]=scope=angular.isObject(options.scope)?options.scope.$new():$rootScope.$new();var $dialog,$dialogParent;var resolve=angular.extend({},options.resolve);angular.forEach(resolve,function(value,key){resolve[key]=angular.isString(value)?$injector.get(value):$injector.invoke(value,null,null,key);});$q.all({template:loadTemplate(options.template||options.templateUrl),locals:$q.all(resolve)}).then(function(setup){var template=setup.template,locals=setup.locals;if(options.showClose){template+='<div class="ngdialog-close"></div>';}var hasOverlayClass=options.overlay?'':' ngdialog-no-overlay';$dialog=$el('<div id="'+dialogID+'" class="ngdialog'+hasOverlayClass+'"></div>');$dialog.html(options.overlay?'<div class="ngdialog-overlay"></div><div class="ngdialog-content" role="document">'+template+'</div>':'<div class="ngdialog-content" role="document">'+template+'</div>');$dialog.data('$ngDialogOptions',options);scope.ngDialogId=dialogID;if(options.data&&angular.isString(options.data)){var firstLetter=options.data.replace(/^\s*/,'')[0];scope.ngDialogData=firstLetter==='{'||firstLetter==='['?angular.fromJson(options.data):options.data;scope.ngDialogData.ngDialogId=dialogID;}else if(options.data&&angular.isObject(options.data)){scope.ngDialogData=options.data;scope.ngDialogData.ngDialogId=dialogID;}if(options.className){$dialog.addClass(options.className);}if(options.disableAnimation){$dialog.addClass(disabledAnimationClass);}if(options.appendTo&&angular.isString(options.appendTo)){$dialogParent=angular.element(document.querySelector(options.appendTo));}else {$dialogParent=$elements.body;}privateMethods.applyAriaAttributes($dialog,options);if(options.preCloseCallback){var preCloseCallback;if(angular.isFunction(options.preCloseCallback)){preCloseCallback=options.preCloseCallback;}else if(angular.isString(options.preCloseCallback)){if(scope){if(angular.isFunction(scope[options.preCloseCallback])){preCloseCallback=scope[options.preCloseCallback];}else if(scope.$parent&&angular.isFunction(scope.$parent[options.preCloseCallback])){preCloseCallback=scope.$parent[options.preCloseCallback];}else if($rootScope&&angular.isFunction($rootScope[options.preCloseCallback])){preCloseCallback=$rootScope[options.preCloseCallback];}}}if(preCloseCallback){$dialog.data('$ngDialogPreCloseCallback',preCloseCallback);}}scope.closeThisDialog=function(value){privateMethods.closeDialog($dialog,value);};if(options.controller&&(angular.isString(options.controller)||angular.isArray(options.controller)||angular.isFunction(options.controller))){var label;if(options.controllerAs&&angular.isString(options.controllerAs)){label=options.controllerAs;}var controllerInstance=$controller(options.controller,angular.extend(locals,{$scope:scope,$element:$dialog}),true,label);if(options.bindToController){angular.extend(controllerInstance.instance,{ngDialogId:scope.ngDialogId,ngDialogData:scope.ngDialogData,closeThisDialog:scope.closeThisDialog});}$dialog.data('$ngDialogControllerController',controllerInstance());}$timeout(function(){var $activeDialogs=document.querySelectorAll('.ngdialog');privateMethods.deactivateAll($activeDialogs);$compile($dialog)(scope);var widthDiffs=$window.innerWidth-$elements.body.prop('clientWidth');$elements.html.addClass('ngdialog-open');$elements.body.addClass('ngdialog-open');var scrollBarWidth=widthDiffs-($window.innerWidth-$elements.body.prop('clientWidth'));if(scrollBarWidth>0){privateMethods.setBodyPadding(scrollBarWidth);}$dialogParent.append($dialog);privateMethods.activate($dialog);if(options.trapFocus){privateMethods.autoFocus($dialog);}if(options.name){$rootScope.$broadcast('ngDialog.opened',{dialog:$dialog,name:options.name});}else {$rootScope.$broadcast('ngDialog.opened',$dialog);}});if(!keydownIsBound){$elements.body.bind('keydown',privateMethods.onDocumentKeydown);keydownIsBound=true;}if(options.closeByNavigation){var eventName=privateMethods.getRouterLocationEventName();$rootScope.$on(eventName,function(){privateMethods.closeDialog($dialog);});}if(options.preserveFocus){$dialog.data('$ngDialogPreviousFocus',document.activeElement);}closeByDocumentHandler=function closeByDocumentHandler(event){var isOverlay=options.closeByDocument?$el(event.target).hasClass('ngdialog-overlay'):false;var isCloseBtn=$el(event.target).hasClass('ngdialog-close');if(isOverlay||isCloseBtn){publicMethods.close($dialog.attr('id'),isCloseBtn?'$closeButton':'$document');}};if(typeof $window.Hammer!=='undefined'){var hammerTime=scope.hammerTime=$window.Hammer($dialog[0]);hammerTime.on('tap',closeByDocumentHandler);}else {$dialog.bind('click',closeByDocumentHandler);}dialogsCount+=1;return publicMethods;});return {id:dialogID,closePromise:defer.promise,close:function close(value){privateMethods.closeDialog($dialog,value);}};function loadTemplateUrl(tmpl,config){$rootScope.$broadcast('ngDialog.templateLoading',tmpl);return $http.get(tmpl,config||{}).then(function(res){$rootScope.$broadcast('ngDialog.templateLoaded',tmpl);return res.data||'';});}function loadTemplate(tmpl){if(!tmpl){return 'Empty template';}if(angular.isString(tmpl)&&options.plain){return tmpl;}if(typeof options.cache==='boolean'&&!options.cache){return loadTemplateUrl(tmpl,{cache:false});}return loadTemplateUrl(tmpl,{cache:$templateCache});}}, /*
+	                     * @param {Object} options:
+	                     * - template {String} - id of ng-template, url for partial, plain string (if enabled)
+	                     * - plain {Boolean} - enable plain string templates, default false
+	                     * - name {String}
+	                     * - scope {Object}
+	                     * - controller {String}
+	                     * - controllerAs {String}
+	                     * - className {String} - dialog theme class
+	                     * - showClose {Boolean} - show close button, default true
+	                     * - closeByEscape {Boolean} - default false
+	                     * - closeByDocument {Boolean} - default false
+	                     * - preCloseCallback {String|Function} - user supplied function name/function called before closing dialog (if set); not called on confirm
+	                     *
+	                     * @return {Object} dialog
+	                     */openConfirm:function openConfirm(opts){var defer=$q.defer();var options=angular.copy(defaults);opts=opts||{};angular.extend(options,opts);options.scope=angular.isObject(options.scope)?options.scope.$new():$rootScope.$new();options.scope.confirm=function(value){defer.resolve(value);var $dialog=$el(document.getElementById(openResult.id));privateMethods.performCloseDialog($dialog,value);};var openResult=publicMethods.open(options);if(openResult){openResult.closePromise.then(function(data){if(data){return defer.reject(data.value);}return defer.reject();});return defer.promise;}},isOpen:function isOpen(id){var $dialog=$el(document.getElementById(id));return $dialog.length>0;}, /*
+	                     * @param {String} id
+	                     * @return {Object} dialog
+	                     */close:function close(id,value){var $dialog=$el(document.getElementById(id));if($dialog.length){privateMethods.closeDialog($dialog,value);}else {if(id==='$escape'){var topDialogId=openIdStack[openIdStack.length-1];$dialog=$el(document.getElementById(topDialogId));if($dialog.data('$ngDialogOptions').closeByEscape){privateMethods.closeDialog($dialog,'$escape');}}else {publicMethods.closeAll(value);}}return publicMethods;},closeAll:function closeAll(value){var $all=document.querySelectorAll('.ngdialog'); // Reverse order to ensure focus restoration works as expected
+	for(var i=$all.length-1;i>=0;i--){var dialog=$all[i];privateMethods.closeDialog($el(dialog),value);}},getOpenDialogs:function getOpenDialogs(){return openIdStack;},getDefaults:function getDefaults(){return defaults;}};angular.forEach(['html','body'],function(elementName){$elements[elementName]=$document.find(elementName);if(forceElementsReload[elementName]){var eventName=privateMethods.getRouterLocationEventName();$rootScope.$on(eventName,function(){$elements[elementName]=$document.find(elementName);});}});return publicMethods;}];});m.directive('ngDialog',['ngDialog',function(ngDialog){return {restrict:'A',scope:{ngDialogScope:'='},link:function link(scope,elem,attrs){elem.on('click',function(e){e.preventDefault();var ngDialogScope=angular.isDefined(scope.ngDialogScope)?scope.ngDialogScope:'noScope';angular.isDefined(attrs.ngDialogClosePrevious)&&ngDialog.close(attrs.ngDialogClosePrevious);var defaults=ngDialog.getDefaults();ngDialog.open({template:attrs.ngDialog,className:attrs.ngDialogClass||defaults.className,controller:attrs.ngDialogController,controllerAs:attrs.ngDialogControllerAs,bindToController:attrs.ngDialogBindToController,scope:ngDialogScope,data:attrs.ngDialogData,showClose:attrs.ngDialogShowClose==='false'?false:attrs.ngDialogShowClose==='true'?true:defaults.showClose,closeByDocument:attrs.ngDialogCloseByDocument==='false'?false:attrs.ngDialogCloseByDocument==='true'?true:defaults.closeByDocument,closeByEscape:attrs.ngDialogCloseByEscape==='false'?false:attrs.ngDialogCloseByEscape==='true'?true:defaults.closeByEscape,overlay:attrs.ngDialogOverlay==='false'?false:attrs.ngDialogOverlay==='true'?true:defaults.overlay,preCloseCallback:attrs.ngDialogPreCloseCallback||defaults.preCloseCallback});});}};}]);return m;});
 
 /***/ },
 /* 117 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').controller('MainController',['$scope',function($scope){$scope.navs=[{id:1,href:'dashboard',title:'DASHBOARD'},{id:2,href:'series',title:'SERIES'},{id:3,href:'daily',title:'DAILY'}];}]);
+	'use strict';angular.module('app',['ngRoute','ngSanitize','ui.select','datePicker','ui.calendar','ngDialog']);
 
 /***/ },
 /* 118 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').config(['$routeProvider',function($routeProvider){$routeProvider.when('/dashboard',{templateUrl:'interface/dashboard/index.html',controller:'dashboardCtrl'}).when('/daily',{templateUrl:'interface/daily/index.html',controller:'dailyCtrl'}).when('/daily/detail/:date',{templateUrl:'interface/daily/detail.html',controller:'dailyDetailCtrl'}).when('/series',{templateUrl:'interface/series/index.html',controller:'seriesCtrl'}).when('/series/add',{templateUrl:'interface/series/add.html',controller:'seriesAddCtrl'}).when('/series/detail/:id',{templateUrl:'interface/series/detail.html',controller:'seriesDetailCtrl'}).otherwise({redirectTo:'/dashboard'});}]);
+	'use strict';angular.module('app').controller('MainController',['$scope',function($scope){$scope.navs=[{id:1,href:'#/dashboard',title:'DASHBOARD'},{id:2,href:'#/series',title:'SERIES'},{id:3,title:'DAILY',submenu:[{id:31,href:'#/daily',title:'DAILY CALENDAR'}]}];$scope.getSub=function(menu){$scope.navs.forEach(function(e){e.opensub=false;});if(menu.submenu){menu.opensub=true;}else {return false;}};}]);
 
 /***/ },
 /* 119 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'it',name:'IT'},{id:'film',name:'Film'},{id:'house',name:'House'},{id:'study',name:'Study'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;});
+	'use strict';angular.module('app').config(['$routeProvider',function($routeProvider){$routeProvider.when('/dashboard',{templateUrl:'interface/dashboard/index.html',controller:'dashboardCtrl'}).when('/daily',{templateUrl:'interface/daily/index.html',controller:'dailyCtrl'}).when('/daily/detail/:date',{templateUrl:'interface/daily/detail.html',controller:'dailyDetailCtrl'}).when('/series',{templateUrl:'interface/series/index.html',controller:'seriesCtrl'}).when('/series/add',{templateUrl:'interface/series/add.html',controller:'seriesAddCtrl'}).when('/series/detail/:id',{templateUrl:'interface/series/detail.html',controller:'seriesDetailCtrl'}).otherwise({redirectTo:'/dashboard'});}]);
 
 /***/ },
 /* 120 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('listService',['$http','$rootScope',function($http,$rootScope){var List=function List(path){var self=this;this.initialize=function(){$http.get('http://localhost:2003/'+path).then(function(res){console.log(res);self.rows=res.data;});};this.add=function(obj){if(!obj)return;$http.post('http://localhost:2003/'+path,obj).then(function(res){self.rows=res.data;});};this.initialize();};return List;}]);
+	'use strict';angular.module('app').constant('appConstant',{series_status:[{id:'finish',name:'Finish'},{id:'giveup',name:'Give Up'},{id:'watching',name:'Watching'}],daily_type:[{id:'series',name:'Series'},{id:'book',name:'Book'},{id:'it',name:'IT'},{id:'film',name:'Film'},{id:'house',name:'House'},{id:'study',name:'Study'},{id:'job',name:'Job'}],item_comment:[{id:'great',name:'Great'},{id:'good',name:'Good'},{id:'normal',name:'Normal'},{id:'bad',name:'Bad'},{id:'worst',name:'Worst'}]}).run(function($rootScope,appConstant){$rootScope.series_status=appConstant.series_status;$rootScope.daily_type=appConstant.daily_type;$rootScope.item_comment=appConstant.item_comment;});
 
 /***/ },
 /* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itemService',['$http','$rootScope',function($http,$rootScope){var ItemService=function ItemService(){this.getItem=function(path,id){return $http.get('http://localhost:2003/'+path+'/'+id);};};return ItemService;}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('listService',['$http','$rootScope',function($http,$rootScope){var List=function List(path){var self=this;this.initialize=function(){$http.get('http://localhost:2003/'+path).then(function(res){console.log(res);self.rows=res.data;});};this.add=function(obj){if(!obj)return;$http.post('http://localhost:2003/'+path,obj).then(function(res){self.rows=res.data;});};this.initialize();};return List;}]);
 
 /***/ },
 /* 122 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itemService',['$http','$rootScope',function($http,$rootScope){var ItemService=function ItemService(){this.getItem=function(path,id){return $http.get('http://localhost:2003/'+path+'/'+id);};};return ItemService;}]);
+
+/***/ },
+/* 123 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').factory('seriesListService',['$http',function($http){var SeriesList=function SeriesList(id,name){var self=this;var headers=[{id:1,name:'name',title:'NAME',clickable:true,href:'#/series/detail/'},{id:2,name:'date',title:'DATE'},{id:3,name:'status',title:'STATUS'}];this.initialize=function(){$http.get('http://localhost:2003/series').then(function(res){console.log(res.data);self.rows=res.data;self.headers=headers;});};this.add=function(name){var obj={};if(!name)return;obj.name=name;console.log('add series '+name);$http.post('http://localhost:2003/series',obj).then(function(res){self.rows=res.data;});};this.addItem=function(id,item){$http.post('http://localhost:2003/series/'+id,item).then(function(res){alert('Success');});};this.initialize();};return SeriesList;}]);
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('seriesService',['$http','$rootScope',function($http,$rootScope){var Series=function Series(id){var self=this;this.initialize=function(){$http.get('http://localhost:2003/series/'+id).then(function(res){console.log(res.data);self._id=res.data._id;self.name=res.data.name;self.date=res.data.date;self.status=res.data.status;self.items=res.data.items;self.selected_status=self.status?$rootScope.series_status.filter(function(s){return s.id==self.status;})[0]:$rootScope.series_status[2];});};this.addNew=function(){self.items.push({num:null,date:(0,_moment2.default)(new Date()).format('YYYY-MM-DD')});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series/'+self._id,item).then(function(res){self.items=res.data;alert('Success');});};this.update=function(){self.date=(0,_moment2.default)(self.date).format('YYYY-MM-DD');self.status=self.selected_status;$http.put('http://localhost:2003/series/'+id,self).then(function(res){self.name=res.data.name;self.date=res.data.date;self.status=res.data.status;alert('Success');});};this.deleteItem=function(item){$http.delete('http://localhost:2003/series/'+self._id+'/'+item._id).then(function(res){self.items=res.data;alert('Success');});};this.updateItem=function(item){$http.post('http://localhost:2003/series/'+self._id+'/'+item._id,item).then(function(res){alert('Success');});};this.initialize();};return Series;}]);
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('seriesItemService',['$http','$rootScope',function($http,$rootScope){var SeriesItem=function SeriesItem(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/series/items/'+id).then(function(res){if(!res.data)return;self.seriesid=res.data.seriesid;self.num=res.data.item.num;self.comment=res.data.item.comment;});};this.initialize();};return SeriesItem;}]);
 
 /***/ },
-/* 125 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('bookService',['$http','$rootScope',function($http,$rootScope){var Book=function Book(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/book/'+id).then(function(res){console.log(res.data);self.name=res.data.name;res.data.data&&(self.date=res.data.date);self.author=res.data.author;self.comment=res.data.comment;if(res.data.ref)self.ref=res.data.ref;});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/book',item).then(function(res){self.items=res.data;alert('Success');});};this.initialize();};return Book;}]);
-
-/***/ },
 /* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itService',['$http','$rootScope',function($http,$rootScope){var IT=function IT(){var self=this;this.getItem=function(id){return $http.get('http://localhost:2003/it/'+id);};};return IT;}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('bookService',['$http','$rootScope','ngDialog',function($http,$rootScope,ngDialog){var Book=function Book(id){var self=this;this.initialize=function(){if(!id)return;$http.get('http://localhost:2003/book/'+id).then(function(res){console.log(res.data);self.name=res.data.name;res.data.data&&(self.date=res.data.date);self.author=res.data.author;self.comment=res.data.comment;if(res.data.ref)self.ref=res.data.ref;});};this.addItem=function(item){item.date=(0,_moment2.default)(item.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/book',item).then(function(res){self.items=res.data;alert('Success');});};this.initialize();};return Book;}]);
 
 /***/ },
 /* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope','seriesItemService','bookService','itemService','itService','filmService',function($http,$rootScope,seriesItemService,bookService,itemService,itService,filmService){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};self.newsub={};var itSerivce=new itService();var itemFactory=new itemService();this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;self.items.forEach(function(item){recodeItem(item,function(result){item.contentName=result;});});});};this.addItem=function(newitem){self.newitem.type=self.selectedtype;console.log(self.newitem);$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;self.items.forEach(function(item){recodeItem(item,function(result){item.contentName=result;});});newitem={};});};this.newItem=function(){self.newitem={};self.selectedtype=null;self.newsub={};};this.getItem=function(item){self.newitem={};self.selectedtype=null;self.newsub={};self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;self.selectedtype=i.type;if(i.type=='series'){self.newsub=new seriesItemService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='book'){self.newsub=new bookService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='it'){}else if(i.type=='film'){filmService.getItem(item._id).then(function(res){self.newsub=res.data;});}return;}});};var recodeItem=function recodeItem(item,cb){switch(item.type){case 'series':itemFactory.getItem('series/items',item._id).then(function(res){var result=res.data.seriesname+' '+res.data.item.num;cb(result);});break;case 'book':itemFactory.getItem('book',item._id).then(function(res){cb(res.data.name);});break;case 'it':itSerivce.getItem(item.content).then(function(res){var result=res.data.name;cb(result);});break;case 'film':itemFactory.getItem('film',item._id).then(function(res){cb(res.data.name);});break;}};this.initialize();};return Daily;}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('itService',['$http','$rootScope',function($http,$rootScope){var IT=function IT(){var self=this;this.getItem=function(id){return $http.get('http://localhost:2003/it/'+id);};};return IT;}]);
 
 /***/ },
 /* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('filmService',['$http','$rootScope',function($http,$rootScope){return {getItem:function getItem(id){return $http.get('http://localhost:2003/film/'+id);},addItem:function addItem(obj){return $http.post('http://localhost:2003/film/',obj);},updateItem:function updateItem(id,obj){return $http.put('http://localhost:2003/film/'+id,obj);}};}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('dailyService',['$http','$rootScope','seriesItemService','bookService','itemService','itService','filmService','modelService',function($http,$rootScope,seriesItemService,bookService,itemService,itService,filmService,modelService){var Daily=function Daily(date){var self=this;self.selectedtype={};self.newitem={};self.newsub={};var itSerivce=new itService();var itemFactory=new itemService();this.initialize=function(){$http.get('http://localhost:2003/daily/'+date).then(function(res){console.log(res.data);self._id=res.data._id;self.date=res.data.date;self.items=res.data.items;self.items.forEach(function(item){recodeItem(item,function(result){item.contentName=result;});});});};this.addItem=function(newitem){self.newitem.type=self.selectedtype;console.log(self.newitem);$http.post('http://localhost:2003/daily/'+date,self.newitem).then(function(res){console.log(res.data);self.items=res.data.items;self.items.forEach(function(item){recodeItem(item,function(result){item.contentName=result;});});newitem={};});};this.newItem=function(){self.newitem={};self.selectedtype=null;self.newsub={};};this.deleteItem=function(){$http.delete('http://localhost:2003/daily/'+date+'/'+self.newitem._id).then(function(res){self.initialize();});};this.getItem=function(item){self.newitem={};self.selectedtype=null;self.newsub={};self.items.forEach(function(i){if(i._id==item._id){self.newitem=i;self.selectedtype=i.type;if(i.type=='series'){self.newsub=new seriesItemService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='book'){self.newsub=new bookService(item._id);self.newsub.date=date;self.newsub.ref=item._id;}else if(i.type=='it'){}else if(i.type=='film'){filmService.getItem(item._id).then(function(res){self.newsub=res.data;});}return;}});};var recodeItem=function recodeItem(item,cb){switch(item.type){case 'series':itemFactory.getItem('series/items',item._id).then(function(res){var result=res.data.seriesname+' '+res.data.item.num;cb(result);});break;case 'book':itemFactory.getItem('book',item._id).then(function(res){cb(res.data.name);});break;case 'it':itSerivce.getItem(item.content).then(function(res){var result=res.data.name;cb(result);});break;case 'film':itemFactory.getItem('film',item._id).then(function(res){cb(res.data.name);});break;case 'house':modelService.getItem('House',item.content).then(function(res){cb(res.data.name);});break;case 'study':modelService.getItem('Study',item.content).then(function(res){cb(res.data.name);});break;case 'job':modelService.getItem('Job',item.content).then(function(res){cb(res.data.name);});break;}};this.initialize();};return Daily;}]);
 
 /***/ },
 /* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('modelService',['$http',function($http){return {getList:function getList(type){return $http.get('http://localhost:2003/item?type='+type);},getItem:function getItem(type,id){return $http.get('http://localhost:2003/item/'+id+'?type='+type);},addItem:function addItem(type,obj){return $http.post('http://localhost:2003/item/'+'?type='+type,obj);},updateItem:function updateItem(type,id,obj){return $http.put('http://localhost:2003/item/'+id+'?type='+type,obj);}};}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('filmService',['$http','$rootScope',function($http,$rootScope){return {getItem:function getItem(id){return $http.get('http://localhost:2003/film/'+id);},addItem:function addItem(obj){return $http.post('http://localhost:2003/film/',obj);},updateItem:function updateItem(id,obj){return $http.put('http://localhost:2003/film/'+id,obj);}};}]);
 
 /***/ },
 /* 130 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').controller('dashboardCtrl',['$scope',function($scope){}]);
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').factory('modelService',['$http',function($http){return {getList:function getList(type){return $http.get('http://localhost:2003/item?type='+type);},getItem:function getItem(type,id){return $http.get('http://localhost:2003/item/'+id+'?type='+type);},addItem:function addItem(type,obj){return $http.post('http://localhost:2003/item/'+'?type='+type,obj);},updateItem:function updateItem(type,id,obj){return $http.put('http://localhost:2003/item/'+id+'?type='+type,obj);}};}]);
 
 /***/ },
 /* 131 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').controller('seriesCtrl',['$scope','$location','seriesListService',function($scope,$location,seriesListService){$scope.add=function(){$location.path('series/add');};$scope.list=new seriesListService();}]);
+	'use strict';angular.module('app').controller('dashboardCtrl',['$scope',function($scope){}]);
 
 /***/ },
 /* 132 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').controller('seriesCtrl',['$scope','$location','seriesListService',function($scope,$location,seriesListService){$scope.add=function(){$location.path('series/add');};$scope.list=new seriesListService();}]);
+
+/***/ },
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('seriesAddCtrl',['$scope','$location','$http','$timeout','seriesService',function($scope,$location,$http,$timeout,seriesService){$scope.newseries={};$scope.selectedseries={};$scope.add=function(){var obj={};obj.name=$scope.newseries.name;$http.post('http://localhost:2003/series',obj).then(function(res){$scope.series=res.data;});};$http.get('http://localhost:2003/series').then(function(res){$scope.series=res.data;});$scope.addItem=function(){var obj={};obj=$scope.newitem;obj.date=(0,_moment2.default)(obj.date).format('YYYY-MM-DD');$http.post('http://localhost:2003/series?id='+$scope.selectedseries._id,obj).then(function(res){console.log(res);});console.log($scope.selectedseries);};}]);
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').controller('seriesDetailCtrl',['$scope','$location','$routeParams','seriesService',function($scope,$location,$routeParams,seriesService){var id=$routeParams.id;$scope.series=new seriesService(id);$scope.control={detail_editable:false,episode_editable:false};$scope.edit=function(){$scope.control.detail_editable=!$scope.control.detail_editable;};$scope.editEp=function(){$scope.control.episode_editable=!$scope.control.episode_editable;};$scope.addEp=function(){$scope.series.addNew();};}]);
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').controller('dailyCtrl',['$scope','$location',function($scope,$location){$scope.eventSources=[];$scope.uiConfig={calendar:{height:450,editable:true,header:{left:'month basicWeek basicDay agendaWeek agendaDay',center:'title',right:'today prev,next'},dayClick:function dayClick(date,jsEvent,view){$scope.alertEventOnClick(date,jsEvent,view);},eventDrop:$scope.alertOnDrop,eventResize:$scope.alertOnResize,events:[]}};$scope.alertEventOnClick=function(date,jsEvent,view){var _date=(0,_moment2.default)(date).format('YYYY-MM-DD');$location.path('/daily/detail/'+_date);};}]);
 
 /***/ },
-/* 135 */
-/***/ function(module, exports) {
-
-	'use strict';angular.module('app').controller('dailyDetailCtrl',['$scope','$routeParams','dailyService',function($scope,$routeParams,dailyService){var self=this;self.date=$routeParams.date;$scope.control={item_editable:false};$scope.newitem={};$scope.daily=new dailyService(self.date);}]);
-
-/***/ },
 /* 136 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
+	'use strict';angular.module('app').controller('dailyDetailCtrl',['$scope','$routeParams','dailyService',function($scope,$routeParams,dailyService){var self=this;self.date=$routeParams.date;$scope.control={item_editable:false};$scope.newitem={};var init=function init(){$scope.daily=new dailyService(self.date);};$scope.$on('DailyReRender',function(){init();});init();}]);
 
 /***/ },
 /* 137 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
+	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
 
 /***/ },
 /* 138 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
+	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
 
 /***/ },
 /* 139 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',selectedseries:'<',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;ctrl.seriesList=new seriesListService();}]});
+	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
 
 /***/ },
 /* 140 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appBookEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['seriesListService','seriesItemService',function(seriesListService,seriesItemService){var ctrl=this;}]});
+	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',selectedseries:'<',date:'<',dailyitemid:'<'},controller:['$scope','seriesListService','seriesItemService','ngDialog',function($scope,seriesListService,seriesItemService,ngDialog){var ctrl=this;ctrl.seriesList=new seriesListService();ctrl.addItem=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {ctrl.seriesList.addItem(ctrl.newseriesitem.seriesid,ctrl.newseriesitem);}};}]});
 
 /***/ },
 /* 141 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appItEdit',{templateUrl:'component/series/it.component.html',bindings:{val:'='},controller:['listService',function(listService){var ctrl=this;ctrl.itList=new listService('it');ctrl.addIt=function(){console.log(ctrl.newName);ctrl.itList.add({name:ctrl.newName});};}]});
+	'use strict';angular.module('app').component('appBookEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','modelService',function($scope,modelService){var ctrl=this;ctrl.addItem=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {modelService.addItem('Book',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});} //ctrl.newitem.addItem(ctrl.newitem);
+	};}]});
 
 /***/ },
 /* 142 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appFilmEdit',{templateUrl:'component/series/film.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['filmService',function(filmService){var ctrl=this;ctrl.add=function(){ctrl.newitem.ref=ctrl.dailyitemid;filmService.addItem(ctrl.newitem).then(function(res){console.log(res);alert('Success');});};ctrl.update=function(){filmService.updateItem(ctrl.newitem._id,ctrl.newitem).then(function(res){console.log(res);alert('Success');});};}]});
+	'use strict';angular.module('app').component('appItEdit',{templateUrl:'component/series/it.component.html',bindings:{val:'='},controller:['listService',function(listService){var ctrl=this;ctrl.itList=new listService('it');ctrl.addIt=function(){console.log(ctrl.newName);ctrl.itList.add({name:ctrl.newName});};}]});
 
 /***/ },
 /* 143 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').component('appItemEdit',{templateUrl:'component/series/item.component.html',bindings:{val:'=',type:'@'},controller:['modelService',function(modelService){var ctrl=this;ctrl.add=function(){modelService.addItem(ctrl.type,{name:ctrl.newName}).then(function(res){console.log(res);alert('Success');});};var getlist=function getlist(){console.log('get list xxxx');modelService.getList(ctrl.type).then(function(res){ctrl.list=res.data;});};getlist();}]});
+	'use strict';angular.module('app').component('appFilmEdit',{templateUrl:'component/series/film.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','filmService','modelService',function($scope,filmService,modelService){var ctrl=this;ctrl.addItem=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {modelService.addItem('Film',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});}};ctrl.update=function(){modelService.updateItem('Film',ctrl.newitem._id,ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});};}]});
+
+/***/ },
+/* 144 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appItemEdit',{templateUrl:'component/series/item.component.html',bindings:{val:'=',type:'@'},controller:['modelService',function(modelService){var ctrl=this;ctrl.add=function(){modelService.addItem(ctrl.type,{name:ctrl.newName}).then(function(res){alert('Success');getlist();});};var getlist=function getlist(){console.log('get list xxxx');modelService.getList(ctrl.type).then(function(res){ctrl.list=res.data;});};getlist();}]});
 
 /***/ }
 /******/ ]);

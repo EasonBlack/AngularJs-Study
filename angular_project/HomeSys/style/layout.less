@@ -59,6 +59,10 @@ body {
   margin-bottom:10px;
 }
 
+.delete-btn {
+  background-color: #C2185B !important;
+}
+
 .app-btn {
   display:inline-block;
   width:70px;
@@ -68,6 +72,47 @@ body {
 
   background-color: #006699;
   color:white;
+}
+
+.sidebar-nav {
+  li {
+    transition:all 0.5s ease;
+  }
+  a {
+    color:white;
+  }
+
+  a:visited {
+    color:white;
+  }
+
+  margin-left: 20px;
+  .logo-wrapper {
+    height:60px;
+    line-height:60px;
+
+  }
+
+  .menus-wrapper {
+
+    .nav-submenu {
+      overflow:hidden;
+      max-height: 0;
+      margin-left:10px;
+      transition:height 0.8s ease;
+    }
+    .nav-submenu.subactive {
+      overflow:hidden;
+      display:block;
+      max-height: 500px;
+      background-color: #1976D2;
+      transition:all 0.8s ease;
+      margin-left: -20px;
+      padding-left: 40px;
+      padding-top: 10px;
+    }
+
+  }
 }
 
 

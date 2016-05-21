@@ -27,11 +27,17 @@
             <input type="text" placeholder="number" ng-model="$ctrl.newseriesitem.num">
         </div>
         <div class="input-section">
-            <label class="input-label">Comment</label>
-            <input type="text" placeholder="comment" ng-model="$ctrl.newseriesitem.comment">
+            <label>Comment</label>
+            <ui-select ng-model="$ctrl.newitem.comment" style="width: 100px;" theme="select2" search-enabled="false"
+                       title="Choose a country">
+                <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="item.id as item in $root.item_comment | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
         </div>
         <div>
-            <a class='app-btn' ng-click="$ctrl.seriesList.addItem($ctrl.newseriesitem.seriesid, $ctrl.newseriesitem)">Add Item</a>
+            <a class='app-btn' ng-click="$ctrl.addItem()">Add Item</a>
         </div>
     </div>
 

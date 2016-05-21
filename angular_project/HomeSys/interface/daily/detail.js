@@ -7,6 +7,12 @@ angular.module('app')
         }
         $scope.newitem = {};
 
-        $scope.daily = new dailyService(self.date);
+        var init = ()=> {
+            $scope.daily = new dailyService(self.date);
+        }
 
+        $scope.$on('DailyReRender', function (){
+            init();
+        });
+        init();
     }]);

@@ -31,7 +31,7 @@ body {
 .left-container {
   height: 100%;
   width: 320px;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
 }
 .left-container ul {
@@ -57,6 +57,9 @@ body {
 .input-section {
   margin-bottom: 10px;
 }
+.delete-btn {
+  background-color: #C2185B !important;
+}
 .app-btn {
   display: inline-block;
   width: 70px;
@@ -65,6 +68,38 @@ body {
   text-align: center;
   background-color: #006699;
   color: white;
+}
+.sidebar-nav {
+  margin-left: 20px;
+}
+.sidebar-nav li {
+  transition: all 0.5s ease;
+}
+.sidebar-nav a {
+  color: white;
+}
+.sidebar-nav a:visited {
+  color: white;
+}
+.sidebar-nav .logo-wrapper {
+  height: 60px;
+  line-height: 60px;
+}
+.sidebar-nav .menus-wrapper .nav-submenu {
+  overflow: hidden;
+  max-height: 0;
+  margin-left: 10px;
+  transition: height 0.8s ease;
+}
+.sidebar-nav .menus-wrapper .nav-submenu.subactive {
+  overflow: hidden;
+  display: block;
+  max-height: 500px;
+  background-color: #1976D2;
+  transition: all 0.8s ease;
+  margin-left: -20px;
+  padding-left: 40px;
+  padding-top: 10px;
 }
 .header-section {
   height: 50px;
@@ -105,7 +140,7 @@ body {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
   text-transform: none;
   text-decoration: none;

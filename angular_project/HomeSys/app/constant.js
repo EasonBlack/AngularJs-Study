@@ -11,12 +11,22 @@ angular.module('app')
             {id: 'it', name: 'IT'},
             {id: 'film', name: 'Film'},
             {id: 'house', name: 'House'},
-            {id: 'study', name: 'Study'}
+            {id: 'study', name: 'Study'},
+            {id: 'job', name: 'Job'}
+        ],
+        item_comment: [
+            {id: 'great', name: 'Great'},
+            {id: 'good', name: 'Good'},
+            {id: 'normal', name: 'Normal'},
+            {id: 'bad', name: 'Bad'},
+            {id: 'worst', name: 'Worst'},
         ]
     })
     .run(function ($rootScope, appConstant) {
+
         $rootScope.series_status = appConstant.series_status;
         $rootScope.daily_type = appConstant.daily_type;
+        $rootScope.item_comment = appConstant.item_comment;
     });
 
 
