@@ -28,7 +28,7 @@
         </div>
         <div class="input-section">
             <label>Comment</label>
-            <ui-select ng-model="$ctrl.newitem.comment" style="width: 100px;" theme="select2" search-enabled="false"
+            <ui-select ng-model="$ctrl.newseriesitem.comment" style="width: 100px;" theme="select2" search-enabled="false"
                        title="Choose a country">
                 <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="item.id as item in $root.item_comment | filter: $select.search">

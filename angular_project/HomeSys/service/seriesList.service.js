@@ -28,10 +28,11 @@ angular.module('app')
                     })
             }
 
-            this.addItem = function(id,item) {
+            this.addItem = function(id,item,cb) {
                 $http.post('http://localhost:2003/series/' + id, item)
                     .then((res)=> {
                         alert('Success');
+                        cb();
                     });
             }
 

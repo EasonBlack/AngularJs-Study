@@ -39,7 +39,6 @@ import './component/select/app.select'
 import './component/table/app.table'
 import './component/series/series.component'
 import './component/series/book.component'
-import './component/series/it.component'
 import './component/series/film.component'
 import './component/series/item.component'
 

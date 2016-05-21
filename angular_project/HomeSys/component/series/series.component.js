@@ -19,7 +19,10 @@ angular.module('app')
                         scope: dialogScope
                     });
                 } else {
-                    ctrl.seriesList.addItem(ctrl.newseriesitem.seriesid, ctrl.newseriesitem)
+                    ctrl.seriesList.addItem(ctrl.newseriesitem.seriesid, ctrl.newseriesitem,function(){
+                        $scope.$emit('DailyReRender')
+                    });
+
                 }
 
 

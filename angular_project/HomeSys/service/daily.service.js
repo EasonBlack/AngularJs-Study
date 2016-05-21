@@ -1,20 +1,17 @@
 import moment from 'moment';
 
 angular.module('app')
-    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService', 'itemService', 'itService', 'filmService', 'modelService',
-        function ($http, $rootScope, seriesItemService, bookService, itemService, itService, filmService, modelService) {
+    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService', 'filmService', 'modelService',
+        function ($http, $rootScope, seriesItemService, bookService, filmService, modelService) {
             var Daily = function (date) {
                 var self = this;
                 self.selectedtype = {};
                 self.newitem = {};
                 self.newsub = {};
 
-                var itSerivce = new itService();
-                var itemFactory = new itemService();
                 this.initialize = function () {
                     $http.get('http://localhost:2003/daily/' + date)
                         .then((res)=> {
-                            console.log(res.data);
                             self._id = res.data._id;
                             self.date = res.data.date;
                             self.items = res.data.items;
@@ -27,18 +24,34 @@ angular.module('app')
                 };
 
                 this.addItem = function (newitem) {
+                    if(!newitem || !newitem.type ) {
+                        alert('type something!');
+                        return ;
+                    }
                     self.newitem.type = self.selectedtype;
-                    console.log(self.newitem);
                     $http.post('http://localhost:2003/daily/' + date, self.newitem)
                         .then((res)=> {
-                            console.log(res.data);
                             self.items = res.data.items;
                             self.items.forEach((item)=> {
                                 recodeItem(item, function (result) {
                                     item.contentName = result;
                                 });
                             });
-                            newitem = {};
+                            self.newitem = {};
+                        })
+                }
+
+                this.UpdateItem = function (newitem) {
+                    self.newitem.type = self.selectedtype;
+                    $http.post('http://localhost:2003/daily/' + date + '/' + self.newitem._id, self.newitem)
+                        .then((res)=> {
+                            self.items = res.data.items;
+                            self.items.forEach((item)=> {
+                                recodeItem(item, function (result) {
+                                    item.contentName = result;
+                                });
+                            });
+                            self.newitem = {};
                         })
                 }
 
@@ -52,6 +65,7 @@ angular.module('app')
                     $http.delete('http://localhost:2003/daily/' + date + '/' + self.newitem._id)
                         .then((res)=> {
                             self.initialize();
+                            self.newitem = {};
                         })
                 }
 
@@ -71,8 +85,7 @@ angular.module('app')
                                 self.newsub = new bookService(item._id);
                                 self.newsub.date = date;
                                 self.newsub.ref = item._id;
-                            } else if (i.type == 'it') {
-
+                                console.log(self.newsub);
                             } else if (i.type == 'film') {
                                 filmService.getItem(item._id)
                                     .then((res)=> {
@@ -87,30 +100,30 @@ angular.module('app')
                 var recodeItem = function (item, cb) {
                     switch (item.type) {
                         case 'series':
-                            itemFactory.getItem('series/items', item._id)
+                            modelService.getItemByRouteAndId('series/items', item._id)
                                 .then((res)=> {
-                                    var result = res.data.seriesname + ' ' + res.data.item.num;
+                                    var result = res.data && (res.data.seriesname + ' ' + res.data.item.num);
                                     cb(result);
-                                });
+                                })
                             break;
                         case 'book':
-                            itemFactory.getItem('book', item._id)
+                            modelService.getItemByRef('Book', item._id)
                                 .then((res)=> {
                                     cb(res.data.name);
-                                });
+                                })
                             break;
                         case 'it':
-                            itSerivce.getItem(item.content)
+                            modelService.getItem('IT', item.content)
                                 .then((res)=> {
-                                    var result = res.data.name;
-                                    cb(result);
-                                });
+                                    console.log(res.data.name);
+                                    cb(res.data.name);
+                                })
                             break;
                         case 'film':
-                            itemFactory.getItem('film', item._id)
+                            modelService.getItemByRef('Film', item._id)
                                 .then((res)=> {
                                     cb(res.data.name);
-                                });
+                                })
                             break;
                         case 'house':
                             modelService.getItem('House', item.content)

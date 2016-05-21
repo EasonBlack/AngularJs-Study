@@ -25,7 +25,6 @@ angular.module('app')
                 item.date = moment(item.date).format('YYYY-MM-DD');
                 $http.post('http://localhost:2003/series/' + self._id, item)
                     .then((res)=> {
-                        self.items = res.data;
                         alert('Success');
                     });
             }

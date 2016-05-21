@@ -8,7 +8,7 @@ angular.module('app')
                 if (!id) return;
                 $http.get('http://localhost:2003/book/' + id)
                     .then((res)=> {
-                        console.log(res.data);
+                        self._id = res.data._id;
                         self.name = res.data.name;
                         res.data.data && (self.date = res.data.date);
                         self.author = res.data.author;

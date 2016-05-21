@@ -17,7 +17,6 @@ angular.module('app')
             }
 
             var getlist = () => {
-                console.log('get list xxxx')
                 modelService.getList(ctrl.type)
                 .then((res)=> {
                         ctrl.list = res.data;

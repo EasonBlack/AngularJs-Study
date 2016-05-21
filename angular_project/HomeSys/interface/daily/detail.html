@@ -57,7 +57,8 @@
                 <label class="input-label">Content</label>
                 <input type="text" placeholder="content" ng-model="daily.newitem.content">
             </div>
-            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.addItem()" >{{daily.newitem._id ? 'Update': 'Add'}}</a>
+            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.addItem()" ng-if="!daily.newitem._id" >Add</a>
+            <a herf="javascript:void(0)" class="app-btn" ng-click="daily.UpdateItem()" ng-if="daily.newitem._id">Update</a>
             <a herf="javascript:void(0)" class="app-btn" ng-click="daily.newItem()" ng-if="daily.newitem._id">New</a>
             <a herf="javascript:void(0)" class="app-btn delete-btn" ng-click="daily.deleteItem()" ng-if="daily.newitem._id">Delete</a>
         </div>
@@ -68,8 +69,11 @@
             <div ng-switch-when="book">
                 <app-book-edit date="daily.date" dailyitemid="daily.newitem._id" newitem="daily.newsub" ></app-book-edit>
             </div>
+            <!--<div ng-switch-when="it">-->
+                <!--<app-it-edit  val="daily.newitem.content"></app-it-edit>-->
+            <!--</div>-->
             <div ng-switch-when="it">
-                <app-it-edit  val="daily.newitem.content"></app-it-edit>
+                <app-item-edit type="IT" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
             </div>
             <div ng-switch-when="film">
                 <app-film-edit date="daily.date" dailyitemid="daily.newitem._id"  newitem="daily.newsub"></app-film-edit>

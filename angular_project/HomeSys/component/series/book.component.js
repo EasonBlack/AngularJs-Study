@@ -6,9 +6,10 @@ angular.module('app')
             date: '<',
             dailyitemid: '<'
         },
-        controller: ['$scope', 'modelService', function ($scope, modelService) {
+        controller: ['$scope', 'modelService', 'ngDialog', function ($scope, modelService, ngDialog) {
             var ctrl = this;
-            ctrl.addItem = ()=> {
+            console.log(ctrl.newitem);
+            ctrl.add = ()=> {
                 if (!ctrl.dailyitemid) {
                     var dialogScope = $scope.$new();
                     dialogScope.title = 'You must bind a daily item!';
@@ -22,7 +23,20 @@ angular.module('app')
                             $scope.$emit('DailyReRender')
                         })
                 }
-                //ctrl.newitem.addItem(ctrl.newitem);
+            }
+
+            ctrl.update = ()=> {
+                modelService.updateItem('Book', ctrl.newitem._id, ctrl.newitem)
+                    .then((res)=> {
+                        $scope.$emit('DailyReRender')
+                    })
+            }
+
+            ctrl.delete = ()=> {
+                modelService.deleteItem('Book', ctrl.newitem._id)
+                    .then((res)=> {
+                        $scope.$emit('DailyReRender')
+                    })
             }
         }]
     })
