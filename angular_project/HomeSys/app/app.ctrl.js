@@ -3,6 +3,7 @@ angular.module('app')
         $scope.navs = [
             {id: 1, href: '#/dashboard', title: 'DASHBOARD'},
             {id: 2, href: '#/series', title: 'SERIES'},
+            {id: 2, href: '#/film', title: 'FILM'},
             {
                 id: 3, title: 'DAILY',
                 submenu: [

@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import angular from 'angular'
+
 import 'angular-route';
 import 'angular-sanitize'
 import 'ui-select'
@@ -10,6 +11,7 @@ import '../../vendor/angular-ui-calendar/calendar'
 import '../../vendor/ngDialog'
 
 import './app/app'
+import './app/request.service'
 import './app/app.ctrl'
 import './app/config'
 import './app/constant'
@@ -31,6 +33,7 @@ import './interface/series/add'
 import './interface/series/detail'
 import './interface/daily/index'
 import './interface/daily/detail'
+import './interface/film/index'
 
 
 

@@ -24,11 +24,11 @@ angular.module('app')
                 };
 
                 this.addItem = function (newitem) {
-                    if(!newitem || !newitem.type ) {
+                    if(!self.newitem || !self.newitem.type ) {
                         alert('type something!');
                         return ;
                     }
-                    self.newitem.type = self.selectedtype;
+                    //self.newitem.type = self.selectedtype;
                     $http.post('http://localhost:2003/daily/' + date, self.newitem)
                         .then((res)=> {
                             self.items = res.data.items;
@@ -42,7 +42,7 @@ angular.module('app')
                 }
 
                 this.UpdateItem = function (newitem) {
-                    self.newitem.type = self.selectedtype;
+                    //self.newitem.type = self.selectedtype;
                     $http.post('http://localhost:2003/daily/' + date + '/' + self.newitem._id, self.newitem)
                         .then((res)=> {
                             self.items = res.data.items;
@@ -57,7 +57,7 @@ angular.module('app')
 
                 this.newItem = function () {
                     self.newitem = {};
-                    self.selectedtype = null;
+                    //self.selectedtype = null;
                     self.newsub = {};
                 }
 
@@ -71,12 +71,12 @@ angular.module('app')
 
                 this.getItem = function (item) {
                     self.newitem = {};
-                    self.selectedtype = null;
+                    //self.selectedtype = null;
                     self.newsub = {};
                     self.items.forEach(function (i) {
                         if (i._id == item._id) {
                             self.newitem = i;
-                            self.selectedtype = i.type;
+                            //self.selectedtype = i.type;
                             if (i.type == 'series') {
                                 self.newsub = new seriesItemService(item._id);
                                 self.newsub.date = date;

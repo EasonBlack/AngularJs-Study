@@ -37,7 +37,7 @@
         <div class="new-item-wrapper">
             <div class="input-section">
                 <label class="input-label">Type</label>
-                <ui-select ng-model="daily.selectedtype" style="width: 100px;" theme="select2" search-enabled="false"
+                <ui-select ng-model="daily.newitem.type" style="width: 100px;" theme="select2" search-enabled="false"
                            title="Choose a country">
                     <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
                     <ui-select-choices repeat="item.id as item in daily_type | filter: $select.search">
@@ -62,7 +62,7 @@
             <a herf="javascript:void(0)" class="app-btn" ng-click="daily.newItem()" ng-if="daily.newitem._id">New</a>
             <a herf="javascript:void(0)" class="app-btn delete-btn" ng-click="daily.deleteItem()" ng-if="daily.newitem._id">Delete</a>
         </div>
-        <div class="type-item-wrapper" ng-switch="daily.selectedtype">
+        <div class="type-item-wrapper" ng-switch="daily.newitem.type">
             <div ng-switch-when="series">
                 <app-series-edit date="daily.date" dailyitemid="daily.newitem._id" newseriesitem="daily.newsub" ></app-series-edit>
             </div>

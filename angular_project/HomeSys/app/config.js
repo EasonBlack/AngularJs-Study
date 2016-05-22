@@ -1,5 +1,6 @@
 angular.module('app')
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+        $httpProvider.interceptors.push('httpRequestInterceptor');
         $routeProvider
             .when('/dashboard',
             {
@@ -31,5 +32,10 @@ angular.module('app')
                 templateUrl: 'interface/series/detail.html',
                 controller: 'seriesDetailCtrl'
             })
+            .when('/film',
+            {
+                templateUrl: 'interface/film/index.html',
+                controller: 'filmCtrl'
+            })
             .otherwise({redirectTo: '/dashboard'});
-    }]);
+    }])
