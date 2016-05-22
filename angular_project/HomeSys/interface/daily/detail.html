@@ -1,6 +1,7 @@
 <div class="daily-detail-container">
     <div class="header-section">
         {{daily.date}}
+        <a class="app-btn" href="javascript:void(0)" ng-click="chart()">Chart</a>
     </div>
 
     <div class="detail-items-section">
@@ -86,5 +87,7 @@
             </div>
         </div>
     </div>
-
+    <div class="chart-section" ng-class="{active: control.chart_show}">
+        <highchart config="highchartsNG"></highchart>
+    </div>
 </div>

@@ -1,21 +1,17 @@
 angular.module('app')
-.factory('chartPie', [function() {
+    .factory('chartBar', [function() {
 
-        var chartPie = function(data) {
+        var chartBar = function(data) {
             this.dataSet = data;
             this.config = {
                 options: {
                     chart: {
-                        type: 'pie'
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            showInLegend: true
-                        }
+                        type: 'bar'
                     }
                 },
-
+                xAxis: {
+                    categories:  this.dataSet.categories
+                },
                 series: [{
                     name :this.dataSet.name,
                     data: this.dataSet.data
@@ -28,6 +24,6 @@ angular.module('app')
 
         }
 
-        return chartPie;
+        return chartBar;
 
     }]);

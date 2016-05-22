@@ -9,6 +9,10 @@ import '../../vendor/angular-datepicker/angular-datepicker'
 import '../../vendor/fullcalendar/fullcalendar'
 import '../../vendor/angular-ui-calendar/calendar'
 import '../../vendor/ngDialog'
+import '../../vendor/highcharts.src.js'
+import '../../vendor/highcharts-more.src.js'
+import '../../vendor/highcharts-ng.js'
+
 
 import './app/app'
 import './app/request.service'
@@ -26,6 +30,8 @@ import './service/it.service'
 import './service/daily.service'
 import './service/film.service'
 import './service/model.service'
+
+import './chartService/chartservice'
 
 import './interface/dashboard/index'
 import './interface/series/index'

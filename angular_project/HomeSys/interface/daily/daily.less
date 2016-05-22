@@ -1,29 +1,43 @@
 .daily-detail-container {
+  position: relative;
   .detail-items-section {
     display: flex;
     .daily-items-wrapper {
       flex: 0.8;
       table {
-        width:100%;
+        width: 100%;
 
         tr {
-          height:30px;
+          height: 30px;
         }
       }
 
     }
-    .new-item-wrapper,.type-item-wrapper {
+    .new-item-wrapper, .type-item-wrapper {
       flex: 0.7;
       label {
         display: inline-block;
-        width:70px;
+        width: 70px;
       }
       input {
-        width:180px;
+        width: 180px;
       }
     }
     .type-item-wrapper {
       flex: 1;
+    }
+  }
+  .chart-section {
+    position: absolute;
+    right: -400px;
+    width:400px;
+    height:400px;
+    top:50px;
+    background-color: #ccc;
+    transition : all 0.5s ease;
+    z-index:10;
+    &.active {
+      right:0px;
     }
   }
 }

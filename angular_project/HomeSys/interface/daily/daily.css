@@ -1,3 +1,6 @@
+.daily-detail-container {
+  position: relative;
+}
 .daily-detail-container .detail-items-section {
   display: flex;
 }
@@ -25,4 +28,17 @@
 }
 .daily-detail-container .detail-items-section .type-item-wrapper {
   flex: 1;
+}
+.daily-detail-container .chart-section {
+  position: absolute;
+  right: -400px;
+  width: 400px;
+  height: 400px;
+  top: 50px;
+  background-color: #ccc;
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+.daily-detail-container .chart-section.active {
+  right: 0px;
 }

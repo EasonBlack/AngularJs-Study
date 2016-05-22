@@ -69,6 +69,22 @@ angular.module('app')
                         })
                 }
 
+                this.getPieChartDate = function(items){
+                    var chartItems = {};
+                    var chartItemsArray =[];
+                    items.forEach((item)=> {
+                        if (!chartItems[item.type]) {
+                            chartItems[item.type] =  parseFloat(item.time);
+                        } else {
+                            chartItems[item.type] = parseFloat(chartItems[item.type]) + parseFloat(item.time);
+                        }
+                    })
+                    for (var o in chartItems) {
+                        chartItemsArray.push({name: o, y: chartItems[o]});
+                    }
+                    return chartItemsArray;
+                }
+
                 this.getItem = function (item) {
                     self.newitem = {};
                     //self.selectedtype = null;

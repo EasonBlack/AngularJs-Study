@@ -1,1 +1,1 @@
-angular.module('app', ['ngRoute', 'ngSanitize', 'ui.select', 'datePicker','ui.calendar', 'ngDialog'])
+angular.module('app', ['ngRoute', 'ngSanitize', 'ui.select', 'datePicker', 'ui.calendar', 'ngDialog', "highcharts-ng"])
