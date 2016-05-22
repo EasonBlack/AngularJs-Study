@@ -9,6 +9,10 @@
             <input type="text" placeholder="film name" ng-model="$ctrl.newitem.name">
         </div>
         <div class="input-section">
+            <label>Date</label>
+            <input type="datetime" date-time  auto-close="true" ng-model="$ctrl.newitem.date" ng-init="$ctrl.newitem.date=$ctrl.date"  max-view="date" min-view="date"  format="YYYY-MM-DD"/>
+        </div>
+        <div class="input-section">
             <label>Comment</label>
             <ui-select ng-model="$ctrl.newitem.comment" style="width: 100px;" theme="select2" search-enabled="false"
                        title="Choose a country">

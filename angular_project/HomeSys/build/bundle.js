@@ -60779,7 +60779,7 @@
 /* 118 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').factory('httpRequestInterceptor',function(){return {request:function request(config){config.headers={'Authentication':'Basic xxxxxxxxx'};return config;}};});
+	'use strict';angular.module('app').factory('httpRequestInterceptor',function(){return {request:function request(config){config.headers['Authorization']='Basic xxxxxxxxx';return config;}};});
 
 /***/ },
 /* 119 */
@@ -60938,9 +60938,9 @@
 
 /***/ },
 /* 144 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';angular.module('app').component('appFilmEdit',{templateUrl:'component/series/film.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','modelService','ngDialog',function($scope,modelService,ngDialog){var ctrl=this;ctrl.add=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {ctrl.newitem.ref=ctrl.dailyitemid;modelService.addItem('Film',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});}};ctrl.update=function(){modelService.updateItem('Film',ctrl.newitem._id,ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});};ctrl.delete=function(){modelService.deleteItem('Film',ctrl.newitem._id).then(function(res){$scope.$emit('DailyReRender');});};}]});
+	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').component('appFilmEdit',{templateUrl:'component/series/film.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','modelService','ngDialog',function($scope,modelService,ngDialog){var ctrl=this;ctrl.add=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {ctrl.newitem.ref=ctrl.dailyitemid;ctrl.newitem.date&&(ctrl.newitem.date=(0,_moment2.default)(ctrl.newitem.date).format('YYYY-MM-DD'));modelService.addItem('Film',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});}};ctrl.update=function(){ctrl.newitem.date&&(ctrl.newitem.date=(0,_moment2.default)(ctrl.newitem.date).format('YYYY-MM-DD'));modelService.updateItem('Film',ctrl.newitem._id,ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});};ctrl.delete=function(){modelService.deleteItem('Film',ctrl.newitem._id).then(function(res){$scope.$emit('DailyReRender');});};}]});
 
 /***/ },
 /* 145 */

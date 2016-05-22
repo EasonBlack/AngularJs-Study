@@ -69,9 +69,6 @@
             <div ng-switch-when="book">
                 <app-book-edit date="daily.date" dailyitemid="daily.newitem._id" newitem="daily.newsub" ></app-book-edit>
             </div>
-            <!--<div ng-switch-when="it">-->
-                <!--<app-it-edit  val="daily.newitem.content"></app-it-edit>-->
-            <!--</div>-->
             <div ng-switch-when="it">
                 <app-item-edit type="IT" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
             </div>

@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 angular.module('app')
     .component('appFilmEdit', {
         templateUrl: 'component/series/film.component.html',
@@ -19,6 +21,7 @@ angular.module('app')
                     });
                 } else {
                     ctrl.newitem.ref = ctrl.dailyitemid;
+                    ctrl.newitem.date && ( ctrl.newitem.date = moment(ctrl.newitem.date).format('YYYY-MM-DD'))
                     modelService.addItem('Film', ctrl.newitem)
                         .then((res)=> {
                             $scope.$emit('DailyReRender')
@@ -27,6 +30,7 @@ angular.module('app')
             }
 
             ctrl.update = ()=> {
+                ctrl.newitem.date && ( ctrl.newitem.date = moment(ctrl.newitem.date).format('YYYY-MM-DD'))
                 modelService.updateItem('Film', ctrl.newitem._id, ctrl.newitem)
                     .then((res)=> {
                         $scope.$emit('DailyReRender')
