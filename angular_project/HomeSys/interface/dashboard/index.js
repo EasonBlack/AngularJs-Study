@@ -1,3 +1,7 @@
+import moment from 'moment';
+
 angular.module('app')
-    .controller('dashboardCtrl', ['$scope', function ($scope) {
+    .controller('dashboardCtrl', ['$scope', '$http', function ($scope, $http) {
+
+
     }])

@@ -31,7 +31,7 @@ body {
 .left-container {
   height: 100%;
   width: 320px;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
 }
 .left-container ul {
@@ -141,7 +141,7 @@ body {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
   text-transform: none;
   text-decoration: none;
@@ -226,4 +226,13 @@ body {
 }
 .daily-detail-container .chart-section.active {
   right: 0px;
+}
+.dashboard-container {
+  padding-left: 30px;
+}
+.dashboard-container .seven-days-top-list {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #ccc;
+  position: relative;
 }
