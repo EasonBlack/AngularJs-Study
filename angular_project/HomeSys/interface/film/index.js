@@ -12,6 +12,7 @@ angular.module('app')
 
         modelService.getList('Film')
         .then((res)=>{
+                console.log(res.data);
                 $scope.list.rows=res.data;
             })
 

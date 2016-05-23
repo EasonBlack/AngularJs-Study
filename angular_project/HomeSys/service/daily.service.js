@@ -87,12 +87,10 @@ angular.module('app')
 
                 this.getItem = function (item) {
                     self.newitem = {};
-                    //self.selectedtype = null;
                     self.newsub = {};
                     self.items.forEach(function (i) {
                         if (i._id == item._id) {
                             self.newitem = i;
-                            //self.selectedtype = i.type;
                             if (i.type == 'series') {
                                 self.newsub = new seriesItemService(item._id);
                                 self.newsub.date = date;
@@ -101,11 +99,10 @@ angular.module('app')
                                 self.newsub = new bookService(item._id);
                                 self.newsub.date = date;
                                 self.newsub.ref = item._id;
-                                console.log(self.newsub);
                             } else if (i.type == 'film') {
                                 filmService.getItem(item._id)
                                     .then((res)=> {
-                                        self.newsub = res.data;
+                                        res.data ? self.newsub = res.data :  self.newsub.date = self.date;
                                     })
                             }
                             return;
@@ -114,47 +111,30 @@ angular.module('app')
                 }
 
                 var recodeItem = function (item, cb) {
-                    switch (item.type) {
-                        case 'series':
+                    let type = item.type;
+                    type = type.replace(/^[a-z]/, function (x) {return x.toUpperCase()});
+                    switch (type) {
+                        case 'Series':
                             modelService.getItemByRouteAndId('series/items', item._id)
                                 .then((res)=> {
                                     var result = res.data && (res.data.seriesname + ' ' + res.data.item.num);
                                     cb(result);
                                 })
                             break;
-                        case 'book':
-                            modelService.getItemByRef('Book', item._id)
+                        case 'Book':
+                        case 'Film':
+                            modelService.getItemByRef(type, item._id)
                                 .then((res)=> {
                                     cb(res.data.name);
                                 })
                             break;
-                        case 'it':
-                            modelService.getItem('IT', item.content)
-                                .then((res)=> {
-                                    console.log(res.data.name);
-                                    cb(res.data.name);
-                                })
-                            break;
-                        case 'film':
-                            modelService.getItemByRef('Film', item._id)
-                                .then((res)=> {
-                                    cb(res.data.name);
-                                })
-                            break;
-                        case 'house':
-                            modelService.getItem('House', item.content)
-                                .then((res)=> {
-                                    cb(res.data.name);
-                                })
-                            break;
-                        case 'study':
-                            modelService.getItem('Study', item.content)
-                                .then((res)=> {
-                                    cb(res.data.name);
-                                })
-                            break;
-                        case 'job':
-                            modelService.getItem('Job', item.content)
+                        case 'House':
+                        case 'Study':
+                        case 'Writing':
+                        case 'It':
+                        case 'Job':
+                            if(type=='It') type='IT';
+                            modelService.getItem(type, item.content)
                                 .then((res)=> {
                                     cb(res.data.name);
                                 })

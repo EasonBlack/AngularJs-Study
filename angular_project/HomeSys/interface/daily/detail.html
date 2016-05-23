@@ -85,6 +85,9 @@
             <div ng-switch-when="job">
                 <app-item-edit type="Job" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
             </div>
+            <div ng-switch-when="writing">
+                <app-item-edit type="Writing" date="daily.date" dailyitemid="daily.newitem._id" val="daily.newitem.content"></app-item-edit>
+            </div>
         </div>
     </div>
     <div class="chart-section" ng-class="{active: control.chart_show}">

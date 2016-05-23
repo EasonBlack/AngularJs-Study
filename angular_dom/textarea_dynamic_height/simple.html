@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+        .text-wrapper {
+            position:relative;
+            width:400px;
+            border:1px solid #002a80;
+            display:flex;
+        }
+        .text-wrapper label {
+            display:block;
+            width:50px;
+            margin:10px 10px;
+        }
+        .text-wrapper textarea {
+            flex:1;
+            height:100%;
+            margin:10px 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="text-wrapper">
+         <label>Text</label>
+        <textarea elastic ng-model="someProperty"></textarea>
+    </div>
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+
+            }])
+            .directive('elastic', [
+                '$timeout',
+                function($timeout) {
+                    return {
+                        restrict: 'A',
+                        link: function($scope, element) {
+                            $scope.initialHeight = $scope.initialHeight || element[0].style.height;
+                            var resize = function() {
+                                element[0].style.height = $scope.initialHeight;
+                                element[0].style.height = "" + element[0].scrollHeight + "px";
+                            };
+                            element.on("input change", resize);
+                            $timeout(resize, 0);
+                        }
+                    };
+                }
+            ]);
+</script>
+</html>

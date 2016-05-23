@@ -12,7 +12,8 @@ angular.module('app')
             {id: 'film', name: 'Film'},
             {id: 'house', name: 'House'},
             {id: 'study', name: 'Study'},
-            {id: 'job', name: 'Job'}
+            {id: 'job', name: 'Job'},
+            {id: 'writing', name: 'Writing'},
         ],
         item_comment: [
             {id: 'great', name: 'Great'},
