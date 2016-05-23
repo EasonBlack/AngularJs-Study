@@ -1,0 +1,18 @@
+<div class="image-list-container">
+    <div class="header-wrapper">
+        View Image
+    </div>
+    <div class="image-frame-wrapper">
+        <div class="image-list-wrapper" ng-style="{left: currentPosition}">
+            <div class="image-section" ng-repeat="item in items">
+                <img ng-src="{{item.src}}">
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-wrapper">
+        <span class="glyphicon glyphicon-menu-left arrow" ng-click="move(-1)" ng-show="current>0"></span>
+        <span class="num-title">{{current +1 }} / {{items.length}}</span>
+        <span class="glyphicon glyphicon-menu-right arrow" ng-click="move(1)" ng-show="current+1<items.length"></span>
+    </div>
+</div>
