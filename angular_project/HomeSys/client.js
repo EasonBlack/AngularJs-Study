@@ -40,6 +40,7 @@ import './interface/series/detail'
 import './interface/daily/index'
 import './interface/daily/detail'
 import './interface/film/index'
+import './interface/book/index'
 
 
 

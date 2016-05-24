@@ -7,3 +7,6 @@
   border: 1px solid #ccc;
   position: relative;
 }
+.dashboard-container .seven-days-top-list label {
+  display: inline-block;
+}

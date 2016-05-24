@@ -37,5 +37,10 @@ angular.module('app')
                 templateUrl: 'interface/film/index.html',
                 controller: 'filmCtrl'
             })
+            .when('/book',
+            {
+                templateUrl: 'interface/book/index.html',
+                controller: 'bookCtrl'
+            })
             .otherwise({redirectTo: '/dashboard'});
     }])

@@ -31,7 +31,7 @@ body {
 .left-container {
   height: 100%;
   width: 320px;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
 }
 .left-container ul {
@@ -141,7 +141,7 @@ body {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
   text-transform: none;
   text-decoration: none;
@@ -243,6 +243,22 @@ body {
 .film-something-container .btn-cancel {
   background-color: #C2185B;
 }
+.book-something-container textarea {
+  width: 100%;
+  height: 120px;
+}
+.book-something-container .btn {
+  width: 100px;
+  height: 30px;
+  color: white;
+  padding: 10px;
+}
+.book-something-container .btn-confirm {
+  background-color: #006699;
+}
+.book-something-container .btn-cancel {
+  background-color: #C2185B;
+}
 .dashboard-container {
   padding-left: 30px;
 }
@@ -251,4 +267,7 @@ body {
   height: 500px;
   border: 1px solid #ccc;
   position: relative;
+}
+.dashboard-container .seven-days-top-list label {
+  display: inline-block;
 }

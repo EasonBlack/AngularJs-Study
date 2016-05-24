@@ -14,6 +14,7 @@ angular.module('app')
             {id: 'study', name: 'Study'},
             {id: 'job', name: 'Job'},
             {id: 'writing', name: 'Writing'},
+            {id: 'comic', name: 'Comic'}
         ],
         item_comment: [
             {id: 'great', name: 'Great'},
