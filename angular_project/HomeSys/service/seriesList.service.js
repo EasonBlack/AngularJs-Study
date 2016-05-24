@@ -3,7 +3,7 @@ angular.module('app')
         var SeriesList = function (id, name) {
             var self = this;
             var headers = [
-                {id:1, name: 'name', title: 'NAME', clickable: true, href: '#/series/detail/'},
+                {id:1, name: 'name', title: 'NAME', type: 'href', href: '#/series/detail/'},
                 {id:2 , name: 'date', title: 'DATE'},
                 {id:3, name: 'status', title: 'STATUS'}
             ]
