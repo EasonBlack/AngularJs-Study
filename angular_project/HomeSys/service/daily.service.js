@@ -74,9 +74,9 @@ angular.module('app')
                     var chartItemsArray =[];
                     items.forEach((item)=> {
                         if (!chartItems[item.type]) {
-                            chartItems[item.type] =  parseFloat(item.time);
+                            chartItems[item.type] =  parseFloat(item.time|| 0);
                         } else {
-                            chartItems[item.type] = parseFloat(chartItems[item.type]) + parseFloat(item.time);
+                            chartItems[item.type] = parseFloat(chartItems[item.type]) + parseFloat(item.time|| 0);
                         }
                     })
                     for (var o in chartItems) {
