@@ -1,19 +1,34 @@
 <div class="dashboard-container">
-    <div class="header-section">
+    <div class="header-container">
 
     </div>
-    <div class="seven-days-top-list">
-        <div class="header-section"></div>
-        <div class="content-section">
-            <ul>
-                <li ng-repeat = 'item in dailyTotalItems'>
-                      <label style="width:40px;">{{item.name}}</label>
-                      <label style="width:40px;">{{item.time}}</label>
-                      <label style="width:40px;">{{item.trophy}}</label>
-                </li>
+    <div class="content-container">
+        <div class="seven-days-top-list">
+            <div class="header-section">
+               {{dailyTotalItems.startdate}} to {{dailyTotalItems.enddate}}
+               <a class="chart-button" href="javascript:void(0)" ng-click="control.dailyTotalItemsChart = !control.dailyTotalItemsChart">C</a>
+            </div>
+            <div class="content-section">
+                <ul>
+                    <li>
+                        <label style="width:40px;"></label>
+                        <label style="width:40px;">TIME</label>
+                        <label style="width:40px;">TROPHY</label>
+                    </li>
+                    <li ng-repeat = 'item in dailyTotalItems.data'>
+                        <label style="width:40px;">{{item.name}}</label>
+                        <label style="width:40px;">{{item.time}}</label>
+                        <label style="width:40px;">{{item.trophy}}</label>
+                    </li>
 
-            </ul>
+                </ul>
+                <div class="chart-section" ng-class="{active : control.dailyTotalItemsChart}">
+                        <highchart config="dailyTotalItemsChart"></highchart>
+                </div>
+            </div>
+
         </div>
     </div>
+
 
 </div>

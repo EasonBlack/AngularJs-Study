@@ -2,6 +2,10 @@ import moment from 'moment';
 
 angular.module('app')
     .controller('dashboardCtrl', ['$scope', '$http', function ($scope, $http) {
+        $scope.control = {
+           dailyTotalItemsChart:false
+        }
+
         //top 7
         var dateend = new moment().format('YYYY-MM-DD');
         var datestart = moment(dateend).subtract(7, 'days').format('YYYY-MM-DD');
@@ -21,9 +25,18 @@ angular.module('app')
                        dataType[item.type].trophy =  parseFloat(dataType[item.type].trophy) + parseFloat(item.trophy || 0);
                    }
                 });
-                $scope.dailyTotalItems = [];
+                $scope.dailyTotalItems = {};
+                $scope.dailyTotalItems.startdate = datestart;
+                $scope.dailyTotalItems.enddate = dateend;
+                $scope.dailyTotalItems.data = [];
+                var chartCatagory = [];
+                var chartDataTime = [];
+                var chartDataTrophy = [];
                 for(var o in dataType) {
-                    $scope.dailyTotalItems.push(
+                    chartCatagory.push(o);
+                    chartDataTime.push(dataType[o].time);
+                    chartDataTrophy.push(dataType[o].trophy);
+                    $scope.dailyTotalItems.data.push(
                         {
                             name: o,
                             time: dataType[o].time,
@@ -31,6 +44,36 @@ angular.module('app')
                         }
                     )
                 }
+
+                $scope.dailyTotalItemsChart = {
+                    options: {
+                        chart: {
+                            type: 'bar'
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    },
+                    xAxis: {
+                        categories: chartCatagory
+                    },
+                    series: [{
+                        name : 'Time',
+                        data: chartDataTime
+                    },{
+                        name : 'Trophy',
+                        data: chartDataTrophy
+                    }],
+                    title: {
+                        text: 'Total'
+                    },
+                    size: {
+                        width: 280,
+                        height:280
+                    },
+                    loading: false
+                }
+
 
             })
 
