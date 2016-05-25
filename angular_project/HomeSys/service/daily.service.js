@@ -1,8 +1,8 @@
 import moment from 'moment';
 
 angular.module('app')
-    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'bookService', 'filmService', 'modelService',
-        function ($http, $rootScope, seriesItemService, bookService, filmService, modelService) {
+    .factory('dailyService', ['$http', '$rootScope', 'seriesItemService', 'filmService', 'modelService',
+        function ($http, $rootScope, seriesItemService, filmService, modelService) {
             var Daily = function (date) {
                 var self = this;
                 self.selectedtype = {};
@@ -24,9 +24,9 @@ angular.module('app')
                 };
 
                 this.addItem = function (newitem) {
-                    if(!self.newitem || !self.newitem.type ) {
+                    if (!self.newitem || !self.newitem.type) {
                         alert('type something!');
-                        return ;
+                        return;
                     }
                     //self.newitem.type = self.selectedtype;
                     $http.post('http://localhost:2003/daily/' + date, self.newitem)
@@ -57,7 +57,6 @@ angular.module('app')
 
                 this.newItem = function () {
                     self.newitem = {};
-                    //self.selectedtype = null;
                     self.newsub = {};
                 }
 
@@ -69,14 +68,14 @@ angular.module('app')
                         })
                 }
 
-                this.getPieChartDate = function(items){
+                this.getPieChartDate = function (items) {
                     var chartItems = {};
-                    var chartItemsArray =[];
+                    var chartItemsArray = [];
                     items.forEach((item)=> {
                         if (!chartItems[item.type]) {
-                            chartItems[item.type] =  parseFloat(item.time|| 0);
+                            chartItems[item.type] = parseFloat(item.time || 0);
                         } else {
-                            chartItems[item.type] = parseFloat(chartItems[item.type]) + parseFloat(item.time|| 0);
+                            chartItems[item.type] = parseFloat(chartItems[item.type]) + parseFloat(item.time || 0);
                         }
                     })
                     for (var o in chartItems) {
@@ -91,20 +90,27 @@ angular.module('app')
                     self.items.forEach(function (i) {
                         if (i._id == item._id) {
                             self.newitem = i;
-                            if (i.type == 'series') {
-                                self.newsub = new seriesItemService(item._id);
-                                self.newsub.date = date;
-                                self.newsub.ref = item._id;
-                            } else if (i.type == 'book') {
-                                self.newsub = new bookService(item._id);
-                                self.newsub.date = date;
-                                self.newsub.ref = item._id;
-                            } else if (i.type == 'film') {
-                                filmService.getItem(item._id)
-                                    .then((res)=> {
-                                        res.data ? self.newsub = res.data :  self.newsub.date = self.date;
-                                    })
+                            let type = item.type;
+                            type = type.replace(/^[a-z]/, function (x) {
+                                return x.toUpperCase()
+                            });
+                            switch (type) {
+                                case 'Series':
+                                    self.newsub = new seriesItemService(item._id);
+                                    self.newsub.date = date;
+                                    self.newsub.ref = item._id;
+                                    break;
+                                case 'Book':
+                                case 'Comic':
+                                case 'Film':
+                                    modelService.getItemByRef(type, item._id)
+                                        .then((res)=> {
+                                            self.newsub.ref = item._id;
+                                            res.data ? self.newsub = res.data : self.newsub.date = self.date;
+                                        })
+                                    break;
                             }
+
                             return;
                         }
                     });
@@ -112,7 +118,9 @@ angular.module('app')
 
                 var recodeItem = function (item, cb) {
                     let type = item.type;
-                    type = type.replace(/^[a-z]/, function (x) {return x.toUpperCase()});
+                    type = type.replace(/^[a-z]/, function (x) {
+                        return x.toUpperCase()
+                    });
                     switch (type) {
                         case 'Series':
                             modelService.getItemByRouteAndId('series/items', item._id)
@@ -122,6 +130,7 @@ angular.module('app')
                                 })
                             break;
                         case 'Book':
+                        case 'Comic':
                         case 'Film':
                             modelService.getItemByRef(type, item._id)
                                 .then((res)=> {
@@ -133,7 +142,7 @@ angular.module('app')
                         case 'Writing':
                         case 'It':
                         case 'Job':
-                            if(type=='It') type='IT';
+                            if (type == 'It') type = 'IT';
                             modelService.getItem(type, item.content)
                                 .then((res)=> {
                                     cb(res.data.name);

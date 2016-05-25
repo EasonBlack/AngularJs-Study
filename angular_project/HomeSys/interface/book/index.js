@@ -1,6 +1,9 @@
 angular.module('app')
     .controller('bookCtrl', ['$scope', '$location', 'modelService', 'ngDialog', function ($scope, $location, modelService, ngDialog) {
         $scope.selectedBook = {};
+        $scope.control = {
+            indexNav: 1
+        }
         $scope.openUpdate = (book)=> {
             $scope.selectedBook = book;
             ngDialog.open({
@@ -17,6 +20,10 @@ angular.module('app')
                 {id: 4, name: 'comment', title: 'COMMENT'}
             ],
             rows: []
+        }
+
+        $scope.setTab = (key)=>{
+            $scope.control.indexNav = key;
         }
 
         var init = ()=> {

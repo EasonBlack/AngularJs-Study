@@ -1,3 +1,17 @@
+.book-list-container .nav-section li {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 10px;
+  float: left;
+  margin-right: 5px;
+}
+.book-list-container .nav-section li.active {
+  border-bottom: 2px solid #006699;
+  color: #006699;
+}
 .book-something-container textarea {
   width: 100%;
   height: 120px;
