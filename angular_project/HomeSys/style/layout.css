@@ -24,6 +24,17 @@ html {
 ul {
   list-style: none;
 }
+a {
+  color: white;
+  text-transform: none;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+}
 body {
   display: flex;
   flex-direction: row;
@@ -31,8 +42,9 @@ body {
 .left-container {
   height: 100%;
   width: 320px;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
+  position: relative;
 }
 .left-container ul {
   margin-left: 20px;
@@ -40,11 +52,6 @@ body {
 .left-container li {
   margin-bottom: 10px;
   color: white;
-}
-.left-container li a {
-  color: white;
-  text-transform: none;
-  text-decoration: none;
 }
 .left-container .logo {
   height: 60px;
@@ -76,12 +83,6 @@ body {
 .sidebar-nav li {
   transition: all 0.5s ease;
 }
-.sidebar-nav a {
-  color: white;
-}
-.sidebar-nav a:visited {
-  color: white;
-}
 .sidebar-nav .logo-wrapper {
   height: 60px;
   line-height: 60px;
@@ -101,4 +102,9 @@ body {
   margin-left: -20px;
   padding-left: 40px;
   padding-top: 10px;
+}
+.setting-container {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 20px;
 }

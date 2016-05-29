@@ -1,0 +1,11 @@
+<div>
+    <div class="tab-pane active" ng-if="control.active=='1'" ng-include="'demo.step1.html'"></div>
+    <div class="tab-pane active" ng-if="control.active=='2'" ng-include="'demo.step2.html'"></div>
+    <div>
+
+        <a class="btn btn-primary" ng-click="open()">Open</a>
+        <a class="btn btn-primary" ng-if="control.active=='1'" ng-click="control.active=2">NEXT</a>
+        <a class="btn btn-primary" ng-if="control.active=='2'" ng-click="control.active=1">Back</a>
+        <a class="btn btn-danger"  ng-click="close()">Close</a>
+    </div>
+</div>

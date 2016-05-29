@@ -42,7 +42,8 @@ import './interface/daily/detail'
 import './interface/film/index'
 import './interface/book/index'
 
-
+import './interface/settings/settings.com'
+import './interface/settings/info'
 
 import './component/input/app.input'
 import './component/select/app.select'

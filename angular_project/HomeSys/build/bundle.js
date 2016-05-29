@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);__webpack_require__(138);__webpack_require__(139);__webpack_require__(140);__webpack_require__(141);__webpack_require__(142);__webpack_require__(143);__webpack_require__(144);__webpack_require__(145);__webpack_require__(146);__webpack_require__(147);__webpack_require__(148);__webpack_require__(149);__webpack_require__(150);__webpack_require__(151);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
+	'use strict';var _jquery=__webpack_require__(1);var _jquery2=_interopRequireDefault(_jquery);var _angular=__webpack_require__(2);var _angular2=_interopRequireDefault(_angular);__webpack_require__(4);__webpack_require__(6);__webpack_require__(8);__webpack_require__(10);__webpack_require__(113);__webpack_require__(114);__webpack_require__(115);__webpack_require__(116);__webpack_require__(117);__webpack_require__(118);__webpack_require__(119);__webpack_require__(120);__webpack_require__(121);__webpack_require__(122);__webpack_require__(123);__webpack_require__(124);__webpack_require__(125);__webpack_require__(126);__webpack_require__(127);__webpack_require__(128);__webpack_require__(129);__webpack_require__(130);__webpack_require__(131);__webpack_require__(132);__webpack_require__(133);__webpack_require__(134);__webpack_require__(135);__webpack_require__(136);__webpack_require__(137);__webpack_require__(138);__webpack_require__(139);__webpack_require__(140);__webpack_require__(141);__webpack_require__(142);__webpack_require__(143);__webpack_require__(153);__webpack_require__(154);__webpack_require__(145);__webpack_require__(146);__webpack_require__(147);__webpack_require__(148);__webpack_require__(149);__webpack_require__(150);__webpack_require__(151);__webpack_require__(152);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
 /***/ },
 /* 1 */
@@ -65286,7 +65286,7 @@
 /* 123 */
 /***/ function(module, exports) {
 
-	'use strict';angular.module('app').config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvider){$httpProvider.interceptors.push('httpRequestInterceptor');$routeProvider.when('/dashboard',{templateUrl:'interface/dashboard/index.html',controller:'dashboardCtrl'}).when('/daily',{templateUrl:'interface/daily/index.html',controller:'dailyCtrl'}).when('/daily/detail/:date',{templateUrl:'interface/daily/detail.html',controller:'dailyDetailCtrl'}).when('/series',{templateUrl:'interface/series/index.html',controller:'seriesCtrl'}).when('/series/add',{templateUrl:'interface/series/add.html',controller:'seriesAddCtrl'}).when('/series/detail/:id',{templateUrl:'interface/series/detail.html',controller:'seriesDetailCtrl'}).when('/film',{templateUrl:'interface/film/index.html',controller:'filmCtrl'}).when('/book',{templateUrl:'interface/book/index.html',controller:'bookCtrl'}).otherwise({redirectTo:'/dashboard'});}]);
+	'use strict';angular.module('app').config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvider){$httpProvider.interceptors.push('httpRequestInterceptor');$routeProvider.when('/dashboard',{templateUrl:'interface/dashboard/index.html',controller:'dashboardCtrl'}).when('/info',{templateUrl:'interface/settings/info.html',controller:'infoCtrl'}).when('/daily',{templateUrl:'interface/daily/index.html',controller:'dailyCtrl'}).when('/daily/detail/:date',{templateUrl:'interface/daily/detail.html',controller:'dailyDetailCtrl'}).when('/series',{templateUrl:'interface/series/index.html',controller:'seriesCtrl'}).when('/series/add',{templateUrl:'interface/series/add.html',controller:'seriesAddCtrl'}).when('/series/detail/:id',{templateUrl:'interface/series/detail.html',controller:'seriesDetailCtrl'}).when('/film',{templateUrl:'interface/film/index.html',controller:'filmCtrl'}).when('/book',{templateUrl:'interface/book/index.html',controller:'bookCtrl'}).otherwise({redirectTo:'/dashboard'});}]);
 
 /***/ },
 /* 124 */
@@ -65412,52 +65412,65 @@
 	'use strict';angular.module('app').controller('bookCtrl',['$scope','$location','modelService','ngDialog',function($scope,$location,modelService,ngDialog){$scope.selectedBook={};$scope.control={indexNav:1};$scope.openUpdate=function(book){$scope.selectedBook=book;ngDialog.open({template:'interface/book/book.something.update.html',scope:$scope});};$scope.list={headers:[{id:1,name:'name',title:'NAME',type:'click',click:$scope.openUpdate},{id:2,name:'author',title:'AUTHOR'},{id:3,name:'date',title:'DATE'},{id:4,name:'comment',title:'COMMENT'}],rows:[]};$scope.setTab=function(key){$scope.control.indexNav=key;};var init=function init(){modelService.getList('Book').then(function(res){console.log(res.data);$scope.list.rows=res.data;});};init();$scope.cancel=function(){ngDialog.close();};$scope.confirm=function(){modelService.updateItem('Book',$scope.selectedBook._id,$scope.selectedBook).then(function(res){ngDialog.close();init();});};}]);
 
 /***/ },
-/* 144 */
+/* 144 */,
+/* 145 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appInput',{templateUrl:'component/input/app.input.html',bindings:{val:'=',type:'@',editable:'<',title:'@',placeholder:'@'}});
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appSelect',{templateUrl:'component/select/app.select.html',bindings:{val:'=',list:'<',editable:'<',title:'@',placeholder:'@',showcol:'@'},controller:function controller(){var ctrl=this;ctrl.getName=function(id){console.log(id);var result=ctrl.list.filter(function(l){return l.id==id;})[0];if(result){return result.name;}else {return '';}};}});
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appTable',{templateUrl:'component/table/app.table.html',bindings:{list:'<'}});
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appSeriesEdit',{templateUrl:'component/series/series.component.html',bindings:{newseriesitem:'=',selectedseries:'<',date:'<',dailyitemid:'<'},controller:['$scope','seriesListService','seriesItemService','ngDialog',function($scope,seriesListService,seriesItemService,ngDialog){var ctrl=this;ctrl.seriesList=new seriesListService();ctrl.addItem=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {ctrl.seriesList.addItem(ctrl.newseriesitem.seriesid,ctrl.newseriesitem,function(){$scope.$emit('DailyReRender');});}};}]});
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appBookEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','modelService','ngDialog',function($scope,modelService,ngDialog){var ctrl=this;console.log(ctrl.newitem);ctrl.add=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {modelService.addItem('Book',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});}};ctrl.update=function(){modelService.updateItem('Book',ctrl.newitem._id,ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});};ctrl.delete=function(){modelService.deleteItem('Book',ctrl.newitem._id).then(function(res){$scope.$emit('DailyReRender');});};}]});
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appComicEdit',{templateUrl:'component/series/book.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','modelService','ngDialog',function($scope,modelService,ngDialog){var ctrl=this;console.log(ctrl.newitem);ctrl.add=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {ctrl.newitem.ref=ctrl.dailyitemid;modelService.addItem('Comic',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});}};ctrl.update=function(){modelService.updateItem('Comic',ctrl.newitem._id,ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});};ctrl.delete=function(){modelService.deleteItem('Comic',ctrl.newitem._id).then(function(res){$scope.$emit('DailyReRender');});};}]});
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _moment=__webpack_require__(10);var _moment2=_interopRequireDefault(_moment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}angular.module('app').component('appFilmEdit',{templateUrl:'component/series/film.component.html',bindings:{newitem:'=',date:'<',dailyitemid:'<'},controller:['$scope','modelService','ngDialog',function($scope,modelService,ngDialog){var ctrl=this;ctrl.add=function(){if(!ctrl.dailyitemid){var dialogScope=$scope.$new();dialogScope.title='You must bind a daily item!';ngDialog.open({template:'component/message/message.html',scope:dialogScope});}else {ctrl.newitem.ref=ctrl.dailyitemid;ctrl.newitem.date&&(ctrl.newitem.date=(0,_moment2.default)(ctrl.newitem.date).format('YYYY-MM-DD'));modelService.addItem('Film',ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});}};ctrl.update=function(){ctrl.newitem.date&&(ctrl.newitem.date=(0,_moment2.default)(ctrl.newitem.date).format('YYYY-MM-DD'));modelService.updateItem('Film',ctrl.newitem._id,ctrl.newitem).then(function(res){$scope.$emit('DailyReRender');});};ctrl.delete=function(){modelService.deleteItem('Film',ctrl.newitem._id).then(function(res){$scope.$emit('DailyReRender');});};}]});
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports) {
 
 	'use strict';angular.module('app').component('appItemEdit',{templateUrl:'component/series/item.component.html',bindings:{val:'=',type:'@'},controller:['modelService',function(modelService){var ctrl=this;ctrl.add=function(){modelService.addItem(ctrl.type,{name:ctrl.newName}).then(function(res){alert('Success');getlist();});};var getlist=function getlist(){modelService.getList(ctrl.type).then(function(res){ctrl.list=res.data;});};getlist();}]});
+
+/***/ },
+/* 153 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').component('appInfo',{templateUrl:'interface/settings/settings.com.html',bindings:{},controller:['$location',function($location){var ctrl=this;ctrl.goInfo=function(){$location.path('/info');};}]});
+
+/***/ },
+/* 154 */
+/***/ function(module, exports) {
+
+	'use strict';angular.module('app').controller('infoCtrl',[function(){}]);
 
 /***/ }
 /******/ ]);

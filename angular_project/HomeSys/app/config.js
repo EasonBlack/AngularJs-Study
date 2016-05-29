@@ -7,6 +7,11 @@ angular.module('app')
                 templateUrl: 'interface/dashboard/index.html',
                 controller: 'dashboardCtrl'
             })
+            .when('/info',
+            {
+                templateUrl: 'interface/settings/info.html',
+                controller: 'infoCtrl'
+            })
             .when('/daily',
             {
                 templateUrl: 'interface/daily/index.html',
