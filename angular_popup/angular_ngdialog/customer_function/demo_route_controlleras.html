@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="../../../style/loading-bar.css" rel="stylesheet"/>
+    <link href="../../../style/ngDialog-css/ngDialog.css" rel="stylesheet" />
+    <link href="../../../style/ngDialog-css/ngDialog-theme-default.css" rel="stylesheet" />
+
+    <title></title>
+</head>
+<body ng-app="app" ng-controller="mainCtrl">
+<div class="container">
+    <div class="container" ng-view></div>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/bootstrap.js"></script>
+<script src="../../../vendor/paging.js"></script>
+<script src="../../../vendor/ng-lodash.js"></script>
+<script src="../../../vendor/angular-route.js"></script>
+<script src="../../../vendor/ngDialog.js"></script>
+<script>
+    angular.module('app', ['ngRoute','ngDialog'])
+            .config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                        .when('/', {
+                            templateUrl: 'page/demo_route_controlleras.template1.html',
+                            controller: '1Controller'
+                        })
+            }])
+            .controller('mainCtrl', ['$scope', 'ngDialog', function ($scope,ngDialog) {
+                 $scope.openWindow = function(msg){
+                     var dialogScope = $scope.$new();
+                     dialogScope.message = msg;
+                     ngDialog.open({
+                         template: 'dialog.html',
+                         scope: dialogScope,
+                         width: 710,
+                         closeByDocument: false
+                     })
+                             .closePromise.then(function (data) {
+
+                             });
+                 }
+            }])
+            .controller('1Controller', ['$scope', '$location', function ($scope, $location) {
+                $scope.open = function () {
+                    $scope.openWindow('xxxx');
+                }
+            }])
+
+
+</script>
+</html>
