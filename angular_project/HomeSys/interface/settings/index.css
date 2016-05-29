@@ -1,0 +1,17 @@
+.box-wrapper {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 20px 20px;
+  flex: 1;
+}
+.box-wrapper div {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.box-wrapper .content-wrapper {
+  flex: 1;
+  text-align: center;
+}

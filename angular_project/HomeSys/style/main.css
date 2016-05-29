@@ -25,12 +25,8 @@ ul {
   list-style: none;
 }
 a {
-  color: white;
   text-transform: none;
   text-decoration: none;
-}
-a:visited {
-  color: white;
 }
 a:hover {
   color: white;
@@ -45,6 +41,9 @@ body {
   background-color: #3f5185;
   color: white;
   position: relative;
+}
+.left-container a {
+  color: white;
 }
 .left-container ul {
   margin-left: 20px;
@@ -107,6 +106,11 @@ body {
   position: absolute;
   bottom: 0px;
   margin-bottom: 20px;
+}
+.flexbox,
+.flexrow {
+  display: flex;
+  flex-direction: row;
 }
 .header-section,
 .header-container {
@@ -341,4 +345,21 @@ body {
 }
 .dashboard-container .seven-days-top-list label {
   flex: 1;
+}
+.box-wrapper {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 20px 20px;
+  flex: 1;
+}
+.box-wrapper div {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.box-wrapper .content-wrapper {
+  flex: 1;
+  text-align: center;
 }

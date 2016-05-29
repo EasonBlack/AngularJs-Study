@@ -25,12 +25,8 @@ ul {
   list-style: none;
 }
 a {
-  color: white;
   text-transform: none;
   text-decoration: none;
-}
-a:visited {
-  color: white;
 }
 a:hover {
   color: white;
@@ -45,6 +41,9 @@ body {
   background-color: #3f5185;
   color: white;
   position: relative;
+}
+.left-container a {
+  color: white;
 }
 .left-container ul {
   margin-left: 20px;
@@ -107,4 +106,9 @@ body {
   position: absolute;
   bottom: 0px;
   margin-bottom: 20px;
+}
+.flexbox,
+.flexrow {
+  display: flex;
+  flex-direction: row;
 }
