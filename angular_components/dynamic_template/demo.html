@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <app-test type="1" title="title" val="val"></app-test>
+    <app-test type="2" title="title" val="val"></app-test>
+    <button ng-click="getResult()">Click Me</button>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app', ['ngLodash'])
+            .controller('appCtrl', ['$scope', 'lodash', function ($scope, _) {
+                $scope.title = 'Name';
+                $scope.val = '';
+                $scope.getResult = function () {
+                    console.log($scope.val);
+                }
+            }])
+            .component('appTest', {
+                template: '<div ng-include="$ctrl.getContentUrl()"></div>',
+                bindings: {
+                    val: '=',
+                    title: '<',
+                    type: '@'
+                },
+                controller: function () {
+                    var ctrl = this;
+                    ctrl.getContentUrl = function () {
+                        return 'demo.template.' + ctrl.type + '.html';
+                    }
+                }
+            })
+</script>
+</html>
