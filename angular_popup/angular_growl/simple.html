@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+        ul {
+            list-style:none;
+        }
+        li {
+            margin-bottom:20px;
+        }
+        .growl-section {
+            position: fixed;
+            width: 300px;
+            top: 0px;
+            left: 50%;
+            margin-left: -150px;
+
+        }
+        .growl-section .alert {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <ul>
+        <li><a class="btn btn-primary" ng-click="success()">Success</a></li>
+        <li><a class="btn btn-primary" ng-click="error()">Error</a></li>
+    </ul>
+    <div growl class="growl-section"></div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script src="../../vendor/angular-growl.js"></script>
+<script>
+    angular.module('app', ['ngLodash', 'angular-growl'])
+            .config(['growlProvider', function (growlProvider) {
+                growlProvider.globalTimeToLive(2000);
+                growlProvider.onlyUniqueMessages(false);
+            }])
+            .controller('appCtrl', ['$scope', 'lodash', 'growl', function ($scope, _, growl) {
+                $scope.success = function () {
+                    growl.success('Hello', {disableCountDown: true});
+                }
+                $scope.error = function () {
+                    growl.error('Error', {disableCountDown: true});
+                }
+            }])
+</script>
+</html>
