@@ -1,0 +1,6 @@
+* {
+  font-size: 15px;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  padding: 0;
+}
