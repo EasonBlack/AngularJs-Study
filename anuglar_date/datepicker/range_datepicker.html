@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../vendor/angular-datepicker/angular-datepicker.css" rel="stylesheet" />
+    <style>
+        .active {
+            display:;
+        }
+        .unactive {
+            display:none;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="appCtrl as ctrl">
+
+<div class="container">
+
+    <div class="row">
+        <input type="text" ng-model="rangeDate" ng-click="open()"/>
+        <div ng-class="{active:isopen, unactive:!isopen}" date-range id="pickerRange" start="dates.minDate" end="dates.maxDate" date-change="changeDate" view="hours" min-view="minutes" ></div>
+    </div>
+
+</div>
+
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/moment.js"></script>
+<script src="../../vendor/angular-datepicker/angular-datepicker.js"></script>
+<script>
+    angular.module('app',['datePicker'])
+            .controller('appCtrl', ['$scope', function($scope){
+                $scope.isopen = false;
+                $scope.dates = {
+
+                }
+                $scope.open = function(){
+                    $scope.isopen = !$scope.isopen;
+                }
+                $scope.changeDate = function(modelName, newValue){
+                    $scope.rangeDate = moment($scope.dates.minDate).format('HH:MM') + '-' +  moment($scope.dates.maxDate).format('HH:MM')
+                }
+            }])
+</script>
+</html>

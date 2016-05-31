@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../vendor/angular-datepicker/angular-datepicker.css" rel="stylesheet" />
 </head>
 <body ng-app="app" ng-controller="appCtrl as ctrl">
 
 <div class="container">
     <div class="row">
-        <input type="datetime" date-time auto-close="false" ng-model="starttime" max-view="date"  format="yyyy-MM-dd HH:mm:ss" class="form-control"
+        <input type="datetime" date-time auto-close="false" ng-model="starttime" max-view="date"  format="YYYY-MM-DD HH:mm:ss" class="form-control"
                 />
     </div>
     <div class="row">
-        <input type="datetime" date-time  auto-close="true" ng-model="starttime1" max-view="date" min-view="date"  format="yyyy-MM-dd HH:mm:ss" class="form-control"
+        <input type="datetime" date-time  auto-close="true" ng-model="starttime1" max-view="date" min-view="date"  format="YYYY-MM-DD HH:mm:ss" class="form-control"
                 />
     </div>
 
@@ -23,11 +23,8 @@
 </body>
 <script src="../../vendor/jquery-1.11.1.js"></script>
 <script src="../../vendor/angular.js"></script>
-<script src="../../vendor/bootstrap.js"></script>
-<script src="scripts/datePicker.js"></script>
-<script src="scripts/datePickerUtils.js"></script>
-<script src="scripts/dateRange.js"></script>
-<script src="scripts/input.js"></script>
+<script src="../../vendor/moment.js"></script>
+<script src="../../vendor/angular-datepicker/angular-datepicker.js"></script>
 <script>
     angular.module('app',['datePicker'])
             .controller('appCtrl', ['$scope', function($scope){
