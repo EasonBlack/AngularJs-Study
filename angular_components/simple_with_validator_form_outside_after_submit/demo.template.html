@@ -1,0 +1,6 @@
+<div >
+    <label>{{$ctrl.title}}</label>
+    <input ng-model="$ctrl.val" name="{{$ctrl.key}}" ng-required="{{$ctrl.required}}" type="text"/>
+
+    <div class="help-block error" ng-show="$ctrl.hassubmit && $ctrl.form['{{$ctrl.key}}'].$error.required">Required</div>
+</div>

@@ -1,0 +1,6 @@
+<div  ng-form="test">
+    <label>{{$ctrl.title}}</label>
+    <input ng-model="$ctrl.val" name="{{$ctrl.key}}" required type="text"/>
+
+    <div class="help-block error" ng-show="test['{{$ctrl.key}}'].$error.required">Required</div>
+</div>

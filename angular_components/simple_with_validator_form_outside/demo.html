@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div  ng-form="test">
+        <app-input title="input.title" val="input.val" key="input.key" required="true"></app-input>
+        <app-input title="input2.title" val="input2.val" key="input2.key"  required="false" ></app-input>
+    </div>
+
+    <button ng-click="getResult()">Click Me</button>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
+<script>
+    angular.module('app',['ngLodash'])
+            .controller('appCtrl',['$scope','lodash',function($scope, _){
+                $scope.input= {
+                    title: 'Field',
+                    val : '',
+                    key: 'field'
+                }
+                $scope.input2= {
+                    title: 'Field2',
+                    val : '',
+                    key: 'field2'
+                }
+
+
+                $scope.getResult = function(){
+                    console.log($scope.val);
+                }
+            }])
+            .component('appInput', {
+                templateUrl: 'demo.template.html',
+                require: {
+                    form: '^form'
+                },
+                bindings: {
+                    val: '=',
+                    title: '<',
+                    key: '<',
+                    required: '@'
+                },
+                controller: function () {
+
+                }
+            })
+</script>
+</html>
