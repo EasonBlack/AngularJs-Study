@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .row {
+            margin-top: 30px;
+        }
+        .red {
+            color:red;
+            font-size:16px;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <highchart id="chart1" config="highchartsNG"></highchart>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/bootstrap.js"></script>
+<script src="../../../vendor/paging.js"></script>
+<script src="../../../vendor/ng-lodash.js"></script>
+<script src="../../../vendor/angular-route.js"></script>
+<script src="../../../vendor/highcharts.src.js"></script>
+<script src="../../../vendor/highcharts-ng.js"></script>
+<script>
+    angular.module('app', ["highcharts-ng"])
+            .controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
+                var _xAxis = ['2001', '2002', '2003', '2004', '2005'];
+                $scope.highchartsNG = {
+                    options: {
+                        chart: {
+                            type: 'pie'
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'xxxx',
+                            data: [['aa', 10], ['bb', 12], ['cc', 22]],
+                            size: '60%',
+                            innerSize: '90%',
+
+                            dataLabels: {
+                                useHTML: true,
+                                formatter: function (e) {
+                                    if (this.point.name == 'aa') {
+                                        return ("<span class='red'>" + this.point.name + "</span><div>bbbb</div>");
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    title: {
+                        text: 'XX XXX'
+                    },
+                    loading: false,
+                    func: function (chart) {
+                        var xpos = '50%';
+                        var ypos = '50%';
+                        var circleradius = 100;
+                        // Render the circle
+//                        chart.renderer.circle(xpos, ypos, circleradius).attr({
+//                            fill: '#ddd',
+//                        }).add();
+                        // Render the text
+                        text = chart.renderer.text("90%").css({textAlign: 'center', 'font-size': '50px'});
+                        textBBox = text.getBBox();
+                        x = chart.plotLeft + (chart.plotWidth  * 0.5) - (textBBox.width  * 0.5);
+                        y = chart.plotTop  + (chart.plotHeight * 0.5) - (textBBox.height * 0.5);
+                        console.log(x,y);
+                        text.attr({x: x-40, y: y+20}).add();
+                    }
+                }
+
+
+            }])
+</script>
+</html>
