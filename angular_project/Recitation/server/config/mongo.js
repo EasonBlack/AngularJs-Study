@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/home');
+mongoose.connect('mongodb://localhost/recite');
 
 
 var db = mongoose.connection;
