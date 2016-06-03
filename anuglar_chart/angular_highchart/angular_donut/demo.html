@@ -54,7 +54,6 @@
                             data: [['aa', 10], ['bb', 12], ['cc', 22]],
                             size: '60%',
                             innerSize: '90%',
-
                             dataLabels: {
                                 useHTML: true,
                                 formatter: function (e) {
@@ -73,11 +72,6 @@
                         var xpos = '50%';
                         var ypos = '50%';
                         var circleradius = 100;
-                        // Render the circle
-//                        chart.renderer.circle(xpos, ypos, circleradius).attr({
-//                            fill: '#ddd',
-//                        }).add();
-                        // Render the text
                         text = chart.renderer.text("90%").css({textAlign: 'center', 'font-size': '50px'});
                         textBBox = text.getBBox();
                         x = chart.plotLeft + (chart.plotWidth  * 0.5) - (textBBox.width  * 0.5);
