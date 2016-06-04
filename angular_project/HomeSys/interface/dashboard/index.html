@@ -5,8 +5,9 @@
     <div class="content-container">
         <div class="seven-days-top-list">
             <div class="header-section">
-               {{dailyTotalItems.startdate}} to {{dailyTotalItems.enddate}}
-               <a class="chart-button" href="javascript:void(0)" ng-click="control.dailyTotalItemsChart = !control.dailyTotalItemsChart">C</a>
+                {{dailyTotalItems.startdate}} to {{dailyTotalItems.enddate}}
+                <a class="chart-button" href="javascript:void(0)"
+                   ng-click="control.dailyTotalItemsChart = !control.dailyTotalItemsChart">C</a>
             </div>
             <div class="content-section">
                 <ul>
@@ -15,7 +16,7 @@
                         <label style="width:40px;">TIME</label>
                         <label style="width:40px;">TROPHY</label>
                     </li>
-                    <li ng-repeat = 'item in dailyTotalItems.data'>
+                    <li ng-repeat='item in dailyTotalItems.data'>
                         <label style="width:40px;">{{item.name}}</label>
                         <label style="width:40px;">{{item.time}}</label>
                         <label style="width:40px;">{{item.trophy}}</label>
@@ -23,10 +24,24 @@
 
                 </ul>
                 <div class="chart-section" ng-class="{active : control.dailyTotalItemsChart}">
-                        <highchart config="dailyTotalItemsChart"></highchart>
+                    <highchart config="dailyTotalItemsChart"></highchart>
                 </div>
             </div>
 
+        </div>
+        <div class="bashboard_type_analyze layout_flex-1 container__div_border container__div_margin-left">
+            <div class="layout__row_flex">
+                <ui-select ng-model="control.selectType" style="width: 100px;" theme="select2" search-enabled="false"
+                           title="Choose a country">
+                    <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="item.id as item in daily_type | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="layout__row_flex">
+                <highchart config="typeChartConfig"></highchart>
+            </div>
         </div>
     </div>
 

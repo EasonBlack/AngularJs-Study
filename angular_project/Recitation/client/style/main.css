@@ -295,6 +295,14 @@ body.ngdialog-open {
   padding: 5px 15px;
   width: 100%;
 }
+.layout__growl {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  margin: 0 auto;
+  width: 400px;
+}
 * {
   font-size: 15px;
 }

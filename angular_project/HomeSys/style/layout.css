@@ -112,3 +112,11 @@ body {
   display: flex;
   flex-direction: row;
 }
+.layout_flex-1 {
+  flex: 1;
+}
+.layout__row_flex {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+}

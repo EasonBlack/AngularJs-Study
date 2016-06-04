@@ -1,5 +1,5 @@
 angular.module('app')
-    .factory('wordService', ['$http', '$rootScope', 'ngDialog', function ($http, $rootScope, ngDialog) {
+    .factory('wordService', ['$http', '$rootScope', 'ngDialog', 'growl', function ($http, $rootScope, ngDialog, growl) {
         class Word {
             constructor() {
                 this.name = '';
@@ -10,7 +10,7 @@ angular.module('app')
             add(item) {
                 $http.post('http://localhost:2006/api/word', item)
                     .then((res)=> {
-                         alert('Success');
+                        growl.success("Success", {});
                     });
             }
         }

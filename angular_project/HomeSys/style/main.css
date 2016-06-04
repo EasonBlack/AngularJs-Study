@@ -112,6 +112,20 @@ body {
   display: flex;
   flex-direction: row;
 }
+.layout_flex-1 {
+  flex: 1;
+}
+.layout__row_flex {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+}
+.container__div_border {
+  border: 1px solid #ccc;
+}
+.container__div_margin-left {
+  margin-left: 10px;
+}
 .header-section,
 .header-container {
   height: 50px;
@@ -286,6 +300,7 @@ body {
 }
 .dashboard-container {
   padding-left: 30px;
+  padding-right: 30px;
 }
 .dashboard-container .content-container {
   width: 100%;

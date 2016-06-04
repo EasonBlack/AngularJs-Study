@@ -22,8 +22,19 @@ angular.module('app')
             rows: []
         }
 
-        $scope.setTab = (key)=>{
+        $scope.setTab = (key)=> {
             $scope.control.indexNav = key;
+            let _defer;
+            if (key == 1) {
+                _defer= modelService.getList('Book')
+            } else if (key == 2) {
+                _defer= modelService.getList('Comic')
+            }
+            _defer.then((res)=>{
+                console.log(res.data);
+                $scope.list.rows = res.data;
+            })
+
         }
 
         var init = ()=> {
@@ -46,6 +57,8 @@ angular.module('app')
                     init();
                 })
         }
+
+
 
 
     }])

@@ -1,0 +1,28 @@
+<div class="app-table-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th ng-repeat="header in  $ctrl.list.headers">
+                {{header.title}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in $ctrl.list.rows">
+            <td ng-repeat="header in $ctrl.list.headers">
+                   <span ng-switch="header.type">
+                      <span ng-switch-when="href">
+                            <a href="{{header.href}}{{row['_id']}}"> {{row[header.name]}}</a>
+                      </span>
+                       <span ng-switch-when="click">
+                            <span ng-click="header.click(row)"> {{row[header.name]}}</span>
+                      </span>
+                      <span ng-switch-default>
+                          {{row[header.name]}}
+                      </span>
+                   </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
