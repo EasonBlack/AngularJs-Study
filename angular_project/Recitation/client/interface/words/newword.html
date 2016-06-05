@@ -24,9 +24,16 @@
             </div>
         </div>
         <div class="box-row">
+            <div class="box-label-group">File</div>
+            <div class="box-input-group">
+                <div class="select-button" ngf-select="upload($file)" ng-model="word.image" ngf-accept="'image/*'">Select</div>
+            </div>
+        </div>
+        <div class="box-row">
             <div class="box-label-group">
                 <button class="btn btn-primary" ng-click="add(word)">Add</button>
             </div>
         </div>
+
     </div>
 </div>

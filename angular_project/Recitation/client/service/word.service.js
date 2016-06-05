@@ -4,14 +4,27 @@ angular.module('app')
             constructor() {
                 this.name = '';
                 this.mean = '';
-                this.start = 0;
+                this.star = 0;
+                this.image = null;
             }
 
             add(item) {
-                $http.post('http://localhost:2006/api/word', item)
+                var _word = new FormData();
+                _word.append("image", item.image);
+                _word.append("name", item.name);
+                _word.append("mean", item.mean);
+                _word.append("star", item.star);
+                $http({
+                    method: 'POST',
+                    url: 'http://localhost:2006/api/word',
+                    data: _word,
+                    headers: {
+                        'Content-Type': undefined
+                    }
+                })
                     .then((res)=> {
                         growl.success("Success", {});
-                    });
+                    })
             }
         }
 

@@ -4,23 +4,30 @@ angular.module('app')
         var stop, index = 0, len;
         $scope.currentWord = '';
         $scope.currentMean = '';
-        wordFactory.getWords()
-            .then((res)=> {
-                words = res.data;
-                len = res.data.length;
-                words = words.sort(function () {
-                    Math.random() - 0.5
+        $scope.currentImage = '';
+        var roll = ()=> {
+            wordFactory.getWords()
+                .then((res)=> {
+                    words = res.data;
+                    len = res.data.length;
+                    words = words.sort(function () {
+                        return Math.random() - 0.5
+                    })
+                    stop = $interval(function () {
+                        $scope.currentWord = words[index].name;
+                        $scope.currentMean = words[index].mean;
+                        $scope.currentImage = words[index].image;
+                        if (index < len - 1) {
+                            index++
+                        } else {
+                            index = 0;
+                            $interval.cancel(stop);
+                            roll();
+                        }
+                    }, 3000);
                 })
-                stop = $interval(function () {
-                    $scope.currentWord = words[index].name;
-                    $scope.currentMean = words[index].mean;
-                    if (index < len - 1) {
-                        index++
-                    } else {
-                        index = 0;
-                    }
-                }, 1000);
-            })
+        }
+        roll();
 
 
     }])

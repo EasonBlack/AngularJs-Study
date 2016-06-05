@@ -3,10 +3,11 @@
         <div class="layout__flex_c1 div_verybigfont">
             {{currentWord}}
         </div>
-        <div class="layout__flex_c1 div_normalfont div_margin-top50">
+        <div class="layout__flex_c1 div_normalfont div_normal-margin-top">
             {{currentMean}}
         </div>
     </div>
-    <div class="layout__flex_c1">
+    <div class="layout__flex_c1 div_normal-margin-top">
+        <img ng-src="http://localhost:2006/images/{{currentImage}}" ng-show="currentImage">
     </div>
 </div>

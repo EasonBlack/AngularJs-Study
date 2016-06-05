@@ -5,7 +5,7 @@ var WordSchema = new Schema({
     name: String,
     mean: String,
     star: String,
-    img : { data: Buffer, contentType: String }
+    image: String
 });
 
 var Word = mongoose.model('Word', WordSchema);

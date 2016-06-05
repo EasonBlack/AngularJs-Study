@@ -15,7 +15,6 @@ exports.WordAll = function (req, res) {
 
 exports.WordList = function (req, res) {
     var page = req.param('page');
-    console.log(page);
     page ? page=parseInt(page): 1;
     Word.count(function(err, count){
         Word.find({}).skip((page-1)*10).limit(10)
@@ -30,7 +29,11 @@ exports.WordList = function (req, res) {
 }
 
 exports.WordAdd = function (req, res) {
+    console.log(req.file);
     var newWork = new Word(req.body);
+    if(req.file) {
+        newWork.image = req.file.filename;
+    }
     newWork.save(function (err) {
         if (err) throw err;
         res.send(newWork);
