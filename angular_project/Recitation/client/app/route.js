@@ -8,5 +8,10 @@ angular.module('app')
                 templateUrl: 'interface/words/index.html',
                 controller: 'wordCtrl'
             })
+            .when('/wordroll',
+            {
+                templateUrl: 'interface/words/wordroll.html',
+                controller: 'wordRollCtrl'
+            })
             .otherwise({redirectTo: '/words'});
     }]);

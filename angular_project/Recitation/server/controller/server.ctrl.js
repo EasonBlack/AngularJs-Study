@@ -7,11 +7,16 @@ exports.getHtml = function (req, res) {
     res.sendFile(path.join(__dirname, '../../client/index.html'));
 }
 
+exports.WordAll = function (req, res) {
+    Word.find({},function(err, words){
+        res.send(words);
+    })
+}
+
 exports.WordList = function (req, res) {
     var page = req.param('page');
     console.log(page);
     page ? page=parseInt(page): 1;
-    console.log(page);
     Word.count(function(err, count){
         Word.find({}).skip((page-1)*10).limit(10)
             .exec(function(err, docs) {

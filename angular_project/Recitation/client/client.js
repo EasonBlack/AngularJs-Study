@@ -16,8 +16,10 @@ import './component/table/app.table'
 
 import './service/word.service';
 import './service/words.service';
+import './service/word.factory';
 
 import './interface/words/index.js'
 import './interface/words/newword.js'
+import './interface/words/wordroll.js'
 
 

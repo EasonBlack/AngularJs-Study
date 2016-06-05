@@ -11,10 +11,10 @@ angular.module('app')
                             {id: 2, name: 'mean', title: 'MEAN'},
                             {id: 3, name: 'star', title: 'STAR'}
                         ]
-                        this.page = page;
                         this.size = 10;
                         this.count = res.data.count;
-                        console.log(this);
+                        this.page = page;
+
                     })
             }
 

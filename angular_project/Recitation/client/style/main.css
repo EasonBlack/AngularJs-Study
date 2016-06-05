@@ -295,6 +295,24 @@ body.ngdialog-open {
   padding: 5px 15px;
   width: 100%;
 }
+.layout__flex_c1 {
+  flex: 1 ;
+}
+.layout__flex_400 {
+  width: 400px;
+}
+.layout__flex_700 {
+  width: 700px;
+  z-index: 10;
+}
+.layout__flex_row {
+  display: flex;
+  flex-direction: row;
+}
+.layout__flex_column {
+  display: flex;
+  flex-direction: column;
+}
 .layout__growl {
   position: fixed;
   top: 0px;
@@ -308,4 +326,17 @@ body.ngdialog-open {
 }
 .ngdialog.ngdialog-theme-default .ngdialog-content {
   padding: 0;
+}
+.div_verybigfont {
+  font-size: 180px;
+  font-weight: bolder;
+}
+.div_normalfont {
+  font-size: 36px;
+}
+.div_normalPadding {
+  padding: 20px 50px;
+}
+.div_normal-margin-top {
+  margin-top: 50px;
 }

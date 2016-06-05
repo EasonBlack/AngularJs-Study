@@ -134,7 +134,6 @@ angular.module('app')
                         text: ''
                     },
                     size: {
-                        width: 280,
                         height: 280
                     },
                     loading: false
