@@ -1,12 +1,12 @@
 angular.module('app')
-    .factory('chartBar', [function() {
+    .factory('chartPie', [function() {
 
         var chartBar = function(data) {
             this.dataSet = data;
             this.config = {
                 options: {
                     chart: {
-                        type: 'bar'
+                        type: 'pie'
                     }
                 },
                 xAxis: {

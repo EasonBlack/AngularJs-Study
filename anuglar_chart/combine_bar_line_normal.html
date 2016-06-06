@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<div class="row">
+    <div class="col-md-6">
+        <highchart id="chart1" config="highchartsNG"></highchart>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.js"></script>
+<script src="../vendor/highcharts.src.js"></script>
+<script src="../vendor/highcharts-ng.js"></script>
+<script>
+    angular.module('app', ["highcharts-ng"])
+            .controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
+
+                var _xAxis = ['2001', '2002', '2003', '2004', '2005'];
+                $scope.highchartsNG = {
+                    options: {
+                        plotOptions: {
+                            series: {
+                                groupPadding: 0.3,
+                                pointPadding: 0
+                            }
+                        },
+                        legend: {
+                            width: 70,
+                            itemWidth: 30,
+                            itemDistance: 30,
+                            labelFormatter: function () {
+                                if (this.name == 'd' || this.name == 'e') {
+                                    return this.name;
+                                } else {
+                                    return '';
+                                }
+
+                            }
+                        }
+                    },
+                    xAxis: {
+                        categories: ['2001', '2002', '2003', '2004', '2005'],
+                    },
+                    series: [
+                        {
+                            type: 'column',
+                            name: 'Expecting',
+                            data: [{y: 8, color: 'yellow'}, 2, 1, 3, 4],
+                            color: 'green',
+                        }, {
+                            type: 'line',
+                            name: 'd',
+                            data: [8, 2, 1, 3, 4],
+                            color: 'green',
+                            marker: {
+                                lineWidth: 2,
+                                lineColor: 'green',
+                                fillColor: 'green',
+                                symbol: 'circle'
+                            },
+                            zIndex: 10
+                        }, {
+                            type: 'column',
+                            name: 'Actual',
+                            data: [4, 3, 3],
+                            color: '#006699'
+                        }, {
+                            type: 'line',
+                            name: 'e',
+                            data: [4, 3, 3],
+                            color: '#006699',
+                            marker: {
+                                lineWidth: 2,
+                                lineColor: '#006699',
+                                fillColor: '#006699',
+                                symbol: 'circle'
+                            }
+                        }
+                    ],
+                    title: {
+                        text: 'Hello'
+                    },
+                    loading: false
+                }
+            }]);
+</script>
+</html>
