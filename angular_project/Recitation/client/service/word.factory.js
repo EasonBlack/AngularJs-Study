@@ -3,7 +3,7 @@ angular.module('app')
 
         return {
             getWords: function () {
-               return $http.get('http://localhost:2006/api/allword')
+                return $http.get($rootScope.api_url + 'allword')
             }
         }
 

@@ -5,6 +5,9 @@ angular.module('app')
         $scope.currentWord = '';
         $scope.currentMean = '';
         $scope.currentImage = '';
+        $scope.control= {
+            hasmean:true
+        }
         var roll = ()=> {
             wordFactory.getWords()
                 .then((res)=> {
@@ -24,7 +27,7 @@ angular.module('app')
                             $interval.cancel(stop);
                             roll();
                         }
-                    }, 3000);
+                    }, 2500);
                 })
         }
         roll();

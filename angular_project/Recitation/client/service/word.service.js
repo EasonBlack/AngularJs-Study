@@ -16,7 +16,7 @@ angular.module('app')
                 _word.append("star", item.star);
                 $http({
                     method: 'POST',
-                    url: 'http://localhost:2006/api/word',
+                    url: $rootScope.api_url + 'word',
                     data: _word,
                     headers: {
                         'Content-Type': undefined

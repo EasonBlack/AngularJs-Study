@@ -2,7 +2,7 @@ angular.module('app')
     .factory('wordListService', ['$http', '$rootScope', 'ngDialog', function ($http, $rootScope, ngDialog) {
         class WordList {
             constructor(page = 1) {
-                $http.get('http://localhost:2006/api/word', {params: {page: page}})
+                $http.get($rootScope.api_url + 'word', {params: {page: page}})
                     .then((res)=> {
 
                         this.rows = res.data.data;
@@ -19,7 +19,7 @@ angular.module('app')
             }
 
             add(item) {
-                $http.post('http://localhost:2006/api/word', item)
+                $http.post($rootScope.api_url + 'word', item)
                     .then((res)=> {
                         alert('Success');
                     });

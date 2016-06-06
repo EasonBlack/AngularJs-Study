@@ -4,6 +4,12 @@
     </div>
     <div class="two-column-section">
         <div class="box-row">
+            <div class="box-label-group">Text</div>
+            <div class="box-input-group">
+                <input type="text" ng-model="word.text"/>
+            </div>
+        </div>
+        <div class="box-row">
             <div class="box-label-group">Word</div>
             <div class="box-input-group">
                 <input type="text" ng-model="word.name"/>
@@ -26,7 +32,7 @@
         <div class="box-row">
             <div class="box-label-group">File</div>
             <div class="box-input-group">
-                <div class="select-button" ngf-select="upload($file)" ng-model="word.image" ngf-accept="'image/*'">Select</div>
+                <div class="select-button button btn btn-default" ngf-select="upload($file)" ng-model="word.image" ngf-accept="'image/*'">Select</div>
             </div>
         </div>
         <div class="box-row">
