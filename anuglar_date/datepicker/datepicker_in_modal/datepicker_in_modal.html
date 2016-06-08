@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="../../../style/ngDialog-css/ngDialog.css" rel="stylesheet"/>
+    <link href="../../../style/ngDialog-css/ngDialog-theme-default.css" rel="stylesheet"/>
+    <link href="../../../vendor/angular-datepicker/angular-datepicker.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <button class="btn btn-primary" ng-click="clickToOpen($event)">Click Me</button>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../vendor/bootstrap.js"></script>
+<script src="../../../vendor/paging.js"></script>
+<script src="../../../vendor/moment.js"></script>
+<script src="../../../vendor/ng-lodash.js"></script>
+<script src="../../../vendor/angular-datepicker/angular-datepicker.js"></script>
+<script src="../../../vendor/ngDialog.js"></script>
+<script>
+    angular.module('app', ['ngLodash', 'ngDialog', 'datePicker'])
+            .controller('appCtrl', ['$scope', 'lodash', 'ngDialog', function ($scope, _, ngDialog) {
+                $scope.db = {};
+                $scope.clickToOpen = function ($event) {
+                    $event.preventDefault();
+                    $event.stopPropagation();
+
+                    ngDialog.open(
+                       {
+                           template: 'basic.template.html',
+                           scope: $scope
+                       }
+                    );
+                };
+            }])
+</script>
+</html>
