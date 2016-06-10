@@ -1,7 +1,10 @@
 <div class="roll-container layout__flex_row">
     <div class=" layout__flex_column div_normalPadding">
         <div class="layout__flex_c1 div_verybigfont">
-            {{currentWord}}
+            {{currentName}}
+        </div>
+        <div class="layout__flex_c1 div_verybigfont">
+            {{currentRead}}
         </div>
         <div class="layout__flex_c1 div_normalfont div_normal-margin-top" ng-show="control.hasmean">
             {{currentMean}}
@@ -12,5 +15,11 @@
     </div>
     <div class="layout_fixed_rightconer">
         <label class="label_margin-right">Has Mean</label><input type="checkbox" ng-model="control.hasmean" />
+        <div class="btn__wrapper_row">
+            <a class="btn__ele btn btn-primary" ng-click="back()">Back</a>
+        </div>
+        <div class="btn__wrapper_row">
+            <a class="btn__ele btn btn-primary" ng-click="newword()">New</a>
+        </div>
     </div>
 </div>

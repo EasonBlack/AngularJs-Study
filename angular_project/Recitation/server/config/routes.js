@@ -19,5 +19,7 @@ module.exports = function(app){
     app.get('/api/word', appCtrl.WordList );
     app.get('/api/allword', appCtrl.WordAll );
     app.post('/api/word', upload.single('image'), appCtrl.WordAdd );
+    app.put('/api/word/:id',  appCtrl.WordUpdate );
+    app.delete('/api/word/:id',  appCtrl.WordDelete );
 }
 

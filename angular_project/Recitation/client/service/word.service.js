@@ -10,8 +10,9 @@ angular.module('app')
 
             add(item) {
                 var _word = new FormData();
-                _word.append("image", item.image);
+                _word.append("image", item.image ? item.image : '');
                 _word.append("name", item.name);
+                _word.append("read", item.read);
                 _word.append("mean", item.mean);
                 _word.append("star", item.star);
                 $http({

@@ -354,3 +354,12 @@ body.ngdialog-open {
 .div_normal-margin-top {
   margin-top: 50px;
 }
+.btn__wrapper {
+  display: block;
+}
+.btn__wrapper_row {
+  margin-bottom: 5px;
+}
+.btn__ele {
+  width: 100px;
+}

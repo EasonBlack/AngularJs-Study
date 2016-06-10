@@ -3,16 +3,17 @@
         <label>New Word</label>
     </div>
     <div class="two-column-section">
-        <div class="box-row">
-            <div class="box-label-group">Text</div>
-            <div class="box-input-group">
-                <input type="text" ng-model="word.text"/>
-            </div>
-        </div>
+
         <div class="box-row">
             <div class="box-label-group">Word</div>
             <div class="box-input-group">
                 <input type="text" ng-model="word.name"/>
+            </div>
+        </div>
+        <div class="box-row">
+            <div class="box-label-group">Read</div>
+            <div class="box-input-group">
+                <input type="text" ng-model="word.read"/>
             </div>
         </div>
         <div class="box-row">
@@ -24,15 +25,18 @@
         <div class="box-row">
             <div class="box-label-group">Star</div>
             <div class="box-input-group">
-                <select  ng-model="word.star"
-                        ng-options="item.id as item.name for item in word_star">
+                <select ng-model="word.star"
+                        ng-options="item.id as item.name for item in word_star"
+                        ng-init="word.star=3">
                 </select>
             </div>
         </div>
         <div class="box-row">
             <div class="box-label-group">File</div>
             <div class="box-input-group">
-                <div class="select-button button btn btn-default" ngf-select="upload($file)" ng-model="word.image" ngf-accept="'image/*'">Select</div>
+                <div class="select-button button btn btn-default" ngf-select="upload($file)" ng-model="word.image"
+                     ngf-accept="'image/*'">Select
+                </div>
             </div>
         </div>
         <div class="box-row">

@@ -1,6 +1,6 @@
 angular.module('app')
-    .controller('wordCtrl', ['$scope', '$location', 'ngDialog', 'wordListService',
-        function ($scope, $location, ngDialog, wordListService) {
+    .controller('wordCtrl', ['$scope', '$rootScope', '$location', 'ngDialog', 'wordListService',
+        function ($scope, $rootScope, $location, ngDialog, wordListService) {
             $scope.newword = ()=> {
                 ngDialog.open({
                     template: './interface/words/newword.html',
@@ -20,8 +20,14 @@ angular.module('app')
             }
 
             var init = (page)=> {
-                $scope.list =  new wordListService(page);
+                $scope.list = new wordListService(page);
             }
             init();
+            $rootScope.$watch("refresh", function (nv, ov) {
+                if (nv && nv != ov) {
+                    init();
+                }
+            });
+
 
         }])

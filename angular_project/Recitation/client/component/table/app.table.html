@@ -17,6 +17,9 @@
                        <span ng-switch-when="click">
                             <span ng-click="header.click(row)"> {{row[header.name]}}</span>
                       </span>
+                        <span ng-switch-when="action">
+                            <a class="btn btn-primary" ng-click="header.action(row)">{{header.key}}</a>
+                      </span>
                       <span ng-switch-default>
                           {{row[header.name]}}
                       </span>
