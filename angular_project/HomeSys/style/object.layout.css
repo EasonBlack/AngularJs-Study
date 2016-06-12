@@ -1,0 +1,23 @@
+.layout_flex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.layout__row_whole_flex {
+  flex-direction: row;
+}
+.layout__column_whole_flex {
+  flex-direction: column;
+}
+.layout__element-row_1 {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+}
+.layout__row_1 {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}

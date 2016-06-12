@@ -4,12 +4,20 @@ angular.module('app')
     .controller('dashboardCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.control = {
             dailyTotalItemsChart: false,
-            selectType: ''
+            selectType: '',
+            typeStartDate : '',
+            typeEndDate : '',
+            typeSelectType : null
         }
 
         $scope.dashboard = {
             daily: {}
         };
+        $scope.typeChartConfig  = {
+            size: {
+                height: 340
+            }
+        }
 
         var dateend = new moment().format('YYYY-MM-DD');
         var datestart = moment(dateend).subtract(7, 'days').format('YYYY-MM-DD');
@@ -134,7 +142,7 @@ angular.module('app')
                         text: ''
                     },
                     size: {
-                        height: 280
+                        height: 340
                     },
                     loading: false
                 }

@@ -7,8 +7,13 @@
   font-size: 14px;
 }
 
-body, html {
-  height: 100%;
+html {
+  height:100%;
+  width: 100%;
+}
+
+body {
+  min-height:100%;
   width: 100%;
 }
 
@@ -32,7 +37,6 @@ body {
 }
 
 .left-container {
-  height: 100%;
   width: 320px;
   background-color: @blue;
   color: white;
@@ -59,7 +63,6 @@ body {
 .right-container {
   height: 100%;
   flex: 1;
-  overflow: hidden;
 }
 
 .input-section {
@@ -127,11 +130,7 @@ body {
 .layout_flex-1 {
   flex: 1;
 }
-.layout__row_flex {
-  display: flex;
-  flex-direction:row;
-  padding: 10px 20px;
-}
+
 
 
 

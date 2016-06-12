@@ -33,7 +33,7 @@
             <div class="layout__row_flex">
                 <ui-select ng-model="control.selectType" style="width: 100px;" theme="select2" search-enabled="false"
                            title="Choose a country">
-                    <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-match>{{$select.selected.name}}</ui-select-match>
                     <ui-select-choices repeat="item.id as item in daily_type | filter: $select.search">
                         <span ng-bind-html="item.name | highlight: $select.search"></span>
                     </ui-select-choices>
@@ -42,6 +42,32 @@
             <div class="layout__row_flex">
                 <highchart config="typeChartConfig"></highchart>
             </div>
+        </div>
+    </div>
+    <div class="layout_flex layout__column_whole_flex  box box__border box__size_whole_normal">
+        <div class="layout__element-row_1">
+            <div>
+                <input class="element element__date" type="datetime" date-time  auto-close="true" ng-model="control.typeStartDate"  max-view="date" min-view="date"  format="YYYY-MM-DD"/>
+            </div>
+
+            <div>
+                <input class="element element__date" type="datetime" date-time  auto-close="true" ng-model="control.typeEndDate"   max-view="date" min-view="date"  format="YYYY-MM-DD"/>
+            </div>
+            <div>
+                <ui-select class='element' ng-model="control.typeSelectType" style="width: 100px;" theme="select2" search-enabled="false"
+                           title="Choose a country">
+                    <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="item.id as item in daily_type | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div>
+                <a class="element element__button_blue">Search</a>
+            </div>
+        </div>
+        <div class="layout__row_1">
+            <highchart config="typeChartConfig"></highchart>
         </div>
     </div>
 

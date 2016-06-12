@@ -1,0 +1,10 @@
+.box {
+  position: relative;
+}
+.box__border {
+  border: 1px solid #ccc;
+}
+.box__size_whole_normal {
+  width: 100%;
+  height: 400px;
+}

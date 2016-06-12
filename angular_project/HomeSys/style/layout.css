@@ -16,9 +16,12 @@
   font-family: 'sf regular';
   font-size: 14px;
 }
-body,
 html {
   height: 100%;
+  width: 100%;
+}
+body {
+  min-height: 100%;
   width: 100%;
 }
 ul {
@@ -36,9 +39,8 @@ body {
   flex-direction: row;
 }
 .left-container {
-  height: 100%;
   width: 320px;
-  background-color: #3F5185;
+  background-color: #3f5185;
   color: white;
   position: relative;
 }
@@ -59,7 +61,6 @@ body {
 .right-container {
   height: 100%;
   flex: 1;
-  overflow: hidden;
 }
 .input-section {
   margin-bottom: 10px;
@@ -114,9 +115,4 @@ body {
 }
 .layout_flex-1 {
   flex: 1;
-}
-.layout__row_flex {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 20px;
 }
