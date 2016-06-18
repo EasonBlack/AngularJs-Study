@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div class="ribbon flex__row">
+        <div class="ribbon__content ribbon__extra"></div>
+        <div class="ribbon__content ribbon__title flex__row_1">RESUME</div>
+    </div>
+    <div class="info wrapper__structure flex__row">
+        <div class="info__title-section wrapper__section flex__row_3">
+            <div class="info__title-name">Eason Xu</div>
+            <div class="info__title-position">Front End Developer</div>
+        </div>
+        <div class="info__detail wrapper__section flex__row_2">
+            <div class="info__detail_row flex__row">
+                <span class="glyphicon glyphicon-phone icon__info"></span>
+               <span class="info__detail-info flex__row_1">
+                  <div class="info__detail-info_text-blue">Mobile</div>
+                  <div>1323232323</div>
+              </span>
+            </div>
+            <div class="info__detail_row flex__row">
+                <span class="glyphicon glyphicon-envelope icon__info"></span>
+              <span class="info__detail-info flex__row_1">
+                  <div class="info__detail-info_text-blue">Email</div>
+                  <div>sdfsdf@sdf.con</div>
+              </span>
+
+            </div>
+            <div class="info__detail_row flex__row">
+                <span class="glyphicon glyphicon-map-marker icon__info"></span>
+              <span class="info__detail-info flex__row_1">
+                  <div class="info__detail-info_text-blue">Location</div>
+                  <div>Shanghai</div>
+              </span>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper__structure flex__row" >
+        <div class="list wrapper__section flex__row_3">
+            <div class="list__title flex__row">
+                <span class="glyphicon glyphicon-plus icon__list-plus"></span>
+                <div  class="list__title_border list__item_padding flex__row_1" >
+                    EMPLOYMENT
+                </div>
+            </div>
+
+        </div>
+        <div class="professional-skill wrapper__section flex__row_2">
+            <div  class="list__title flex__row">
+                <span class="glyphicon glyphicon-plus icon__list-plus"></span>
+                <div class="list__title_border list__item_padding flex__row_1">
+                    FROFESSIONAL SKILLS
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="app/app.js"></script>
+<script src="service/myself.service.js"></script>
+<script src="app/app.controller.js"></script>
+
+</html>

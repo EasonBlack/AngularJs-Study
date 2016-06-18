@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'sf-medium';
+  src: url('../fonts/SFUIText-Medium.ttf');
+}
+@font-face {
+  font-family: 'sf-regular';
+  src: url('../fonts/SFUIText-Regular.ttf');
+}
+@font-face {
+  font-family: 'sf-semibold';
+  src: url('../fonts/SFUIText-Semibold.ttf');
+}
+.info__title-name {
+  font-family: 'sf-medium';
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.info__title-position {
+  font-size: 20px;
+  color: #3f51b5;
+}
+.info__detail_row {
+  margin-bottom: 20px;
+}
+.info__detail-info {
+  display: inline-block;
+  border-bottom: 1px solid #b6b6b6;
+  width: 100%;
+  padding-bottom: 5px;
+}
+.info__detail-info_text-blue {
+  color: #3f51b5;
+}

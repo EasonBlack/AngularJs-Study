@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'sf-medium';
+  src: url('../fonts/SFUIText-Medium.ttf');
+}
+@font-face {
+  font-family: 'sf-regular';
+  src: url('../fonts/SFUIText-Regular.ttf');
+}
+@font-face {
+  font-family: 'sf-semibold';
+  src: url('../fonts/SFUIText-Semibold.ttf');
+}
+.ribbon {
+  width: 100%;
+  margin-top: 30px;
+}
+.ribbon__content {
+  background-color: #303f9f;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+}
+.ribbon__extra {
+  width: 20px;
+  margin-right: 20px;
+}
+.ribbon__title {
+  padding-left: 20px;
+}
