@@ -838,8 +838,15 @@ h3 {
 .text_lightblue {
   color: #448aff;
 }
+.text_linebreak {
+  white-space: pre-line;
+}
 .text_bolder {
   font-weight: bolder;
+}
+.flex__structure-row {
+  display: flex;
+  flex-direction: row;
 }
 .flex__row {
   display: flex;
@@ -875,6 +882,20 @@ h3 {
 .wrapper__section {
   margin-top: 40px;
   padding: 0px 40px;
+}
+.wrapper__section_bottom {
+  margin-top: 100px;
+  width: 100%;
+  background-color: #303f9f;
+  height: 30px;
+}
+@media all and (max-width: 780px) {
+  .flex__structure-row {
+    flex-direction: column;
+  }
+  .wrapper__structure {
+    margin: 0px 10px;
+  }
 }
 .info__title-name {
   font-family: 'sf-medium';
@@ -916,6 +937,9 @@ h3 {
 }
 .list__title_border {
   border-bottom: 2px solid #b6b6b6;
+}
+.list__title_top {
+  margin-top: 40px;
 }
 .list__items {
   margin-left: 7px;

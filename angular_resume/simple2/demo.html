@@ -6,12 +6,12 @@
     <link href="style/main.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container" ng-app="app" ng-controller="appCtrl">
+<div class="container wrapper" ng-app="app" ng-controller="appCtrl">
     <div class="ribbon flex__row">
         <div class="ribbon__content ribbon__extra"></div>
         <div class="ribbon__content ribbon__title flex__row_1">RESUME</div>
     </div>
-    <div class="info wrapper__structure flex__row">
+    <div class="info wrapper__structure flex__structure-row">
         <div class="info__title-section wrapper__section flex__row_3">
             <div class="info__title-name">{{info.name}}</div>
             <div class="info__title-position">{{info.position}}</div>
@@ -33,16 +33,24 @@
 
             </div>
             <div class="info__detail_row flex__row">
-                <span class="glyphicon glyphicon-map-marker icon__info"></span>
+                <span class="glyphicon glyphicon-map-marker icon__info" style="padding-right: 3px;"></span>
               <span class="info__detail-info flex__row_1">
                   <div class="info__detail-info_text-blue">Location</div>
                   <div>{{info.location}}</div>
               </span>
             </div>
+            <div class="info__detail_row flex__row">
+                <span class="glyphicon glyphicon-cloud-download icon__info" ></span>
+              <span class="info__detail-info flex__row_1">
+                  <div class="info__detail-info_text-blue">BORN IN</div>
+                  <div>{{info.birth}}</div>
+              </span>
+            </div>
         </div>
     </div>
-    <div class="wrapper__structure flex__row">
+    <div class="wrapper__structure flex__structure-row">
         <div class="list wrapper__section flex__row_3">
+            <!--Employment-->
             <div class="list__title flex__row">
                 <span class="glyphicon glyphicon-plus icon__list-plus"></span>
 
@@ -58,17 +66,39 @@
                         <div class="flex__row_2">
                             <h3 class="text_normalblue">{{e.name}}</h3>
 
-                            <h2 class="text_bolder">Web ddd</h2>
+                            <h2 class="text_bolder">{{e.position}}</h2>
 
-                            <p>{{e.detail}}</p>
+                            <p class="text_linebreak">{{e.detail}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Education-->
+            <div class="list__title list__title_top flex__row">
+                <span class="glyphicon glyphicon-plus icon__list-plus"></span>
+
+                <div class="list__title_border list__item_padding flex__row_1">
+                    EDUCATION
+                </div>
+            </div>
+            <div class="education">
+                <ul class="list__items list__items_border">
+                    <li class="flex__row list__item list__item-point" ng-repeat="e in info.education">
+                        <div class="flex__row_1">{{e.time}}</div>
+                        <div class="flex__row_2">
+                            <h3 class="text_normalblue text_linebreak">{{e.name}}</h3>
+                            <p class="text_linebreak">{{e.detail}}</p>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="professional-skill wrapper__section flex__row_2">
+            <!--Professiongal Skill-->
             <div class="list__title flex__row">
                 <span class="glyphicon glyphicon-plus icon__list-plus"></span>
+
                 <div class="list__title_border list__item_padding flex__row_1">
                     PROFESSIONAL SKILLS
                 </div>
@@ -77,14 +107,39 @@
                 <ul class="list__items_normal">
                     <li class="flex__row list__item list__item_padding" ng-repeat="k in info.skill">
                         <span class="flex__row_150">{{k.name}}</span>
-                        <span class="flex__row_1 align-right">
+                        <span class="flex__row_1 align-right" ng-show="k.detail!='0'">
                            <svg height="10" width="100">
                                <g ng-repeat="c in getNumber(5) track by $index">
-                                   <circle cx="{{5 + $index*20}}" cy="5" r="5" class="list__circle_blank" />
+                                   <circle cx="{{5 + $index*20}}" cy="5" r="5" class="list__circle_blank"/>
                                </g>
 
                                <g ng-repeat="d in getNumber(k.detail)  track by $index">
-                                   <circle cx="{{5 + $index*20}}" cy="5" r="5" class="list__circle_full" />
+                                   <circle cx="{{5 + $index*20}}" cy="5" r="5" class="list__circle_full"/>
+                               </g>
+                           </svg>
+                         </span>
+                    </li>
+                </ul>
+            </div>
+            <!--English Skill-->
+            <div class="list__title  list__title_top flex__row">
+                <span class="glyphicon glyphicon-plus icon__list-plus"></span>
+
+                <div class="list__title_border list__item_padding flex__row_1">
+                    ENGLISH SKILLS
+                </div>
+            </div>
+            <div class="english-skills">
+                <ul class="list__items_normal">
+                    <li class="flex__row list__item list__item_padding" ng-repeat="k in info.english">
+                        <span class="flex__row_150">{{k.name}}</span>
+                        <span class="flex__row_1 align-right">
+                           <svg height="10" width="100">
+                               <g ng-repeat="c in getNumber(5) track by $index">
+                                   <circle cx="{{5 + $index*20}}" cy="5" r="5" class="list__circle_blank"/>
+                               </g>
+                               <g ng-repeat="d in getNumber(k.detail)  track by $index">
+                                   <circle cx="{{5 + $index*20}}" cy="5" r="5" class="list__circle_full"/>
                                </g>
                            </svg>
                          </span>
@@ -93,6 +148,20 @@
             </div>
         </div>
     </div>
+    <!--<div class="wrapper__structure flex__row">-->
+        <!--<div class="list wrapper__section flex__row_1">-->
+            <!--<div class="list__title list__title_top flex__row">-->
+                <!--<span class="glyphicon glyphicon-plus icon__list-plus"></span>-->
+                <!--<div class="list__title_border list__item_padding flex__row_1">-->
+                   <!--PROJECT-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="project">-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="wrapper__section_bottom"></div>
 </div>
 </body>
 <script src="../../vendor/jquery-1.11.1.js"></script>

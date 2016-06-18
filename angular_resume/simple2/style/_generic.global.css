@@ -19,6 +19,9 @@
 .text_lightblue {
   color: #448aff;
 }
+.text_linebreak {
+  white-space: pre-line;
+}
 .text_bolder {
   font-weight: bolder;
 }

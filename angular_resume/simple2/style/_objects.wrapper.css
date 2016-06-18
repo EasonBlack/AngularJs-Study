@@ -1,7 +1,25 @@
+@font-face {
+  font-family: 'sf-medium';
+  src: url('../fonts/SFUIText-Medium.ttf');
+}
+@font-face {
+  font-family: 'sf-regular';
+  src: url('../fonts/SFUIText-Regular.ttf');
+}
+@font-face {
+  font-family: 'sf-semibold';
+  src: url('../fonts/SFUIText-Semibold.ttf');
+}
 .wrapper__structure {
   margin: 0px 60px;
 }
 .wrapper__section {
   margin-top: 40px;
   padding: 0px 40px;
+}
+.wrapper__section_bottom {
+  margin-top: 100px;
+  width: 100%;
+  background-color: #303f9f;
+  height: 30px;
 }

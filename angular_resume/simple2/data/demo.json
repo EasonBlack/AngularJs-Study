@@ -1,43 +1,76 @@
 {
   "name": "Eason Xu",
   "position": "Front End Developer",
-  "intro": "xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx xxx xx xxxx xx xxxx x x xxxxx  ",
-  "mobile": "136000000",
-  "email": "easonxu@163.com",
+  "intro": "",
+  "mobile": "13601782446",
+  "email": "eason820720@163.com",
   "location": "Shanghai",
+  "birth": "1982-07-20",
   "experience": [
     {
-      "name": "AAAA",
-      "time": "2010",
-      "detail": "aaaaaaaa"
+      "name": "AppConomy",
+      "time": "2015~2016",
+      "position": "Front-end Architect",
+      "detail": "AngularJs, ES6, NodeJs ..."
     },
     {
-      "name": "BBBB",
-      "time": "2012",
-      "detail": "bbb bbb bbbb bbb bbb bbb bbbb bbb bbb bbb bbbb bbb bbb bbb bbbb bbb bbb bbb bbbb bbb bbb bbb bbbb bbb bbb bbb bbbb bbb bbb bbb bbbb bbb "
+      "name": "MagicPoint",
+      "time": "2012~2015",
+      "position": "Team Leader & Front-end Developer",
+      "detail": "ASP.NET, C#, Nodejs, Backbone, Jq ..."
+    },
+    {
+      "name": "Bleum",
+      "time": "2011~2012",
+      "position": ".Net Developer",
+      "detail": "ASP.NET, C# "
+    },
+    {
+      "name": "Emoney",
+      "time": "2009~2011",
+      "position": ".Net Developer",
+      "detail": "ASP.NET, C#, SQL Server "
+    },
+    {
+      "name": "F3(Guizheng)",
+      "time": "2007~2009",
+      "position": ".Net Developer",
+      "detail": "ASP.NET, VB.NET, C#, SQL Server"
+    },
+    {
+      "name": "RuanZhong ",
+      "time": "2005~2007",
+      "position": ".Net Developer",
+      "detail": "ASP.NET, VB.NET, SQL Server"
     }
   ],
   "education": [
     {
-      "name": "USST",
-      "detail": "IT"
+      "name": "University for Shanghai of Science and Technology",
+      "time": "2003~2005",
+      "detail": "Computer Science"
+    },
+    {
+      "name": "ShanDa University",
+      "time": "2001~2003",
+      "detail": "Software"
     }
   ],
   "english": [
     {
-      "name": "reading",
+      "name": "Reading",
       "detail": "4"
     },
     {
-      "name": "writing",
-      "detail": "5"
+      "name": "Writing",
+      "detail": "4"
     },
     {
       "name": "Speaking",
-      "detail": "2"
+      "detail": "3"
     },
     {
-      "name": "listening",
+      "name": "Listening",
       "detail": "3"
     }
   ],
@@ -47,20 +80,16 @@
       "detail": "5"
     },
     {
-      "name": ".net",
-      "detail": "4"
-    },
-    {
       "name": "Javascript",
       "detail": "5"
     },
     {
-      "name": "CSS",
+      "name": "Jquery",
       "detail": "5"
     },
     {
-      "name": "React",
-      "detail": "3"
+      "name": "CSS3",
+      "detail": "5"
     },
     {
       "name": "AngularJs",
@@ -69,6 +98,99 @@
     {
       "name": "Backbone",
       "detail": "5"
+    },
+    {
+      "name": "RequreJs",
+      "detail": "4"
+    },
+    {
+      "name": "ES6",
+      "detail": "4"
+    },
+    {
+      "name": "React",
+      "detail": "3"
+    },
+    {
+      "name": "TypeScript",
+      "detail": "3"
+    },
+    {
+      "name": "AngularJs 2",
+      "detail": "2"
+    },
+    {
+      "name": "",
+      "detail": "0"
+    },
+    {
+      "name": "",
+      "detail": "0"
+    },
+
+    {
+      "name": "Hightchart",
+      "detail": "4"
+    },
+    {
+      "name": "Canvas",
+      "detail": "3"
+    },
+    {
+      "name": "D3",
+      "detail": "3"
+    },
+    {
+      "name": "",
+      "detail": "0"
+    },
+    {
+      "name": "",
+      "detail": "0"
+    },
+
+    {
+      "name": "NodeJs",
+      "detail": "4"
+    },
+    {
+      "name": "Webpack",
+      "detail": "4"
+    },
+    {
+      "name": "Gulp",
+      "detail": "3"
+    },
+
+    {
+      "name": "",
+      "detail": "0"
+    },
+    {
+      "name": "",
+      "detail": "0"
+    },
+    {
+      "name": ".Net",
+      "detail": "3"
+    },
+    {
+      "name": "WebAPI",
+      "detail": "3"
+    },
+    {
+      "name": "SQL Server",
+      "detail": "3"
+    },
+    {
+      "name": "",
+      "detail": "3"
+    }
+  ],
+  "project" : [
+    {
+      "name": "",
+      "detail": ""
     }
   ]
 }

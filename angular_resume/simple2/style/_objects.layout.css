@@ -1,3 +1,7 @@
+.flex__structure-row {
+  display: flex;
+  flex-direction: row;
+}
 .flex__row {
   display: flex;
   flex-direction: row;
