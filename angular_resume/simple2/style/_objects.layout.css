@@ -11,3 +11,18 @@
 .flex__row_3 {
   flex: 3;
 }
+.flex__row_150 {
+  width: 150px;
+}
+.flex__row_200 {
+  width: 200px;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}

@@ -10,19 +10,15 @@
   font-family: 'sf-semibold';
   src: url('../fonts/SFUIText-Semibold.ttf');
 }
-.icon__info {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 50%;
-  background-color: #3f51b5;
-  text-align: center;
-  color: white;
-  margin-right: 15px;
+.text_deepblue {
+  color: #303f9f;
 }
-.icon__list-plus {
+.text_normalblue {
   color: #3f51b5;
-  margin-right: 15px;
-  width: 15px;
+}
+.text_lightblue {
+  color: #448aff;
+}
+.text_bolder {
+  font-weight: bolder;
 }

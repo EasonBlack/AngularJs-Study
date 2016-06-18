@@ -13,6 +13,41 @@
 .list__title_border {
   border-bottom: 2px solid #b6b6b6;
 }
+.list__items {
+  margin-left: 7px;
+}
+.list__items_normal {
+  padding-top: 10px;
+  margin-left: 30px;
+}
+.list__items_border {
+  list-style: none;
+  border-left: 2px solid #303f9f;
+  position: relative;
+}
 .list__item_padding {
   padding-bottom: 5px;
+}
+.list__item-point {
+  position: relative;
+  margin-left: 23px;
+  margin-top: 30px;
+}
+.list__item-point:before {
+  box-shadow: 0 0 0 4px #303f9f;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  height: 8px;
+  line-height: 8px;
+  width: 8px;
+  content: "";
+  left: -28px;
+  top: 4px;
+}
+.list__circle_full {
+  fill: #303f9f;
+}
+.list__circle_blank {
+  fill: #c5cae9;
 }
