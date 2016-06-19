@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="style/main.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body ng-app="app" >
+<ul class="menu">
+    <li><a href="#/Home">Home</a></li>
+    <li><a href="#/About">About</a></li>
+</ul>
+<div ng-view></div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+<script src="../../vendor/angular-route.js"></script>
+<script src="app/app.module.js"></script>
+<script src="interface/home/home.module.js"></script>
+<script src="interface/about/about.module.js"></script>
+<script src="common/components/app.components.js"></script>
+<script src="common/service/app.service.js"></script>
+
+<script src="common/components/input/input.component.js"></script>
+<script src="common/service/common.service.js"></script>
+
+</html>
