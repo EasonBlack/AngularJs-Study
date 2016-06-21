@@ -30986,10 +30986,13 @@
 	    value: true
 	});
 	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	function View1Ctrl($scope) {
-	    $scope.message = "View1 1 1 1";
-	}
+	var View1Ctrl = function View1Ctrl($scope) {
+	    _classCallCheck(this, View1Ctrl);
+	
+	    $scope.message = "View1 1 1 11";
+	};
 	
 	View1Ctrl['$inject'] = ['$scope'];
 	
