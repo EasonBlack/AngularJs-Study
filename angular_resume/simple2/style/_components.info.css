@@ -17,17 +17,17 @@
 }
 .info__title-position {
   font-size: 20px;
-  color: #3f51b5;
+  color: #3F51B5;
 }
 .info__detail_row {
   margin-bottom: 20px;
 }
 .info__detail-info {
   display: inline-block;
-  border-bottom: 1px solid #b6b6b6;
+  border-bottom: 1px solid #B6B6B6;
   width: 100%;
   padding-bottom: 5px;
 }
 .info__detail-info_text-blue {
-  color: #3f51b5;
+  color: #3F51B5;
 }

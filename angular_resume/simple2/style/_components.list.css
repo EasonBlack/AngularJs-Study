@@ -11,7 +11,7 @@
   src: url('../fonts/SFUIText-Semibold.ttf');
 }
 .list__title_border {
-  border-bottom: 2px solid #b6b6b6;
+  border-bottom: 2px solid #B6B6B6;
 }
 .list__title_top {
   margin-top: 40px;
@@ -25,7 +25,7 @@
 }
 .list__items_border {
   list-style: none;
-  border-left: 2px solid #303f9f;
+  border-left: 2px solid #303F9F;
   position: relative;
 }
 .list__item_padding {
@@ -37,7 +37,7 @@
   margin-top: 30px;
 }
 .list__item-point:before {
-  box-shadow: 0 0 0 4px #303f9f;
+  box-shadow: 0 0 0 4px #303F9F;
   position: absolute;
   background: white;
   border-radius: 50%;
@@ -49,8 +49,8 @@
   top: 4px;
 }
 .list__circle_full {
-  fill: #303f9f;
+  fill: #303F9F;
 }
 .list__circle_blank {
-  fill: #c5cae9;
+  fill: #C5CAE9;
 }

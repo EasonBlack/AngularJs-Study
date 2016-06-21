@@ -11,13 +11,13 @@
   src: url('../fonts/SFUIText-Semibold.ttf');
 }
 .text_deepblue {
-  color: #303f9f;
+  color: #303F9F;
 }
 .text_normalblue {
-  color: #3f51b5;
+  color: #3F51B5;
 }
 .text_lightblue {
-  color: #448aff;
+  color: #448AFF;
 }
 .text_linebreak {
   white-space: pre-line;

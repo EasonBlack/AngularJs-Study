@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="../../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .flex__row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex__row_1 {
+            flex: 1;
+        }
+    </style>
+    <title></title>
+</head>
+<body ng-app="app">
+<div class="container">
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+
+    <div class="flex__row">
+        <div class="flex__row_1" ui-view="viewA"></div>
+        <div class="flex__row_1" ui-view="viewB"></div>
+    </div>
+</div>
+</body>
+<script src="../../../vendor/jquery-1.11.1.js"></script>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script>
+    angular.module('app', ['ui.router'])
+            .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+                $urlRouterProvider.otherwise("/state1");
+
+                $stateProvider
+                        .state('state1', {
+                            url: "/state1",
+                            views: {
+                                "viewA": {
+                                    templateUrl: "demo.view1.html",
+                                    controller: 'View1Controller'
+                                },
+                                "viewB": {
+                                    templateUrl: "demo.view2.html",
+                                    controller: 'View2Controller'
+                                }
+                            }
+                        })
+                        .state('state2', {
+                            url: "/state2",
+                            views: {
+                                "viewA": {
+                                    templateUrl: "demo.view3.html",
+                                    controller: 'View3Controller'
+                                },
+                                "viewB": {
+                                    templateUrl: "demo.view4.html",
+                                    controller: 'View4Controller'
+                                }
+                            }
+                        })
+            }])
+            .controller('View1Controller', ['$scope', function ($scope) {
+                $scope.message = 'Hello';
+            }])
+            .controller('View2Controller', ['$scope', function ($scope) {
+                $scope.message = 'World';
+            }])
+            .controller('View3Controller', ['$scope', function ($scope) {
+                $scope.message = 'Ha';
+            }])
+            .controller('View4Controller', ['$scope', function ($scope) {
+                $scope.message = 'Ho';
+            }]);
+
+
+
+</script>
+</html>
