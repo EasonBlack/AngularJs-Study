@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div>
+        {{test1}}
+    </div>
+    <div>
+        {{test2}}
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script>
+    angular.module('app', [])
+            .constant("test1", {
+                message: 'Hello'
+            })
+            .constant("test2", {
+                message: 'World'
+            })
+            .controller('appCtrl', ['$scope', 'test1', 'test2', function ($scope, test1, test2) {
+                $scope.test1 = test1.message;
+                $scope.test2 = test2.message;
+            }])
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        .container {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+   <app-test></app-test>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+
+            }])
+            .component('appTest', {
+                template: `
+                  <div>
+                    <p>{{$ctrl.user.name}}</p>
+                    <child-component
+                      user="$ctrl.user"
+                      on-update="$ctrl.updateUser(event);">
+                    </child-component>
+                  </div>
+                `,
+                controller: function () {
+                    this.$onInit = function(){
+                        this.user = {
+                            name: 'Eason',
+                            desc: 'xxxxxxxx'
+                        }
+                    }
+                    this.updateUser = function (event) {
+                        this.user = event.user;
+                    };
+                }
+            })
+            .component('childComponent', {
+               template: `
+                  <div>
+                      <input type="text" ng-model="$ctrl.user.name" />
+                      <button ng-click="$ctrl.change()">Update</button>
+                  </div>
+               `,
+                bindings: {
+                    user: '<',
+                    onUpdate: '&'
+                },
+                controller : function(){
+                    this.$onInit = function(){
+
+                    }
+                    this.$onChanges  = function(changes){
+                        this.user = angular.copy(changes.user.currentValue);
+                    }
+                    this.change = function(){
+                        this.onUpdate({
+                            event : {
+                                user: this.user
+                            }
+                        })
+                    }
+                }
+            });
+</script>
+</html>
