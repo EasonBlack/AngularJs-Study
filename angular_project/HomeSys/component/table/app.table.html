@@ -25,4 +25,12 @@
         </tr>
         </tbody>
     </table>
+    <div paging
+         class="list-pager"
+         page="$ctrl.list.page"
+         page-size="$ctrl.list.size"
+         total="$ctrl.list.count"
+         paging-action="$ctrl.pageTo(page)"
+    >
+    </div>
 </div>

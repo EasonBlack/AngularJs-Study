@@ -33,6 +33,7 @@ angular.module('app')
             _defer.then((res)=>{
                 console.log(res.data);
                 $scope.list.rows = res.data;
+                $scope.$broadcast("List_Ready");
             })
 
         }
@@ -42,6 +43,7 @@ angular.module('app')
                 .then((res)=> {
                     console.log(res.data);
                     $scope.list.rows = res.data;
+                    $scope.$broadcast("List_Ready");
                 })
         }
         init();
