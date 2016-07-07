@@ -8,7 +8,7 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/'
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     plugins: [
         new webpack.ProvidePlugin({
             $: "jquery",
@@ -19,7 +19,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/, exclude: /node_modules/, loader: 'babel',
+                test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
                 query: {
                     presets: ['es2015'],
                     compact : true

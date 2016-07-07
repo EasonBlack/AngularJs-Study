@@ -1,10 +1,11 @@
 import $ from 'jquery'
 import angular from 'angular'
-
+import _ from 'lodash';
 import 'angular-route';
 import 'angular-sanitize'
 import 'ui-select'
 import 'moment'
+
 import '../../vendor/angular-datepicker/angular-datepicker'
 import '../../vendor/fullcalendar/fullcalendar'
 import '../../vendor/angular-ui-calendar/calendar'
@@ -12,6 +13,7 @@ import '../../vendor/ngDialog'
 import '../../vendor/highcharts.src.js'
 import '../../vendor/highcharts-more.src.js'
 import '../../vendor/highcharts-ng.js'
+import '../../vendor/paging.js';
 
 
 import './app/app'

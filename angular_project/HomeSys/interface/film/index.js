@@ -18,14 +18,28 @@ angular.module('app')
             rows: []
         }
 
-        var init = ()=> {
+        var init = (obj)=> {
+
             modelService.getList('Film')
                 .then((res)=> {
+
                     console.log(res.data);
-                    $scope.list.rows = res.data;
+                    $scope.rows  = res.data;
+                    let page = obj.page;
+                    let page_size =10;
+                    $scope.list.rows = _.slice( $scope.rows ,(page-1)*page_size, (page-1)*page_size + page_size)
+                    $scope.list.size = page_size;
+                    $scope.list.count = res.data.length;
+                    $scope.list.page = parseInt(page) ;
                 })
         }
-        init();
+        init({page: 1});
+
+        $scope.pageTo = (page)=> {
+            let page_size =10;
+            $scope.list.rows = _.slice( $scope.rows ,(page-1)*page_size, (page-1)*page_size + page_size)
+            $scope.list.page = parseInt(page) + 1;
+        }
 
         $scope.cancel = ()=> {
             ngDialog.close();
@@ -35,7 +49,7 @@ angular.module('app')
             modelService.updateItem('Film', $scope.selectedFilm._id, $scope.selectedFilm)
                 .then((res)=> {
                     ngDialog.close();
-                    init();
+                    init({page: 1});
                 })
         }
 

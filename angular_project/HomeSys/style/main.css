@@ -179,6 +179,10 @@ body {
   line-height: 50px;
   font-size: 21px;
 }
+.list-pager {
+  float: right;
+  margin-right: 30px;
+}
 .detail-section,
 .detail-items-section {
   margin-left: 30px;
