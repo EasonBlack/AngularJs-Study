@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(../../../fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(../../../fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(../../../fonts/SFUIText-Semibold.ttf);
+}
+.button {
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 15px;
+  min-width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+.button__add {
+  font-size: 18px;
+  background-color: #03436a;
+  cursor: pointer;
+}
+.button__add:hover {
+  background-color: #0969a2;
+}

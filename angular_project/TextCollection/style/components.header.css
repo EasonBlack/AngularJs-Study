@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(../../../fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(../../../fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(../../../fonts/SFUIText-Semibold.ttf);
+}
+.header__box {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.31);
+  letter-spacing: 2px;
+}
+.header__bg_color {
+  background-color: #0969a2;
+  color: white;
+}
