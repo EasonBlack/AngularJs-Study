@@ -3,9 +3,10 @@
          <textarea
                  maxlength="140"
                  class="import__textarea text__size_18"
+                 ng-model="item.context"
          ></textarea>
     </div>
     <div class="flow__row">
-        <a class="button button__add">ADD</a>
+        <a class="button button__add" ng-click="add()">ADD</a>
     </div>
 </div>

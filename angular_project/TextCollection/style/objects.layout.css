@@ -1,3 +1,6 @@
+.relative {
+  position: relative;
+}
 .flex__row {
   display: flex;
   flex-direction: row;

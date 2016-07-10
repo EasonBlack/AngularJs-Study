@@ -1,11 +1,11 @@
 angular.module('app')
-    .factory('fetchService', ['$http', function ($http) {
+    .factory('fetchService', ['$http', '$localForage', function ($http, $localForage) {
         return {
-            getContectList: ()=> {
-                  return ['aa aa','bb bb'];
+            getContextList: (key)=> {
+                return $localForage.getItem(key);
             },
-            getContectById: ()=> {
-
+            setContextList: (key, obj)=> {
+                return $localForage.setItem(key, obj);
             }
         }
     }]);

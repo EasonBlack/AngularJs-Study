@@ -1,3 +1,12 @@
 <div>
-    {{message}}
+    <ul>
+        <li class="relative list__item-space_bottom text__color_w"
+             ng-repeat = 'item in list'>
+            {{item.context}}
+            <span class="glyphicon glyphicon-remove list__item_after"
+                   ng-click="delete(item)"
+            >
+            </span>
+        </li>
+    </ul>
 </div>
