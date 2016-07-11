@@ -18,12 +18,18 @@
   min-width: 100px;
   display: inline-block;
   text-align: center;
-}
-.button__add {
   font-size: 18px;
-  background-color: #03436a;
   cursor: pointer;
 }
-.button__add:hover {
+.button__blue {
+  background-color: #03436a;
+}
+.button__blue:hover {
   background-color: #0969a2;
+}
+.button__light-blue {
+  background-color: #3d9ad1;
+}
+.button__light-blue:hover {
+  background-color: #03436a;
 }

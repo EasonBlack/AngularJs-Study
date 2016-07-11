@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: row;
 }
+.flex__row_wrap {
+  flex-wrap: wrap;
+}
 .flex__row_right {
   justify-content: flex-end;
 }
@@ -20,9 +23,20 @@
 .flex__row_3 {
   flex: 3;
 }
+.flex__card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 280px;
+}
 .float__left {
   float: left;
 }
 .float__right {
   float: right;
+}
+.float__left_margin {
+  margin-right: auto;
+}
+.float__right_margin {
+  margin-left: auto;
 }

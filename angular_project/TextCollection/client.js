@@ -1,4 +1,3 @@
-
 import 'angular';
 import 'angular-ui-router';
 import 'angular-sanitize'
@@ -12,6 +11,8 @@ import './module/layout/layout.module';
 import './module/layout/menu.component';
 import './module/layout/content.component';
 
+import './component/context_card/context_card.component';
+
 import './services/fetch.service';
 import './services/context.service';
 import './services/contextList.service';
@@ -23,6 +24,8 @@ import './module/import/import.list/import.list.controller';
 
 import './module/category/category.module';
 import './module/category/category.route';
+import './module/category/category.list/category.list.controller';
+import './module/category/category.type/category.type.controller';
 
 
 

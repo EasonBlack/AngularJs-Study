@@ -32,11 +32,26 @@ angular.module('app')
                 })
             }
 
-            saveContext() {
-                fetchService.setContextList('context', this.contextList)
-                    .then(()=> {
-                        this.saved = true;
-                    })
+            getContext(callback) {
+                fetchService.getContextList('context')
+                    .then((data)=> {
+                        callback(data)
+                    });
+            }
+
+            saveContext(callback) {
+                fetchService.getContextList('context')
+                    .then((data)=> {
+                        data || (data = []);
+                        let list = [...data, ...this.contextList];
+                        fetchService.setContextList('context', list)
+                            .then(()=> {
+                                this.saved = true;
+                                this.contextList = [];
+                                callback();
+                            })
+                    });
+
             }
 
         }

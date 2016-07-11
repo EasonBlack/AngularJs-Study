@@ -1,3 +1,7 @@
 <div>
-    {{message}}
+    <ul class="flex__row flex__row_wrap">
+        <li class='flex__card' ng-repeat="item in items">
+            <app-context-card context="item.context"></app-context-card>
+        </li>
+    </ul>
 </div>

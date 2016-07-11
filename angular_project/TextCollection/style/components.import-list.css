@@ -11,10 +11,9 @@
   src: url(/fonts/SFUIText-Semibold.ttf);
 }
 .import-list__view {
-  padding: 50px 20px;
+  padding: 20px 20px;
   height: calc(100vh - 150px);
 }
-.import-list__bg {
-  background-color: #ff7100;
-  box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.31);
+.list__item-wrapper_top {
+  margin-top: 20px;
 }
