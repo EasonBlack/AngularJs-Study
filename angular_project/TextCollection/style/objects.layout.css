@@ -23,11 +23,6 @@
 .flex__row_3 {
   flex: 3;
 }
-.flex__card {
-  flex: 1;
-  min-width: 280px;
-  max-width: 280px;
-}
 .float__left {
   float: left;
 }

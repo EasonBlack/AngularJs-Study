@@ -1,10 +1,12 @@
 <div>
     <a class="button button__blue float__right_margin header__button_margin-top"
-       ng-click="set()">
+       ng-click="$ctrl.set()">
         SET
     </a>
    <ul class="list__item-wrapper_top">
-       <li ng-repeat="type in types" ng-click="setCurrent(type.name)">
+       <li class="category-type__list"
+           ng-class="{'category-type__list_active': type.checked, 'category-type__list_unactive': !type.checked}"
+           ng-repeat="type in $ctrl.types" ng-click="$ctrl.toggleSelect(type)">
            <span class="text__first_capital" >{{type.name}}</span>
        </li>
    </ul>

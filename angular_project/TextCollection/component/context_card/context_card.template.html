@@ -1,3 +1,5 @@
-<div class="card__box card__border_blue">
-    {{$ctrl.context}}
+<div class="card__box card__border_blue"
+     ng-class="{'context__card_active': $ctrl.item.checked, 'context__card_unactive': !$ctrl.item.checked}"
+>
+    {{$ctrl.item.context}}
 </div>

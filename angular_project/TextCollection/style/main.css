@@ -861,11 +861,6 @@ a:hover {
 .flex__row_3 {
   flex: 3;
 }
-.flex__card {
-  flex: 1;
-  min-width: 280px;
-  max-width: 280px;
-}
 .float__left {
   float: left;
 }
@@ -996,6 +991,15 @@ a:hover {
   border: 2px solid #0969a2;
   border-radius: 10px;
 }
+.context__card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 280px;
+}
+.context__card_active {
+  background-color: #36d695;
+  color: #03436a;
+}
 .category__view {
   height: calc(100vh - 150px);
   padding: 20px 20px;
@@ -1004,4 +1008,24 @@ a:hover {
 }
 .category__view::-webkit-scrollbar {
   width: 16px;
+}
+.category-type__view {
+  padding: 20px 20px;
+  height: calc(100vh - 150px);
+}
+.category-type__list {
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  margin-bottom: 3px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+}
+.category-type__list_unactive {
+  color: white;
+}
+.category-type__list_active {
+  background-color: #cccccc;
+  color: #0969a2;
 }

@@ -1,8 +1,9 @@
 angular.module('app')
-    .factory('contextListService', ['fetchService', function (fetchService) {
+    .factory('contextListService', ['fetchService', 'contextService', function (fetchService, contextService) {
         class contextListService {
             constructor(obj) {
                 this.contextList = [];
+                this.contextSavedList = [];
                 this.saved = false;
             }
 
@@ -23,20 +24,27 @@ angular.module('app')
                 });
             }
 
-            setType(type) {
-                this.contextList.forEach((c)=> {
-                    if (c.checked && c.type !== type) {
-                        c.type = type;
-                        this.saved = false;
+            setType(types) {
+                this.contextSavedList.forEach((o)=> {
+                    if (o.checked) {
+                        o.type = [...types];
                     }
                 })
             }
 
             getContext(callback) {
-                fetchService.getContextList('context')
+                return fetchService.getContextList('context')
                     .then((data)=> {
-                        callback(data)
+                        this.contextSavedList = data;
                     });
+            }
+
+            saveTotalContext() {
+                return fetchService.setContextList('context', this.contextSavedList.map((o)=> {
+                    console.log(contextService);
+                    let {context, type} = o;
+                    return {context, type}
+                }))
             }
 
             saveContext(callback) {
@@ -48,6 +56,7 @@ angular.module('app')
                             .then(()=> {
                                 this.saved = true;
                                 this.contextList = [];
+                                this.contextSavedList = list;
                                 callback();
                             })
                     });

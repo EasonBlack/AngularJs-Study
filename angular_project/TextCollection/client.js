@@ -24,8 +24,9 @@ import './module/import/import.list/import.list.controller';
 
 import './module/category/category.module';
 import './module/category/category.route';
-import './module/category/category.list/category.list.controller';
-import './module/category/category.type/category.type.controller';
+import './module/category/category.controller';
+import './module/category/category.list/category.list.component';
+import './module/category/category.type/category.type.component';
 
 
 

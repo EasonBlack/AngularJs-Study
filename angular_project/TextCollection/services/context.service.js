@@ -4,7 +4,7 @@ angular.module('app')
             constructor(obj) {
                 obj || (obj = {})
                 this.context = obj.context;
-                this.type = obj.type;
+                this.type = obj.type || [];
             }
         }
 

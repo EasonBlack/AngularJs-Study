@@ -20,3 +20,12 @@
   border: 2px solid #0969a2;
   border-radius: 10px;
 }
+.context__card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 280px;
+}
+.context__card_active {
+  background-color: #36d695;
+  color: #03436a;
+}
