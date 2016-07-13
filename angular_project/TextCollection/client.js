@@ -23,10 +23,6 @@ import './module/import/import.input/import.input.controller';
 import './module/import/import.list/import.list.controller';
 
 import './module/category/category.module';
-import './module/category/category.route';
-import './module/category/category.controller';
-import './module/category/category.list/category.list.component';
-import './module/category/category.type/category.type.component';
 
 
 

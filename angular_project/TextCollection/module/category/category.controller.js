@@ -1,63 +1,37 @@
-// class CategoryController {
-//     constructor($scope, contextListService, contextService) {
-//         this.$scope = $scope;
-//         this.$scope.types = [
-//             {name: 'start', checked: false},
-//             {name: 'high', checked: false},
-//             {name: 'end', checked: false}
-//         ];
-//         $scope.items = [];
-//         this.contextListService = contextListService;
-//         this.init();
-//     }
-//
-//     init() {
-//         let self = this;
-//         this.contextListService.getContext()
-//             .then(()=> {
-//                 console.log(this);
-//                 this.$scope.items = this.contextListService.contextSavedList;
-//             })
-//     }
-//
-//     set(types) {
-//         let self = this;
-//         this.contextListService.setType(types);
-//         this.contextListService.saveTotalContext()
-//             .then(()=> {
-//                 self.init();
-//             });
-//     }
-// }
-//
-// CategoryController.$inject = ['$scope', 'contextListService', 'contextService'];
-//
-// export {CategoryController}
+const ContextListService = new WeakMap();
 
-angular.module('category.module')
-    .controller('CategoryController', ['$scope', 'contextListService', 'contextService', '$timeout',
-        function ($scope, contextListService, contextService, $timeout) {
+class CategoryController {
+    constructor(contextListService) {
 
+        this.types = [
+            {name: 'start', checked: false},
+            {name: 'high', checked: false},
+            {name: 'end', checked: false}
+        ];
+        this.items = [];
+        ContextListService.set(this, contextListService);
+        this.init();
+    }
 
-            let init = ()=> {
-                contextListService.getContext()
-                    .then(()=> {
-                        $scope.items = contextListService.contextSavedList;
-                    })
-            }
-            init();
+    init() {
+        let self = this;
+        ContextListService.get(this).getContext()
+            .then(()=> {
+                this.items = ContextListService.get(this).contextSavedList;
+            })
+    }
 
-            $scope.types = [
-                {name: 'start', checked: false},
-                {name: 'high', checked: false},
-                {name: 'end', checked: false}
-            ];
+    set(types) {
+        let self = this;
+        ContextListService.get(this).setType(types);
+        ContextListService.get(this).saveTotalContext()
+            .then(()=> {
+                this.init();
+            });
+    }
+}
 
-            $scope.set = (types)=> {
-                contextListService.setType(types);
-                contextListService.saveTotalContext()
-                    .then(()=> {
-                        init();
-                    });
-            }
-        }])
+CategoryController.$inject = ['contextListService'];
+
+export {CategoryController}
+
