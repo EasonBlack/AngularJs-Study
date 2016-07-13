@@ -909,7 +909,7 @@ a:hover {
   cursor: pointer;
 }
 .button__blue {
-  background-color: #03436a;
+  background-color: #03436A;
 }
 .button__blue:hover {
   background-color: #0969a2;
@@ -918,7 +918,7 @@ a:hover {
   background-color: #3d9ad1;
 }
 .button__light-blue:hover {
-  background-color: #03436a;
+  background-color: #03436A;
 }
 .view__bg_green {
   background-color: #00ae68;
@@ -929,7 +929,7 @@ a:hover {
   box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.31);
 }
 .view__bg_grey {
-  background-color: #cccccc;
+  background-color: #ccc;
   box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.31);
 }
 .header__box {
@@ -998,7 +998,7 @@ a:hover {
 }
 .context__card_active {
   background-color: #36d695;
-  color: #03436a;
+  color: #03436A;
 }
 .category__view {
   height: calc(100vh - 150px);
@@ -1026,6 +1026,6 @@ a:hover {
   color: white;
 }
 .category-type__list_active {
-  background-color: #cccccc;
+  background-color: #ccc;
   color: #0969a2;
 }

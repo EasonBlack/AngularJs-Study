@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 .button__blue {
-  background-color: #03436a;
+  background-color: #03436A;
 }
 .button__blue:hover {
   background-color: #0969a2;
@@ -31,5 +31,5 @@
   background-color: #3d9ad1;
 }
 .button__light-blue:hover {
-  background-color: #03436a;
+  background-color: #03436A;
 }
