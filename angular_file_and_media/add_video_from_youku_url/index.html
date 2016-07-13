@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+<div class="container">
+    <div>
+        <input ng-model="newUrl" /> <button ng-click="add()">Add</button>
+    </div>
+    <div>
+        <ul>
+            <li ng-repeat="item in items">
+                <iframe width="560" height="315" ng-src="{{getIframeSrc(item)}}" frameborder="0"></iframe>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</body>
+<script src="build/bundle.js"></script>
+
+</html>
