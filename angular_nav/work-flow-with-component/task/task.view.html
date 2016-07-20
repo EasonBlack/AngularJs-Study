@@ -1,0 +1,15 @@
+<div>
+    {{vm.message}}
+    <div ng-show="vm.nav==1">
+        <task-step-one info1="vm.task.info1"></task-step-one>
+        <button ng-click="vm.next(2)">Next</button>
+    </div>
+    <div ng-show="vm.nav==2">
+        <task-step-two info2="vm.task.info2"></task-step-two>
+        <button ng-click="vm.next(3)">Next</button>
+    </div>
+    <div ng-show="vm.nav==3">
+        <task-step-three info3="vm.task.info3"></task-step-three>
+        <button ng-click="vm.confirm()">Confirm</button>
+    </div>
+</div>
