@@ -1,0 +1,27 @@
+@import 'settings.global.less';
+
+.button {
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 15px;
+  min-width: 100px;
+  display: inline-block;
+  text-align: center;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.button__blue {
+  background-color: @blue-dark;
+  &:hover {
+    background-color: @blue;
+  }
+}
+
+.button__light-blue {
+  background-color: @blue-light;
+  &:hover {
+    background-color: @blue-dark;
+  }
+}
