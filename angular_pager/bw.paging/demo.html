@@ -2,42 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link href="../style/bootstrap.css" rel="stylesheet" />
-    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
 
-    <style>
-        .pager_input {
-            margin: 20px 0;
-            display: inline-block;
-            margin-left: 12px;
-            padding-top: 2px;
-        }
-
-        .pager_input input {
-            width: 40px;
-            height: 30px;
-            display: inline-block;
-            border-bottom-right-radius: 0;
-            border-top-right-radius: 0;
-        }
-        .pager_input a {
-            display: inline-block;
-            background-color: steelblue;
-            color: white;
-            text-transform: none;
-            text-decoration: none;
-            height: 30px;
-            line-height: 30px;
-            padding-left: 10px;
-            padding-right: 10px;
-            vertical-align: top;
-            border-bottom-right-radius: 10%;
-            border-top-right-radius: 10%;
-
-        }
-    </style>
     <title></title>
-
 </head>
 <body ng-app="app" ng-controller="appCtrl">
 <div   class="container">
@@ -58,8 +26,7 @@
        </tbody>
    </table>
     <div>
-        <div style="float:left"
-                paging
+        <div paging
              page="page"
              page-size="page_size"
              total="count"
@@ -70,17 +37,17 @@
 </div>
 
 </body>
-<script src="../vendor/jquery-1.11.1.js"></script>
-<script src="../vendor/angular.js"></script>
-<script src="../vendor/bootstrap.js"></script>
-<script src="paging_eason.js"></script>
-<script src="../vendor/ng-lodash.js"></script>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/paging.js"></script>
+<script src="../../vendor/ng-lodash.js"></script>
 <script>
     angular.module('app',['ngLodash','bw.paging'])
             .controller('appCtrl',['$scope','$http', 'lodash', function($scope, $http , _){
                 $scope.page= 1;
                 $scope.page_size =10;
-                $http.get('../data/data.json')
+                $http.get('../../data/data.json')
                         .then(function(data){
                             $scope.allrows = data.data;
                             var _rows = data.data;
