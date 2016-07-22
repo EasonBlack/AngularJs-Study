@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(/fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(/fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(/fonts/SFUIText-Semibold.ttf);
+}
+.text_white {
+  color: white;
+}
+.text__size_20 {
+  font-size: 20px;
+}
+.text__size_18 {
+  font-size: 18px;
+}
+.text__size_16 {
+  font-size: 16px;
+}
+.text__size_10 {
+  font-size: 10px;
+}
+.text__first_capital {
+  text-transform: capitalize;
+}

@@ -1,0 +1,14 @@
+.app-checkbox input[type="checkbox"] {
+  display: none;
+}
+.app-checkbox input[type="checkbox"] + label {
+  background-image: url("../image/icons.png");
+  background-position: -20px 0px;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+.app-checkbox input[type="checkbox"]:checked + label {
+  background-image: url("../image/icons.png");
+  background-position: 0px 0px;
+}

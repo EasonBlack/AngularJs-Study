@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(/fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(/fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(/fonts/SFUIText-Semibold.ttf);
+}
+.button__bigbutton {
+  top: 0;
+  height: 126px;
+  width: 130px;
+  background-color: #009AD6;
+  right: 0px;
+  position: absolute;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.button__bigbutton div {
+  font-size: 16px;
+  font-family: 'sf medium';
+  margin: 0 auto;
+  color: #fff;
+}

@@ -1,0 +1,25 @@
+<div class="list-header_box">
+    <div class="list-header__title">
+        <div class="list-header__name">
+            <img class="list-header__name-icon"  src="../../../image/icon-title-task.png" />TASK PLAN
+        </div>
+        <div class="list-header__tab">
+            <ul class="list-header__tab-items">
+                <li ng-repeat="tab in $ctrl.tabs"
+                    ng-bind="tab.title"
+                    class="list-header__tab-item"
+                    ng-class="{'list-header__tab-item_active': tab.active}"
+                    ng-click="$ctrl.onSet({tab: tab})"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="list-header__button">
+        <div class="button__bigbutton" ng-click="$ctrl.onAdd()">
+            <div class="list-header__button_position">
+                <div><span class="list-header__button-icon"></span></div>
+                <div>{{$ctrl.title1}}</div>
+                <div>{{$ctrl.title2}}</div>
+            </div>
+        </div>
+    </div>
+</div>

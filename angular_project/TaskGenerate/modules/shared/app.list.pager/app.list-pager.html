@@ -1,0 +1,24 @@
+<div class="wrapper__pager flex__row">
+    <div class="flex__row_1 perpage-count-section  list-pager__page-count" >
+        <select class="list-pager__page-count-select">
+            <option>Show 10 items</option>
+        </select>
+    </div>
+    <div class="flex__row_3 list-pager_pager">
+        <div class="pager-discription-title list-pager_pager-title">
+            <span>Page</span>
+        </div>
+        <div paging
+             class="list-pager_pager-select"
+             page="$ctrl.list.page"
+             page-size="$ctrl.list.pagesize"
+             total="$ctrl.list.total"
+             show-prev-next="true"
+             paging-action="$ctrl.onSkip({page:page})">
+        </div>
+        <div class="list-pager_pager-discription">
+            <span>of {{$ctrl.list.pageNum}}, {{$ctrl.list.total}} items in total</span>
+        </div>
+    </div>
+
+</div>

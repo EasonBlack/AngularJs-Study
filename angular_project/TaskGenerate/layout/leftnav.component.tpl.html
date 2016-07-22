@@ -1,0 +1,19 @@
+<div class="leftnav_box leftnav_color">
+    <ul>
+        <div class="leftnav__logo_box">
+            <a href="#/dashboard" class="leftnav__link_box leftnav__link_logo text_white">
+                LOGO
+            </a>
+        </div>
+        <li ng-repeat="nav in $ctrl.navs" class="layout_relative">
+            <span class="leftnav__icon leftnav__icon_{{nav.id}}"></span>
+            <a href="{{nav.href}}" ng-bind="nav.title"
+               class="leftnav__link_box leftnav__link_nav text_white "
+               ng-class="{true:'leftnav__link_active'}[$ctrl.selectNav==nav.id]"
+               ng-click="$ctrl.activeNav(nav)">
+            </a>
+        </li>
+    </ul>
+</div>
+
+

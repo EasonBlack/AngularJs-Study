@@ -1,0 +1,45 @@
+.list-pager__page-count {
+  padding-left: 25px;
+  margin-top: 5px;
+}
+.list-pager__page-count-select {
+  height: 30px;
+  outline: none;
+  color: #0089BE;
+  font-family: 'sf regular';
+}
+.list-pager__page-num {
+  position: absolute;
+  right: 0px;
+  padding-right: 10px;
+  margin-top: 5px;
+  font-family: 'sf regular';
+}
+.list-pager_pager {
+  position: absolute;
+  right: 0px;
+  padding-right: 10px;
+  margin-top: 5px;
+  font-family: 'sf regular';
+}
+.list-pager_pager-title {
+  display: block;
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+.list-pager_pager-select {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+.list-pager_pager-select ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.list-pager_pager-discription {
+  display: block;
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}

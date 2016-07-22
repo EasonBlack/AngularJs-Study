@@ -1,0 +1,63 @@
+@import 'settings.global.less';
+
+.leftnav_box {
+  width: 260px;
+  height: 100%;
+}
+
+.leftnav_color {
+  background-color: @blue;
+  color: white;
+}
+
+.leftnav__logo_box {
+  height: 60px;
+  line-height: 60px;
+}
+
+.leftnav__link_box {
+  display: block;
+  height: 42px;
+  line-height: 42px;
+}
+
+.leftnav__link_nav {
+  padding-left:52px;
+  position:relative;
+}
+
+.leftnav__link_active {
+  border-left: solid 6px #fff;
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.30);
+  background-color:rgba(255,255,255,0.5);
+  padding-left: 46px;
+}
+
+.leftnav__link_logo {
+  padding-left:20px;
+}
+
+.leftnav__icon {
+  display: block;
+  position: absolute;
+  content: '';
+  left: 20px;
+  background-size: cover;
+  width: 16px;
+  height: 18px;
+  margin-top: 10px;
+  background-image: url("../image/Navbar icon.png");
+}
+
+.leftnav__icon_task {
+  background-position: 32px 0px;
+}
+.leftnav__icon_dashboard {
+  background-position: 0px 0px;
+}
+.leftnav__icon_protection {
+  background-position: 48px 0px;
+}
+
+
+
