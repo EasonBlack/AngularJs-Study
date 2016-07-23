@@ -1,5 +1,8 @@
 <div>
    <app-list-header tabs="vm.tabs" on-set="vm.setTab(tab)" on-add="vm.add()"  title1="NEW PLAN"></app-list-header>
-   <app-list-table list="vm.list"></app-list-table>
-   <app-list-pager list="vm.list"></app-list-pager>
+   <div class="layout__scroll_y list-table__task_height">
+      <app-list-table list="vm.list"></app-list-table>
+      <app-list-pager list="vm.list"></app-list-pager>
+   </div>
+
 </div>

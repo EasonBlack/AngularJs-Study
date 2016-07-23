@@ -49,3 +49,6 @@
 .layout__height_100 {
   height: 100%;
 }
+.layout__scroll_y {
+  overflow-y: scroll;
+}

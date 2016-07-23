@@ -1248,6 +1248,9 @@ select {
 .layout__height_100 {
   height: 100%;
 }
+.layout__scroll_y {
+  overflow-y: scroll;
+}
 .wrapper__box {
   margin: 20px 50px 20px;
 }
@@ -1295,7 +1298,7 @@ select {
   height: 100%;
 }
 .leftnav_color {
-  background-color: #0089BE;
+  background-color: #0089be;
   color: white;
 }
 .leftnav__logo_box {
@@ -1414,8 +1417,11 @@ select {
   margin: auto;
   margin-bottom: 10px;
 }
+.list-table__task_height {
+  height: calc(100vh - 126px);
+}
 .list-table__tr:last-child td {
-  border-bottom: 2px solid #C6C9CC;
+  border-bottom: 2px solid #c6c9cc;
 }
 .list-table__tr_editable {
   background-color: #ECF0F1;
@@ -1430,7 +1436,7 @@ select {
   content: '';
   width: 14px;
   height: 2px;
-  background-color: #0089BE;
+  background-color: #0089be;
   position: absolute;
   top: 45%;
   left: 2px;
@@ -1441,7 +1447,7 @@ select {
   font-family: 'sf semibold';
   font-size: 16px;
   color: #808080;
-  border-bottom: 2px solid #C6C9CC;
+  border-bottom: 2px solid #c6c9cc;
 }
 .list-table__th:first-child {
   padding-left: 30px;
@@ -1456,16 +1462,16 @@ select {
   color: #404040;
   font-size: 14px;
   font-family: 'sf regular';
-  border-bottom: 1px solid #DBDEE1;
+  border-bottom: 1px solid #dbdee1;
 }
 .list-table__td:first-child {
   padding-left: 30px;
 }
 .list-table__text_link-type {
-  color: #0089BE;
+  color: #0089be;
 }
 .list-table__td_time-type {
-  color: #C0392B;
+  color: #c0392b;
 }
 .app-checkbox input[type="checkbox"] {
   display: none;
@@ -1499,7 +1505,6 @@ select {
   font-family: 'sf regular';
 }
 .list-pager_pager {
-  position: absolute;
   right: 0px;
   padding-right: 10px;
   margin-top: 5px;
