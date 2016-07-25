@@ -25,14 +25,20 @@
 .text_black {
   color: #404040;
 }
+.text_purple {
+  color: #303f9f;
+}
 .text_grey {
   color: #808080;
 }
 .text_blue {
-  color: #0089BE;
+  color: #0089be;
 }
 .text_deepred {
-  color: #C0392B;
+  color: #c0392b;
+}
+.text_30 {
+  font-size: 30px;
 }
 .text_24 {
   font-size: 24px;

@@ -1,23 +1,42 @@
-<div>
-    <div class="quest__header_box flex__row">
-        <div class="ribbon__content ribbon__extra"></div>
-        <div class="ribbon__content flex__row_1">
-
-        </div>
+<div class="quest__header_box flex__row">
+    <div class="ribbon__content ribbon__extra"></div>
+    <div class="ribbon__content flex__row_1"></div>
+</div>
+<div class="quest__view_box">
+    <div class="quest__mask">
+        <ul class="quest__container"
+            ng-style="{'left': -1 * vm.position + '%'}">
+            <li class="quest__item"
+                ng-repeat="quest in vm.quests">
+                <div class="quest__question text_20">
+                    {{$index + 1}}. {{quest.title}}
+                </div>
+                <div ng-switch="quest.type" class="quest__content_box">
+                    <ul ng-switch-when="radio" class="text_16">
+                        <li ng-repeat="item in quest.items" class="quest_content-item_box app-radio">
+                            <input type="radio"
+                                   id="item{{$parent.$index}}_{{$index}}"
+                                   name="item{{$parent.$index}}">
+                            <label for="item{{$parent.$index}}_{{$index}}">
+                                {{item}}
+                            </label>
+                        </li>
+                    </ul>
+                    <textarea ng-switch-when="textarea" class="app-textarea"></textarea>
+                </div>
+            </li>
+        </ul>
     </div>
-    <div class="quest__view_box">
-        <div class="quest__mask">
-            <ul class="quest__container"
-                ng-style="{'left': -1 * vm.position + '%'}">
-                <li class="quest__item"
-                    ng-repeat="quest in vm.quests">
-                    {{quest}}
-                </li>
-            </ul>
-        </div>
 
-        <div class="quest__button_prev" ng-click="vm.prev()">Prev</div>
-        <div class="quest__button_next" ng-click="vm.next()">Next</div>
+    <div class="quest__button_prev" ng-click="vm.prev()" ng-show="!vm.isFirst()">
+        <span class="glyphicon glyphicon-arrow-left quest__arrow text_30 text_purple text_purple"></span>
+    </div>
+    <div class="quest__button_confirm" ng-click="vm.confirm()" ng-show="vm.isLast()">
+        Confirm
+    </div>
+    <div class="quest__button_next" ng-click="vm.next()" ng-show="!vm.isLast()">
+        <span class="glyphicon glyphicon-arrow-right quest__arrow text_30 text_purple text_purple"></span>
     </div>
 </div>
+
 
