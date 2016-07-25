@@ -1,10 +1,8 @@
 @import 'settings.global.less';
 
-.list-table {
-}
 
 .list-table__task_height {
-  height: calc(~"100vh - 126px");
+  height: calc(~"100vh - @list-header-height");
 }
 
 .list-table__tr {
@@ -38,14 +36,9 @@
 .list-table__th {
   height: 80px;
   vertical-align: middle !important;
-  font-family: 'sf semibold';
-  font-size: 16px;
-  color: @text-grey;
   border-bottom: 2px solid @border1;
-
   &:first-child {
     padding-left: 30px;
-
   }
 }
 
@@ -57,20 +50,9 @@
 .list-table__td {
   height: 60px;
   vertical-align: middle !important;
-  color: @text-black;
-  font-size: 14px;
-  font-family: 'sf regular';
   border-bottom: 1px solid @border2;
-
   &:first-child {
     padding-left: 30px;
   }
 }
 
-.list-table__text_link-type {
-  color: @text-blue;
-}
-
-.list-table__td_time-type {
-  color: @color-deep-red;
-}

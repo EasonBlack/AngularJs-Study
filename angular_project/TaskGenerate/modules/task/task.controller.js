@@ -1,11 +1,13 @@
 
 let TASKLISTCONST = new WeakMap();
 let FETCHSERVICE = new WeakMap();
+let STATE = new WeakMap();
 
 class TaskController {
     
-    constructor($http, TaskListConst, FetchService) {
+    constructor($state, TaskListConst, FetchService) {
 
+        STATE.set(this, $state);
         TASKLISTCONST.set(this, TaskListConst);
         FETCHSERVICE.set(this, FetchService);
         this.tabs = TASKLISTCONST.get(this).tabs;
@@ -30,10 +32,10 @@ class TaskController {
     }
 
     add() {
-        alert('Add');
+        STATE.get(this).go('task-add');
     }
 }
 
-TaskController.$inject = ['$http', 'TaskListConst', 'FetchService'];
+TaskController.$inject = ['$state', 'TaskListConst', 'FetchService'];
 
 export default TaskController;

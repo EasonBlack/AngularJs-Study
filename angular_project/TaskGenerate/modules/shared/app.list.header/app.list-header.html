@@ -1,21 +1,21 @@
 <div class="list-header_box">
-    <div class="list-header__title">
-        <div class="list-header__name">
-            <img class="list-header__name-icon"  src="../../../image/icon-title-task.png" />TASK PLAN
+    <div class="list-header__title_box">
+        <div class="list-header__name_box text_black text_24">
+            <img class="list-header__name-icon_box "  src="../../../image/icon-title-task.png" />TASK PLAN
         </div>
-        <div class="list-header__tab">
-            <ul class="list-header__tab-items">
+        <div class="list-header__tab_box">
+            <ul class="list-header__tab-items_box">
                 <li ng-repeat="tab in $ctrl.tabs"
                     ng-bind="tab.title"
-                    class="list-header__tab-item"
-                    ng-class="{'list-header__tab-item_active': tab.active}"
-                    ng-click="$ctrl.onSet({tab: tab})"></li>
+                    class="list-header__tab-item text_grey text_16"
+                    ng-class="{'list-header__tab-item_active text_blue text_medium': tab.active}"
+                ng-click="$ctrl.onSet({tab: tab})"></li>
             </ul>
         </div>
     </div>
-    <div class="list-header__button">
+    <div class="list-header__button-section_box text_white">
         <div class="button__bigbutton" ng-click="$ctrl.onAdd()">
-            <div class="list-header__button_position">
+            <div class="list-header__button_box text_white text_medium text_16">
                 <div><span class="list-header__button-icon"></span></div>
                 <div>{{$ctrl.title1}}</div>
                 <div>{{$ctrl.title2}}</div>

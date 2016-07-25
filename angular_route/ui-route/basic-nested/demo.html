@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="app">
+<div class="container">
+    <div ui-view=""></div>
+</div>
+</body>
+<script src="../../../vendor/angular.js"></script>
+<script src="../../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script>
+    angular.module('app', ['ui.router'])
+            .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+                $urlRouterProvider.otherwise("/view");
+
+                $stateProvider
+                        .state('view', {
+                            url: "/view",
+                            templateUrl: "demo.view.html",
+                            controller: 'ViewController'
+                        })
+                        .state('view.sub', {
+                            url: "/sub",
+                            templateUrl: "demo.view.sub.html",
+                            controller: 'ViewSubController'
+                        })
+                        .state('subview', {
+                            url: "/view/subview",
+                            templateUrl: "demo.view.sub.html",
+                            controller: 'ViewSubController'
+                        })
+
+
+            }])
+            .controller('ViewController', ['$scope', '$state', function ($scope, $state) {
+                $scope.message = 'View';
+                $scope.sub = function () {
+                    $state.go('view.sub');
+                }
+                $scope.subview = function(){
+                    $state.go('subview');
+                }
+            }])
+            .controller('ViewSubController', ['$scope', function ($scope) {
+                $scope.message = 'Sub';
+            }])
+</script>
+</html>

@@ -1,38 +1,33 @@
+@import 'settings.global.less';
+
+//列表页的表头部分
+//<editor-fold desc="List Header">
 .list-header_box {
   position: relative;
-  height: 126px;
+  height: @list-header-height;
   margin-left: 30px;
 }
 
-.list-header__title {
+.list-header__title_box {
   position: absolute;
   top: 0px;
   float: left;
   height: 126px;
 }
 
-.list-header__name {
-  color: #404040;
-  font-size: 24px;
-  font-family: 'sf regular';
+.list-header__name_box {
   margin-top: 20px;
 }
 
-.list-header__name-icon {
+.list-header__name-icon_box {
   padding: 0 8px 5px 0;
 }
 
-.list-header__name_normalsize {
-  color: #404040;
-  font-family: 'sf regular';
-  margin-top: 20px;
-}
-
-.list-header__tab {
+.list-header__tab_box {
   margin-top: 30px;
 }
 
-.list-header__tab-items {
+.list-header__tab-items_box {
   position: relative;
   z-index: 11;
 }
@@ -42,18 +37,18 @@
   float: left;
   margin-right: 40px;
   height: 30px;
-  color: #808080;
-  font-family: 'sf regular';
   font-size: 16px;
 }
 
 .list-header__tab-item_active {
   border-bottom: 2px solid #0089BE;
-  color: #0089BE;
-  font-family: 'sf medium';
 }
+//</editor-fold>
 
-.list-header__button {
+
+//列表页表头部分中的按钮部分
+//<editor-fold desc="List Button">
+.list-header__button-section_box {
   right: 0;
   top: 0;
   height: 126px;
@@ -61,18 +56,15 @@
   background-color: #009AD6;
   right: 0px;
   position: absolute;
-  color: white;
   text-align: center;
   display: flex;
   align-items: center;
 }
 
-.list-header__button_position {
-  font-size: 16px;
-  font-family: 'sf medium';
+.list-header__button_box {
   margin: 0 auto;
-  color: #fff;
 }
+
 .list-header__button-icon {
   background-image: url("../image/icons.png");
   background-position: -40px 0px;
@@ -82,3 +74,4 @@
   margin: auto;
   margin-bottom: 10px;
 }
+//</editor-fold>

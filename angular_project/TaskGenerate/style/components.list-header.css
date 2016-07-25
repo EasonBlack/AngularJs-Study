@@ -1,32 +1,36 @@
+@font-face {
+  font-family: 'sf medium';
+  src: url(/fonts/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: 'sf regular';
+  src: url(/fonts/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: 'sf semibold';
+  src: url(/fonts/SFUIText-Semibold.ttf);
+}
 .list-header_box {
   position: relative;
   height: 126px;
   margin-left: 30px;
 }
-.list-header__title {
+.list-header__title_box {
   position: absolute;
   top: 0px;
   float: left;
   height: 126px;
 }
-.list-header__name {
-  color: #404040;
-  font-size: 24px;
-  font-family: 'sf regular';
+.list-header__name_box {
   margin-top: 20px;
 }
-.list-header__name-icon {
+.list-header__name-icon_box {
   padding: 0 8px 5px 0;
 }
-.list-header__name_normalsize {
-  color: #404040;
-  font-family: 'sf regular';
-  margin-top: 20px;
-}
-.list-header__tab {
+.list-header__tab_box {
   margin-top: 30px;
 }
-.list-header__tab-items {
+.list-header__tab-items_box {
   position: relative;
   z-index: 11;
 }
@@ -35,16 +39,12 @@
   float: left;
   margin-right: 40px;
   height: 30px;
-  color: #808080;
-  font-family: 'sf regular';
   font-size: 16px;
 }
 .list-header__tab-item_active {
   border-bottom: 2px solid #0089BE;
-  color: #0089BE;
-  font-family: 'sf medium';
 }
-.list-header__button {
+.list-header__button-section_box {
   right: 0;
   top: 0;
   height: 126px;
@@ -52,16 +52,12 @@
   background-color: #009AD6;
   right: 0px;
   position: absolute;
-  color: white;
   text-align: center;
   display: flex;
   align-items: center;
 }
-.list-header__button_position {
-  font-size: 16px;
-  font-family: 'sf medium';
+.list-header__button_box {
   margin: 0 auto;
-  color: #fff;
 }
 .list-header__button-icon {
   background-image: url("../image/icons.png");

@@ -1,14 +1,16 @@
 let TaskRouteConfig = ($stateProvider, $urlRouterProvider) => {
     $stateProvider
         .state('task', {
-            url: "/task",
-            views: {
-                "": {
-                    templateUrl: "/modules/task/task.view.html",
-                    controller: 'TaskController',
-                    controllerAs: 'vm'
-                }
-            }
+            url: '/task',
+            templateUrl: "/modules/task/task.view.html",
+            controller: 'TaskController',
+            controllerAs: 'vm'
+        })
+        .state('task-add', {
+            url: '/task/add',
+            templateUrl: "/modules/task/add/task-add.view.html",
+            controller: "TaskAddController",
+            controllerAs: 'vm'
         })
 }
 

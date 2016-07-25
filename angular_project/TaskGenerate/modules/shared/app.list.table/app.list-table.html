@@ -1,6 +1,8 @@
 <table class="table">
     <tr>
-        <th class='list-table__th' ng-repeat="header in $ctrl.list.headers" ng-style="{width: header.width }">
+        <th class='list-table__th text_semibold text_16 text_grey'
+            ng-repeat="header in $ctrl.list.headers"
+            ng-style="{width: header.width }">
             <div ng-if="header.checkbox" class="app-checkbox">
                 <input type="checkbox" id="thAll" ng-model="$ctrl.checkAll" ng-click="$ctrl.checkAllItem()"/>
                 <label for="thAll"></label>
@@ -11,7 +13,7 @@
         </th>
     </tr>
     <tr ng-repeat="item in $ctrl.list.data">
-        <td class='list-table__td' ng-repeat="header in $ctrl.list.headers"
+        <td class='list-table__td text_14 text_black' ng-repeat="header in $ctrl.list.headers"
             ng-style="{width: header.width, cursor: header.cursor }">
             <div ng-if="header.checkbox" class="app-checkbox">
                 <input type="checkbox" id="td{{$parent.$parent.$index}}" ng-model="item.selected"
@@ -20,7 +22,7 @@
             </div>
             <span ng-if="!header.checkbox" ng-click="redirect(header, item)">
                 <span
-                      ng-class="{'list-table__text_link-type': header.type=='href'}"
+                      ng-class="{'text_blue': header.type=='href'}"
                       ng-style="{color: header.color}">
                     {{!isNull(item[header.name])?item[header.name]: header.nullMsg }}
                 </span>
