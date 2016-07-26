@@ -920,16 +920,16 @@ select {
   color: #404040;
 }
 .text_purple {
-  color: #303F9F;
+  color: #303f9f;
 }
 .text_grey {
   color: #808080;
 }
 .text_blue {
-  color: #0089BE;
+  color: #0089be;
 }
 .text_deepred {
-  color: #C0392B;
+  color: #c0392b;
 }
 .text_30 {
   font-size: 30px;
@@ -1010,8 +1010,8 @@ select {
   margin: 0 auto;
   text-align: center;
   border-radius: 10px;
-  border: 1px solid #303F9F;
-  background-color: #303F9F;
+  border: 1px solid #303f9f;
+  background-color: #303f9f;
   box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.31);
   color: white;
   font-size: 18px;
@@ -1021,10 +1021,20 @@ select {
   cursor: pointer;
 }
 .quest__arrow:hover {
-  color: #1ABC9C;
+  color: #1abc9c;
+}
+.quest__input_others {
+  border: none;
+  appearance: none;
+  border-bottom: 1px solid #ccc;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.quest__input_others:focus {
+  outline: none;
 }
 .ribbon__content {
-  background-color: #303F9F;
+  background-color: #303f9f;
   color: white;
   height: 100%;
   line-height: 100%;
@@ -1048,11 +1058,11 @@ select {
   background-position: 0 -48px;
 }
 .app-textarea {
-  background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
-  background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
-  background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
-  background-image: -o-linear-gradient(left, white 10px, transparent 10px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
-  background-image: linear-gradient(left, white 10px, transparent 10px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #cccccc 30px, #cccccc 31px, white 31px);
+  background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #cccccc 30px, #cccccc 31px, white 31px);
+  background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #cccccc 30px, #cccccc 31px, white 31px);
+  background-image: -o-linear-gradient(left, white 10px, transparent 10px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #cccccc 30px, #cccccc 31px, white 31px);
+  background-image: linear-gradient(left, white 10px, transparent 10px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #cccccc 30px, #cccccc 31px, white 31px);
   background-size: 100% 100%, 100% 100%, 100% 31px;
   line-height: 31px;
   font-family: Arial, Helvetica, Sans-serif;

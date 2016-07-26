@@ -11,28 +11,7 @@
                 <div class="quest__question text_20">
                     {{$index + 1}}. {{quest.title}}
                 </div>
-                <div ng-switch="quest.type" class="quest__content_box">
-                    <ul ng-switch-when="radio" class="text_16">
-                        <li ng-repeat="item in quest.items" class="quest_content-item_box app-radio">
-                            <input type="radio"
-                                   id="item{{$parent.$index}}_{{$index}}"
-                                   name="item{{$parent.$index}}">
-                            <label for="item{{$parent.$index}}_{{$index}}">
-                                {{item}}
-                            </label>
-                        </li>
-                        <li ng-show="quest.hasOther"  class="quest_content-item_box app-radio">
-                            <input type="radio"
-                                   id="item{{$parent.$index}}_other"
-                                   name="item{{$parent.$index}}">
-                            <label for="item{{$parent.$index}}_other">
-                                Other
-                            </label>
-                            <input type="text" width="200" />
-                        </li>
-                    </ul>
-                    <textarea ng-switch-when="textarea" class="app-textarea"></textarea>
-                </div>
+                <app-quest-input type="quest.type" quest="quest" index="{{$index}}"></app-quest-input>
             </li>
         </ul>
     </div>

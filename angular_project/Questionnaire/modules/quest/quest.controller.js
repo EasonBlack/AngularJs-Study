@@ -2,9 +2,9 @@ class QuestController {
     constructor() {
         this.message = 'Hello';
         this.quests = [
-            {type: 'radio', title: 'aaaaaaaaaaaa', items: ['aa','bbb'], hasOther: true },
-            {type: 'textarea', title: 'bbbbbbbbbbbb' },
-            {type: 'radio', title: 'ccccccccc', items: ['ee','wwww'] },
+            {type: 'radio', title: 'aaaaaaaaaaaa', items: ['aa', 'bbb'], hasOther: true},
+            {type: 'textarea', title: 'bbbbbbbbbbbb'},
+            {type: 'radio', title: 'ccccccccc', items: ['ee', 'wwww']},
         ]
         this.current = 0;
     }
@@ -36,7 +36,10 @@ class QuestController {
     }
 
     confirm() {
-        alert(123);
+        let answer = this.quests.map((q)=>{
+            return q.answer || q.others;
+        })
+        console.log(answer);
     }
 
 }
