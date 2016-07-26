@@ -2,7 +2,7 @@ class QuestController {
     constructor() {
         this.message = 'Hello';
         this.quests = [
-            {type: 'radio', title: 'aaaaaaaaaaaa', items: ['aa','bbb'] },
+            {type: 'radio', title: 'aaaaaaaaaaaa', items: ['aa','bbb'], hasOther: true },
             {type: 'textarea', title: 'bbbbbbbbbbbb' },
             {type: 'radio', title: 'ccccccccc', items: ['ee','wwww'] },
         ]

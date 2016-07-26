@@ -21,6 +21,15 @@
                                 {{item}}
                             </label>
                         </li>
+                        <li ng-show="quest.hasOther"  class="quest_content-item_box app-radio">
+                            <input type="radio"
+                                   id="item{{$parent.$index}}_other"
+                                   name="item{{$parent.$index}}">
+                            <label for="item{{$parent.$index}}_other">
+                                Other
+                            </label>
+                            <input type="text" width="200" />
+                        </li>
                     </ul>
                     <textarea ng-switch-when="textarea" class="app-textarea"></textarea>
                 </div>
