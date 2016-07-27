@@ -1,11 +1,9 @@
+let QUESTCONST = new WeakMap();
+
 class QuestController {
-    constructor() {
-        this.message = 'Hello';
-        this.quests = [
-            {type: 'radio', title: 'aaaaaaaaaaaa', items: ['aa', 'bbb'], hasOther: true},
-            {type: 'textarea', title: 'bbbbbbbbbbbb'},
-            {type: 'radio', title: 'ccccccccc', items: ['ee', 'wwww']},
-        ]
+    constructor(QuestConst) {
+        QUESTCONST.set(this,QuestConst)
+        this.quests = QUESTCONST.get(this).quests;
         this.current = 0;
     }
 
@@ -36,12 +34,13 @@ class QuestController {
     }
 
     confirm() {
-        let answer = this.quests.map((q)=>{
+        let answer = this.quests.map((q)=> {
             return q.answer || q.others;
         })
         console.log(answer);
     }
-
 }
+
+QuestController.$inject = ['QuestConst'];
 
 export default QuestController;

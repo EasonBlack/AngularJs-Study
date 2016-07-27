@@ -1,4 +1,5 @@
-import questTpl from './quest.view.html'
+import questTpl from './test-page/quest.view.html'
+import questListTpl from './list-page/quest.list.view.html'
 
 
 let QuestRouteConfig = ($stateProvider, $urlRouterProvider) => {
@@ -9,6 +10,12 @@ let QuestRouteConfig = ($stateProvider, $urlRouterProvider) => {
             url: '/quest',
             template: questTpl,
             controller: 'QuestController',
+            controllerAs: 'vm'
+        })
+        .state('quest-list', {
+            url: '/quest-list',
+            template: questListTpl,
+            controller: 'QuestListController',
             controllerAs: 'vm'
         })
 }

@@ -7,13 +7,15 @@
         <ul class="quest__container"
             ng-style="{'left': -1 * vm.position + '%'}">
             <li class="quest__item"
-                ng-repeat="quest in vm.quests">
+                ng-repeat="quest in vm.quests track by $index">
                 <div class="quest__question text_20">
                     {{$index + 1}}. {{quest.title}}
                 </div>
                 <app-quest-input type="quest.type" quest="quest" index="{{$index}}"></app-quest-input>
+
             </li>
         </ul>
+
     </div>
 
     <div class="quest__button_prev" ng-click="vm.prev()" ng-show="!vm.isFirst()">
