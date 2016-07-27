@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script>
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', 'appService', function ($scope, appService) {
+                appService.getData()
+                        .then(function (res) {
+                            console.log(res[0], res[1]);
+                        })
+            }])
+            .factory('appService', ['$q', '$http', function ($q, $http) {
+                return {
+                    getData: function () {
+                        var arr = ['a', 'b'];
+                        var promises = [];
+                        arr.forEach(function (a) {
+                            let promise = $http.get(a + '1.json')
+                            promises.push(promise);
+                        })
+                        return $q.all(promises);
+                    }
+                }
+            }])
+</script>
+</html>
