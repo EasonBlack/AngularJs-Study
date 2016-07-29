@@ -1,8 +1,12 @@
 let QUESTCONST = new WeakMap();
+let ANSWERSTORE = new WeakMap();
+let STATE = new WeakMap();
 
 class QuestController {
-    constructor(QuestConst) {
-        QUESTCONST.set(this,QuestConst)
+    constructor(QuestConst, AnswerStoreService, $state) {
+        QUESTCONST.set(this, QuestConst)
+        ANSWERSTORE.set(this, AnswerStoreService);
+        STATE.set(this, $state);
         this.quests = QUESTCONST.get(this).quests;
         this.current = 0;
     }
@@ -37,10 +41,11 @@ class QuestController {
         let answer = this.quests.map((q)=> {
             return q.answer || q.others;
         })
-        console.log(answer);
+        ANSWERSTORE.get(this).answer = answer;
+        (STATE.get(this)).go('quest-list');
     }
 }
 
-QuestController.$inject = ['QuestConst'];
+QuestController.$inject = ['QuestConst', 'AnswerStoreService', '$state'];
 
 export default QuestController;
