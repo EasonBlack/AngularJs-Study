@@ -904,6 +904,9 @@ select {
 .full-height {
   height: 100%;
 }
+.scroll-y {
+  overflow-y: scroll;
+}
 .text_regular {
   font-family: 'sf regular';
 }
@@ -966,6 +969,18 @@ select {
   margin-top: 30px;
   position: relative;
   padding: 30px 40px;
+}
+.quest__title_box {
+  margin-bottom: 20px;
+}
+.quest__num_box {
+  display: inline-block;
+  width: 20px;
+}
+.quest__answer_box {
+  padding-left: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
 }
 .quest__mask {
   width: 100%;
