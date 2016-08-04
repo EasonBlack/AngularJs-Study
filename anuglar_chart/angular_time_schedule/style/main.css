@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.schedule__wrapper {
+  display: flex;
+  padding: 20px;
+  height: 200px;
+  background-color: #CCCCCC;
+}
+.schedule__container {
+  flex: 1;
+  border: 1px solid #555;
+}
+.schedule__title {
+  padding-left: 20px;
+  padding-top: 5px;
+}
