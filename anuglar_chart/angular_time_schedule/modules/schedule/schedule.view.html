@@ -1,10 +1,19 @@
 <div class="schedule__wrapper">
-   <div class="schedule__container">
-      <div class="schedule__title">Timeline Preview</div>
-      <div class="schedule__background">
-         <ul>
-            <li></li>
-         </ul>
-      </div>
-   </div>
+    <div class="schedule__container">
+        <div class="schedule__title">Timeline Preview</div>
+
+        <ul class="schedule__bg">
+            <li ng-repeat="item in vm.schedule.BgCut" class="schedule__bg-item">
+                <div class="schedule__time" title="{{item.name || '&nbsp;'}}">&nbsp;</div>
+                <div class="schedule__box" ng-class="{'schedule__box_border': !item.visible}">
+                </div>
+            </li>
+        </ul>
+        <ul class="schedule__tasks">
+            <li ng-repeat="task in vm.tasks" class="schedule__task-item"
+                ng-style="{flex:task.span, 'background-color': task.color}">
+            </li>
+        </ul>
+
+    </div>
 </div>

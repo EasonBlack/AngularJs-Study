@@ -4,6 +4,12 @@
 }
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+li {
+  position: relative;
 }
 .schedule__wrapper {
   display: flex;
@@ -14,8 +20,55 @@ ul {
 .schedule__container {
   flex: 1;
   border: 1px solid #555;
+  position: relative;
 }
 .schedule__title {
   padding-left: 20px;
   padding-top: 5px;
+  border-bottom: 1px solid #555;
+}
+.schedule__bg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+.schedule__tasks {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 3;
+  top: 70px;
+}
+.schedule__bg-item {
+  flex: 4;
+}
+.schedule__bg-item:first-child .schedule__box {
+  border-left: 1px solid rgba(0, 0, 0, 0);
+}
+.schedule__bg-item:last-child .schedule__box {
+  border-left: 1px solid rgba(0, 0, 0, 0);
+}
+.schedule__time {
+  text-align: center;
+  border-bottom: 1px solid #555;
+  position: relative;
+  height: 30px;
+}
+.schedule__time:before {
+  font-size: 14px;
+  content: attr(title);
+  position: absolute;
+  left: -13px;
+}
+.schedule__box {
+  height: 140px;
+}
+.schedule__box_border {
+  border-left: 1px solid #555;
+}
+.schedule__task-item {
+  height: 50px;
+  display: inline-block;
+  border-radius: 10px;
 }

@@ -2,8 +2,39 @@
   "name": "xxxxx",
   "list" :  [
     {
+      "start": "0400",
+      "end": "0445",
+      "color": "purple"
+    },
+    {
+      "start": "0445",
+      "end": "0500",
+      "color": "pink"
+    },
+    {
+      "start": "0500",
+      "end": "0515",
+      "color": "green"
+    },
+    {
       "start": "0700",
-      "end": "0815"
+      "end": "0815",
+      "color": "blue"
+    },
+    {
+      "start": "0900",
+      "end": "0915",
+      "color": "red"
+    },
+    {
+      "start": "1300",
+      "end": "1330",
+      "color": "yellow"
+    },
+    {
+      "start": "2200",
+      "end": "2300",
+      "color": "red"
     }
   ]
 }

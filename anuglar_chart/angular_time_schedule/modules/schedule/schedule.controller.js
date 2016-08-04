@@ -14,6 +14,7 @@ class ScheduleController {
             .then((res) => {
                 console.log(res);
                 this.schedule = new (SCHEDULE.get(this))(res.data);
+                this.tasks = this.schedule.recodeSchedule();
             })
     }
 }
