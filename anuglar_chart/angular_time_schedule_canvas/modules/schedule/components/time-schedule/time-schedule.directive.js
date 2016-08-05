@@ -96,9 +96,7 @@ let TimeScheduleCanvas = ()=> {
             tasks: '=',
             test: '='
         },
-        link: link,
-        controller: 'ScheduleController',
-        controllerAs: 'ctrl'
+        link: link
     }
 }
 
