@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="style/main.css" rel="stylesheet"/>
+    <link rel="icon" href="data:;base64,=">
+</head>
+<body>
+  <div class="flex__row">
+      <app-menu class="flex__row_300"></app-menu>
+      <ui-view class="flex__row_1"></ui-view>
+  </div>
+
+  <div growl></div>
+</body>
+<script src="build/vendor.bundle.js"></script>
+<script src="build/app.bundle.js"></script>
+</html>
