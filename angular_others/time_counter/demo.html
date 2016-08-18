@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        .time__container {
+            width: 100px;
+            heigth: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+    <div>
+        <time-counter status="status"></time-counter>
+        <button ng-click="status=1">Start</button>
+        <button ng-click="status=0">Stop</button>
+    </div>
+</div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+
+<script>
+
+    angular.module('app', [])
+            .controller('appCtrl', ['$scope', function ($scope) {
+
+            }])
+            .value('time', {
+                h: 0,
+                m: 0,
+                s: 0,
+                isCounting: false
+            })
+            .directive('timeCounter', ['time', function (time) {
+                return {
+                    restrict: 'E',
+                    template: "<div class='time__container'></div>",
+                    scope: {
+                        status: '='
+                    },
+                    link: function (scope, element, attrs) {
+                        function recodeTime(s) {
+                            if (s < 10) {
+                                return '0' + s;
+                            } else {
+                                return s;
+                            }
+                        }
+
+                        function showTime() {
+                            var timeText = recodeTime(time.h) + ":" + recodeTime(time.m) + ":" + recodeTime(time.s);
+                            element.html(timeText);
+                        }
+
+                        function checkTime() {
+                            time.s++;
+                            if (time.s >= 60) {
+                                time.m++
+                                time.s = 0;
+                            }
+                            if (time.m >= 60) {
+                                time.h++;
+                                time.m = 0;
+                            }
+                            showTime();
+                        }
+
+
+                        function resetTime() {
+                            time = {
+                                h: 0,
+                                m: 0,
+                                s: 0
+                            };
+                            showTime();
+                        }
+
+                        function stopTime() {
+                            if (time.isCounting) {
+                                time.isCounting = false;
+                                clearTimeout(timeoutId);
+                            }
+                        }
+
+                        function startTime() {
+                            if (!time.isCounting) {
+                                time.isCounting = true;
+                                timeoutId = setInterval(checkTime, 1000);
+                            }
+                        }
+
+                        scope.$watch('status', function () {
+                            if (scope.status == 1) {
+                                startTime();
+                            } else if (scope.status == 0) {
+                                stopTime();
+                            }
+                        })
+
+                    }
+
+                }
+            }]);
+</script>
+</html>
