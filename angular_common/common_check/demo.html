@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="asset/style/component.check.css" rel="stylesheet" />
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+   <app-check val="target.checked" title="Target"></app-check>
+</body>
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+<script>
+    angular.module('app',[])
+            .controller('appCtrl',['$scope',function($scope){
+                 $scope.target = {
+                     checked: false
+                 }
+            }])
+</script>
+<script src="check.component.js"></script>
+</html>
