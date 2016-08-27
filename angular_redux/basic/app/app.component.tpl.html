@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <input type="text"  ng-model="$ctrl.todo"  />
+        <button  type="button"  ng-click="$ctrl.submitTodo($ctrl.todo)">Save</button>
+    </div>
+    <ul>
+        <li ng-repeat="todo in $ctrl.todos track by $index">
+            {{todo}}
+        </li>
+    </ul>
+</div>
