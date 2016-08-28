@@ -1,0 +1,26 @@
+<div class="current__section">
+    <div class="current__header">
+        <a class="current__add float__right" ng-click="$ctrl.addCurrent()">Add Current</a>
+    </div>
+    <div class="current__panel">
+        <div class="current__cantainer flex__row flex__wrap">
+            <div class="current__box" ng-repeat="card in $ctrl.cards">
+                <div class="current__card">
+                   <div class="current__card_title">
+                       <span ng-show="!card.isEdit">{{card.name}}</span>
+                       <span ng-show="card.isEdit">
+                           <input type=text ng-model="card.name" />
+                           <a class="current__card_button_normal color__bg_blue" ng-click="$ctrl.save(card)">Save</a>
+                       </span>
+                   </div>
+                   <div class="current__card_number">{{card.trophy}}</div>
+                   <div class="current__card_button">
+                       <a class="float__left current__card_button_add" ng-click="$ctrl.addNumber(card)">+</a>
+                       <a class="float__right current__card_button_normal" ng-click="$ctrl.submit(card)">Submit</a>
+                       <a class="float__right current__card_button_normal" ng-click="$ctrl.edit(card)">Edit</a>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
