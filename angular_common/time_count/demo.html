@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="container" ng-app="app" ng-controller="appCtrl">
+   <time-wrapper time="time" action="action"></time-wrapper>
+    <button ng-click="action='start'">Start</button>
+    <button ng-click="action='stop'">Stop</button>
+    <button ng-click="action='reset'">Reset</button>
+</div>
+
+</body>
+
+<script src="../../vendor/angular.1.5.5.min.js"></script>
+
+<script src="app.js"></script>
+<script src="time-count.component.js"></script>
+<script src="time-icon.component.js"></script>
+<script src="time-wrapper.component.js"></script>
+<script src="time.service.js"></script>
+
+</html>

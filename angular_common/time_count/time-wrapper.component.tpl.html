@@ -1,0 +1,7 @@
+<div class="time__wrapper">
+    <div class="time__icon" ng-switch="$ctrl.action">
+        <span ng-switch-when="start" class="glyphicon glyphicon-pause" ng-click="$ctrl.action='stop'"></span>
+        <span ng-switch-when="stop"  class="glyphicon glyphicon-play" ng-click="$ctrl.action='start'"></span>
+    </div>
+    <div class="time__count"><time-count  action="{{$ctrl.action}}"></time-count></div>
+</div>
