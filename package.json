@@ -45,6 +45,7 @@
   "dependencies": {
     "angular": "^1.5.5",
     "angular-animate": "^1.5.5",
+    "angular-cookies": "^1.5.8",
     "angular-dragula": "^1.2.6",
     "angular-growl-v2": "^0.7.5",
     "angular-jwt": "0.0.9",
@@ -53,6 +54,7 @@
     "angular-route": "^1.5.3",
     "angular-sanitize": "^1.5.3",
     "angular-storage": "0.0.15",
+    "angular-translate-loader-url": "^2.11.1",
     "angular-tree-control": "^0.2.25",
     "angular-ui-calendar": "^1.0.2",
     "angular-ui-router": "^0.3.1",

@@ -1,0 +1,1113 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Eason\\Tool\\nodejs\\node.exe',
+1 verbose cli   'C:\\Eason\\Tool\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   'iconv',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose install initial load of C:\Eason\Work\myproject\Angular-Study\package.json
+5 warn package.json ang@1.0.0 No description
+6 warn package.json ang@1.0.0 No repository field.
+7 warn package.json ang@1.0.0 No README data
+8 warn package.json ang@1.0.0 No license field.
+9 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular\package.json
+10 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-animate\package.json
+11 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-cookies\package.json
+12 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-dragula\package.json
+13 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-growl-v2\package.json
+14 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-jwt\package.json
+15 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-localforage\package.json
+16 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-paging\package.json
+17 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-route\package.json
+18 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-sanitize\package.json
+19 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-storage\package.json
+20 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-translate-loader-url\package.json
+21 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-translate-storage-cookie\package.json
+22 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-tree-control\package.json
+23 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-ui-calendar\package.json
+24 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-ui-router\package.json
+25 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\angular-ui-tree\package.json
+26 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-core\package.json
+27 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-loader\package.json
+28 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-plugin-add-module-exports\package.json
+29 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-plugin-object-assign\package.json
+30 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-plugin-transform-object-assign\package.json
+31 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-polyfill\package.json
+32 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-preset-es2015\package.json
+33 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-preset-es2015-loose\package.json
+34 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-preset-react\package.json
+35 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\babel-runtime\package.json
+36 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\body-parser\package.json
+37 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\bootstrap\package.json
+38 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\browserify\package.json
+39 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\cors\package.json
+40 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\css-loader\package.json
+41 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\dust-loader\package.json
+42 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\dust-loader-complete\package.json
+43 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\dustjs-linkedin\package.json
+44 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\express\package.json
+45 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\file-loader\package.json
+46 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\gulp\package.json
+47 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\gulp-concat\package.json
+48 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\gulp-less\package.json
+49 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\gulp-minify-css\package.json
+50 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\gulp-rename\package.json
+51 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\gulp-uglify\package.json
+52 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\html-loader\package.json
+53 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\imports-loader\package.json
+54 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\jasmine-core\package.json
+55 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\jquery\package.json
+56 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\jsonwebtoken\package.json
+57 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\karma\package.json
+58 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\karma-babel-preprocessor\package.json
+59 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\karma-browserify\package.json
+60 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\karma-chrome-launcher\package.json
+61 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\karma-jasmine\package.json
+62 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\less\package.json
+63 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\less-loader\package.json
+64 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\localforage\package.json
+65 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\lodash\package.json
+66 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\moment\package.json
+67 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\mongoose\package.json
+68 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\multer\package.json
+69 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\ng-dialog\package.json
+70 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\ng-fx\package.json
+71 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\ng-redux\package.json
+72 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\node-uuid\package.json
+73 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\oclazyload\package.json
+74 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\raw-loader\package.json
+75 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\redux\package.json
+76 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\script-loader\package.json
+77 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\socket.io\package.json
+78 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\socket.io-client\package.json
+79 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\style-loader\package.json
+80 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\ui-select\package.json
+81 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\url-loader\package.json
+82 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\watchify\package.json
+83 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\webpack\package.json
+84 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\webpack-dev-middleware\package.json
+85 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\webpack-dev-server\package.json
+86 verbose installManyTop reading scoped package data from C:\Eason\Work\myproject\Angular-Study\node_modules\webpack-hot-middleware\package.json
+87 info package.json babel-plugin-add-module-exports@0.2.1 No README data
+88 info package.json babel-polyfill@6.9.1 No description
+89 info package.json dust-loader@1.0.1 No repository field.
+90 info package.json dust-loader@1.0.1 No license field.
+91 info package.json gulp-rename@1.2.2 No license field.
+92 info package.json html-loader@0.4.3 No license field.
+93 info package.json gulp-minify-css@1.2.4 No repository field.
+94 info package.json less-loader@2.2.3 No license field.
+95 info package.json node-uuid@1.4.7 No license field.
+96 info package.json raw-loader@0.5.1 No license field.
+97 info package.json webpack-dev-middleware@1.6.1 No license field.
+98 info package.json angular-jwt@0.0.9 No repository field.
+99 info package.json angular-jwt@0.0.9 No license field.
+100 info package.json angular-storage@0.0.15 No license field.
+101 info package.json script-loader@0.7.0 No license field.
+102 verbose readDependencies loading dependencies from C:\Eason\Work\myproject\Angular-Study\package.json
+103 silly cache add args [ 'iconv', null ]
+104 verbose cache add spec iconv
+105 silly cache add parsed spec Result {
+105 silly cache add   raw: 'iconv',
+105 silly cache add   scope: null,
+105 silly cache add   name: 'iconv',
+105 silly cache add   rawSpec: '',
+105 silly cache add   spec: 'latest',
+105 silly cache add   type: 'tag' }
+106 silly addNamed iconv@latest
+107 verbose addNamed "latest" is being treated as a dist-tag for iconv
+108 info addNameTag [ 'iconv', 'latest' ]
+109 silly mapToRegistry name iconv
+110 silly mapToRegistry using default registry
+111 silly mapToRegistry registry https://registry.npmjs.org/
+112 silly mapToRegistry uri https://registry.npmjs.org/iconv
+113 verbose addNameTag registry:https://registry.npmjs.org/iconv not in flight; fetching
+114 verbose request uri https://registry.npmjs.org/iconv
+115 verbose request no auth needed
+116 info attempt registry request try #1 at 16:41:42
+117 verbose request id b1a5c4a232b51d00
+118 verbose etag "4WJZIFF3HMIJ49LARDYDNIX3L"
+119 http request GET https://registry.npmjs.org/iconv
+120 http 200 https://registry.npmjs.org/iconv
+121 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+121 verbose headers   etag: '"9JG4SOKO32VUZE37FVW2YBDGV"',
+121 verbose headers   'content-type': 'application/json',
+121 verbose headers   'content-encoding': 'gzip',
+121 verbose headers   'cache-control': 'max-age=300',
+121 verbose headers   'content-length': '6935',
+121 verbose headers   'accept-ranges': 'bytes',
+121 verbose headers   date: 'Fri, 02 Sep 2016 08:41:42 GMT',
+121 verbose headers   via: '1.1 varnish',
+121 verbose headers   age: '0',
+121 verbose headers   connection: 'keep-alive',
+121 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+121 verbose headers   'x-cache': 'MISS',
+121 verbose headers   'x-cache-hits': '0',
+121 verbose headers   'x-timer': 'S1472805701.980532,VS0,VE900',
+121 verbose headers   vary: 'Accept-Encoding' }
+122 silly get cb [ 200,
+122 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+122 silly get     etag: '"9JG4SOKO32VUZE37FVW2YBDGV"',
+122 silly get     'content-type': 'application/json',
+122 silly get     'content-encoding': 'gzip',
+122 silly get     'cache-control': 'max-age=300',
+122 silly get     'content-length': '6935',
+122 silly get     'accept-ranges': 'bytes',
+122 silly get     date: 'Fri, 02 Sep 2016 08:41:42 GMT',
+122 silly get     via: '1.1 varnish',
+122 silly get     age: '0',
+122 silly get     connection: 'keep-alive',
+122 silly get     'x-served-by': 'cache-hkg6825-HKG',
+122 silly get     'x-cache': 'MISS',
+122 silly get     'x-cache-hits': '0',
+122 silly get     'x-timer': 'S1472805701.980532,VS0,VE900',
+122 silly get     vary: 'Accept-Encoding' } ]
+123 verbose get saving iconv to C:\Users\Eason\AppData\Roaming\npm-cache\registry.npmjs.org\iconv\.cache.json
+124 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+125 silly addNameTag next cb for iconv with tag latest
+126 silly addNamed iconv@2.2.1
+127 verbose addNamed "2.2.1" is a plain semver version for iconv
+128 silly mapToRegistry name iconv
+129 silly mapToRegistry using default registry
+130 silly mapToRegistry registry https://registry.npmjs.org/
+131 silly mapToRegistry uri https://registry.npmjs.org/iconv
+132 verbose addRemoteTarball https://registry.npmjs.org/iconv/-/iconv-2.2.1.tgz not in flight; adding
+133 verbose addRemoteTarball [ 'https://registry.npmjs.org/iconv/-/iconv-2.2.1.tgz',
+133 verbose addRemoteTarball   '39b13fdd98987d26aef26c0a2f2a900911fa4584' ]
+134 info retry fetch attempt 1 at 16:41:44
+135 info attempt registry request try #1 at 16:41:44
+136 http fetch GET https://registry.npmjs.org/iconv/-/iconv-2.2.1.tgz
+137 http fetch 200 https://registry.npmjs.org/iconv/-/iconv-2.2.1.tgz
+138 silly fetchAndShaCheck shasum 39b13fdd98987d26aef26c0a2f2a900911fa4584
+139 verbose addTmpTarball C:\Users\Eason\AppData\Local\Temp\npm-7808-d17ca165\registry.npmjs.org\iconv\-\iconv-2.2.1.tgz not in flight; adding
+140 verbose addTmpTarball already have metadata; skipping unpack for iconv@2.2.1
+141 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+142 silly cache afterAdd iconv@2.2.1
+143 verbose afterAdd C:\Users\Eason\AppData\Roaming\npm-cache\iconv\2.2.1\package\package.json not in flight; writing
+144 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+145 verbose afterAdd C:\Users\Eason\AppData\Roaming\npm-cache\iconv\2.2.1\package\package.json written
+146 silly install resolved [ { name: 'iconv',
+146 silly install resolved     main: './lib/iconv',
+146 silly install resolved     version: '2.2.1',
+146 silly install resolved     description: 'Text recoding in JavaScript for fun and profit!',
+146 silly install resolved     homepage: 'https://github.com/bnoordhuis/node-iconv',
+146 silly install resolved     repository:
+146 silly install resolved      { type: 'git',
+146 silly install resolved        url: 'git://github.com/bnoordhuis/node-iconv.git' },
+146 silly install resolved     author: { name: 'Ben Noordhuis', email: 'info@bnoordhuis.nl' },
+146 silly install resolved     engines: { node: '>=0.8.0' },
+146 silly install resolved     license: 'ISC',
+146 silly install resolved     dependencies: { nan: '^2.3.5' },
+146 silly install resolved     devDependencies: { tap: '~0.4.8' },
+146 silly install resolved     scripts: { test: 'tap test/test-*.js', install: 'node-gyp rebuild' },
+146 silly install resolved     gypfile: true,
+146 silly install resolved     gitHead: '3a2cbfeca5dac59d9b7d3ed62c34b68852aaaba8',
+146 silly install resolved     bugs: { url: 'https://github.com/bnoordhuis/node-iconv/issues' },
+146 silly install resolved     _id: 'iconv@2.2.1',
+146 silly install resolved     _shasum: '39b13fdd98987d26aef26c0a2f2a900911fa4584',
+146 silly install resolved     _from: 'iconv@latest',
+146 silly install resolved     _npmVersion: '3.9.3',
+146 silly install resolved     _nodeVersion: '7.0.0-pre',
+146 silly install resolved     _npmUser: { name: 'bnoordhuis', email: 'info@bnoordhuis.nl' },
+146 silly install resolved     maintainers: [ [Object] ],
+146 silly install resolved     dist:
+146 silly install resolved      { shasum: '39b13fdd98987d26aef26c0a2f2a900911fa4584',
+146 silly install resolved        tarball: 'https://registry.npmjs.org/iconv/-/iconv-2.2.1.tgz' },
+146 silly install resolved     _npmOperationalInternal:
+146 silly install resolved      { host: 'packages-16-east.internal.npmjs.com',
+146 silly install resolved        tmp: 'tmp/iconv-2.2.1.tgz_1466067699747_0.7849630943965167' },
+146 silly install resolved     directories: {},
+146 silly install resolved     _resolved: 'https://registry.npmjs.org/iconv/-/iconv-2.2.1.tgz' } ]
+147 info install iconv@2.2.1 into C:\Eason\Work\myproject\Angular-Study
+148 info installOne iconv@2.2.1
+149 verbose installOne of iconv to C:\Eason\Work\myproject\Angular-Study not in flight; installing
+150 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+151 verbose lock using C:\Users\Eason\AppData\Roaming\npm-cache\_locks\iconv-83dc3ed9be55bdfb.lock for C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+152 silly install write writing iconv 2.2.1 to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+153 verbose unbuild node_modules\iconv
+154 silly gentlyRm C:\Eason\Work\myproject\Angular-Study\node_modules\iconv is being purged from base C:\Eason\Work\myproject\Angular-Study
+155 verbose gentlyRm don't care about contents; nuking C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+156 verbose tar unpack C:\Users\Eason\AppData\Roaming\npm-cache\iconv\2.2.1\package.tgz
+157 verbose tar unpacking to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+158 silly gentlyRm C:\Eason\Work\myproject\Angular-Study\node_modules\iconv is being purged
+159 verbose gentlyRm don't care about contents; nuking C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+160 silly gunzTarPerm modes [ '777', '666' ]
+161 silly gunzTarPerm extractEntry package.json
+162 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+163 silly gunzTarPerm extractEntry .npmignore
+164 silly gunzTarPerm modified mode [ '.npmignore', 436, 438 ]
+165 silly gunzTarPerm extractEntry README.md
+166 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+167 silly gunzTarPerm extractEntry LICENSE
+168 silly gunzTarPerm modified mode [ 'LICENSE', 436, 438 ]
+169 silly gunzTarPerm extractEntry binding.gyp
+170 silly gunzTarPerm modified mode [ 'binding.gyp', 436, 438 ]
+171 silly gunzTarPerm extractEntry deps/libiconv/README
+172 silly gunzTarPerm modified mode [ 'deps/libiconv/README', 436, 438 ]
+173 silly gunzTarPerm extractEntry deps/libiconv/INSTALL.generic
+174 silly gunzTarPerm modified mode [ 'deps/libiconv/INSTALL.generic', 436, 438 ]
+175 silly gunzTarPerm extractEntry deps/libiconv/COPYING
+176 silly gunzTarPerm modified mode [ 'deps/libiconv/COPYING', 436, 438 ]
+177 silly gunzTarPerm extractEntry deps/libiconv/COPYING.LIB
+178 silly gunzTarPerm modified mode [ 'deps/libiconv/COPYING.LIB', 436, 438 ]
+179 silly gunzTarPerm extractEntry deps/libiconv/ChangeLog
+180 silly gunzTarPerm modified mode [ 'deps/libiconv/ChangeLog', 436, 438 ]
+181 silly gunzTarPerm extractEntry deps/libiconv/DEPENDENCIES
+182 silly gunzTarPerm modified mode [ 'deps/libiconv/DEPENDENCIES', 436, 438 ]
+183 silly gunzTarPerm extractEntry deps/libiconv/DESIGN
+184 silly gunzTarPerm modified mode [ 'deps/libiconv/DESIGN', 436, 438 ]
+185 silly gunzTarPerm extractEntry deps/libiconv/HACKING
+186 silly gunzTarPerm modified mode [ 'deps/libiconv/HACKING', 436, 438 ]
+187 silly gunzTarPerm extractEntry deps/libiconv/AUTHORS
+188 silly gunzTarPerm modified mode [ 'deps/libiconv/AUTHORS', 436, 438 ]
+189 silly gunzTarPerm extractEntry deps/libiconv/NEWS
+190 silly gunzTarPerm modified mode [ 'deps/libiconv/NEWS', 436, 438 ]
+191 silly gunzTarPerm extractEntry deps/libiconv/NOTES
+192 silly gunzTarPerm modified mode [ 'deps/libiconv/NOTES', 436, 438 ]
+193 silly gunzTarPerm extractEntry deps/libiconv/PORTS
+194 silly gunzTarPerm modified mode [ 'deps/libiconv/PORTS', 436, 438 ]
+195 silly gunzTarPerm extractEntry deps/libiconv/ABOUT-NLS
+196 silly gunzTarPerm modified mode [ 'deps/libiconv/ABOUT-NLS', 436, 438 ]
+197 silly gunzTarPerm extractEntry deps/libiconv/README.woe32
+198 silly gunzTarPerm modified mode [ 'deps/libiconv/README.woe32', 436, 438 ]
+199 silly gunzTarPerm extractEntry deps/libiconv/THANKS
+200 silly gunzTarPerm modified mode [ 'deps/libiconv/THANKS', 436, 438 ]
+201 silly gunzTarPerm extractEntry deps/libiconv/lib/euc_tw.h
+202 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/euc_tw.h', 436, 438 ]
+203 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases.gperf
+204 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases.gperf', 436, 438 ]
+205 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases2.h
+206 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases2.h', 436, 438 ]
+207 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_aix.h
+208 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_aix.h', 436, 438 ]
+209 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_aix_sysaix.h
+210 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_aix_sysaix.h', 436, 438 ]
+211 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_dos.h
+212 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_dos.h', 436, 438 ]
+213 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_extra.h
+214 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_extra.h', 436, 438 ]
+215 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_osf1.h
+216 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_osf1.h', 436, 438 ]
+217 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_osf1_sysosf1.h
+218 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_osf1_sysosf1.h', 436, 438 ]
+219 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_sysaix.gperf
+220 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_sysaix.gperf', 436, 438 ]
+221 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_sysaix.h
+222 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_sysaix.h', 436, 438 ]
+223 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_syshpux.gperf
+224 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_syshpux.gperf', 436, 438 ]
+225 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_syshpux.h
+226 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_syshpux.h', 436, 438 ]
+227 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_sysosf1.gperf
+228 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_sysosf1.gperf', 436, 438 ]
+229 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_sysosf1.h
+230 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_sysosf1.h', 436, 438 ]
+231 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_syssolaris.gperf
+232 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_syssolaris.gperf', 436, 438 ]
+233 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases_syssolaris.h
+234 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases_syssolaris.h', 436, 438 ]
+235 silly gunzTarPerm extractEntry deps/libiconv/lib/armscii_8.h
+236 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/armscii_8.h', 436, 438 ]
+237 silly gunzTarPerm extractEntry deps/libiconv/lib/ascii.h
+238 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ascii.h', 436, 438 ]
+239 silly gunzTarPerm extractEntry deps/libiconv/lib/atarist.h
+240 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/atarist.h', 436, 438 ]
+241 silly gunzTarPerm extractEntry deps/libiconv/lib/big5.h
+242 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/big5.h', 436, 438 ]
+243 silly gunzTarPerm extractEntry deps/libiconv/lib/big5_2003.h
+244 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/big5_2003.h', 436, 438 ]
+245 silly gunzTarPerm extractEntry deps/libiconv/lib/big5hkscs1999.h
+246 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/big5hkscs1999.h', 436, 438 ]
+247 silly gunzTarPerm extractEntry deps/libiconv/lib/big5hkscs2001.h
+248 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/big5hkscs2001.h', 436, 438 ]
+249 silly gunzTarPerm extractEntry deps/libiconv/lib/big5hkscs2004.h
+250 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/big5hkscs2004.h', 436, 438 ]
+251 silly gunzTarPerm extractEntry deps/libiconv/lib/big5hkscs2008.h
+252 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/big5hkscs2008.h', 436, 438 ]
+253 silly gunzTarPerm extractEntry deps/libiconv/lib/c99.h
+254 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/c99.h', 436, 438 ]
+255 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical.h
+256 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical.h', 436, 438 ]
+257 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_aix.h
+258 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_aix.h', 436, 438 ]
+259 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_aix_sysaix.h
+260 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_aix_sysaix.h', 436, 438 ]
+261 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_dos.h
+262 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_dos.h', 436, 438 ]
+263 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_extra.h
+264 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_extra.h', 436, 438 ]
+265 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_local.h
+266 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_local.h', 436, 438 ]
+267 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_local_sysaix.h
+268 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_local_sysaix.h', 436, 438 ]
+269 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_local_syshpux.h
+270 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_local_syshpux.h', 436, 438 ]
+271 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_local_sysosf1.h
+272 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_local_sysosf1.h', 436, 438 ]
+273 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_local_syssolaris.h
+274 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_local_syssolaris.h', 436, 438 ]
+275 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_osf1.h
+276 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_osf1.h', 436, 438 ]
+277 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_osf1_sysosf1.h
+278 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_osf1_sysosf1.h', 436, 438 ]
+279 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_sysaix.h
+280 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_sysaix.h', 436, 438 ]
+281 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_syshpux.h
+282 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_syshpux.h', 436, 438 ]
+283 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_sysosf1.h
+284 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_sysosf1.h', 436, 438 ]
+285 silly gunzTarPerm extractEntry deps/libiconv/lib/canonical_syssolaris.h
+286 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/canonical_syssolaris.h', 436, 438 ]
+287 silly gunzTarPerm extractEntry deps/libiconv/lib/ces_big5.h
+288 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ces_big5.h', 436, 438 ]
+289 silly gunzTarPerm extractEntry deps/libiconv/lib/ces_gbk.h
+290 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ces_gbk.h', 436, 438 ]
+291 silly gunzTarPerm extractEntry deps/libiconv/lib/cjk_variants.h
+292 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cjk_variants.h', 436, 438 ]
+293 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643.h
+294 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643.h', 436, 438 ]
+295 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_1.h
+296 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_1.h', 436, 438 ]
+297 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_15.h
+298 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_15.h', 436, 438 ]
+299 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_2.h
+300 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_2.h', 436, 438 ]
+301 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_3.h
+302 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_3.h', 436, 438 ]
+303 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_4.h
+304 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_4.h', 436, 438 ]
+305 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_4a.h
+306 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_4a.h', 436, 438 ]
+307 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_4b.h
+308 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_4b.h', 436, 438 ]
+309 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_5.h
+310 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_5.h', 436, 438 ]
+311 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_6.h
+312 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_6.h', 436, 438 ]
+313 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_7.h
+314 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_7.h', 436, 438 ]
+315 silly gunzTarPerm extractEntry deps/libiconv/lib/cns11643_inv.h
+316 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cns11643_inv.h', 436, 438 ]
+317 silly gunzTarPerm extractEntry deps/libiconv/lib/converters.h
+318 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/converters.h', 436, 438 ]
+319 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1046.h
+320 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1046.h', 436, 438 ]
+321 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1124.h
+322 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1124.h', 436, 438 ]
+323 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1125.h
+324 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1125.h', 436, 438 ]
+325 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1129.h
+326 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1129.h', 436, 438 ]
+327 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1131.h
+328 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1131.h', 436, 438 ]
+329 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1133.h
+330 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1133.h', 436, 438 ]
+331 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1161.h
+332 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1161.h', 436, 438 ]
+333 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1162.h
+334 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1162.h', 436, 438 ]
+335 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1163.h
+336 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1163.h', 436, 438 ]
+337 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1250.h
+338 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1250.h', 436, 438 ]
+339 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1251.h
+340 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1251.h', 436, 438 ]
+341 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1252.h
+342 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1252.h', 436, 438 ]
+343 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1253.h
+344 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1253.h', 436, 438 ]
+345 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1254.h
+346 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1254.h', 436, 438 ]
+347 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1255.h
+348 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1255.h', 436, 438 ]
+349 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1256.h
+350 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1256.h', 436, 438 ]
+351 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1257.h
+352 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1257.h', 436, 438 ]
+353 silly gunzTarPerm extractEntry deps/libiconv/lib/cp1258.h
+354 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp1258.h', 436, 438 ]
+355 silly gunzTarPerm extractEntry deps/libiconv/lib/cp437.h
+356 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp437.h', 436, 438 ]
+357 silly gunzTarPerm extractEntry deps/libiconv/lib/cp737.h
+358 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp737.h', 436, 438 ]
+359 silly gunzTarPerm extractEntry deps/libiconv/lib/cp775.h
+360 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp775.h', 436, 438 ]
+361 silly gunzTarPerm extractEntry deps/libiconv/lib/cp850.h
+362 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp850.h', 436, 438 ]
+363 silly gunzTarPerm extractEntry deps/libiconv/lib/cp852.h
+364 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp852.h', 436, 438 ]
+365 silly gunzTarPerm extractEntry deps/libiconv/lib/cp853.h
+366 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp853.h', 436, 438 ]
+367 silly gunzTarPerm extractEntry deps/libiconv/lib/cp855.h
+368 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp855.h', 436, 438 ]
+369 silly gunzTarPerm extractEntry deps/libiconv/lib/cp856.h
+370 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp856.h', 436, 438 ]
+371 silly gunzTarPerm extractEntry deps/libiconv/lib/cp857.h
+372 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp857.h', 436, 438 ]
+373 silly gunzTarPerm extractEntry deps/libiconv/lib/cp858.h
+374 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp858.h', 436, 438 ]
+375 silly gunzTarPerm extractEntry deps/libiconv/lib/cp860.h
+376 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp860.h', 436, 438 ]
+377 silly gunzTarPerm extractEntry deps/libiconv/lib/cp861.h
+378 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp861.h', 436, 438 ]
+379 silly gunzTarPerm extractEntry deps/libiconv/lib/cp862.h
+380 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp862.h', 436, 438 ]
+381 silly gunzTarPerm extractEntry deps/libiconv/lib/cp863.h
+382 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp863.h', 436, 438 ]
+383 silly gunzTarPerm extractEntry deps/libiconv/lib/cp864.h
+384 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp864.h', 436, 438 ]
+385 silly gunzTarPerm extractEntry deps/libiconv/lib/cp865.h
+386 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp865.h', 436, 438 ]
+387 silly gunzTarPerm extractEntry deps/libiconv/lib/cp866.h
+388 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp866.h', 436, 438 ]
+389 silly gunzTarPerm extractEntry deps/libiconv/lib/cp869.h
+390 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp869.h', 436, 438 ]
+391 silly gunzTarPerm extractEntry deps/libiconv/lib/cp874.h
+392 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp874.h', 436, 438 ]
+393 silly gunzTarPerm extractEntry deps/libiconv/lib/cp922.h
+394 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp922.h', 436, 438 ]
+395 silly gunzTarPerm extractEntry deps/libiconv/lib/cp932.h
+396 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp932.h', 436, 438 ]
+397 silly gunzTarPerm extractEntry deps/libiconv/lib/cp932ext.h
+398 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp932ext.h', 436, 438 ]
+399 silly gunzTarPerm extractEntry deps/libiconv/lib/cp936.h
+400 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp936.h', 436, 438 ]
+401 silly gunzTarPerm extractEntry deps/libiconv/lib/cp936ext.h
+402 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp936ext.h', 436, 438 ]
+403 silly gunzTarPerm extractEntry deps/libiconv/lib/cp943.h
+404 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp943.h', 436, 438 ]
+405 silly gunzTarPerm extractEntry deps/libiconv/lib/cp949.h
+406 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp949.h', 436, 438 ]
+407 silly gunzTarPerm extractEntry deps/libiconv/lib/cp950.h
+408 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp950.h', 436, 438 ]
+409 silly gunzTarPerm extractEntry deps/libiconv/lib/cp950ext.h
+410 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/cp950ext.h', 436, 438 ]
+411 silly gunzTarPerm extractEntry deps/libiconv/lib/dec_hanyu.h
+412 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/dec_hanyu.h', 436, 438 ]
+413 silly gunzTarPerm extractEntry deps/libiconv/lib/dec_kanji.h
+414 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/dec_kanji.h', 436, 438 ]
+415 silly gunzTarPerm extractEntry deps/libiconv/lib/encodings.def
+416 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/encodings.def', 436, 438 ]
+417 silly gunzTarPerm extractEntry deps/libiconv/lib/encodings_aix.def
+418 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/encodings_aix.def', 436, 438 ]
+419 silly gunzTarPerm extractEntry deps/libiconv/lib/encodings_dos.def
+420 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/encodings_dos.def', 436, 438 ]
+421 silly gunzTarPerm extractEntry deps/libiconv/lib/encodings_extra.def
+422 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/encodings_extra.def', 436, 438 ]
+423 silly gunzTarPerm extractEntry deps/libiconv/lib/encodings_local.def
+424 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/encodings_local.def', 436, 438 ]
+425 silly gunzTarPerm extractEntry deps/libiconv/lib/encodings_osf1.def
+426 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/encodings_osf1.def', 436, 438 ]
+427 silly gunzTarPerm extractEntry deps/libiconv/lib/euc_cn.h
+428 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/euc_cn.h', 436, 438 ]
+429 silly gunzTarPerm extractEntry deps/libiconv/lib/euc_jisx0213.h
+430 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/euc_jisx0213.h', 436, 438 ]
+431 silly gunzTarPerm extractEntry deps/libiconv/lib/euc_jp.h
+432 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/euc_jp.h', 436, 438 ]
+433 silly gunzTarPerm extractEntry deps/libiconv/lib/euc_kr.h
+434 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/euc_kr.h', 436, 438 ]
+435 silly gunzTarPerm extractEntry deps/libiconv/lib/aliases.h
+436 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/aliases.h', 436, 438 ]
+437 silly gunzTarPerm extractEntry deps/libiconv/lib/flags.h
+438 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/flags.h', 436, 438 ]
+439 silly gunzTarPerm extractEntry deps/libiconv/lib/flushwc.h
+440 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/flushwc.h', 436, 438 ]
+441 silly gunzTarPerm extractEntry deps/libiconv/lib/gb12345.h
+442 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gb12345.h', 436, 438 ]
+443 silly gunzTarPerm extractEntry deps/libiconv/lib/gb12345ext.h
+444 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gb12345ext.h', 436, 438 ]
+445 silly gunzTarPerm extractEntry deps/libiconv/lib/gb18030.h
+446 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gb18030.h', 436, 438 ]
+447 silly gunzTarPerm extractEntry deps/libiconv/lib/gb18030ext.h
+448 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gb18030ext.h', 436, 438 ]
+449 silly gunzTarPerm extractEntry deps/libiconv/lib/gb18030uni.h
+450 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gb18030uni.h', 436, 438 ]
+451 silly gunzTarPerm extractEntry deps/libiconv/lib/gb2312.h
+452 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gb2312.h', 436, 438 ]
+453 silly gunzTarPerm extractEntry deps/libiconv/lib/gbk.h
+454 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gbk.h', 436, 438 ]
+455 silly gunzTarPerm extractEntry deps/libiconv/lib/gbkext1.h
+456 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gbkext1.h', 436, 438 ]
+457 silly gunzTarPerm extractEntry deps/libiconv/lib/gbkext2.h
+458 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gbkext2.h', 436, 438 ]
+459 silly gunzTarPerm extractEntry deps/libiconv/lib/gbkext_inv.h
+460 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gbkext_inv.h', 436, 438 ]
+461 silly gunzTarPerm extractEntry deps/libiconv/lib/genaliases.c
+462 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/genaliases.c', 436, 438 ]
+463 silly gunzTarPerm extractEntry deps/libiconv/lib/genaliases2.c
+464 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/genaliases2.c', 436, 438 ]
+465 silly gunzTarPerm extractEntry deps/libiconv/lib/genflags.c
+466 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/genflags.c', 436, 438 ]
+467 silly gunzTarPerm extractEntry deps/libiconv/lib/gentranslit.c
+468 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/gentranslit.c', 436, 438 ]
+469 silly gunzTarPerm extractEntry deps/libiconv/lib/georgian_academy.h
+470 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/georgian_academy.h', 436, 438 ]
+471 silly gunzTarPerm extractEntry deps/libiconv/lib/georgian_ps.h
+472 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/georgian_ps.h', 436, 438 ]
+473 silly gunzTarPerm extractEntry deps/libiconv/lib/hkscs1999.h
+474 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/hkscs1999.h', 436, 438 ]
+475 silly gunzTarPerm extractEntry deps/libiconv/lib/hkscs2001.h
+476 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/hkscs2001.h', 436, 438 ]
+477 silly gunzTarPerm extractEntry deps/libiconv/lib/hkscs2004.h
+478 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/hkscs2004.h', 436, 438 ]
+479 silly gunzTarPerm extractEntry deps/libiconv/lib/hkscs2008.h
+480 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/hkscs2008.h', 436, 438 ]
+481 silly gunzTarPerm extractEntry deps/libiconv/lib/hp_roman8.h
+482 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/hp_roman8.h', 436, 438 ]
+483 silly gunzTarPerm extractEntry deps/libiconv/lib/hz.h
+484 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/hz.h', 436, 438 ]
+485 silly gunzTarPerm extractEntry deps/libiconv/lib/iconv.c
+486 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iconv.c', 436, 438 ]
+487 silly gunzTarPerm extractEntry deps/libiconv/lib/iconv_open1.h
+488 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iconv_open1.h', 436, 438 ]
+489 silly gunzTarPerm extractEntry deps/libiconv/lib/iconv_open2.h
+490 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iconv_open2.h', 436, 438 ]
+491 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_cn.h
+492 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_cn.h', 436, 438 ]
+493 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_cnext.h
+494 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_cnext.h', 436, 438 ]
+495 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_jp.h
+496 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_jp.h', 436, 438 ]
+497 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_jp1.h
+498 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_jp1.h', 436, 438 ]
+499 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_jp2.h
+500 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_jp2.h', 436, 438 ]
+501 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_jp3.h
+502 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_jp3.h', 436, 438 ]
+503 silly gunzTarPerm extractEntry deps/libiconv/lib/iso2022_kr.h
+504 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso2022_kr.h', 436, 438 ]
+505 silly gunzTarPerm extractEntry deps/libiconv/lib/iso646_cn.h
+506 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso646_cn.h', 436, 438 ]
+507 silly gunzTarPerm extractEntry deps/libiconv/lib/iso646_jp.h
+508 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso646_jp.h', 436, 438 ]
+509 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_1.h
+510 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_1.h', 436, 438 ]
+511 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_10.h
+512 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_10.h', 436, 438 ]
+513 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_11.h
+514 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_11.h', 436, 438 ]
+515 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_13.h
+516 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_13.h', 436, 438 ]
+517 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_14.h
+518 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_14.h', 436, 438 ]
+519 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_15.h
+520 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_15.h', 436, 438 ]
+521 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_16.h
+522 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_16.h', 436, 438 ]
+523 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_2.h
+524 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_2.h', 436, 438 ]
+525 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_3.h
+526 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_3.h', 436, 438 ]
+527 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_4.h
+528 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_4.h', 436, 438 ]
+529 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_5.h
+530 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_5.h', 436, 438 ]
+531 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_6.h
+532 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_6.h', 436, 438 ]
+533 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_7.h
+534 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_7.h', 436, 438 ]
+535 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_8.h
+536 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_8.h', 436, 438 ]
+537 silly gunzTarPerm extractEntry deps/libiconv/lib/iso8859_9.h
+538 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/iso8859_9.h', 436, 438 ]
+539 silly gunzTarPerm extractEntry deps/libiconv/lib/isoir165.h
+540 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/isoir165.h', 436, 438 ]
+541 silly gunzTarPerm extractEntry deps/libiconv/lib/isoir165ext.h
+542 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/isoir165ext.h', 436, 438 ]
+543 silly gunzTarPerm extractEntry deps/libiconv/lib/java.h
+544 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/java.h', 436, 438 ]
+545 silly gunzTarPerm extractEntry deps/libiconv/lib/jisx0201.h
+546 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/jisx0201.h', 436, 438 ]
+547 silly gunzTarPerm extractEntry deps/libiconv/lib/jisx0208.h
+548 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/jisx0208.h', 436, 438 ]
+549 silly gunzTarPerm extractEntry deps/libiconv/lib/jisx0212.h
+550 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/jisx0212.h', 436, 438 ]
+551 silly gunzTarPerm extractEntry deps/libiconv/lib/jisx0213.h
+552 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/jisx0213.h', 436, 438 ]
+553 silly gunzTarPerm extractEntry deps/libiconv/lib/johab.h
+554 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/johab.h', 436, 438 ]
+555 silly gunzTarPerm extractEntry deps/libiconv/lib/johab_hangul.h
+556 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/johab_hangul.h', 436, 438 ]
+557 silly gunzTarPerm extractEntry deps/libiconv/lib/koi8_r.h
+558 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/koi8_r.h', 436, 438 ]
+559 silly gunzTarPerm extractEntry deps/libiconv/lib/koi8_ru.h
+560 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/koi8_ru.h', 436, 438 ]
+561 silly gunzTarPerm extractEntry deps/libiconv/lib/koi8_t.h
+562 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/koi8_t.h', 436, 438 ]
+563 silly gunzTarPerm extractEntry deps/libiconv/lib/koi8_u.h
+564 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/koi8_u.h', 436, 438 ]
+565 silly gunzTarPerm extractEntry deps/libiconv/lib/ksc5601.h
+566 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ksc5601.h', 436, 438 ]
+567 silly gunzTarPerm extractEntry deps/libiconv/lib/loop_unicode.h
+568 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/loop_unicode.h', 436, 438 ]
+569 silly gunzTarPerm extractEntry deps/libiconv/lib/loop_wchar.h
+570 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/loop_wchar.h', 436, 438 ]
+571 silly gunzTarPerm extractEntry deps/libiconv/lib/loops.h
+572 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/loops.h', 436, 438 ]
+573 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_arabic.h
+574 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_arabic.h', 436, 438 ]
+575 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_centraleurope.h
+576 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_centraleurope.h', 436, 438 ]
+577 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_croatian.h
+578 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_croatian.h', 436, 438 ]
+579 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_cyrillic.h
+580 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_cyrillic.h', 436, 438 ]
+581 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_greek.h
+582 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_greek.h', 436, 438 ]
+583 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_hebrew.h
+584 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_hebrew.h', 436, 438 ]
+585 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_iceland.h
+586 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_iceland.h', 436, 438 ]
+587 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_roman.h
+588 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_roman.h', 436, 438 ]
+589 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_romania.h
+590 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_romania.h', 436, 438 ]
+591 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_thai.h
+592 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_thai.h', 436, 438 ]
+593 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_turkish.h
+594 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_turkish.h', 436, 438 ]
+595 silly gunzTarPerm extractEntry deps/libiconv/lib/mac_ukraine.h
+596 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mac_ukraine.h', 436, 438 ]
+597 silly gunzTarPerm extractEntry deps/libiconv/lib/mulelao.h
+598 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/mulelao.h', 436, 438 ]
+599 silly gunzTarPerm extractEntry deps/libiconv/lib/nextstep.h
+600 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/nextstep.h', 436, 438 ]
+601 silly gunzTarPerm extractEntry deps/libiconv/lib/pt154.h
+602 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/pt154.h', 436, 438 ]
+603 silly gunzTarPerm extractEntry deps/libiconv/lib/relocatable.c
+604 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/relocatable.c', 436, 438 ]
+605 silly gunzTarPerm extractEntry deps/libiconv/lib/relocatable.h
+606 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/relocatable.h', 436, 438 ]
+607 silly gunzTarPerm extractEntry deps/libiconv/lib/riscos1.h
+608 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/riscos1.h', 436, 438 ]
+609 silly gunzTarPerm extractEntry deps/libiconv/lib/rk1048.h
+610 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/rk1048.h', 436, 438 ]
+611 silly gunzTarPerm extractEntry deps/libiconv/lib/shift_jisx0213.h
+612 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/shift_jisx0213.h', 436, 438 ]
+613 silly gunzTarPerm extractEntry deps/libiconv/lib/sjis.h
+614 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/sjis.h', 436, 438 ]
+615 silly gunzTarPerm extractEntry deps/libiconv/lib/tcvn.h
+616 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/tcvn.h', 436, 438 ]
+617 silly gunzTarPerm extractEntry deps/libiconv/lib/tds565.h
+618 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/tds565.h', 436, 438 ]
+619 silly gunzTarPerm extractEntry deps/libiconv/lib/tis620.h
+620 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/tis620.h', 436, 438 ]
+621 silly gunzTarPerm extractEntry deps/libiconv/lib/translit.def
+622 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/translit.def', 436, 438 ]
+623 silly gunzTarPerm extractEntry deps/libiconv/lib/translit.h
+624 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/translit.h', 436, 438 ]
+625 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs2.h
+626 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs2.h', 436, 438 ]
+627 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs2be.h
+628 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs2be.h', 436, 438 ]
+629 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs2internal.h
+630 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs2internal.h', 436, 438 ]
+631 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs2le.h
+632 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs2le.h', 436, 438 ]
+633 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs2swapped.h
+634 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs2swapped.h', 436, 438 ]
+635 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs4.h
+636 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs4.h', 436, 438 ]
+637 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs4be.h
+638 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs4be.h', 436, 438 ]
+639 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs4internal.h
+640 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs4internal.h', 436, 438 ]
+641 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs4le.h
+642 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs4le.h', 436, 438 ]
+643 silly gunzTarPerm extractEntry deps/libiconv/lib/ucs4swapped.h
+644 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/ucs4swapped.h', 436, 438 ]
+645 silly gunzTarPerm extractEntry deps/libiconv/lib/uhc_1.h
+646 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/uhc_1.h', 436, 438 ]
+647 silly gunzTarPerm extractEntry deps/libiconv/lib/uhc_2.h
+648 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/uhc_2.h', 436, 438 ]
+649 silly gunzTarPerm extractEntry deps/libiconv/lib/utf16.h
+650 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf16.h', 436, 438 ]
+651 silly gunzTarPerm extractEntry deps/libiconv/lib/utf16be.h
+652 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf16be.h', 436, 438 ]
+653 silly gunzTarPerm extractEntry deps/libiconv/lib/utf16le.h
+654 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf16le.h', 436, 438 ]
+655 silly gunzTarPerm extractEntry deps/libiconv/lib/utf32.h
+656 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf32.h', 436, 438 ]
+657 silly gunzTarPerm extractEntry deps/libiconv/lib/utf32be.h
+658 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf32be.h', 436, 438 ]
+659 silly gunzTarPerm extractEntry deps/libiconv/lib/utf32le.h
+660 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf32le.h', 436, 438 ]
+661 silly gunzTarPerm extractEntry deps/libiconv/lib/utf7.h
+662 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf7.h', 436, 438 ]
+663 silly gunzTarPerm extractEntry deps/libiconv/lib/utf8.h
+664 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/utf8.h', 436, 438 ]
+665 silly gunzTarPerm extractEntry deps/libiconv/lib/vietcomb.h
+666 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/vietcomb.h', 436, 438 ]
+667 silly gunzTarPerm extractEntry deps/libiconv/lib/viscii.h
+668 silly gunzTarPerm modified mode [ 'deps/libiconv/lib/viscii.h', 436, 438 ]
+669 silly gunzTarPerm extractEntry lib/iconv.js
+670 silly gunzTarPerm modified mode [ 'lib/iconv.js', 436, 438 ]
+671 silly gunzTarPerm extractEntry src/binding.cc
+672 silly gunzTarPerm modified mode [ 'src/binding.cc', 436, 438 ]
+673 silly gunzTarPerm extractEntry support/config.h
+674 silly gunzTarPerm modified mode [ 'support/config.h', 436, 438 ]
+675 silly gunzTarPerm extractEntry support/iconv.h
+676 silly gunzTarPerm modified mode [ 'support/iconv.h', 436, 438 ]
+677 silly gunzTarPerm extractEntry test/test-basic.js
+678 silly gunzTarPerm modified mode [ 'test/test-basic.js', 436, 438 ]
+679 silly gunzTarPerm extractEntry test/test-big-buffer.js
+680 silly gunzTarPerm modified mode [ 'test/test-big-buffer.js', 436, 438 ]
+681 silly gunzTarPerm extractEntry test/test-stream.js
+682 silly gunzTarPerm modified mode [ 'test/test-stream.js', 436, 438 ]
+683 silly gunzTarPerm extractEntry test/fixtures/lorem-ipsum.txt
+684 silly gunzTarPerm modified mode [ 'test/fixtures/lorem-ipsum.txt', 436, 438 ]
+685 verbose write writing to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\package.json
+686 info preinstall iconv@2.2.1
+687 verbose readDependencies loading dependencies from C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\package.json
+688 silly prepareForInstallMany adding nan@^2.3.5 from iconv dependencies
+689 verbose readDependencies loading dependencies from C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\package.json
+690 silly cache add args [ 'nan@^2.3.5', null ]
+691 verbose cache add spec nan@^2.3.5
+692 silly cache add parsed spec Result {
+692 silly cache add   raw: 'nan@^2.3.5',
+692 silly cache add   scope: null,
+692 silly cache add   name: 'nan',
+692 silly cache add   rawSpec: '^2.3.5',
+692 silly cache add   spec: '>=2.3.5 <3.0.0',
+692 silly cache add   type: 'range' }
+693 silly addNamed nan@>=2.3.5 <3.0.0
+694 verbose addNamed ">=2.3.5 <3.0.0" is a valid semver range for nan
+695 silly addNameRange { name: 'nan', range: '>=2.3.5 <3.0.0', hasData: false }
+696 silly mapToRegistry name nan
+697 silly mapToRegistry using default registry
+698 silly mapToRegistry registry https://registry.npmjs.org/
+699 silly mapToRegistry uri https://registry.npmjs.org/nan
+700 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+701 verbose request uri https://registry.npmjs.org/nan
+702 verbose request no auth needed
+703 info attempt registry request try #1 at 16:41:58
+704 verbose etag "2POVJEDCD6LOO0Y53S1HJ4UMJ"
+705 http request GET https://registry.npmjs.org/nan
+706 http 200 https://registry.npmjs.org/nan
+707 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+707 verbose headers   etag: '"1OOZJAUMBQC59OINHZGMRRCSL"',
+707 verbose headers   'content-type': 'application/json',
+707 verbose headers   'content-encoding': 'gzip',
+707 verbose headers   'cache-control': 'max-age=300',
+707 verbose headers   'content-length': '17213',
+707 verbose headers   'accept-ranges': 'bytes',
+707 verbose headers   date: 'Fri, 02 Sep 2016 08:41:57 GMT',
+707 verbose headers   via: '1.1 varnish',
+707 verbose headers   age: '232',
+707 verbose headers   connection: 'keep-alive',
+707 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+707 verbose headers   'x-cache': 'HIT',
+707 verbose headers   'x-cache-hits': '3',
+707 verbose headers   'x-timer': 'S1472805717.066825,VS0,VE0',
+707 verbose headers   vary: 'Accept-Encoding' }
+708 silly get cb [ 200,
+708 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+708 silly get     etag: '"1OOZJAUMBQC59OINHZGMRRCSL"',
+708 silly get     'content-type': 'application/json',
+708 silly get     'content-encoding': 'gzip',
+708 silly get     'cache-control': 'max-age=300',
+708 silly get     'content-length': '17213',
+708 silly get     'accept-ranges': 'bytes',
+708 silly get     date: 'Fri, 02 Sep 2016 08:41:57 GMT',
+708 silly get     via: '1.1 varnish',
+708 silly get     age: '232',
+708 silly get     connection: 'keep-alive',
+708 silly get     'x-served-by': 'cache-hkg6822-HKG',
+708 silly get     'x-cache': 'HIT',
+708 silly get     'x-cache-hits': '3',
+708 silly get     'x-timer': 'S1472805717.066825,VS0,VE0',
+708 silly get     vary: 'Accept-Encoding' } ]
+709 verbose get saving nan to C:\Users\Eason\AppData\Roaming\npm-cache\registry.npmjs.org\nan\.cache.json
+710 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+711 silly addNameRange number 2 { name: 'nan', range: '>=2.3.5 <3.0.0', hasData: true }
+712 silly addNameRange versions [ 'nan',
+712 silly addNameRange   [ '0.3.0-wip',
+712 silly addNameRange     '0.3.0-wip2',
+712 silly addNameRange     '0.3.0',
+712 silly addNameRange     '0.3.1',
+712 silly addNameRange     '0.3.2',
+712 silly addNameRange     '0.4.0',
+712 silly addNameRange     '0.4.1',
+712 silly addNameRange     '0.4.2',
+712 silly addNameRange     '0.4.3',
+712 silly addNameRange     '0.4.4',
+712 silly addNameRange     '0.5.0',
+712 silly addNameRange     '0.5.1',
+712 silly addNameRange     '0.5.2',
+712 silly addNameRange     '0.6.0',
+712 silly addNameRange     '0.7.0',
+712 silly addNameRange     '0.7.1',
+712 silly addNameRange     '0.8.0',
+712 silly addNameRange     '1.0.0',
+712 silly addNameRange     '1.1.0',
+712 silly addNameRange     '1.1.1',
+712 silly addNameRange     '1.1.2',
+712 silly addNameRange     '1.2.0',
+712 silly addNameRange     '1.3.0',
+712 silly addNameRange     '1.4.0',
+712 silly addNameRange     '1.4.1',
+712 silly addNameRange     '1.5.0',
+712 silly addNameRange     '1.4.2',
+712 silly addNameRange     '1.4.3',
+712 silly addNameRange     '1.5.1',
+712 silly addNameRange     '1.5.2',
+712 silly addNameRange     '1.6.0',
+712 silly addNameRange     '1.5.3',
+712 silly addNameRange     '1.6.1',
+712 silly addNameRange     '1.6.2',
+712 silly addNameRange     '1.7.0',
+712 silly addNameRange     '1.8.0',
+712 silly addNameRange     '1.8.1',
+712 silly addNameRange     '1.8.2',
+712 silly addNameRange     '1.8.3',
+712 silly addNameRange     '1.8.4',
+712 silly addNameRange     '1.9.0',
+712 silly addNameRange     '2.0.0',
+712 silly addNameRange     '2.0.1',
+712 silly addNameRange     '2.0.2',
+712 silly addNameRange     '2.0.3',
+712 silly addNameRange     '2.0.4',
+712 silly addNameRange     '2.0.5',
+712 silly addNameRange     '2.0.6',
+712 silly addNameRange     '2.0.7',
+712 silly addNameRange     '2.0.8',
+712 silly addNameRange     '2.0.9',
+712 silly addNameRange     '2.1.0',
+712 silly addNameRange     '2.2.0',
+712 silly addNameRange     '2.2.1',
+712 silly addNameRange     '2.3.0',
+712 silly addNameRange     '2.3.1',
+712 silly addNameRange     '2.3.2',
+712 silly addNameRange     '2.3.3',
+712 silly addNameRange     '2.3.4',
+712 silly addNameRange     '2.3.5',
+712 silly addNameRange     '2.4.0' ] ]
+713 silly addNamed nan@2.4.0
+714 verbose addNamed "2.4.0" is a plain semver version for nan
+715 silly mapToRegistry name nan
+716 silly mapToRegistry using default registry
+717 silly mapToRegistry registry https://registry.npmjs.org/
+718 silly mapToRegistry uri https://registry.npmjs.org/nan
+719 verbose addRemoteTarball https://registry.npmjs.org/nan/-/nan-2.4.0.tgz not in flight; adding
+720 verbose addRemoteTarball [ 'https://registry.npmjs.org/nan/-/nan-2.4.0.tgz',
+720 verbose addRemoteTarball   'fb3c59d45fe4effe215f0b890f8adf6eb32d2232' ]
+721 info retry fetch attempt 1 at 16:41:58
+722 info attempt registry request try #1 at 16:41:58
+723 http fetch GET https://registry.npmjs.org/nan/-/nan-2.4.0.tgz
+724 http fetch 200 https://registry.npmjs.org/nan/-/nan-2.4.0.tgz
+725 silly fetchAndShaCheck shasum fb3c59d45fe4effe215f0b890f8adf6eb32d2232
+726 verbose addTmpTarball C:\Users\Eason\AppData\Local\Temp\npm-7808-d17ca165\registry.npmjs.org\nan\-\nan-2.4.0.tgz not in flight; adding
+727 verbose addTmpTarball already have metadata; skipping unpack for nan@2.4.0
+728 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+729 silly cache afterAdd nan@2.4.0
+730 verbose afterAdd C:\Users\Eason\AppData\Roaming\npm-cache\nan\2.4.0\package\package.json not in flight; writing
+731 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+732 verbose afterAdd C:\Users\Eason\AppData\Roaming\npm-cache\nan\2.4.0\package\package.json written
+733 silly install resolved [ { name: 'nan',
+733 silly install resolved     version: '2.4.0',
+733 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8 -> 6 compatibility',
+733 silly install resolved     main: 'include_dirs.js',
+733 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+733 silly install resolved     scripts:
+733 silly install resolved      { test: 'tap --gc --stderr test/js/*-test.js',
+733 silly install resolved        'rebuild-tests': 'node-gyp rebuild --msvs_version=2013 --directory test',
+733 silly install resolved        docs: 'doc/.build.sh' },
+733 silly install resolved     contributors:
+733 silly install resolved      [ [Object],
+733 silly install resolved        [Object],
+733 silly install resolved        [Object],
+733 silly install resolved        [Object],
+733 silly install resolved        [Object],
+733 silly install resolved        [Object],
+733 silly install resolved        [Object] ],
+733 silly install resolved     devDependencies:
+733 silly install resolved      { bindings: '~1.2.1',
+733 silly install resolved        commander: '^2.8.1',
+733 silly install resolved        glob: '^5.0.14',
+733 silly install resolved        'node-gyp': '~3.0.1',
+733 silly install resolved        'readable-stream': '^2.1.4',
+733 silly install resolved        tap: '~0.7.1',
+733 silly install resolved        xtend: '~4.0.0' },
+733 silly install resolved     license: 'MIT',
+733 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+733 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+733 silly install resolved     _id: 'nan@2.4.0',
+733 silly install resolved     _shasum: 'fb3c59d45fe4effe215f0b890f8adf6eb32d2232',
+733 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-2.4.0.tgz',
+733 silly install resolved     _from: 'nan@>=2.3.5 <3.0.0',
+733 silly install resolved     _npmVersion: '3.3.6',
+733 silly install resolved     _nodeVersion: '5.0.0',
+733 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+733 silly install resolved     dist:
+733 silly install resolved      { shasum: 'fb3c59d45fe4effe215f0b890f8adf6eb32d2232',
+733 silly install resolved        tarball: 'https://registry.npmjs.org/nan/-/nan-2.4.0.tgz' },
+733 silly install resolved     maintainers: [ [Object], [Object] ],
+733 silly install resolved     _npmOperationalInternal:
+733 silly install resolved      { host: 'packages-16-east.internal.npmjs.com',
+733 silly install resolved        tmp: 'tmp/nan-2.4.0.tgz_1468158679820_0.6951719264034182' },
+733 silly install resolved     directories: {} } ]
+734 info install nan@2.4.0 into C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+735 info installOne nan@2.4.0
+736 verbose installOne of nan to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv not in flight; installing
+737 verbose correctMkdir C:\Users\Eason\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+738 verbose lock using C:\Users\Eason\AppData\Roaming\npm-cache\_locks\nan-4afd391196bcf19e.lock for C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+739 silly install write writing nan 2.4.0 to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+740 verbose unbuild node_modules\iconv\node_modules\nan
+741 silly gentlyRm C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan is being purged from base C:\Eason\Work\myproject\Angular-Study
+742 verbose gentlyRm don't care about contents; nuking C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+743 verbose tar unpack C:\Users\Eason\AppData\Roaming\npm-cache\nan\2.4.0\package.tgz
+744 verbose tar unpacking to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+745 silly gentlyRm C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan is being purged
+746 verbose gentlyRm don't care about contents; nuking C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+747 silly gunzTarPerm modes [ '777', '666' ]
+748 silly gunzTarPerm extractEntry package.json
+749 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+750 silly gunzTarPerm extractEntry README.md
+751 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+752 silly gunzTarPerm extractEntry include_dirs.js
+753 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 438 ]
+754 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+755 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 438 ]
+756 silly gunzTarPerm extractEntry CHANGELOG.md
+757 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+758 silly gunzTarPerm extractEntry LICENSE.md
+759 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 438 ]
+760 silly gunzTarPerm extractEntry doc/node_misc.md
+761 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 438 ]
+762 silly gunzTarPerm extractEntry doc/asyncworker.md
+763 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 438 ]
+764 silly gunzTarPerm extractEntry doc/callback.md
+765 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 438 ]
+766 silly gunzTarPerm extractEntry doc/converters.md
+767 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 438 ]
+768 silly gunzTarPerm extractEntry doc/errors.md
+769 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 438 ]
+770 silly gunzTarPerm extractEntry doc/maybe_types.md
+771 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 438 ]
+772 silly gunzTarPerm extractEntry doc/methods.md
+773 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 438 ]
+774 silly gunzTarPerm extractEntry doc/new.md
+775 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 438 ]
+776 silly gunzTarPerm extractEntry doc/buffers.md
+777 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 438 ]
+778 silly gunzTarPerm extractEntry doc/object_wrappers.md
+779 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 438 ]
+780 silly gunzTarPerm extractEntry doc/persistent.md
+781 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 438 ]
+782 silly gunzTarPerm extractEntry doc/scopes.md
+783 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 438 ]
+784 silly gunzTarPerm extractEntry doc/script.md
+785 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 438 ]
+786 silly gunzTarPerm extractEntry doc/string_bytes.md
+787 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 438 ]
+788 silly gunzTarPerm extractEntry doc/v8_internals.md
+789 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 438 ]
+790 silly gunzTarPerm extractEntry doc/v8_misc.md
+791 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 438 ]
+792 silly gunzTarPerm extractEntry nan.h
+793 silly gunzTarPerm modified mode [ 'nan.h', 436, 438 ]
+794 silly gunzTarPerm extractEntry nan_callbacks.h
+795 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 438 ]
+796 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+797 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 438 ]
+798 silly gunzTarPerm extractEntry nan_converters.h
+799 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 438 ]
+800 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+801 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 438 ]
+802 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+803 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 438 ]
+804 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+805 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 438 ]
+806 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+807 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 438 ]
+808 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+809 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 438 ]
+810 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+811 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 438 ]
+812 silly gunzTarPerm extractEntry nan_new.h
+813 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 438 ]
+814 silly gunzTarPerm extractEntry nan_object_wrap.h
+815 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 438 ]
+816 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+817 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 438 ]
+818 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+819 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 438 ]
+820 silly gunzTarPerm extractEntry nan_string_bytes.h
+821 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 438 ]
+822 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+823 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 438 ]
+824 silly gunzTarPerm extractEntry nan_weak.h
+825 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 438 ]
+826 silly gunzTarPerm extractEntry tools/package.json
+827 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 438 ]
+828 silly gunzTarPerm extractEntry tools/README.md
+829 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 438 ]
+830 silly gunzTarPerm extractEntry tools/1to2.js
+831 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 511 ]
+832 verbose write writing to C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan\package.json
+833 info preinstall nan@2.4.0
+834 verbose readDependencies loading dependencies from C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan\package.json
+835 verbose readDependencies loading dependencies from C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan\package.json
+836 silly install resolved []
+837 verbose about to build C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+838 info build C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+839 info linkStuff nan@2.4.0
+840 silly linkStuff nan@2.4.0 has C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules as its parent node_modules
+841 verbose linkBins nan@2.4.0
+842 verbose linkMans nan@2.4.0
+843 verbose rebuildBundles nan@2.4.0
+844 info install nan@2.4.0
+845 info postinstall nan@2.4.0
+846 verbose unlock done using C:\Users\Eason\AppData\Roaming\npm-cache\_locks\nan-4afd391196bcf19e.lock for C:\Eason\Work\myproject\Angular-Study\node_modules\iconv\node_modules\nan
+847 verbose about to build C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+848 info build C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+849 info linkStuff iconv@2.2.1
+850 silly linkStuff iconv@2.2.1 has C:\Eason\Work\myproject\Angular-Study\node_modules as its parent node_modules
+851 verbose linkBins iconv@2.2.1
+852 verbose linkMans iconv@2.2.1
+853 verbose rebuildBundles iconv@2.2.1
+854 verbose rebuildBundles [ 'nan' ]
+855 info install iconv@2.2.1
+856 verbose unsafe-perm in lifecycle true
+857 info iconv@2.2.1 Failed to exec install script
+858 verbose unlock done using C:\Users\Eason\AppData\Roaming\npm-cache\_locks\iconv-83dc3ed9be55bdfb.lock for C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+859 verbose stack Error: iconv@2.2.1 install: `node-gyp rebuild`
+859 verbose stack Exit status 1
+859 verbose stack     at EventEmitter.<anonymous> (C:\Eason\Tool\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
+859 verbose stack     at emitTwo (events.js:87:13)
+859 verbose stack     at EventEmitter.emit (events.js:172:7)
+859 verbose stack     at ChildProcess.<anonymous> (C:\Eason\Tool\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+859 verbose stack     at emitTwo (events.js:87:13)
+859 verbose stack     at ChildProcess.emit (events.js:172:7)
+859 verbose stack     at maybeClose (internal/child_process.js:827:16)
+859 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+860 verbose pkgid iconv@2.2.1
+861 verbose cwd C:\Eason\Work\myproject\Angular-Study\angular_translate\translate_by_url_cookies
+862 error Windows_NT 6.1.7601
+863 error argv "C:\\Eason\\Tool\\nodejs\\node.exe" "C:\\Eason\\Tool\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i" "iconv" "--save"
+864 error node v4.4.0
+865 error npm  v2.14.20
+866 error code ELIFECYCLE
+867 error iconv@2.2.1 install: `node-gyp rebuild`
+867 error Exit status 1
+868 error Failed at the iconv@2.2.1 install script 'node-gyp rebuild'.
+868 error This is most likely a problem with the iconv package,
+868 error not with npm itself.
+868 error Tell the author that this fails on your system:
+868 error     node-gyp rebuild
+868 error You can get information on how to open an issue for this project with:
+868 error     npm bugs iconv
+868 error Or if that isn't available, you can get their info via:
+868 error
+868 error     npm owner ls iconv
+868 error There is likely additional logging output above.
+869 verbose exit [ 1, true ]
+870 verbose unbuild node_modules\iconv
+871 info preuninstall iconv@2.2.1
+872 info uninstall iconv@2.2.1
+873 verbose unbuild rmStuff iconv@2.2.1 from C:\Eason\Work\myproject\Angular-Study\node_modules
+874 info postuninstall iconv@2.2.1
+875 silly gentlyRm C:\Eason\Work\myproject\Angular-Study\node_modules\iconv is being purged from base C:\Eason\Work\myproject\Angular-Study
+876 verbose gentlyRm don't care about contents; nuking C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+877 silly vacuum-fs purging C:\Eason\Work\myproject\Angular-Study\node_modules\iconv
+878 silly vacuum-fs quitting because other entries in C:\Eason\Work\myproject\Angular-Study\node_modules
