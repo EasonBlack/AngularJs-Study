@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link href="../style/bootstrap.css" rel="stylesheet" />
-    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
 </head>
 <body>
   <div id="container" ng-app="app" ng-controller="appCtrl as ctrl">
@@ -32,16 +32,16 @@
       </div>
   </div>
 </body>
-<script src="../vendor/jquery-1.11.1.js"></script>
-<script src="../vendor/angular.js"></script>
-<script src="../vendor/bootstrap.js"></script>
-<script src="../vendor/angular-translate.js"></script>
-<script src="../vendor/angular-translate-loader-static-files.js"></script>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script src="../../vendor/angular-translate.js"></script>
+<script src="../../vendor/angular-translate-loader-static-files.js"></script>
 <script>
     angular.module('app',['pascalprecht.translate'])
             .config(["$translateProvider", function ($translateProvider) {
                 $translateProvider.useStaticFilesLoader({
-                    prefix: 'basic_static_file/my_',
+                    prefix: './my_',
                     suffix: '.json'
                 });
                 $translateProvider.preferredLanguage('ch');
