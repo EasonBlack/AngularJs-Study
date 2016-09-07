@@ -1,0 +1,14 @@
+<ul class="flex__row nav-top-bar">
+    <li class="nav-top-bar__logo">
+        <span class="nav-top-bar__logo_bold">Smart</span>
+        <span class="nav-top-bar__logo_normal">Life</span>
+    </li>
+    <li class="nav-top-bar__link" ng-class="{ active: $ctrl.isActive('/project/list') }"><a href="#/project/list">Project</a></li>
+    <li class="nav-top-bar__link" ng-class="{ active: $ctrl.isActive('/database') }"><a href="#/database">Database</a></li>
+    <li class="nav-top-bar__user">
+        <img ng-src="{{$ctrl.userIcon}}"  width="30" height="30"/>
+        <span>User</span>
+    </li>
+</ul>
+
+<div ui-view></div>
