@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="project-header flex__row">
+    <div class="flex__vcenter flex__row_1"><h2>My Project</h2></div>
+    <div class="flex__vcenter flex__hright flex__row_1"><a class="button">Add Project</a></div>
+</div>
+<div class="project-list__wrapper">
+    <div class="project-list__search-bar flex__vcenter">
+        <input class="input-search" placeholder="Search Project " />
+    </div>
+    <div class="project-list__container">
+      <app-table headers="$ctrl.headers" data="$ctrl.data"></app-table>
+    </div>
+</div>

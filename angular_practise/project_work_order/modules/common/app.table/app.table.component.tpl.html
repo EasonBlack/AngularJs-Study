@@ -1,0 +1,15 @@
+<table class="table">
+    <tr>
+        <th class='table__th'
+            ng-repeat="header in $ctrl.headers"
+            ng-style="{width: header.width }">
+            {{header.title}}
+        </th>
+    </tr>
+    <tr ng-repeat="item in $ctrl.data">
+        <td class='table__td' ng-repeat="header in $ctrl.headers"
+            ng-style="{width: header.width, cursor: header.cursor }">
+            {{item[header.name]}}
+        </td>
+    </tr>
+</table>

@@ -1,7 +1,9 @@
+@import 'settings.global';
+
 .nav-top-bar {
   background-color: #3F3F3F;
-  height:40px;
-  line-height:40px;
+  height:$nav_top_bar_height;
+  line-height:$nav_top_bar_height;
 }
 
 .nav-top-bar__logo {

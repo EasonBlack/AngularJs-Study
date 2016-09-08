@@ -1,0 +1,16 @@
+@import 'settings.global';
+
+.project-list__wrapper {
+  background-color: #F5F7F6;
+  width: 100%;
+  height:  calc(100vh - #{$nav_top_bar_height + $project_header_height})
+}
+
+.project-list__search-bar {
+  height:80px;
+  padding: 0 30px;
+}
+
+.project-list__container {
+  padding: 0 30px;
+}

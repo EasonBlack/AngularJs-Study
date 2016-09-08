@@ -1,0 +1,18 @@
+
+.table {
+  width:100%;
+  border-collapse:collapse;
+}
+.table__th {
+  height: 60px;
+  background-color: #EBEDEC;
+  text-align: left;
+  padding:0 20px;
+}
+
+.table__td {
+  height: 40px;
+  background-color: white;
+  text-align: left;
+  padding:0 20px;
+}

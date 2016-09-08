@@ -1,0 +1,13 @@
+@import 'settings.global';
+
+.input-search {
+  width:430px;
+  height:40px;
+  padding: 10px 20px;
+  background-color: #EBECEE;
+  border: none;
+  appearance: none;
+  &:focus {
+    outline-width: 0;
+  }
+}

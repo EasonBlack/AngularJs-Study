@@ -15,8 +15,15 @@
 
 .flex__wrap {  flex-wrap:wrap;  }
 
+.flex__vcenter {  display: flex; align-items: center}
+.flex__hcenter { display: flex; justify-content: center}
+.flex__hright { display: flex; justify-content: flex-end}
+.flex__hleft { display: flex; justify-content: flex-start}
+
 .float__left {  float:left}
 .float__right {  float:right }
+
+
 
 .float__left_margin {  margin-right:auto;  }
 .float__right_margin {  margin-left:auto; }

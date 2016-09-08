@@ -3,7 +3,7 @@
         <span class="nav-top-bar__logo_bold">Smart</span>
         <span class="nav-top-bar__logo_normal">Life</span>
     </li>
-    <li class="nav-top-bar__link" ng-class="{ active: $ctrl.isActive('/project/list') }"><a href="#/project/list">Project</a></li>
+    <li class="nav-top-bar__link" ng-class="{ active: $ctrl.isActive('/project') }"><a href="#/project">Project</a></li>
     <li class="nav-top-bar__link" ng-class="{ active: $ctrl.isActive('/database') }"><a href="#/database">Database</a></li>
     <li class="nav-top-bar__user">
         <img ng-src="{{$ctrl.userIcon}}"  width="30" height="30"/>
@@ -11,4 +11,4 @@
     </li>
 </ul>
 
-<div ui-view></div>
+<div class="nav-top-bar__view" ui-view></div>

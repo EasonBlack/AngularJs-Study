@@ -7,7 +7,7 @@ let DatabaseRouteConfig = ($stateProvider) => {
     $stateProvider
         .state('database', {
             url: '/database',
-            template: '<database></database>'
+            template: '<database-view></database-view>'
         })
 }
 

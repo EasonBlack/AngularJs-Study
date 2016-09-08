@@ -2,6 +2,6 @@ import 'angular-ui-router';
 import DatabaseRouteConfig from './database.route.js'
 import DatabaseComponent from './database.component.js';
 
-angular.module('database.module', ['ui.router'])
+angular.module('app.database', ['ui.router'])
     .config(DatabaseRouteConfig)
-    .component('databaseComponent', DatabaseComponent)
+    .component('databaseView', DatabaseComponent)

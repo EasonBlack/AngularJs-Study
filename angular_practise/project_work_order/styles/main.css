@@ -52,6 +52,22 @@ img {
 .flex__wrap {
   flex-wrap: wrap; }
 
+.flex__vcenter {
+  display: flex;
+  align-items: center; }
+
+.flex__hcenter {
+  display: flex;
+  justify-content: center; }
+
+.flex__hright {
+  display: flex;
+  justify-content: flex-end; }
+
+.flex__hleft {
+  display: flex;
+  justify-content: flex-start; }
+
 .float__left {
   float: left; }
 
@@ -120,5 +136,47 @@ img {
   .nav-top-bar__user span {
     margin-right: 20px;
     margin-left: 10px; }
+
+.project-header {
+  padding: 0 30px;
+  height: 50px; }
+
+.project-list__wrapper {
+  background-color: #F5F7F6;
+  width: 100%;
+  height: calc(100vh - 90px); }
+
+.project-list__search-bar {
+  height: 80px;
+  padding: 0 30px; }
+
+.project-list__container {
+  padding: 0 30px; }
+
+.input-search {
+  width: 430px;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: #EBECEE;
+  border: none;
+  appearance: none; }
+  .input-search:focus {
+    outline-width: 0; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.table__th {
+  height: 60px;
+  background-color: #EBEDEC;
+  text-align: left;
+  padding: 0 20px; }
+
+.table__td {
+  height: 40px;
+  background-color: white;
+  text-align: left;
+  padding: 0 20px; }
 
 /*# sourceMappingURL=main.css.map */
