@@ -1,10 +1,11 @@
+@import 'settings.global';
 
 .table {
   width:100%;
   border-collapse:collapse;
 }
 .table__th {
-  height: 60px;
+  height: $panel_header_height;
   background-color: #EBEDEC;
   text-align: left;
   padding:0 20px;

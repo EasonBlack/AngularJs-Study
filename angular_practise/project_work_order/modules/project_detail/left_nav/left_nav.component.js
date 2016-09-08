@@ -1,3 +1,10 @@
-/**
- * Created by Eason on 2016/9/7.
- */
+
+import controller from './left_nav.component.ctrl.js';
+import template from './left_nav.component.tpl.html';
+
+let LeftNavComponent = {
+    controller,
+    template
+}
+
+export default LeftNavComponent;

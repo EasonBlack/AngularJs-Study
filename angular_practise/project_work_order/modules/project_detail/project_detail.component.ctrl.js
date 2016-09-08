@@ -1,3 +1,9 @@
-/**
- * Created by Eason on 2016/9/7.
- */
+
+
+class ProjectDetailCtrl {
+    constructor() {
+
+    }
+}
+
+export default ProjectDetailCtrl;

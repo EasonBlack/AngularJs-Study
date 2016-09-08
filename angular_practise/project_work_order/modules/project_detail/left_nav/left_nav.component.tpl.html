@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<ul>
+    <li ng-repeat="nav in $ctrl.navs" class="layout_relative left-nav__item flex__vcenter">
+        <span class="left-nav__icon"></span>
+        <a ui-sref="project-detail.{{nav.name}}" ng-bind="nav.title"
+                class="left-nav__content">
+        </a>
+    </li>
+</ul>

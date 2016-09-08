@@ -101,6 +101,23 @@ img {
 .color__bg_blue {
   background-color: #336699 !important; }
 
+.panel {
+  background-color: white;
+  min-height: 300px;
+  margin-bottom: 30px; }
+
+.panel__header {
+  background-color: #EBEDEC;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; }
+
+.panel__content {
+  display: flex;
+  align-items: center;
+  padding: 0 20px; }
+
 .nav-top-bar {
   background-color: #3F3F3F;
   height: 40px;
@@ -137,6 +154,27 @@ img {
     margin-right: 20px;
     margin-left: 10px; }
 
+.left-nav {
+  width: 300px;
+  height: calc(100vh - 90px);
+  background-color: #E3E4E6; }
+
+.left-nav__item {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px; }
+
+.left-nav__icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white; }
+
+.left-nav__content {
+  margin-left: 10px;
+  width: 100%; }
+
 .project-header {
   padding: 0 30px;
   height: 50px; }
@@ -153,6 +191,14 @@ img {
 .project-list__container {
   padding: 0 30px; }
 
+.project-detail {
+  background-color: #F5F7F6;
+  width: 100%; }
+
+.project-container {
+  border-top: 1px solid #E3E4E6;
+  padding: 30px 30px; }
+
 .input-search {
   width: 430px;
   height: 40px;
@@ -168,7 +214,7 @@ img {
   border-collapse: collapse; }
 
 .table__th {
-  height: 60px;
+  height: 50px;
   background-color: #EBEDEC;
   text-align: left;
   padding: 0 20px; }

@@ -3,11 +3,13 @@
 @import './objects.layout';
 @import './objects.color';
 @import './objects.view';
+@import './objects.panel';
 
 @import './_components.nav_top_bar';
 @import './_components.nav_left_bar';
 @import './_components.project_header';
 @import './_components.project_list';
+@import './_components.project_detail';
 @import './_components.project_card';
 @import './_components.input-search';
 @import './_components.table';
