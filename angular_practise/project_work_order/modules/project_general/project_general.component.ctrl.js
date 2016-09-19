@@ -11,10 +11,10 @@ class ProjectGeneralCtrl {
 
         this.data = [
             {id: '1', name: 'aa', category: 'bbb', issue: '1', owner: 'aaa'},
-            {id: '2', name: 'aa', category: 'bbb', issue: '1', owner: 'aaa'},
-            {id: '3', name: 'aa', category: 'bbb', issue: '1', owner: 'aaa'},
-            {id: '4', name: 'aa', category: 'bbb', issue: '1', owner: 'aaa'},
-            {id: '5', name: 'aa', category: 'bbb', issue: '1', owner: 'aaa'}
+            {id: '2', name: 'bb', category: 'bbb', issue: '1', owner: 'aaa'},
+            {id: '3', name: 'cc', category: 'bbb', issue: '1', owner: 'aaa'},
+            {id: '4', name: 'dd', category: 'bbb', issue: '1', owner: 'aaa'},
+            {id: '5', name: 'ee', category: 'bbb', issue: '1', owner: 'aaa'}
         ]
     }
 }

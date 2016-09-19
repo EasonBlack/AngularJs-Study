@@ -225,4 +225,20 @@ img {
   text-align: left;
   padding: 0 20px; }
 
+.project-card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.project-card {
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  height: 300px;
+  border: 1px solid steelblue;
+  flex: 0 0 300px;
+  margin-left: 50px;
+  margin-bottom: 20px; }
+
 /*# sourceMappingURL=main.css.map */
