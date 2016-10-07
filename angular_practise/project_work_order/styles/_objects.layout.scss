@@ -5,6 +5,7 @@
 
 .flex__body { }
 .flex__row {  display:flex; flex-direction: row}
+.flex__column { display:flex; flex-direction:column}
 .flex__row_100vh {  display:flex; flex-direction: row; height:100%;}
 .flex__row_wrap { flex-wrap: wrap;}
 .flex__row_right {  justify-content: flex-end; }

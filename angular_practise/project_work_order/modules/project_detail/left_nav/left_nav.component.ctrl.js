@@ -5,7 +5,7 @@ class LeftNavCtrl {
             {title: "Work Order", name: "workorder"},
             {title: "Work Plan", name: "workplan"},
             {title: "Form", name: "form"},
-            {title: "Location & Asset", name: "locationasset"},
+            {title: "Location", name: "location_list"},
             {title: "People", name: "people"},
             {title: "Notes", name: "notes"},
             {title: "Report", name: "report"}
