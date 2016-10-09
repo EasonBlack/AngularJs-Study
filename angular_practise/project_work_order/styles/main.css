@@ -26,6 +26,10 @@ img {
   display: flex;
   flex-direction: row; }
 
+.flex__column {
+  display: flex;
+  flex-direction: column; }
+
 .flex__row_100vh {
   display: flex;
   flex-direction: row;

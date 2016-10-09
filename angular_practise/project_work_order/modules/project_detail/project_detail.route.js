@@ -14,6 +14,10 @@ let ProjectDetailRouteConfig = ($stateProvider) => {
             url: '/workorder',
             template: '<div>This is work order</div>'
         })
+        .state('project-detail.location_list', {
+            url: '/location_list',
+            template: '<location-list></location-list>'
+        })
 }
 
 ProjectDetailRouteConfig.$inject = ['$stateProvider'];
