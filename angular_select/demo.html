@@ -3,52 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link href="../style/bootstrap.css" rel="stylesheet" />
-    <link href="../style/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../style/bootstrap.css" rel="stylesheet"/>
+    <link href="../style/bootstrap-theme.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container" ng-app="app" ng-controller="appCtrl">
     <div class="panel-body">
         <select ng-model="item"
                 ng-options="item as item.name for item in items"
-                ng-init = "item = items[0]"
-                >
+                ng-init="item = items[0]"
+        >
         </select>
         <div>
-            {{item  | json}}
+            {{item | json}}
         </div>
     </div>
 
     <div class="panel-body">
         <select ng-model="item2"
                 ng-options="item.id as item.name for item in item2s"
-                ng-init = "item2 = item2s[0].id"
-                >
+                ng-init="item2 = item2s[0].id"
+        >
         </select>
         <div>
-            {{item2  | json}}
+            {{item2 | json}}
         </div>
+    </div>
+
+    <div class="panel-body">
+        <select ng-model="item3"
+                ng-options="item.id as item.name for item in item3s"
+        >
+        </select>
+        <button ng-click="changeItem3()">click</button>
+        <div>
+            {{item3 | json}}
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <app-select current="item3" options="item3s"></app-select>
     </div>
 </div>
 
 </body>
 <script src="../vendor/jquery-1.11.1.js"></script>
-<script src="../vendor/angular.js"></script>
+<script src="../vendor/angular.1.5.5.min.js"></script>
 <script src="../vendor/bootstrap.js"></script>
 <script src="../vendor/paging.js"></script>
 <script src="../vendor/ng-file-upload.js"></script>
 <script>
-  angular.module('app',[])
-          .controller('appCtrl',function($scope){
-              $scope.items = [
-                  {id: 1, name : 'aaaa'},
-                  {id: 2, name : 'bbbb'},
-                  {id: 3, name : 'cccc'},
-                  {id: 4, name : 'dddd'},
-                  {id: 5, name : 'eeee'}
-              ]
+    angular.module('app', [])
+            .controller('appCtrl', function ($scope) {
+                $scope.items = [
+                    {id: 1, name: 'aaaa'},
+                    {id: 2, name: 'bbbb'},
+                    {id: 3, name: 'cccc'},
+                    {id: 4, name: 'dddd'},
+                    {id: 5, name: 'eeee'}
+                ]
 
-              $scope.item2s = $scope.items;
-          })
+                $scope.item2s = $scope.items;
+                $scope.item3s = [...$scope.items];
+                $scope.item3 = 3;
+                $scope.changeItem3 = ()=> {
+                    $scope.item3 = 5;
+                }
+            })
+            .component('appSelect', {
+                template: '<select ng-model="$ctrl.current"  ng-options="item.id as item.name for item in $ctrl.options" ></select>',
+                bindings: {
+                    current: '<',
+                    options: '<'
+                }
+            })
 </script>
 </html>
