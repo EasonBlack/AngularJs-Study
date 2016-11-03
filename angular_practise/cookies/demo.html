@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://opensource.keycdn.com/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-cookie/4.1.0/angular-cookie.min.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-controller="MyController">
+    {{message}}
+</div>
+</body>
+<script>
+    angular.module('app', ['ipCookie'])
+            .controller('MyController', ['$scope', 'ipCookie',
+                function ($scope, ipCookie) {
+                    $scope.message = 'xxxx';
+                    ipCookie('xxName', '1234567');
+                    console.log(ipCookie());
+                }]);
+
+</script>
+</html>
