@@ -1,0 +1,14 @@
+<div>
+    <div>{{title}}</div>
+    <div ng-show="showa">This is A</div>
+    <div ng-show="showb">This is B</div>
+    <div ng-show="showc">This is C</div>
+    <div>{{message}}</div>
+    <button ng-click="onClickButton({obj: {name: message}})">Button</button>
+    <input ng-model="message"  ng-readonly="readonly"/>
+    <ul>
+        <li ng-repeat="item in items">
+            {{item}}
+        </li>
+    </ul>
+</div>
