@@ -16,6 +16,7 @@
     <div  ng-form="test">
         <app-input title="input.title" val="input.val" key="input.key" required="true"></app-input>
         <app-input title="input2.title" val="input2.val" key="input2.key"  required="false" ></app-input>
+        <app-input title="input3.title" val="input3.val" key="input3.key"  required="false" ></app-input>
     </div>
 
     <button ng-click="getResult()">Click Me</button>
@@ -39,10 +40,14 @@
                     val : '',
                     key: 'field2'
                 }
+                $scope.input3 = {
+                    title: "Field3",
+                    key: 'field3'
+                }
 
 
                 $scope.getResult = function(){
-                    console.log($scope.val);
+                    console.log($scope.input, $scope.input2, $scope.input3);
                 }
             }])
             .component('appInput', {
