@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="vendor/isteven-multi-select.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<p>Selected: {{outputBrowsers}}</p>
+
+<div
+    isteven-multi-select
+    input-model="modernBrowsers"
+    output-model="outputBrowsers"
+    button-label="name"
+    item-label="name"
+    tick-property="ticked"
+    selection-mode="single"
+    helper-elements='filter'
+>
+</div>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.1.5.11.min.js"></script>
+<script src="vendor/isteven-multi-select.js"></script>
+<script>
+    angular.module('app', ["isteven-multi-select"])
+            .controller('appCtrl',function($scope){
+                $scope.modernBrowsers = [
+                    {		name: "Opera",	maker: "Opera Software",		},
+                    {	    name: "Internet Explorer",	maker: "Microsoft",		},
+                    {		name: "Firefox",	maker: "Mozilla Foundation",		},
+                    {		name: "Safari",	maker: "Apple",		},
+                    {		name: "Chrome",	maker: "Google",		}
+                ];
+            });
+   
+</script>
+</html>

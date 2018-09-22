@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../style/bootstrap.css" rel="stylesheet" />
+    <link href="vendor/oi.select.min.css" rel="stylesheet"/>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<p>Selected: {{country}}</p>
+
+  <oi-select
+    oi-options="item.name for item in countries "
+    ng-model="country"
+    multiple
+    placeholder="Select"
+    ></oi-select>
+</body>
+<script src="../vendor/jquery-1.11.1.js"></script>
+<script src="../vendor/angular.1.5.11.min.js"></script>
+<script src="vendor/oi.select-tpls.min.js"></script>
+<script>
+    angular.module('app',[ 'oi.select'])
+            .controller('appCtrl',function($scope){
+                $scope.country = {};
+                $scope.countries = [
+                    {name: 'Afghanistan', code: 'AF'},
+                    {name: 'Åland Islands', code: 'AX'},
+                    {name: 'Albania', code: 'AL'},
+                    {name: 'Algeria', code: 'DZ'},
+                    {name: 'American Samoa', code: 'AS'},
+                    {name: 'Andorra', code: 'AD'},
+                    {name: 'Angola', code: 'AO'}
+                ]
+            });
+</script>
+</html>
