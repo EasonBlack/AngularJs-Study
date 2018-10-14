@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .container {
+            padding-top:30px;
+        }
+
+        
+
+        .popup-wrapper {
+          position:fixed;
+          top:0;left:0;bottom:0;right:0;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0,0,0,0.3);
+          transition:all 1s ease;   
+        }
+
+        .popup {
+          padding: 20px;
+          transition:all 1s ease; 
+          opacity: 0;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid rgba(0,0,0,.2);
+          border-radius: .3rem;
+          outline: 0;
+        }
+
+        .popup-wrapper.ng-show .popup {
+          opacity: 1;
+        }
+        .popup-wrapper.ng-show-remove {
+          opacity: 0;
+        }
+     
+
+    </style>
+</head>
+<body>
+  <div class="container" ng-app="app" ng-controller="appCtrl">
+    <div>
+      <button ng-click='show()'>Click Me</button>
+    </div>
+    <my-popup title="text" ng-if='isPopupDisplay' cancel='cancel()'/>
+  </div>
+</body>
+
+<script src="../../vendor/angular.1.5.11.min.js"></script>
+<script src='../../vendor/angular-sanitize.js'></script>
+<script src='../../vendor/angular-animate.1.5.5.min.js'></script>
+<script>
+    angular.module('app',['ngSanitize'])
+            .controller('appCtrl',['$scope', '$timeout', function($scope, $timeout){
+              $scope.popupclass = '';
+              $scope.isPopupDisplay = false;
+              $scope.show = ()=>{
+                $scope.isPopupDisplay = true;
+              }
+              $scope.cancel = () => {
+                $scope.isPopupDisplay = false;
+              }
+              $scope.text = `<div><h1>asd</h1>asdfadf </br> asdfasdf </br></div>`
+            }])
+            .component('myPopup', {
+      
+                templateUrl: 'demo2.template.html',
+                bindings: {
+                    title: '<',
+                    cancel: '&'
+                },
+                controller: ['$scope', '$timeout',  function ($scope, $timeout) {
+                    var self = this;
+                    this.popupclass ='';
+                    this.msg = ""
+                    this.$onInit = () => {
+                      $timeout(() => {
+                        this.popupclass = 'ng-show';     
+                      }, 0);   
+                    };
+                    this.cancelPopup = () => {
+                      this.popupclass = 'ng-show-remove'; 
+                      $timeout(() => {
+                        this.popupclass = '';  
+                        this.cancel()       
+                      
+                      }, 500); 
+                        
+                    }
+                }]
+              }
+           )
+</script>
+</html>

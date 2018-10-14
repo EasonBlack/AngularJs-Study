@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .container {
+            padding-top:30px;
+        }
+
+        
+
+        .popup-wrapper {
+          position:fixed;
+          top:0;left:0;bottom:0;right:0;
+          display:flex;
+          opacity: 1;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0,0,0,0.3);
+          transition:all 1s ease;
+        }
+
+        .popup {
+          padding: 20px;
+          background-color: white;   
+        }
+
+        .popup-component.ng-hide .popup-wrapper {
+          opacity: 0;
+        }
+
+        /* 无效 */
+        .popup-component.ng-hide-add .popup-wrapper  {
+          opacity: 1;
+        }
+     
+
+    </style>
+</head>
+<body>
+  <div class="container" ng-app="app" ng-controller="appCtrl">
+    <div>
+      <button ng-click='popup()'>Click Me</button>
+    </div>
+    <my-popup title="text" class='popup-component' ng-show='isPopupDisplay' cancel='cancel()'/>
+  </div>
+</body>
+
+<script src="../../vendor/angular.1.5.11.min.js"></script>
+<script src='../../vendor/angular-sanitize.js'></script>
+<script src='../../vendor/angular-animate.1.5.5.min.js'></script>
+<script>
+    angular.module('app',['ngSanitize', 'ngAnimate'])
+            .controller('appCtrl',['$scope',function($scope){
+      
+              $scope.isPopupDisplay = false;
+              $scope.popup = ()=>{
+                $scope.isPopupDisplay = !$scope.isPopupDisplay;
+              }
+              $scope.cancel = () => {
+                $scope.isPopupDisplay = false
+              }
+              $scope.text = `<div><h1>asd</h1>asdfadf </br> asdfasdf </br></div>`
+            }])
+            .component('myPopup', {
+                templateUrl: 'demo.template.html',
+                bindings: {
+                    title: '<',
+                    cancel: '&'
+                },
+                controller: function () {
+                    var self = this;
+                
+                    self.cancelPopup = () => {
+                      self.cancel()          
+                    }
+                }
+            })
+</script>
+</html>

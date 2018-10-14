@@ -1,0 +1,8 @@
+<div class='input-wrapper' ng-style="{'height': $ctrl.h + 'px', 'width':$ctrl.w + 'px'}">
+    <label class="label">
+        <img ng-src='{{$ctrl.imagesrc}}' />
+        <span class="title">Add File</span>
+        <input type="file" file-on-change  on-change="$ctrl.onChange(e)" />
+    </label>  
+</div>
+
