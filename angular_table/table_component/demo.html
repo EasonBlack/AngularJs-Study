@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container" ng-app="app" ng-controller="appCtrl">
+    <div>{{message}}</div>
+    <app-table cols='cols' rows='rows' test-click="testClick(event)"  test='tableConfig'>
+      <div>aaaaa</div>
+    </app-table>
+  </div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.11.min.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script>
+    angular.module('app' , [])
+            .component('appDemo', {
+              template: `<div>BBBB</div>`
+            })
+            .component('appTable', {
+              templateUrl: 'table.template.html',
+              transclude: true,
+              bindings: {
+                  cols: '=',
+                  rows: '=',
+                  test: "=",
+                  testClick: "&"
+              },
+              controller:  function () {
+                  let self = this;
+                  this.onEdit =  (event) => {
+                      console.log(234);
+                      self.testClick({
+                        event : {
+                          "aaa": 123
+                        }
+                      })
+                  };
+              }
+            })
+            .controller('appCtrl',['$scope',function($scope){
+              $scope.message = "Helll"
+              $scope.cols = [
+                {id: 'name', title: "Name"},
+                {id: 'num', title: "Num"},
+                {id: 'special', title: "Specail", type: "spec"}
+              ]
+              $scope.tableConfig = {
+                edit: function() {
+                  alert('edit')
+                }
+              }
+              $scope.rows = [
+                {name: "aaa", num: 12},
+                {name: "bbb", num: 13},
+                {name: "ccc", num: 14},
+                {name: "ddd", num: 15}
+              ]
+              $scope.testClick = function(obj) {
+                console.log(123);
+                console.log(obj);
+              }
+            }])
+</script>
+</html>

@@ -1,0 +1,22 @@
+<div ng-transclude></div>
+<app-demo></app-demo>
+<div></div>
+<table class="table">
+  <thead>
+    <tr>
+      <th ng-repeat="h in $ctrl.cols">{{h.title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in $ctrl.rows" ng-click='$ctrl.test.edit()'>
+      <td  ng-repeat='h in $ctrl.cols' >
+         <ng-template ng-switch="h.type">
+            <span ng-switch-when="spec">
+              <button class='btn btn-primay'  ng-click='$ctrl.onEdit(event)'>AAA</button>
+            </span>
+            <span ng-switch-default>{{row[h.id]}}</span>
+         </ng-template>
+      </td >
+    </tr>
+  </tbody>
+</table>
