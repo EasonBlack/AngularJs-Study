@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample App</title>
+    <link href="../../vendor/MultipleDatePicker/multipleDatePicker.css" rel="stylesheet"/>
+    <style>
+      .picker-day.picker-selected{
+          background-color: #9c5244;
+      }
+      .picker-day.picker-selected:hover{
+          background-color: #00e795 !important;
+          color: #fff !important;
+      }
+    </style>
+</head>
+<body ng-app="app" ng-controller="ac">
+    <div>{{message}}</div>
+    <div style='width:100%;position:relative;'>
+      <div ng-repeat="d in week" style="width: 14.28%;display: inline-block; text-align: center" ng-click="toggleWeekDay(d)">
+        <button>{{d.title}}</button>
+      </div>
+    </div>
+    <div>
+         <!-- disable-days-before="today"  -->
+      <multiple-date-picker 
+   
+      ng-model="myArrayOfDates"  
+      month-changed="monthChanged"
+      month-click="checkMonth"
+      day-click="checkSelection"></multiple-date-picker>
+    </div>
+    <div>
+      <button ng-click='confirm()'>Confirm</button>
+      <button ng-click='allMonth()'>全月</button>
+    </div>
+    <br/>
+    <div>
+      <div>
+        <select>
+          <option>门店 1</option>
+          <option>门店 2</option>
+        </select>
+        <button>添加</button>
+      </div>
+      <div>
+        <div >
+          <div style="display: flex;">
+            <label>门店 1</label>
+            <label>数量</label>
+            <input value="1"/>
+            <div style="display: flex;">
+                <label>开始时间</label>
+                <input value="14：00"/>
+            </div> 
+            <div style="display: flex;">
+                <label>结束时间</label>
+                <input value="15：00"/>
+            </div>
+          </div> 
+          <div style="display: flex;">
+              <label>门店 2</label>
+              <label>数量</label>
+              <input value="1"/>
+              <div style="display: flex;">
+                  <label>开始时间</label>
+                  <input value="14：00"/>
+              </div> 
+              <div style="display: flex;">
+                  <label>结束时间</label>
+                  <input value="15：00"/>
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <!-- <div>
+      <div>
+          <button>添加</button>
+      </div>
+      <div  style="display: flex;">
+          <div style="display: flex;">
+              <label>开始时间</label>
+              <input value="10：00"/>
+          </div> 
+          <div style="display: flex;">
+              <label>结束时间</label>
+              <input value="12：00"/>
+          </div> 
+      </div>
+      <div  style="display: flex;">
+          <div style="display: flex;">
+              <label>开始时间</label>
+              <input value="14：00"/>
+          </div> 
+          <div style="display: flex;">
+              <label>结束时间</label>
+              <input value="15：00"/>
+          </div> 
+      </div>
+    </div> -->
+</body>
+<script src="../../vendor/angular.1.5.11.min.js"></script>
+<script src="../../vendor/moment.js"></script>
+<script src="../../vendor/MultipleDatePicker/multipleDatePicker.min.js"></script>
+<script >
+    let app =  angular.module('app', ['multipleDatePicker']);
+    app.controller("ac",function ($scope) {
+
+      
+      $scope.myArrayOfDates = [];
+      $scope.today = moment();
+      
+
+      $scope.week = [ 
+        {id: 1, title: "一"}, 
+        {id: 2, title: "二"}, 
+        {id: 3, title: "三"}, 
+        {id: 4, title: "四"}, 
+        {id: 5, title: "五"}, 
+        {id: 6, title: "六"}, 
+        {id: 0, title: "日"}
+      ]
+      $scope.confirm = () => {
+        console.log($scope.myArrayOfDates.map(o=>o.format("YYYY-MM-DD")))
+      }
+      $scope.checkSelection = (event, date) => {
+        console.log(date);
+      }
+      $scope.monthChanged = (newMonth, oldMonth) => {
+        console.log(newMonth);
+        console.log(oldMonth);
+      }
+
+      $scope.checkMonth = (m) => {
+        console.log(m)
+      }
+      $scope.toggleWeekDay = function(d) {
+        var date = moment().startOf('month');
+        // var origin = new Set($scope.myArrayOfDates);
+        var origin = [...$scope.myArrayOfDates];
+        var originDate = origin.map(o=>o.format("YYYY-MM-DD"));
+        console.log(originDate);
+        var result = [];
+        var month = 2;
+        while (date.month() == month - 1) {
+          let _date = moment(date);
+          if(_date.days() == d.id) {
+            //origin.add(date);
+            if(originDate.indexOf(_date.format("YYYY-MM-DD")) == -1) {
+              origin.push(_date);
+              originDate.push(_date.format("YYYY-MM-DD"))
+            }
+            
+          }
+          date.add(1, "day");
+        }
+        console.log(origin);
+       
+        $scope.myArrayOfDates = origin;
+      }
+      $scope.allMonth = function() {
+        var date = moment().startOf('month');
+        var origin = [...$scope.myArrayOfDates];
+        var originDate = origin.map(o=>o.format("YYYY-MM-DD"));
+        var month = 2;
+        while (date.month() == month - 1) {
+          let _date = moment(date);
+          if(originDate.indexOf(_date.format("YYYY-MM-DD")) == -1) {
+              origin.push(_date);
+              originDate.push(_date.format("YYYY-MM-DD"))
+          }
+          date.add(1, "day");
+        }
+        console.log(origin);
+       
+        $scope.myArrayOfDates = origin;
+      }
+    });
+  
+</script>
+
+</html>
