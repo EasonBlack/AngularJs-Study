@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../style/bootstrap.css" rel="stylesheet" />
+    <link href="../../style/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .container {
+            padding-top:30px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container" ng-app="app" ng-controller="appCtrl">
+      
+    <table class="table">
+      <thead>
+        <tr>
+          <th ng-repeat='h in rows[0].names'></th>
+          <th ng-repeat="h in cols">{{h.title}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in rows" >
+         
+          <td ng-repeat='col in row.rowspan' ng-if='col' rowspan='{{col}}'>
+            {{row.names[$index]}}
+          </td>
+         
+          <td  ng-repeat='h in  cols' >
+             {{row[h.id]}}
+          </td >
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+<script src="../../vendor/jquery-1.11.1.js"></script>
+<script src="../../vendor/angular.1.5.11.min.js"></script>
+<script src="../../vendor/bootstrap.js"></script>
+<script>
+    angular.module('app' , [])
+            .controller('appCtrl',['$scope',function($scope){
+              $scope.message = "Helll"
+              $scope.cols = [
+                {id: 'num', title: "Num"}
+              ]
+             
+              $scope.rows = [
+                {names: ["aaa", "bbb"], num: 12, rowspan: [2,1]},
+                {names: ["aaa", "bbb"], num: 13, rowspan: [0,1]},
+                {names: ["ccc", "bbb"], num: 14, rowspan: [2,1]},
+                {names: ["ccc", "bbb"], num: 15, rowspan: [0,1]}
+              ]
+            
+            }])
+</script>
+</html>
